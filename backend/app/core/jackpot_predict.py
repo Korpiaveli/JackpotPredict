@@ -197,8 +197,8 @@ class JackpotPredict:
             else:
                 answer = validation.formatted_answer
 
-            # Convert probability to confidence percentage
-            confidence_pct = entity_prob.probability * 100
+            # Use confidence score (already 0-1), convert to percentage
+            confidence_pct = entity_prob.confidence * 100
 
             # Build reasoning (limit to 100 chars for UI)
             reasoning = entity_prob.reasoning
