@@ -158,6 +158,10 @@ class BayesianUpdater:
             # Posterior: P(entity|clue) ∝ P(clue|entity) × P(entity)
             posterior = likelihood * prior
 
+            # Debug logging for Monopoly
+            if canonical_name == "Monopoly":
+                logger.info(f"[Monopoly] Clue {len(self.clue_history)}: prior={prior:.6f}, likelihood={likelihood:.6f}, posterior={posterior:.6f}, evidence={evidence}")
+
             # Calculate confidence (increases with more evidence)
             new_confidence = self._calculate_confidence(
                 entity_prob.confidence,
@@ -182,6 +186,11 @@ class BayesianUpdater:
 
         # Normalize probabilities
         self._normalize_probabilities()
+
+        # Debug: Check Monopoly after normalization
+        if "Monopoly" in self.entity_probs:
+            monopoly_prob = self.entity_probs["Monopoly"]
+            logger.info(f"[Monopoly] After normalization: prob={monopoly_prob.probability:.6f}, conf={monopoly_prob.confidence:.6f}")
 
         # Return top entities sorted by probability
         sorted_entities = sorted(
@@ -229,12 +238,28 @@ class BayesianUpdater:
 
         # 3. Polysemy bonus - critical for Clue 1-2
         polysemy_match = False
+
+        # First check: Use ClueAnalyzer's detected polysemous words
         for polysemous_word, meanings in clue_analysis.polysemous_words.items():
             # Check if any meaning relates to entity triggers
             for trigger in entity.polysemy_triggers:
                 if any(meaning.lower() in trigger.lower() for meaning in meanings):
                     polysemy_match = True
                     evidence.append(f"Polysemy match: '{polysemous_word}' → {trigger}")
+                    break
+
+        # Second check (FALLBACK): Direct keyword-to-trigger matching
+        # This catches polysemy that ClueAnalyzer's hardcoded map missed
+        if not polysemy_match:
+            for keyword in clue_analysis.keywords:
+                for trigger in entity.polysemy_triggers:
+                    # Check if keyword appears in trigger phrase
+                    # e.g., "flavors" in "flavors/editions"
+                    if keyword in trigger.lower() or trigger.lower() in keyword:
+                        polysemy_match = True
+                        evidence.append(f"Polysemy trigger match: '{keyword}' <-> '{trigger}'")
+                        break
+                if polysemy_match:
                     break
 
         if polysemy_match:
