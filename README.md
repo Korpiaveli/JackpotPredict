@@ -96,27 +96,77 @@ pip install -r requirements.txt
 python -m spacy download en_core_web_lg
 ```
 
-**3. Frontend setup:**
+**3. Populate entity database (choose one method):**
+
+**Option A: Using Ollama (FREE, local AI):**
 ```bash
-cd frontend
+# Make sure Ollama is running with llama3.1:8b model
+ollama pull llama3.1:8b
+
+# Scrape entities
+python scripts/scrape_entities.py --output app/data/scraped_entities.json
+
+# Annotate with Ollama (zero cost)
+python scripts/annotate_entities.py \
+  --input app/data/scraped_entities.json \
+  --output app/data/annotated_entities.json \
+  --use-ollama \
+  --limit 500  # Start with 500 entities for testing
+
+# Populate database
+python scripts/populate_db.py --input app/data/annotated_entities.json
+```
+
+**Option B: Using Claude API (paid, faster):**
+```bash
+# Set API key
+export ANTHROPIC_API_KEY=your_key_here  # Or add to .env file
+
+# Scrape entities
+python scripts/scrape_entities.py --output app/data/scraped_entities.json
+
+# Annotate with Claude API (~$2.50 per 500 entities)
+python scripts/annotate_entities.py \
+  --input app/data/scraped_entities.json \
+  --output app/data/annotated_entities.json \
+  --limit 500
+
+# Populate database
+python scripts/populate_db.py --input app/data/annotated_entities.json
+```
+
+See [DATA_PIPELINE_GUIDE.md](backend/DATA_PIPELINE_GUIDE.md) for detailed instructions.
+
+**4. Frontend setup:**
+```bash
+cd ../frontend
 npm install
 ```
 
 ### Running the Application
 
-**Backend:**
+**Backend API Server:**
 ```bash
 cd backend
-uvicorn app.main:app --reload
+uvicorn app.server:app --reload --port 8000
 ```
 
-**Frontend:**
+**Backend CLI (for testing):**
+```bash
+cd backend
+python -m app.main
+```
+
+**Frontend Dashboard:**
 ```bash
 cd frontend
 npm run dev
 ```
 
-Visit `http://localhost:5173` to use the dashboard.
+Access the application:
+- **Frontend Dashboard**: http://localhost:5173
+- **Backend API Docs**: http://localhost:8000/docs
+- **API Health Check**: http://localhost:8000/api/health
 
 ## Key Features
 
@@ -184,9 +234,15 @@ npm run test
 - Build command: `npm run build`
 - Output directory: `dist`
 
+## Documentation
+
+- **[DATA_PIPELINE_GUIDE.md](backend/DATA_PIPELINE_GUIDE.md)** - Entity scraping and AI annotation guide
+- **[SCALING_GUIDE.md](backend/SCALING_GUIDE.md)** - Performance analysis for 5K-25K entities
+- **[Implementation Plan](C:\Users\Korp\.claude\plans\elegant-wishing-hammock.md)** - Complete development roadmap
+
 ## Contributing
 
-This is a personal project for Netflix's Best Guess Live game show. See [PLAN.md](../.claude/plans/elegant-wishing-hammock.md) for detailed implementation roadmap.
+This is a personal project for Netflix's Best Guess Live game show.
 
 ## Success Metrics
 
