@@ -1,0 +1,218 @@
+[
+  {
+    "puzzle_name": "Monopoly",
+    "expected_answer": "Monopoly",
+    "target_clue": 3,
+    "min_confidence": 75.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Savors many flavors",
+        "top_3": [
+          "Statue of Liberty",
+          "Eiffel Tower",
+          "Mt. Rushmore"
+        ],
+        "answer_found": false,
+        "answer_rank": null,
+        "answer_confidence": 0.0
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Round and round",
+        "top_3": [
+          "Statue of Liberty",
+          "Eiffel Tower",
+          "Mt. Rushmore"
+        ],
+        "answer_found": false,
+        "answer_rank": null,
+        "answer_confidence": 0.0
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "A hostile takeover",
+        "top_3": [
+          "Monopoly",
+          "Statue of Liberty",
+          "Eiffel Tower"
+        ],
+        "answer_found": true,
+        "answer_rank": 1,
+        "answer_confidence": 95.0
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Trespassing will cost you",
+        "top_3": [
+          "Monopoly",
+          "Statue of Liberty",
+          "Eiffel Tower"
+        ],
+        "answer_found": true,
+        "answer_rank": 1,
+        "answer_confidence": 95.0
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Jail time can be dicey",
+        "top_3": [
+          "Big Ben",
+          "Monopoly",
+          "Mt. Rushmore"
+        ],
+        "answer_found": true,
+        "answer_rank": 2,
+        "answer_confidence": 95.0
+      }
+    ],
+    "passed": true,
+    "found_at_clue": 3,
+    "final_rank": 2,
+    "final_confidence": 95.0
+  },
+  {
+    "puzzle_name": "Paris Hilton",
+    "expected_answer": "Paris Hilton",
+    "target_clue": 4,
+    "min_confidence": 75.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Back to the basics",
+        "top_3": [
+          "Statue of Liberty",
+          "Eiffel Tower",
+          "Mt. Rushmore"
+        ],
+        "answer_found": false,
+        "answer_rank": null,
+        "answer_confidence": 0.0
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Loud with the crowd",
+        "top_3": [
+          "Statue of Liberty",
+          "Eiffel Tower",
+          "Mt. Rushmore"
+        ],
+        "answer_found": false,
+        "answer_rank": null,
+        "answer_confidence": 0.0
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "A sensation and a destination",
+        "top_3": [
+          "Statue of Liberty",
+          "Eiffel Tower",
+          "Mt. Rushmore"
+        ],
+        "answer_found": false,
+        "answer_rank": null,
+        "answer_confidence": 0.0
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Her family is extremely hospitable",
+        "top_3": [
+          "Statue of Liberty",
+          "Eiffel Tower",
+          "Mt. Rushmore"
+        ],
+        "answer_found": false,
+        "answer_rank": null,
+        "answer_confidence": 0.0
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Named after a romantic city? That's hot.",
+        "top_3": [
+          "Eiffel Tower",
+          "Times Square",
+          "Statue of Liberty"
+        ],
+        "answer_found": false,
+        "answer_rank": null,
+        "answer_confidence": 0.0
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Mt. Rushmore",
+    "expected_answer": "Mt. Rushmore",
+    "target_clue": 2,
+    "min_confidence": 75.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Natural but not natural",
+        "top_3": [
+          "Grand Canyon",
+          "Statue of Liberty",
+          "Eiffel Tower"
+        ],
+        "answer_found": false,
+        "answer_rank": null,
+        "answer_confidence": 0.0
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Presidential faces",
+        "top_3": [
+          "Mt. Rushmore",
+          "Grand Canyon",
+          "Statue of Liberty"
+        ],
+        "answer_found": true,
+        "answer_rank": 1,
+        "answer_confidence": 85.3902336400337
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "South Dakota landmark",
+        "top_3": [
+          "Mt. Rushmore",
+          "Grand Canyon",
+          "Big Ben"
+        ],
+        "answer_found": true,
+        "answer_rank": 1,
+        "answer_confidence": 95.0
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Carved in granite",
+        "top_3": [
+          "Mt. Rushmore",
+          "Grand Canyon",
+          "Big Ben"
+        ],
+        "answer_found": true,
+        "answer_rank": 1,
+        "answer_confidence": 95.0
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Four founding fathers",
+        "top_3": [
+          "Mt. Rushmore",
+          "Grand Canyon",
+          "Big Ben"
+        ],
+        "answer_found": true,
+        "answer_rank": 1,
+        "answer_confidence": 95.0
+      }
+    ],
+    "passed": true,
+    "found_at_clue": 2,
+    "final_rank": 1,
+    "final_confidence": 95.0
+  }
+]

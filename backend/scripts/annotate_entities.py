@@ -321,7 +321,8 @@ async def main():
 
     with open(args.input, 'r', encoding='utf-8') as f:
         data = json.load(f)
-        entities = data.get("entities", data)  # Handle both formats
+        # Handle both formats: {"entities": [...]} or [...]
+        entities = data.get("entities", data) if isinstance(data, dict) else data
 
     logger.info(f"Loaded {len(entities)} entities from {args.input}")
 

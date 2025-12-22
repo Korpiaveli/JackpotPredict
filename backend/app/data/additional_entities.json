@@ -6,7 +6,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "The Shawshank Redemption"
   },
   {
     "canonical_name": "The Godfather",
@@ -15,7 +16,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "The Godfather"
   },
   {
     "canonical_name": "Pulp Fiction",
@@ -24,7 +26,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Pulp Fiction"
   },
   {
     "canonical_name": "Forrest Gump",
@@ -33,7 +36,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Forrest Gump"
   },
   {
     "canonical_name": "The Matrix",
@@ -42,7 +46,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "The Matrix"
   },
   {
     "canonical_name": "Inception",
@@ -51,7 +56,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Inception"
   },
   {
     "canonical_name": "The Dark Knight",
@@ -60,7 +66,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "The Dark Knight"
   },
   {
     "canonical_name": "Avatar",
@@ -69,7 +76,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Avatar"
   },
   {
     "canonical_name": "Avengers Endgame",
@@ -78,7 +86,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Avengers Endgame"
   },
   {
     "canonical_name": "Black Panther",
@@ -87,7 +96,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Black Panther"
   },
   {
     "canonical_name": "Jurassic Park",
@@ -96,7 +106,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Jurassic Park"
   },
   {
     "canonical_name": "E.T.",
@@ -105,7 +116,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "E.T."
   },
   {
     "canonical_name": "Jaws",
@@ -114,7 +126,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Jaws"
   },
   {
     "canonical_name": "Rocky",
@@ -123,7 +136,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Rocky"
   },
   {
     "canonical_name": "The Wizard of Oz",
@@ -132,7 +146,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "The Wizard of Oz"
   },
   {
     "canonical_name": "Casablanca",
@@ -141,7 +156,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Casablanca"
   },
   {
     "canonical_name": "Gone with the Wind",
@@ -150,7 +166,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Gone with the Wind"
   },
   {
     "canonical_name": "The Sound of Music",
@@ -159,7 +176,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "The Sound of Music"
   },
   {
     "canonical_name": "Friends",
@@ -168,7 +186,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Friends"
   },
   {
     "canonical_name": "The Office",
@@ -177,7 +196,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "The Office"
   },
   {
     "canonical_name": "Breaking Bad",
@@ -186,7 +206,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Breaking Bad"
   },
   {
     "canonical_name": "Game of Thrones",
@@ -195,7 +216,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Game of Thrones"
   },
   {
     "canonical_name": "The Simpsons",
@@ -204,7 +226,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "The Simpsons"
   },
   {
     "canonical_name": "Seinfeld",
@@ -213,7 +236,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Seinfeld"
   },
   {
     "canonical_name": "Stranger Things",
@@ -222,7 +246,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Stranger Things"
   },
   {
     "canonical_name": "The Crown",
@@ -231,7 +256,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "The Crown"
   },
   {
     "canonical_name": "The Sopranos",
@@ -240,7 +266,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "The Sopranos"
   },
   {
     "canonical_name": "The Wire",
@@ -249,7 +276,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "The Wire"
   },
   {
     "canonical_name": "Mad Men",
@@ -258,7 +286,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Mad Men"
   },
   {
     "canonical_name": "Lost",
@@ -267,7 +296,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Lost"
   },
   {
     "canonical_name": "The West Wing",
@@ -276,7 +306,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "The West Wing"
   },
   {
     "canonical_name": "Parks and Recreation",
@@ -285,7 +316,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Parks and Recreation"
   },
   {
     "canonical_name": "30 Rock",
@@ -294,7 +326,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "30 Rock"
   },
   {
     "canonical_name": "Arrested Development",
@@ -303,7 +336,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Arrested Development"
   },
   {
     "canonical_name": "Frasier",
@@ -312,7 +346,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Frasier"
   },
   {
     "canonical_name": "Cheers",
@@ -321,7 +356,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Cheers"
   },
   {
     "canonical_name": "Brad Pitt",
@@ -330,7 +366,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Brad Pitt"
   },
   {
     "canonical_name": "Leonardo DiCaprio",
@@ -339,7 +376,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Leonardo DiCaprio"
   },
   {
     "canonical_name": "Meryl Streep",
@@ -348,7 +386,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Meryl Streep"
   },
   {
     "canonical_name": "Denzel Washington",
@@ -357,7 +396,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Denzel Washington"
   },
   {
     "canonical_name": "Jennifer Aniston",
@@ -366,7 +406,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Jennifer Aniston"
   },
   {
     "canonical_name": "Will Smith",
@@ -375,7 +416,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Will Smith"
   },
   {
     "canonical_name": "Dwayne Johnson",
@@ -384,7 +426,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Dwayne Johnson"
   },
   {
     "canonical_name": "Scarlett Johansson",
@@ -393,7 +436,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Scarlett Johansson"
   },
   {
     "canonical_name": "Robert Downey Jr",
@@ -402,7 +446,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Robert Downey Jr"
   },
   {
     "canonical_name": "Chris Hemsworth",
@@ -411,7 +456,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Chris Hemsworth"
   },
   {
     "canonical_name": "Zendaya",
@@ -420,7 +466,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Zendaya"
   },
   {
     "canonical_name": "Timothee Chalamet",
@@ -429,7 +476,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Timothee Chalamet"
   },
   {
     "canonical_name": "Emma Stone",
@@ -438,7 +486,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Emma Stone"
   },
   {
     "canonical_name": "Ryan Gosling",
@@ -447,7 +496,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Ryan Gosling"
   },
   {
     "canonical_name": "Margot Robbie",
@@ -456,7 +506,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Margot Robbie"
   },
   {
     "canonical_name": "Lady Gaga",
@@ -465,7 +516,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Lady Gaga"
   },
   {
     "canonical_name": "Drake",
@@ -474,7 +526,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Drake"
   },
   {
     "canonical_name": "Adele",
@@ -483,7 +536,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Adele"
   },
   {
     "canonical_name": "Ed Sheeran",
@@ -492,7 +546,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Ed Sheeran"
   },
   {
     "canonical_name": "Ariana Grande",
@@ -501,7 +556,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Ariana Grande"
   },
   {
     "canonical_name": "Billie Eilish",
@@ -510,7 +566,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Billie Eilish"
   },
   {
     "canonical_name": "The Weeknd",
@@ -519,7 +576,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "The Weeknd"
   },
   {
     "canonical_name": "Kanye West",
@@ -528,7 +586,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Kanye West"
   },
   {
     "canonical_name": "Jay-Z",
@@ -537,7 +596,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Jay-Z"
   },
   {
     "canonical_name": "Rihanna",
@@ -546,7 +606,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Rihanna"
   },
   {
     "canonical_name": "Serena Williams",
@@ -555,7 +616,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Serena Williams"
   },
   {
     "canonical_name": "Roger Federer",
@@ -564,7 +626,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Roger Federer"
   },
   {
     "canonical_name": "Cristiano Ronaldo",
@@ -573,7 +636,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Cristiano Ronaldo"
   },
   {
     "canonical_name": "Lionel Messi",
@@ -582,7 +646,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Lionel Messi"
   },
   {
     "canonical_name": "Usain Bolt",
@@ -591,7 +656,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Usain Bolt"
   },
   {
     "canonical_name": "Simone Biles",
@@ -600,7 +666,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Simone Biles"
   },
   {
     "canonical_name": "Tiger Woods",
@@ -609,7 +676,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Tiger Woods"
   },
   {
     "canonical_name": "Steph Curry",
@@ -618,7 +686,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Steph Curry"
   },
   {
     "canonical_name": "Patrick Mahomes",
@@ -627,7 +696,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Patrick Mahomes"
   },
   {
     "canonical_name": "Shohei Ohtani",
@@ -636,7 +706,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Shohei Ohtani"
   },
   {
     "canonical_name": "Caitlin Clark",
@@ -645,7 +716,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Caitlin Clark"
   },
   {
     "canonical_name": "Abraham Lincoln",
@@ -654,7 +726,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Abraham Lincoln"
   },
   {
     "canonical_name": "George Washington",
@@ -663,7 +736,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "George Washington"
   },
   {
     "canonical_name": "Martin Luther King Jr",
@@ -672,7 +746,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Martin Luther King Jr"
   },
   {
     "canonical_name": "Albert Einstein",
@@ -681,7 +756,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Albert Einstein"
   },
   {
     "canonical_name": "Nelson Mandela",
@@ -690,7 +766,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Nelson Mandela"
   },
   {
     "canonical_name": "Mahatma Gandhi",
@@ -699,7 +776,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Mahatma Gandhi"
   },
   {
     "canonical_name": "Winston Churchill",
@@ -708,7 +786,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Winston Churchill"
   },
   {
     "canonical_name": "Queen Elizabeth II",
@@ -717,7 +796,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Queen Elizabeth II"
   },
   {
     "canonical_name": "Princess Diana",
@@ -726,7 +806,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Princess Diana"
   },
   {
     "canonical_name": "Rosa Parks",
@@ -735,7 +816,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Rosa Parks"
   },
   {
     "canonical_name": "Facebook",
@@ -744,7 +826,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Facebook"
   },
   {
     "canonical_name": "Instagram",
@@ -753,7 +836,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Instagram"
   },
   {
     "canonical_name": "Twitter",
@@ -762,7 +846,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Twitter"
   },
   {
     "canonical_name": "TikTok",
@@ -771,7 +856,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "TikTok"
   },
   {
     "canonical_name": "YouTube",
@@ -780,7 +866,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "YouTube"
   },
   {
     "canonical_name": "Tesla",
@@ -789,7 +876,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Tesla"
   },
   {
     "canonical_name": "iPhone",
@@ -798,7 +886,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "iPhone"
   },
   {
     "canonical_name": "PlayStation",
@@ -807,7 +896,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "PlayStation"
   },
   {
     "canonical_name": "Xbox",
@@ -816,7 +906,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Xbox"
   },
   {
     "canonical_name": "Nintendo",
@@ -825,7 +916,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Nintendo"
   },
   {
     "canonical_name": "LEGO",
@@ -834,7 +926,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "LEGO"
   },
   {
     "canonical_name": "Mattel",
@@ -843,7 +936,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Mattel"
   },
   {
     "canonical_name": "Hot Wheels",
@@ -852,7 +946,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Hot Wheels"
   },
   {
     "canonical_name": "Nerf",
@@ -861,7 +956,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Nerf"
   },
   {
     "canonical_name": "Rubik's Cube",
@@ -870,7 +966,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Rubik's Cube"
   },
   {
     "canonical_name": "Taco",
@@ -879,7 +976,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Taco"
   },
   {
     "canonical_name": "Sushi",
@@ -888,7 +986,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Sushi"
   },
   {
     "canonical_name": "Ramen",
@@ -897,7 +996,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Ramen"
   },
   {
     "canonical_name": "Pasta",
@@ -906,7 +1006,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Pasta"
   },
   {
     "canonical_name": "Sandwich",
@@ -915,7 +1016,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Sandwich"
   },
   {
     "canonical_name": "Burrito",
@@ -924,7 +1026,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Burrito"
   },
   {
     "canonical_name": "Nachos",
@@ -933,7 +1036,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Nachos"
   },
   {
     "canonical_name": "Wings",
@@ -942,7 +1046,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Wings"
   },
   {
     "canonical_name": "BBQ Ribs",
@@ -951,7 +1056,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "BBQ Ribs"
   },
   {
     "canonical_name": "Fried Chicken",
@@ -960,7 +1066,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Fried Chicken"
   },
   {
     "canonical_name": "Cheesecake",
@@ -969,7 +1076,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Cheesecake"
   },
   {
     "canonical_name": "Brownie",
@@ -978,7 +1086,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Brownie"
   },
   {
     "canonical_name": "Cupcake",
@@ -987,7 +1096,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Cupcake"
   },
   {
     "canonical_name": "Pancakes",
@@ -996,7 +1106,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Pancakes"
   },
   {
     "canonical_name": "Waffles",
@@ -1005,7 +1116,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Waffles"
   },
   {
     "canonical_name": "Bacon",
@@ -1014,7 +1126,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Bacon"
   },
   {
     "canonical_name": "Avocado",
@@ -1023,7 +1136,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Avocado"
   },
   {
     "canonical_name": "Kale",
@@ -1032,7 +1146,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Kale"
   },
   {
     "canonical_name": "Taj Mahal",
@@ -1041,7 +1156,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Taj Mahal"
   },
   {
     "canonical_name": "Colosseum",
@@ -1050,7 +1166,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Colosseum"
   },
   {
     "canonical_name": "Machu Picchu",
@@ -1059,7 +1176,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Machu Picchu"
   },
   {
     "canonical_name": "Stonehenge",
@@ -1068,7 +1186,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Stonehenge"
   },
   {
     "canonical_name": "Sydney Opera House",
@@ -1077,7 +1196,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Sydney Opera House"
   },
   {
     "canonical_name": "Burj Khalifa",
@@ -1086,7 +1206,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Burj Khalifa"
   },
   {
     "canonical_name": "Empire State Building",
@@ -1095,7 +1216,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Empire State Building"
   },
   {
     "canonical_name": "White House",
@@ -1104,7 +1226,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "White House"
   },
   {
     "canonical_name": "Buckingham Palace",
@@ -1113,7 +1236,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Buckingham Palace"
   },
   {
     "canonical_name": "Louvre",
@@ -1122,7 +1246,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Louvre"
   },
   {
     "canonical_name": "Vatican",
@@ -1131,7 +1256,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Vatican"
   },
   {
     "canonical_name": "Kremlin",
@@ -1140,7 +1266,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Kremlin"
   },
   {
     "canonical_name": "Forbidden City",
@@ -1149,7 +1276,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Forbidden City"
   },
   {
     "canonical_name": "Angkor Wat",
@@ -1158,7 +1286,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Angkor Wat"
   },
   {
     "canonical_name": "Pyramids of Giza",
@@ -1167,7 +1296,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Pyramids of Giza"
   },
   {
     "canonical_name": "Sphinx",
@@ -1176,7 +1306,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Sphinx"
   },
   {
     "canonical_name": "Petra",
@@ -1185,7 +1316,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Petra"
   },
   {
     "canonical_name": "Acropolis",
@@ -1194,7 +1326,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Acropolis"
   },
   {
     "canonical_name": "Niagara Falls",
@@ -1203,7 +1336,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Niagara Falls"
   },
   {
     "canonical_name": "Victoria Falls",
@@ -1212,7 +1346,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Victoria Falls"
   },
   {
     "canonical_name": "Yellowstone",
@@ -1221,7 +1356,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Yellowstone"
   },
   {
     "canonical_name": "Yosemite",
@@ -1230,7 +1366,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Yosemite"
   },
   {
     "canonical_name": "Everest",
@@ -1239,7 +1376,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Everest"
   },
   {
     "canonical_name": "New York",
@@ -1248,7 +1386,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "New York"
   },
   {
     "canonical_name": "Los Angeles",
@@ -1257,7 +1396,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Los Angeles"
   },
   {
     "canonical_name": "Chicago",
@@ -1266,7 +1406,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Chicago"
   },
   {
     "canonical_name": "Las Vegas",
@@ -1275,7 +1416,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Las Vegas"
   },
   {
     "canonical_name": "Miami",
@@ -1284,7 +1426,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Miami"
   },
   {
     "canonical_name": "London",
@@ -1293,7 +1436,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "London"
   },
   {
     "canonical_name": "Paris",
@@ -1302,7 +1446,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Paris"
   },
   {
     "canonical_name": "Rome",
@@ -1311,7 +1456,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Rome"
   },
   {
     "canonical_name": "Tokyo",
@@ -1320,7 +1466,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Tokyo"
   },
   {
     "canonical_name": "Beijing",
@@ -1329,7 +1476,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Beijing"
   },
   {
     "canonical_name": "Dubai",
@@ -1338,7 +1486,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Dubai"
   },
   {
     "canonical_name": "Sydney",
@@ -1347,7 +1496,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Sydney"
   },
   {
     "canonical_name": "Rio de Janeiro",
@@ -1356,7 +1506,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Rio de Janeiro"
   },
   {
     "canonical_name": "Barcelona",
@@ -1365,7 +1516,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Barcelona"
   },
   {
     "canonical_name": "Amsterdam",
@@ -1374,7 +1526,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Amsterdam"
   },
   {
     "canonical_name": "Venice",
@@ -1383,7 +1536,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Venice"
   },
   {
     "canonical_name": "Prague",
@@ -1392,7 +1546,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Prague"
   },
   {
     "canonical_name": "Athens",
@@ -1401,7 +1556,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Athens"
   },
   {
     "canonical_name": "Istanbul",
@@ -1410,7 +1566,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Istanbul"
   },
   {
     "canonical_name": "Cairo",
@@ -1419,7 +1576,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Cairo"
   },
   {
     "canonical_name": "Super Bowl",
@@ -1428,7 +1586,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Super Bowl"
   },
   {
     "canonical_name": "World Cup",
@@ -1437,7 +1596,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "World Cup"
   },
   {
     "canonical_name": "Olympics",
@@ -1446,7 +1606,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Olympics"
   },
   {
     "canonical_name": "March Madness",
@@ -1455,7 +1616,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "March Madness"
   },
   {
     "canonical_name": "World Series",
@@ -1464,7 +1626,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "World Series"
   },
   {
     "canonical_name": "NBA Finals",
@@ -1473,7 +1636,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "NBA Finals"
   },
   {
     "canonical_name": "Stanley Cup",
@@ -1482,7 +1646,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Stanley Cup"
   },
   {
     "canonical_name": "Wimbledon",
@@ -1491,7 +1656,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Wimbledon"
   },
   {
     "canonical_name": "Masters",
@@ -1500,7 +1666,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Masters"
   },
   {
     "canonical_name": "Kentucky Derby",
@@ -1509,7 +1676,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Kentucky Derby"
   },
   {
     "canonical_name": "Daytona 500",
@@ -1518,7 +1686,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Daytona 500"
   },
   {
     "canonical_name": "Tour de France",
@@ -1527,7 +1696,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Tour de France"
   },
   {
     "canonical_name": "Uno",
@@ -1536,7 +1706,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Uno"
   },
   {
     "canonical_name": "Cards Against Humanity",
@@ -1545,7 +1716,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Cards Against Humanity"
   },
   {
     "canonical_name": "Exploding Kittens",
@@ -1554,7 +1726,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Exploding Kittens"
   },
   {
     "canonical_name": "Candy Land",
@@ -1563,7 +1736,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Candy Land"
   },
   {
     "canonical_name": "Chutes and Ladders",
@@ -1572,7 +1746,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Chutes and Ladders"
   },
   {
     "canonical_name": "Operation",
@@ -1581,7 +1756,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Operation"
   },
   {
     "canonical_name": "Mouse Trap",
@@ -1590,7 +1766,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Mouse Trap"
   },
   {
     "canonical_name": "Twister",
@@ -1599,7 +1776,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Twister"
   },
   {
     "canonical_name": "Pictionary",
@@ -1608,7 +1786,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Pictionary"
   },
   {
     "canonical_name": "Charades",
@@ -1617,7 +1796,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Charades"
   },
   {
     "canonical_name": "Taboo",
@@ -1626,7 +1806,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Taboo"
   },
   {
     "canonical_name": "Boggle",
@@ -1635,7 +1816,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Boggle"
   },
   {
     "canonical_name": "Yahtzee",
@@ -1644,7 +1826,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Yahtzee"
   },
   {
     "canonical_name": "Dominoes",
@@ -1653,7 +1836,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Dominoes"
   },
   {
     "canonical_name": "Poker",
@@ -1662,7 +1846,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Poker"
   },
   {
     "canonical_name": "Blackjack",
@@ -1671,7 +1856,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Blackjack"
   },
   {
     "canonical_name": "Roulette",
@@ -1680,7 +1866,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Roulette"
   },
   {
     "canonical_name": "Bingo",
@@ -1689,7 +1876,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Bingo"
   },
   {
     "canonical_name": "Guitar",
@@ -1698,7 +1886,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Guitar"
   },
   {
     "canonical_name": "Drums",
@@ -1707,7 +1896,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Drums"
   },
   {
     "canonical_name": "Violin",
@@ -1716,7 +1906,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Violin"
   },
   {
     "canonical_name": "Trumpet",
@@ -1725,7 +1916,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Trumpet"
   },
   {
     "canonical_name": "Saxophone",
@@ -1734,7 +1926,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Saxophone"
   },
   {
     "canonical_name": "Flute",
@@ -1743,7 +1936,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Flute"
   },
   {
     "canonical_name": "Harp",
@@ -1752,7 +1946,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Harp"
   },
   {
     "canonical_name": "Accordion",
@@ -1761,7 +1956,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Accordion"
   },
   {
     "canonical_name": "Blender",
@@ -1770,7 +1966,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Blender"
   },
   {
     "canonical_name": "Toaster",
@@ -1779,7 +1976,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Toaster"
   },
   {
     "canonical_name": "Oven",
@@ -1788,7 +1986,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Oven"
   },
   {
     "canonical_name": "Stove",
@@ -1797,7 +1996,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Stove"
   },
   {
     "canonical_name": "Dishwasher",
@@ -1806,7 +2006,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Dishwasher"
   },
   {
     "canonical_name": "Vacuum",
@@ -1815,7 +2016,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Vacuum"
   },
   {
     "canonical_name": "Broom",
@@ -1824,7 +2026,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Broom"
   },
   {
     "canonical_name": "Mop",
@@ -1833,7 +2036,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Mop"
   },
   {
     "canonical_name": "Bucket",
@@ -1842,7 +2046,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Bucket"
   },
   {
     "canonical_name": "Hammer",
@@ -1851,7 +2056,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Hammer"
   },
   {
     "canonical_name": "Drill",
@@ -1860,7 +2066,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Drill"
   },
   {
     "canonical_name": "Saw",
@@ -1869,7 +2076,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Saw"
   },
   {
     "canonical_name": "Wrench",
@@ -1878,7 +2086,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Wrench"
   },
   {
     "canonical_name": "Screwdriver",
@@ -1887,7 +2096,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Screwdriver"
   },
   {
     "canonical_name": "Ladder",
@@ -1896,7 +2106,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Ladder"
   },
   {
     "canonical_name": "Bicycle",
@@ -1905,7 +2116,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Bicycle"
   },
   {
     "canonical_name": "Skateboard",
@@ -1914,7 +2126,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Skateboard"
   },
   {
     "canonical_name": "Scooter",
@@ -1923,7 +2136,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Scooter"
   },
   {
     "canonical_name": "Motorcycle",
@@ -1932,7 +2146,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Motorcycle"
   },
   {
     "canonical_name": "Submarine",
@@ -1941,7 +2156,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Submarine"
   },
   {
     "canonical_name": "Helicopter",
@@ -1950,7 +2166,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Helicopter"
   },
   {
     "canonical_name": "Airplane",
@@ -1959,7 +2176,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Airplane"
   },
   {
     "canonical_name": "Rocket",
@@ -1968,7 +2186,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Rocket"
   },
   {
     "canonical_name": "Train",
@@ -1977,7 +2196,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Train"
   },
   {
     "canonical_name": "Trolley",
@@ -1986,7 +2206,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Trolley"
   },
   {
     "canonical_name": "Cable Car",
@@ -1995,7 +2216,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Cable Car"
   },
   {
     "canonical_name": "Panda",
@@ -2004,7 +2226,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Panda"
   },
   {
     "canonical_name": "Penguin",
@@ -2013,7 +2236,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Penguin"
   },
   {
     "canonical_name": "Dolphin",
@@ -2022,7 +2246,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Dolphin"
   },
   {
     "canonical_name": "Whale",
@@ -2031,7 +2256,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Whale"
   },
   {
     "canonical_name": "Shark",
@@ -2040,7 +2266,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Shark"
   },
   {
     "canonical_name": "Octopus",
@@ -2049,7 +2276,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Octopus"
   },
   {
     "canonical_name": "Giraffe",
@@ -2058,7 +2286,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Giraffe"
   },
   {
     "canonical_name": "Zebra",
@@ -2067,7 +2296,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Zebra"
   },
   {
     "canonical_name": "Rhino",
@@ -2076,7 +2306,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Rhino"
   },
   {
     "canonical_name": "Hippo",
@@ -2085,7 +2316,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Hippo"
   },
   {
     "canonical_name": "Koala",
@@ -2094,7 +2326,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Koala"
   },
   {
     "canonical_name": "Kangaroo",
@@ -2103,7 +2336,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Kangaroo"
   },
   {
     "canonical_name": "Sloth",
@@ -2112,7 +2346,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Sloth"
   },
   {
     "canonical_name": "Flamingo",
@@ -2121,7 +2356,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Flamingo"
   },
   {
     "canonical_name": "Peacock",
@@ -2130,7 +2366,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Peacock"
   },
   {
     "canonical_name": "Owl",
@@ -2139,7 +2376,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Owl"
   },
   {
     "canonical_name": "Parrot",
@@ -2148,7 +2386,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Parrot"
   },
   {
     "canonical_name": "Toucan",
@@ -2157,7 +2396,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Toucan"
   },
   {
     "canonical_name": "Jeans",
@@ -2166,7 +2406,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Jeans"
   },
   {
     "canonical_name": "Sneakers",
@@ -2175,7 +2416,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Sneakers"
   },
   {
     "canonical_name": "Sunglasses",
@@ -2184,7 +2426,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Sunglasses"
   },
   {
     "canonical_name": "Hat",
@@ -2193,7 +2436,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Hat"
   },
   {
     "canonical_name": "Scarf",
@@ -2202,7 +2446,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Scarf"
   },
   {
     "canonical_name": "Tie",
@@ -2211,7 +2456,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Tie"
   },
   {
     "canonical_name": "Belt",
@@ -2220,7 +2466,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Belt"
   },
   {
     "canonical_name": "Watch",
@@ -2229,7 +2476,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Watch"
   },
   {
     "canonical_name": "Ring",
@@ -2238,7 +2486,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Ring"
   },
   {
     "canonical_name": "Necklace",
@@ -2247,7 +2496,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Necklace"
   },
   {
     "canonical_name": "Earrings",
@@ -2256,7 +2506,8 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Earrings"
   },
   {
     "canonical_name": "Bracelet",
@@ -2265,6 +2516,7 @@
     "polysemy_triggers": [],
     "clue_associations": [],
     "recency_score": 0.5,
-    "source": "curated_trivia_list"
+    "source": "curated_trivia_list",
+    "name": "Bracelet"
   }
 ]
