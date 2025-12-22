@@ -162,7 +162,7 @@ class JackpotPredict:
             keywords=clue_analysis.keywords,
             category=None,  # Don't filter by category yet
             top_k=50,  # Get more candidates for Bayesian filtering
-            min_score=0.05
+            min_score=0.01  # Lowered to catch weak polysemy matches like "flavors/editions"
         )
 
         # Step 3: Initialize Bayesian priors on first clue

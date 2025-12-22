@@ -258,8 +258,11 @@ class ClueAnalyzer:
 
             # Extract nouns, verbs, adjectives
             if token.pos_ in ["NOUN", "PROPN", "VERB", "ADJ"]:
-                # Use lemma for normalization
+                # Keep both lemma AND original form for better matching
+                # (e.g., "flavors" matches "flavors/editions", but "flavor" doesn't)
                 keywords.append(token.lemma_.lower())
+                if token.text.lower() != token.lemma_.lower():
+                    keywords.append(token.text.lower())
 
         return keywords
 
