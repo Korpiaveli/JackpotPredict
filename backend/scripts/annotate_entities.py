@@ -1,12 +1,16 @@
 """
-AI Entity Annotator - Generate polysemy triggers and clue associations using Claude API.
+AI Entity Annotator - Generate polysemy triggers and clue associations using AI.
 
-This script uses Claude to automatically generate rich metadata for entities:
+This script uses either Claude API or Ollama (local) to automatically generate rich metadata for entities:
 - Polysemy triggers (dual meanings)
 - Clue associations (likely game show clue patterns)
 - Aliases (alternative names)
 
 Usage:
+    # Using Ollama (FREE, local):
+    python scripts/annotate_entities.py --input data/scraped_entities.json --output data/annotated_entities.json --use-ollama
+
+    # Using Claude API (paid):
     python scripts/annotate_entities.py --input data/scraped_entities.json --output data/annotated_entities.json
 """
 
@@ -30,7 +34,7 @@ logger = logging.getLogger(__name__)
 
 class EntityAnnotator:
     """
-    AI-powered entity annotation using Claude API.
+    AI-powered entity annotation using Claude API or Ollama (local).
 
     Generates:
     - polysemy_triggers: Words with dual meanings related to entity
@@ -39,6 +43,7 @@ class EntityAnnotator:
     """
 
     ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages"
+    OLLAMA_API_URL = "http://localhost:11434/v1/chat/completions"
 
     # Annotation prompt template
     ANNOTATION_PROMPT = """You are a trivia game expert helping to annotate entities for a game show prediction system.
@@ -66,29 +71,42 @@ Respond ONLY with valid JSON in this exact format:
 
 Focus on what would make GOOD TRIVIA CLUES - think wordplay, puns, and cultural references."""
 
-    def __init__(self, api_key: Optional[str] = None, rate_limit: float = 0.2):
+    def __init__(self, use_ollama: bool = False, ollama_model: str = "llama3.1:8b", api_key: Optional[str] = None, rate_limit: float = 0.2):
         """
-        Initialize annotator with Claude API.
+        Initialize annotator with Claude API or Ollama.
 
         Args:
-            api_key: Anthropic API key (or from ANTHROPIC_API_KEY env var)
-            rate_limit: Requests per second (default 0.2 = 5 req/sec, well under limit)
+            use_ollama: Use Ollama (local, free) instead of Claude API
+            ollama_model: Ollama model to use (llama3.1:8b, mistral:7b, gemma2:9b)
+            api_key: Anthropic API key (or from ANTHROPIC_API_KEY env var) - only needed if use_ollama=False
+            rate_limit: Requests per second (default 0.2 = 5 req/sec)
         """
-        self.api_key = api_key or os.getenv("ANTHROPIC_API_KEY")
-        if not self.api_key:
-            raise ValueError("ANTHROPIC_API_KEY not found in environment or constructor")
-
-        self.client = httpx.AsyncClient(
-            headers={
-                "x-api-key": self.api_key,
-                "anthropic-version": "2023-06-01",
-                "content-type": "application/json"
-            },
-            timeout=60.0
-        )
-
+        self.use_ollama = use_ollama
+        self.ollama_model = ollama_model
         self.rate_limit = rate_limit
         self.last_request_time = 0
+
+        if use_ollama:
+            # Ollama (local)
+            logger.info(f"Using Ollama with model: {ollama_model}")
+            self.client = httpx.AsyncClient(
+                timeout=120.0  # Ollama can be slower
+            )
+        else:
+            # Claude API
+            self.api_key = api_key or os.getenv("ANTHROPIC_API_KEY")
+            if not self.api_key:
+                raise ValueError("ANTHROPIC_API_KEY not found in environment or constructor")
+
+            logger.info("Using Claude API")
+            self.client = httpx.AsyncClient(
+                headers={
+                    "x-api-key": self.api_key,
+                    "anthropic-version": "2023-06-01",
+                    "content-type": "application/json"
+                },
+                timeout=60.0
+            )
 
     async def _rate_limit_wait(self):
         """Enforce rate limiting."""
@@ -108,7 +126,7 @@ Focus on what would make GOOD TRIVIA CLUES - think wordplay, puns, and cultural 
         category: str
     ) -> Optional[Dict]:
         """
-        Generate annotations for a single entity using Claude API.
+        Generate annotations for a single entity using Claude API or Ollama.
 
         Args:
             entity_name: Name of the entity
@@ -125,28 +143,45 @@ Focus on what would make GOOD TRIVIA CLUES - think wordplay, puns, and cultural 
             category=category
         )
 
-        # Call Claude API
-        payload = {
-            "model": "claude-3-5-sonnet-20241022",
-            "max_tokens": 1024,
-            "messages": [
-                {
-                    "role": "user",
-                    "content": prompt
-                }
-            ]
-        }
-
         try:
             logger.info(f"Annotating: {entity_name}")
-            response = await self.client.post(self.ANTHROPIC_API_URL, json=payload)
-            response.raise_for_status()
 
-            data = response.json()
-            content = data["content"][0]["text"]
+            if self.use_ollama:
+                # Ollama API (OpenAI-compatible format)
+                payload = {
+                    "model": self.ollama_model,
+                    "messages": [
+                        {
+                            "role": "user",
+                            "content": prompt
+                        }
+                    ],
+                    "temperature": 0.7,
+                    "stream": False
+                }
+                response = await self.client.post(self.OLLAMA_API_URL, json=payload)
+                response.raise_for_status()
+                data = response.json()
+                content = data["choices"][0]["message"]["content"]
+            else:
+                # Claude API
+                payload = {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "max_tokens": 1024,
+                    "messages": [
+                        {
+                            "role": "user",
+                            "content": prompt
+                        }
+                    ]
+                }
+                response = await self.client.post(self.ANTHROPIC_API_URL, json=payload)
+                response.raise_for_status()
+                data = response.json()
+                content = data["content"][0]["text"]
 
             # Parse JSON from response
-            # Sometimes Claude wraps in markdown code blocks
+            # Sometimes models wrap in markdown code blocks
             content = content.strip()
             if content.startswith("```json"):
                 content = content[7:]
@@ -169,7 +204,7 @@ Focus on what would make GOOD TRIVIA CLUES - think wordplay, puns, and cultural 
 
         except json.JSONDecodeError as e:
             logger.error(f"JSON parse error for {entity_name}: {e}")
-            logger.debug(f"Response content: {content}")
+            logger.debug(f"Response content: {content if 'content' in locals() else 'N/A'}")
             return None
         except httpx.HTTPStatusError as e:
             logger.error(f"API error for {entity_name}: {e}")
@@ -265,6 +300,17 @@ async def main():
         action="store_true",
         help="Skip entities that are already annotated"
     )
+    parser.add_argument(
+        "--use-ollama",
+        action="store_true",
+        help="Use Ollama (local, free) instead of Claude API"
+    )
+    parser.add_argument(
+        "--ollama-model",
+        type=str,
+        default="llama3.1:8b",
+        help="Ollama model to use (default: llama3.1:8b, also: mistral:7b, gemma2:9b)"
+    )
 
     args = parser.parse_args()
 
@@ -291,17 +337,35 @@ async def main():
 
     # Initialize annotator
     try:
-        annotator = EntityAnnotator()
+        if args.use_ollama:
+            print(f"\n🤖 Using Ollama (local) with model: {args.ollama_model}")
+            print("Make sure Ollama is running: ollama serve")
+            annotator = EntityAnnotator(
+                use_ollama=True,
+                ollama_model=args.ollama_model
+            )
+        else:
+            print(f"\n🤖 Using Claude API")
+            annotator = EntityAnnotator()
     except ValueError as e:
         print(f"❌ {e}")
-        print("Set ANTHROPIC_API_KEY environment variable or use .env file")
+        if not args.use_ollama:
+            print("Set ANTHROPIC_API_KEY environment variable or use .env file")
+            print("Or use --use-ollama flag for free local annotation")
         return
 
     try:
         # Annotate entities
-        print(f"\n🤖 Starting AI annotation with Claude API...")
+        model_name = args.ollama_model if args.use_ollama else "Claude API"
+        est_time_per_entity = 10 if args.use_ollama else 5
+        print(f"\n🤖 Starting AI annotation with {model_name}...")
         print(f"Entities to annotate: {len(entities)}")
-        print(f"Estimated time: ~{len(entities) * 5} seconds (with rate limiting)\n")
+        print(f"Estimated time: ~{len(entities) * est_time_per_entity} seconds (with rate limiting)")
+        if args.use_ollama:
+            print(f"💰 Cost: $0 (100% local)")
+        else:
+            print(f"💰 Estimated cost: ${len(entities) * 0.005:.2f}")
+        print()
 
         annotated = await annotator.annotate_batch(entities, max_concurrent=3)
 

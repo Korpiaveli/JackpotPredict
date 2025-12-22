@@ -1,0 +1,350 @@
+"""
+API Request/Response Models - Pydantic schemas for FastAPI endpoints.
+
+Defines:
+- Request models for submitting clues
+- Response models for predictions
+- Session management models
+"""
+
+from typing import List, Optional, Dict
+from pydantic import BaseModel, Field, ConfigDict
+from enum import Enum
+
+
+class EntityCategory(str, Enum):
+    """Entity category enum matching core models."""
+    PERSON = "person"
+    PLACE = "place"
+    THING = "thing"
+
+
+class ClueRequest(BaseModel):
+    """Request model for submitting a new clue."""
+
+    clue_text: str = Field(
+        ...,
+        min_length=1,
+        max_length=500,
+        description="The clue text to analyze",
+        examples=["Savors many flavors"]
+    )
+
+    session_id: Optional[str] = Field(
+        None,
+        description="Optional session ID for continuing an existing puzzle"
+    )
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "clue_text": "Savors many flavors",
+                "session_id": "550e8400-e29b-41d4-a716-446655440000"
+            }
+        }
+    )
+
+
+class Prediction(BaseModel):
+    """Individual prediction result."""
+
+    rank: int = Field(
+        ...,
+        ge=1,
+        le=3,
+        description="Rank position (1-3)"
+    )
+
+    answer: str = Field(
+        ...,
+        description="Predicted answer (canonical spelling)"
+    )
+
+    confidence: float = Field(
+        ...,
+        ge=0.0,
+        le=1.0,
+        description="Confidence score (0.0-1.0)"
+    )
+
+    category: EntityCategory = Field(
+        ...,
+        description="Entity category (person/place/thing)"
+    )
+
+    reasoning: str = Field(
+        ...,
+        description="Explanation of why this answer was predicted"
+    )
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "rank": 1,
+                "answer": "Monopoly",
+                "confidence": 0.87,
+                "category": "thing",
+                "reasoning": "Strong polysemy match with 'flavors' (editions) and keyword alignment"
+            }
+        }
+    )
+
+
+class GuessRecommendation(BaseModel):
+    """Recommendation on whether to guess now."""
+
+    should_guess: bool = Field(
+        ...,
+        description="Whether to make a guess with current top answer"
+    )
+
+    confidence_threshold: float = Field(
+        ...,
+        description="Minimum confidence threshold for this clue number"
+    )
+
+    rationale: str = Field(
+        ...,
+        description="Explanation of recommendation"
+    )
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "should_guess": True,
+                "confidence_threshold": 0.75,
+                "rationale": "Clue 3: Confidence 87% exceeds 75% threshold - recommended to guess"
+            }
+        }
+    )
+
+
+class PredictionResponse(BaseModel):
+    """Response model for prediction results."""
+
+    session_id: str = Field(
+        ...,
+        description="Unique session identifier"
+    )
+
+    clue_number: int = Field(
+        ...,
+        ge=1,
+        le=5,
+        description="Current clue number (1-5)"
+    )
+
+    predictions: List[Prediction] = Field(
+        ...,
+        min_length=0,
+        max_length=3,
+        description="Top 3 predictions ordered by confidence"
+    )
+
+    guess_recommendation: GuessRecommendation = Field(
+        ...,
+        description="Recommendation on whether to guess now"
+    )
+
+    elapsed_time: float = Field(
+        ...,
+        description="Processing time in seconds"
+    )
+
+    clue_history: List[str] = Field(
+        ...,
+        description="All clues submitted so far in this session"
+    )
+
+    category_probabilities: Dict[str, float] = Field(
+        default_factory=dict,
+        description="Current probability distribution across categories"
+    )
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "session_id": "550e8400-e29b-41d4-a716-446655440000",
+                "clue_number": 3,
+                "predictions": [
+                    {
+                        "rank": 1,
+                        "answer": "Monopoly",
+                        "confidence": 0.87,
+                        "category": "thing",
+                        "reasoning": "Strong polysemy match with 'flavors' (editions)"
+                    }
+                ],
+                "guess_recommendation": {
+                    "should_guess": True,
+                    "confidence_threshold": 0.75,
+                    "rationale": "Clue 3: Confidence 87% exceeds 75% threshold"
+                },
+                "elapsed_time": 1.23,
+                "clue_history": [
+                    "Savors many flavors",
+                    "Round and round",
+                    "A hostile takeover"
+                ],
+                "category_probabilities": {
+                    "thing": 0.85,
+                    "place": 0.10,
+                    "person": 0.05
+                }
+            }
+        }
+    )
+
+
+class ResetRequest(BaseModel):
+    """Request model for resetting a session."""
+
+    session_id: Optional[str] = Field(
+        None,
+        description="Optional session ID to reset (if None, creates new session)"
+    )
+
+
+class ResetResponse(BaseModel):
+    """Response model for session reset."""
+
+    session_id: str = Field(
+        ...,
+        description="New session identifier"
+    )
+
+    message: str = Field(
+        ...,
+        description="Confirmation message"
+    )
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "session_id": "550e8400-e29b-41d4-a716-446655440000",
+                "message": "Session reset successfully. Ready for new puzzle."
+            }
+        }
+    )
+
+
+class ValidationRequest(BaseModel):
+    """Request model for spelling validation."""
+
+    answer: str = Field(
+        ...,
+        min_length=1,
+        max_length=200,
+        description="Answer to validate"
+    )
+
+
+class ValidationResponse(BaseModel):
+    """Response model for spelling validation."""
+
+    is_valid: bool = Field(
+        ...,
+        description="Whether the answer is valid"
+    )
+
+    canonical_spelling: Optional[str] = Field(
+        None,
+        description="Correct canonical spelling if valid"
+    )
+
+    error_type: Optional[str] = Field(
+        None,
+        description="Type of error (abbreviation, partial_name, typo, not_found)"
+    )
+
+    suggestion: Optional[str] = Field(
+        None,
+        description="Suggested correction"
+    )
+
+    fuzzy_matches: List[str] = Field(
+        default_factory=list,
+        description="Alternative fuzzy matches"
+    )
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "is_valid": False,
+                "canonical_spelling": None,
+                "error_type": "partial_name",
+                "suggestion": "Paris Hilton",
+                "fuzzy_matches": ["Paris Hilton", "Paris, France"]
+            }
+        }
+    )
+
+
+class HealthResponse(BaseModel):
+    """Response model for health check endpoint."""
+
+    status: str = Field(
+        ...,
+        description="Service status (healthy/unhealthy)"
+    )
+
+    version: str = Field(
+        ...,
+        description="API version"
+    )
+
+    entity_count: int = Field(
+        ...,
+        description="Number of entities in registry"
+    )
+
+    active_sessions: int = Field(
+        ...,
+        description="Number of active sessions"
+    )
+
+    uptime_seconds: float = Field(
+        ...,
+        description="Server uptime in seconds"
+    )
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "status": "healthy",
+                "version": "1.0.0",
+                "entity_count": 5000,
+                "active_sessions": 12,
+                "uptime_seconds": 3600.5
+            }
+        }
+    )
+
+
+class ErrorResponse(BaseModel):
+    """Standard error response model."""
+
+    error: str = Field(
+        ...,
+        description="Error type"
+    )
+
+    message: str = Field(
+        ...,
+        description="Human-readable error message"
+    )
+
+    detail: Optional[str] = Field(
+        None,
+        description="Additional error details"
+    )
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "error": "ValidationError",
+                "message": "Invalid clue text",
+                "detail": "Clue text cannot be empty"
+            }
+        }
+    )
