@@ -169,14 +169,28 @@ async def predict(request: ClueRequest) -> PredictionResponse:
         ]
 
         # Build guess recommendation
+        # Get threshold for current clue number (from JackpotPredict.GUESS_THRESHOLDS)
+        threshold_map = {1: 0.50, 2: 0.65, 3: 0.75, 4: 0.85, 5: 0.0}
+        threshold = threshold_map.get(predictor.clue_count, 0.75)
+
+        # Build rationale string
+        top_conf = predictions[0].confidence if predictions else 0.0
+        if prediction_result.should_guess:
+            rationale = f"Clue {predictor.clue_count}: Confidence {top_conf:.0%} exceeds {threshold:.0%} threshold - recommended to guess"
+        else:
+            rationale = f"Clue {predictor.clue_count}: Confidence {top_conf:.0%} below {threshold:.0%} threshold - continue to next clue"
+
         guess_rec = GuessRecommendation(
             should_guess=prediction_result.should_guess,
-            confidence_threshold=prediction_result.guess_threshold,
-            rationale=prediction_result.guess_rationale
+            confidence_threshold=threshold,
+            rationale=rationale
         )
 
         # Calculate elapsed time
         elapsed = time.time() - start_time
+
+        # Build clue history from Bayesian updater's stored clue texts
+        clue_texts = [clue.clue_text for clue in predictor.bayesian.clue_history]
 
         response = PredictionResponse(
             session_id=session_id,
@@ -184,11 +198,11 @@ async def predict(request: ClueRequest) -> PredictionResponse:
             predictions=predictions,
             guess_recommendation=guess_rec,
             elapsed_time=elapsed,
-            clue_history=predictor.clue_history.copy(),
+            clue_history=clue_texts,
             category_probabilities={
-                "thing": predictor.category_probs.get("thing", 0.0),
-                "place": predictor.category_probs.get("place", 0.0),
-                "person": predictor.category_probs.get("person", 0.0)
+                "thing": predictor.category_probs.get(EntityCategory.THING, 0.0),
+                "place": predictor.category_probs.get(EntityCategory.PLACE, 0.0),
+                "person": predictor.category_probs.get(EntityCategory.PERSON, 0.0)
             }
         )
 
