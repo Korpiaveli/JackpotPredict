@@ -57,18 +57,18 @@
         "clue_number": 5,
         "clue_text": "Jail time can be dicey",
         "top_3": [
+          "Times Square",
           "Big Ben",
-          "Monopoly",
-          "Mt. Rushmore"
+          "Baseball"
         ],
-        "answer_found": true,
-        "answer_rank": 2,
-        "answer_confidence": 95.0
+        "answer_found": false,
+        "answer_rank": null,
+        "answer_confidence": 0.0
       }
     ],
     "passed": true,
     "found_at_clue": 3,
-    "final_rank": 2,
+    "final_rank": 1,
     "final_confidence": 95.0
   },
   {
@@ -129,9 +129,9 @@
         "clue_number": 5,
         "clue_text": "Named after a romantic city? That's hot.",
         "top_3": [
-          "Eiffel Tower",
           "Times Square",
-          "Statue of Liberty"
+          "Eiffel Tower",
+          "Hot Dog"
         ],
         "answer_found": false,
         "answer_rank": null,
@@ -171,7 +171,7 @@
         ],
         "answer_found": true,
         "answer_rank": 1,
-        "answer_confidence": 85.3902336400337
+        "answer_confidence": 86.07736166656659
       },
       {
         "clue_number": 3,
@@ -179,7 +179,7 @@
         "top_3": [
           "Mt. Rushmore",
           "Grand Canyon",
-          "Big Ben"
+          "Hollywood"
         ],
         "answer_found": true,
         "answer_rank": 1,
@@ -191,7 +191,7 @@
         "top_3": [
           "Mt. Rushmore",
           "Grand Canyon",
-          "Big Ben"
+          "Hollywood"
         ],
         "answer_found": true,
         "answer_rank": 1,
@@ -203,7 +203,7 @@
         "top_3": [
           "Mt. Rushmore",
           "Grand Canyon",
-          "Big Ben"
+          "Hollywood"
         ],
         "answer_found": true,
         "answer_rank": 1,
@@ -212,6 +212,78 @@
     ],
     "passed": true,
     "found_at_clue": 2,
+    "final_rank": 1,
+    "final_confidence": 95.0
+  },
+  {
+    "puzzle_name": "Eiffel Tower",
+    "expected_answer": "Eiffel Tower",
+    "target_clue": 1,
+    "min_confidence": 75.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Named after Eiffel",
+        "top_3": [
+          "Eiffel Tower",
+          "Statue of Liberty",
+          "Mt. Rushmore"
+        ],
+        "answer_found": true,
+        "answer_rank": 1,
+        "answer_confidence": 50.0
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Iron lady of Paris",
+        "top_3": [
+          "Eiffel Tower",
+          "Statue of Liberty",
+          "Football"
+        ],
+        "answer_found": true,
+        "answer_rank": 1,
+        "answer_confidence": 95.0
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Built for an exposition",
+        "top_3": [
+          "Eiffel Tower",
+          "Statue of Liberty",
+          "Football"
+        ],
+        "answer_found": true,
+        "answer_rank": 1,
+        "answer_confidence": 95.0
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "World's most visited paid monument",
+        "top_3": [
+          "Eiffel Tower",
+          "Statue of Liberty",
+          "Times Square"
+        ],
+        "answer_found": true,
+        "answer_rank": 1,
+        "answer_confidence": 95.0
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "1000 feet of French engineering",
+        "top_3": [
+          "Eiffel Tower",
+          "Football",
+          "Statue of Liberty"
+        ],
+        "answer_found": true,
+        "answer_rank": 1,
+        "answer_confidence": 95.0
+      }
+    ],
+    "passed": true,
+    "found_at_clue": 1,
     "final_rank": 1,
     "final_confidence": 95.0
   }

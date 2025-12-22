@@ -62,14 +62,22 @@ class BayesianUpdater:
     # Category weight in likelihood calculation
     CATEGORY_WEIGHT = 0.3
 
-    # Keyword match weight
-    KEYWORD_WEIGHT = 0.4
+    # Keyword match weight - INCREASED to trust TF-IDF search results more
+    KEYWORD_WEIGHT = 0.8  # Was 0.4
 
     # Recency bonus weight
     RECENCY_WEIGHT = 0.1
 
     # Clue association weight
     ASSOCIATION_WEIGHT = 0.2
+
+    # Direct name match bonus - STRONGEST SIGNAL
+    # When clue keyword matches entity's canonical name (e.g., "Eiffel" in "Eiffel Tower")
+    CANONICAL_NAME_BONUS = 2.5
+
+    # Alias match bonus - Strong signal
+    # When clue keyword matches a known alias
+    ALIAS_MATCH_BONUS = 2.0
 
     def __init__(self):
         """Initialize BayesianUpdater."""
@@ -228,6 +236,19 @@ class BayesianUpdater:
             if search_score > 0.3:
                 evidence.append(f"Strong keyword match (score: {search_score:.2f})")
 
+        # 1.5. Canonical name match - STRONGEST SIGNAL
+        # When clue keyword directly matches entity name (e.g., "Eiffel" -> "Eiffel Tower")
+        canonical_match, alias_match, matched_keyword = self._check_canonical_name_match(
+            entity, clue_analysis.keywords
+        )
+
+        if canonical_match:
+            likelihood *= self.CANONICAL_NAME_BONUS  # 2.5x multiplier
+            evidence.append(f"Direct name match: '{matched_keyword}' in '{entity.canonical_name}'")
+        elif alias_match:
+            likelihood *= self.ALIAS_MATCH_BONUS  # 2.0x multiplier
+            evidence.append(f"Alias match: '{matched_keyword}'")
+
         # 2. Category alignment
         category_prob = clue_analysis.category_probs.get(entity.category, 0.33)
         category_contribution = self.CATEGORY_WEIGHT * category_prob
@@ -292,6 +313,56 @@ class BayesianUpdater:
                         break
 
         return likelihood, evidence
+
+    def _check_canonical_name_match(
+        self,
+        entity: Entity,
+        keywords: List[str]
+    ) -> tuple:
+        """
+        Check if any keyword directly matches the entity's canonical name or aliases.
+
+        This is the STRONGEST signal - when a clue explicitly mentions an entity by name.
+        E.g., "Named after Eiffel" should strongly match "Eiffel Tower".
+
+        Args:
+            entity: Entity to check
+            keywords: Keywords from clue analysis
+
+        Returns:
+            (canonical_match: bool, alias_match: bool, matched_keyword: str) tuple
+        """
+        # Extract words from canonical name (e.g., "Eiffel Tower" -> ["eiffel", "tower"])
+        name_words = set(word.lower() for word in entity.canonical_name.split())
+
+        # Check keywords against canonical name words
+        for keyword in keywords:
+            keyword_lower = keyword.lower()
+
+            # Exact word match in canonical name
+            if keyword_lower in name_words:
+                return (True, False, keyword)
+
+            # Partial match (keyword is substring of name word or vice versa)
+            # Only for keywords with 4+ chars to avoid false positives
+            for name_word in name_words:
+                if len(keyword_lower) >= 4 and len(name_word) >= 4:
+                    if keyword_lower in name_word or name_word in keyword_lower:
+                        return (True, False, keyword)
+
+        # Check against aliases
+        for alias in entity.aliases:
+            alias_words = set(word.lower() for word in alias.split())
+            for keyword in keywords:
+                keyword_lower = keyword.lower()
+                if keyword_lower in alias_words:
+                    return (False, True, keyword)
+                for alias_word in alias_words:
+                    if len(keyword_lower) >= 4 and len(alias_word) >= 4:
+                        if keyword_lower in alias_word or alias_word in keyword_lower:
+                            return (False, True, keyword)
+
+        return (False, False, "")
 
     def _calculate_confidence(
         self,

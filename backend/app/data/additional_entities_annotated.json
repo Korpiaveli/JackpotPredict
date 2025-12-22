@@ -1,0 +1,6701 @@
+{
+  "metadata": {
+    "annotated_at": "2025-12-22T08:48:10.188399",
+    "total_entities": 252,
+    "successfully_annotated": 242
+  },
+  "entities": [
+    {
+      "canonical_name": "LEGO",
+      "category": "thing",
+      "aliases": [
+        "Lego bricks",
+        "LEGO"
+      ],
+      "polysemy_triggers": [
+        "toy bricks",
+        "small pieces",
+        "artistic creations",
+        "children's play",
+        "miniature structures"
+      ],
+      "clue_associations": [
+        "imagination at play",
+        "childhood memories",
+        "creative building sets",
+        "miniature worlds",
+        "plastic blocks",
+        "construction sets",
+        "building imagination"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "LEGO",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Mad Men",
+      "category": "thing",
+      "aliases": [],
+      "polysemy_triggers": [
+        "advertising",
+        "60s style",
+        "smoking habits",
+        "creative directors",
+        "network TV"
+      ],
+      "clue_associations": [
+        "smoky office",
+        "Don Draper's world",
+        "betting on the next big thing",
+        "fashion influence",
+        "Roger Sterling's charm",
+        "Betty's role",
+        "Peggy Olson's rise"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Mad Men",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Serena Williams",
+      "category": "person",
+      "aliases": [
+        "Serena J. Williams",
+        "The GOAT (Greatest of All Time)"
+      ],
+      "polysemy_triggers": [
+        "will",
+        "serve",
+        "ace",
+        "tournament",
+        "volley"
+      ],
+      "clue_associations": [
+        "US Open champion",
+        "tennis icon",
+        "Grande Slam winner",
+        "Williams sister",
+        "fashionista on the court",
+        "Golden Slam contender",
+        "Wimbledon sensation"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Serena Williams",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Louvre",
+      "category": "place",
+      "aliases": [
+        "Louvre Museum",
+        "Mus\u00e9e du Louvre"
+      ],
+      "polysemy_triggers": [
+        "art museum",
+        "Parisian location",
+        "iconic landmark",
+        "masterpiece repository",
+        "French treasure"
+      ],
+      "clue_associations": [
+        "Impressionist art",
+        "Da Vinci's home",
+        "Mona Lisa's resting place",
+        "Michelangelo's Sistine Chapel rival",
+        "Cultural icon",
+        "World's most visited museum",
+        "Ile de France jewel"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Louvre",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Bingo",
+      "category": "thing",
+      "aliases": [
+        "Bingo",
+        " Bingo Night"
+      ],
+      "polysemy_triggers": [
+        "call out",
+        "mark off",
+        "number game",
+        "luck of the draw",
+        "strike it rich"
+      ],
+      "clue_associations": [
+        "numbers game",
+        "random selection",
+        "jackpot winner",
+        "card game strategy",
+        "game night classic"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Bingo",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Rocket",
+      "category": "thing",
+      "aliases": [
+        "rockets",
+        "spaceships",
+        "spacecraft"
+      ],
+      "polysemy_triggers": [
+        "blast off",
+        "fuel for thought",
+        "launchpad",
+        "space out",
+        "pilot error"
+      ],
+      "clue_associations": [
+        "orbital paths",
+        "cosmic exploration",
+        "rocket science",
+        "interstellar travel",
+        "star-studded history",
+        "blast into the unknown"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Rocket",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Athens",
+      "category": "place",
+      "aliases": [
+        "Atenas",
+        "Athen"
+      ],
+      "polysemy_triggers": [
+        "capital city",
+        "ancient ruins",
+        "Greek mythology",
+        "Olympics roots",
+        "philosophy hub"
+      ],
+      "clue_associations": [
+        "cradle of democracy",
+        "Acropolis connection",
+        "Socrates' stomping ground",
+        "Theater and arts legacy",
+        "Marathon origins"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Athens",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Earrings",
+      "category": "thing",
+      "aliases": [
+        "droplets",
+        "stud earrings"
+      ],
+      "polysemy_triggers": [
+        "dangle",
+        "decorate",
+        "accessory",
+        "jewelry",
+        "adornment"
+      ],
+      "clue_associations": [
+        "fashion statement",
+        "ear-resistible",
+        "style icon",
+        "bling",
+        "fine jewelry",
+        "expensive taste",
+        "gift for her"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Earrings",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Roger Federer",
+      "category": "person",
+      "aliases": [
+        "The Maestro",
+        "Fed Express"
+      ],
+      "polysemy_triggers": [
+        "ace",
+        "king",
+        "racket",
+        "serve",
+        "grass"
+      ],
+      "clue_associations": [
+        "Swiss tennis",
+        "2009 French Open winner",
+        "grandslam record holder",
+        "Nadal rivalry",
+        "all-time great",
+        "Wimbledon champion",
+        "15-0 start to a year"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Roger Federer",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Lost",
+      "category": "thing",
+      "aliases": [],
+      "polysemy_triggers": [],
+      "clue_associations": [],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Lost",
+      "annotated": false
+    },
+    {
+      "canonical_name": "Istanbul",
+      "category": "place",
+      "aliases": [
+        "Istanbul",
+        "Constantinople",
+        "Byzantium"
+      ],
+      "polysemy_triggers": [
+        "crossroads",
+        "bridge between East and West",
+        "conqueror's city",
+        "fishing port",
+        "byzantine"
+      ],
+      "clue_associations": [
+        "bosphorus strait",
+        "ottoman empire",
+        "silk road",
+        "mosque minarets",
+        "cappadocia hotspot",
+        "whirling dervishes",
+        "hagia sophia"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Istanbul",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Vatican",
+      "category": "place",
+      "aliases": [
+        "Vatican City",
+        "Holy See of Rome",
+        "City of the Vatican"
+      ],
+      "polysemy_triggers": [
+        "holy see",
+        "city state",
+        "vatican city",
+        "catholic church",
+        "pope's residence"
+      ],
+      "clue_associations": [
+        "christian heartland",
+        "roman ruins",
+        "sistine chapel artwork",
+        "popemobile tours",
+        "apostolic palace intrigue",
+        "benedictine heritage"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Vatican",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Mattel",
+      "category": "thing",
+      "aliases": [
+        "Mattel, Inc.",
+        "Mattel Toys"
+      ],
+      "polysemy_triggers": [
+        "toy company",
+        "board game manufacturer",
+        "maker of Barbie dolls",
+        "company founded by Ruth Handler",
+        "creator of Monopoly"
+      ],
+      "clue_associations": [
+        "Barbie dolls",
+        "Hot Wheels",
+        "Fisher-Price toys",
+        "creativity and play",
+        "nostalgic childhood memories",
+        "iconic toy brands",
+        "toys that teach skills"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Mattel",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Bracelet",
+      "category": "thing",
+      "aliases": [
+        "charm",
+        "anklet",
+        "band"
+      ],
+      "polysemy_triggers": [
+        "ornament",
+        "fitness tracker",
+        "jewelry box"
+      ],
+      "clue_associations": [
+        "fashion accessory",
+        "sports timing device",
+        "personal adornment",
+        "hand held decoration",
+        "accessory for the wrist"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Bracelet",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Train",
+      "category": "thing",
+      "aliases": [
+        "railcar",
+        "train car",
+        " locomotive engine"
+      ],
+      "polysemy_triggers": [
+        "railway",
+        "speed",
+        "track",
+        "line",
+        "route"
+      ],
+      "clue_associations": [
+        "locomotive",
+        "engine",
+        "routes",
+        "travel",
+        "conductor",
+        "transportation",
+        "network",
+        "schedule"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Train",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Guitar",
+      "category": "thing",
+      "aliases": [
+        "Guitars",
+        "Fender Guitars",
+        "Electric Guitar",
+        "Acoustic Guitar"
+      ],
+      "polysemy_triggers": [
+        "pick",
+        "axe",
+        "string",
+        "rock out",
+        "jam"
+      ],
+      "clue_associations": [
+        "electric instrument",
+        "Fender or Gibson",
+        "acoustic or electric",
+        "six strings",
+        "plugged in",
+        "classical music",
+        "guitar hero"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Guitar",
+      "annotated": true
+    },
+    {
+      "canonical_name": "The West Wing",
+      "category": "thing",
+      "aliases": [
+        "The West Wing Show",
+        "WW"
+      ],
+      "polysemy_triggers": [
+        "lobby",
+        "branch of government",
+        "white house",
+        "staff room",
+        "public affairs"
+      ],
+      "clue_associations": [
+        "tv drama",
+        "nbc show",
+        "martin sheen",
+        "samm weisman",
+        "west wing writers' room"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "The West Wing",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Cristiano Ronaldo",
+      "category": "person",
+      "aliases": [
+        "CR7",
+        "Ron"
+      ],
+      "polysemy_triggers": [
+        "superstar",
+        "goalgetter",
+        "Portuguese",
+        "Manchester",
+        "soccer"
+      ],
+      "clue_associations": [
+        "Ballon d'Or winner",
+        "UEFA Champions League record",
+        "Cristiano and the CR7 branding",
+        "Famous haircuts in sports",
+        "High-scoring striker",
+        "International football legend"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Cristiano Ronaldo",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Hot Wheels",
+      "category": "thing",
+      "aliases": [
+        "HotWheels",
+        "HW",
+        "Hot Wheels die-cast"
+      ],
+      "polysemy_triggers": [
+        "wheels",
+        "tracks",
+        "racing",
+        "models",
+        "cars"
+      ],
+      "clue_associations": [
+        "die-cast",
+        "miniature",
+        "toys for boys",
+        "collector's item",
+        "racing champions",
+        "scale models",
+        "miniatures"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Hot Wheels",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Drums",
+      "category": "thing",
+      "aliases": [
+        "drums kit",
+        "drum set",
+        "percussion"
+      ],
+      "polysemy_triggers": [
+        "percussion section",
+        "drumstick",
+        "beat",
+        "rhythm section",
+        "driving force"
+      ],
+      "clue_associations": [
+        "rock drums",
+        "jazz session",
+        "stick handling",
+        "session musicians",
+        "backbeat"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Drums",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Kremlin",
+      "category": "place",
+      "aliases": [
+        "Kremlin Palace",
+        "Moscow Kremlin"
+      ],
+      "polysemy_triggers": [
+        "palace",
+        "red",
+        "fortress",
+        "stronghold",
+        "powerhouse"
+      ],
+      "clue_associations": [
+        "Russian leadership",
+        "Cold War backdrop",
+        "Eagle Nest",
+        "Resident Evil setting",
+        "Iron Curtain location"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Kremlin",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Cairo",
+      "category": "place",
+      "aliases": [
+        "Al-Qahira",
+        "El Qahirah"
+      ],
+      "polysemy_triggers": [
+        "The City of a Thousand Minarets",
+        "a pharaoh's tomb",
+        "Egyptian capital city",
+        "pyramid builders",
+        "Suez Canal terminus"
+      ],
+      "clue_associations": [
+        "ancient pyramids",
+        "Nile River delta",
+        "Islamic architecture",
+        "Middle Eastern metropolis",
+        "Arab Spring protests"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Cairo",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Trolley",
+      "category": "thing",
+      "aliases": [
+        "Tram",
+        "Railcar",
+        "Pendulum"
+      ],
+      "polysemy_triggers": [
+        "public transportation",
+        "shopping cart",
+        "toy train",
+        "tram",
+        "ferry"
+      ],
+      "clue_associations": [
+        "mode of transport",
+        "city street",
+        "railway system",
+        "conveyor belt",
+        "commuter's friend"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Trolley",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Parks and Recreation",
+      "category": "thing",
+      "aliases": [
+        "P&R",
+        "Parks"
+      ],
+      "polysemy_triggers": [
+        "recreation",
+        "parks",
+        "town hall",
+        "government",
+        "small town"
+      ],
+      "clue_associations": [
+        "local government",
+        "harmony",
+        "department of fun",
+        "city council",
+        "waffles and wimbles",
+        "Leslie Knope's pride",
+        "Gryzzl"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Parks and Recreation",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Pulp Fiction",
+      "category": "thing",
+      "aliases": [
+        "Pulp Fiction: The Movie",
+        "The Tarantino Classic"
+      ],
+      "polysemy_triggers": [
+        "fictional story",
+        "paper product",
+        " Quentin Tarantino film",
+        "retro aesthetic",
+        "cool guy"
+      ],
+      "clue_associations": [
+        "iconic dialogue",
+        "Vincent Vega and Jules Winnfield",
+        "Palm Springs and Royale with Cheese",
+        "crime drama mastery",
+        "90s and 2000s pop culture"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Pulp Fiction",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Nerf",
+      "category": "thing",
+      "aliases": [
+        "Nerf Guns",
+        "Nerf Blasters",
+        "Softball Bats"
+      ],
+      "polysemy_triggers": [
+        "dodge",
+        "blaster",
+        "battle",
+        "warfare",
+        "toy"
+      ],
+      "clue_associations": [
+        " Nerf gun battles",
+        "soft targets",
+        "backyard fun",
+        " Nerf wars",
+        "soft ammo"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Nerf",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Lionel Messi",
+      "category": "person",
+      "aliases": [
+        "Lio Messi",
+        "Leo Messi"
+      ],
+      "polysemy_triggers": [
+        "number 10",
+        "futbol superstar",
+        "argentine icon",
+        "ball control master",
+        "soccer god"
+      ],
+      "clue_associations": [
+        "Barcelona legend",
+        "world cup winner",
+        "record breaker",
+        "golden boot holder",
+        "la liga dominance",
+        "crystal ball award",
+        "argentine pride"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Lionel Messi",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Forbidden City",
+      "category": "place",
+      "aliases": [
+        "Palace Museum",
+        "Imperial Palace of Beijing",
+        "Gugong"
+      ],
+      "polysemy_triggers": [
+        "forbidden fruit",
+        "city of kings",
+        "imperial palace",
+        "red walls",
+        "ancient secrets"
+      ],
+      "clue_associations": [
+        "Ming dynasty",
+        "Qin Shi Huang",
+        "Beijing's heart",
+        "Tiananmen Square neighbor",
+        "Silk Road stopover",
+        "Chinese emperor's residence",
+        "Forbidden love story setting"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Forbidden City",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Super Bowl",
+      "category": "thing",
+      "aliases": [
+        "NFL Championship",
+        "Gridiron Showdown"
+      ],
+      "polysemy_triggers": [
+        "bowl",
+        "super",
+        "championship",
+        "football",
+        "halftime"
+      ],
+      "clue_associations": [
+        "touchdown",
+        "quarterback",
+        "gridiron",
+        "end zone",
+        "two-minute warning",
+        "draft day",
+        "kickoff party"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Super Bowl",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Cable Car",
+      "category": "thing",
+      "aliases": [
+        "cable railway",
+        "funicular system"
+      ],
+      "polysemy_triggers": [
+        "wireless",
+        "transportation",
+        "carriage",
+        " suspension system",
+        " San Francisco"
+      ],
+      "clue_associations": [
+        "funicular",
+        "hills of San Francisco",
+        "mode of transportation",
+        " famous landmarks",
+        " steep inclines",
+        " iconic symbol",
+        " tourist attractions"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Cable Car",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Violin",
+      "category": "thing",
+      "aliases": [
+        "Fiddle",
+        "Violincello",
+        "Lira"
+      ],
+      "polysemy_triggers": [
+        "bow",
+        "stringed instrument",
+        "musician's friend",
+        "orchestra staple",
+        "fiddler"
+      ],
+      "clue_associations": [
+        "Stradivarius",
+        "Paganini",
+        "classical music",
+        "Itzhak Perlman",
+        "Vivaldi"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Violin",
+      "annotated": true
+    },
+    {
+      "canonical_name": "30 Rock",
+      "category": "thing",
+      "aliases": [
+        "30 Rock TV Show"
+      ],
+      "polysemy_triggers": [
+        "rock band",
+        "NBC network show",
+        "sketch comedy",
+        "geological formation",
+        "music genre"
+      ],
+      "clue_associations": [
+        "Tina Fey's creation",
+        "Alec Baldwin's infamous character",
+        "Percy's boss",
+        "TV show set in a fictional building",
+        "New York City location"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "30 Rock",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Usain Bolt",
+      "category": "person",
+      "aliases": [
+        "Lightning Bolt"
+      ],
+      "polysemy_triggers": [
+        "bolt action",
+        "electricity",
+        "fasten",
+        "speed record holder",
+        "legendary"
+      ],
+      "clue_associations": [
+        "world records",
+        "Berlin Olympics",
+        "track and field",
+        "faster than the rest",
+        "gold medal winner",
+        "Jamaican pride"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Usain Bolt",
+      "annotated": true
+    },
+    {
+      "canonical_name": "The Godfather",
+      "category": "thing",
+      "aliases": [
+        "The Godfather film",
+        "Don Vito Corleone",
+        "Mario Puzo's novel"
+      ],
+      "polysemy_triggers": [
+        "father figure",
+        "mafia boss",
+        "family ties",
+        "Don Corleone",
+        "godsend"
+      ],
+      "clue_associations": [
+        "classic cinema",
+        "Francis Ford Coppola",
+        "the family business",
+        "Marlon Brando's iconic performance",
+        "Cosa Nostra crime syndicate",
+        "Italian-American culture",
+        "Gangster movies"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "The Godfather",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Rubik's Cube",
+      "category": "thing",
+      "aliases": [
+        "Rubik",
+        "Cube"
+      ],
+      "polysemy_triggers": [
+        "cube",
+        "puzzle",
+        "twist",
+        "turn",
+        "solve"
+      ],
+      "clue_associations": [
+        "math problem",
+        "brain teaser",
+        "3D challenge",
+        "World Speedsolving Championships",
+        "rotating puzzle"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Rubik's Cube",
+      "annotated": true
+    },
+    {
+      "canonical_name": "World Cup",
+      "category": "thing",
+      "aliases": [
+        "FIFA World Cup",
+        "The Beautiful Game Tournament",
+        "World Football Championship"
+      ],
+      "polysemy_triggers": [
+        "cupboard",
+        "football federation",
+        "soccer tournament",
+        "cups sold",
+        "worldwide competition"
+      ],
+      "clue_associations": [
+        "victorious nations",
+        "goalkeepers' challenge",
+        "pitch invaders",
+        "iconic stadiums",
+        "beautiful game"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "World Cup",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Angkor Wat",
+      "category": "place",
+      "aliases": [
+        "Angkor Wat temple",
+        "Temples of Angkor",
+        "Great Temple"
+      ],
+      "polysemy_triggers": [
+        "watery place",
+        "ancient city",
+        "oriental temple",
+        "lost city of gold",
+        "Khmer architecture"
+      ],
+      "clue_associations": [
+        "Cambodian ruins",
+        "UNESCO World Heritage Site",
+        "ancient Hindu temples",
+        "Angkor Empire",
+        "Silk Road destination",
+        "Buddhist pilgrimage site"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Angkor Wat",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Forrest Gump",
+      "category": "thing",
+      "aliases": [
+        "Forrest",
+        "Gump"
+      ],
+      "polysemy_triggers": [
+        "shrimp",
+        "feet",
+        "boxcar",
+        "jenny",
+        "runaway"
+      ],
+      "clue_associations": [
+        "run-for-your-life",
+        "slow-witted",
+        "cornfield",
+        "memorable lines",
+        "American classic",
+        "run across the country",
+        "box of chocolates"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Forrest Gump",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Trumpet",
+      "category": "thing",
+      "aliases": [
+        "trumpets",
+        "brass"
+      ],
+      "polysemy_triggers": [
+        "trumpet sound",
+        "political figure",
+        "love of music",
+        "brass instrument",
+        "big league"
+      ],
+      "clue_associations": [
+        "Jazz Age",
+        "Brass band",
+        "Military march",
+        "Blowing off steam",
+        "Louis Armstrong's friend",
+        "Classic symbol",
+        "New Orleans staple"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Trumpet",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Panda",
+      "category": "thing",
+      "aliases": [
+        "Pandamonium",
+        "Giant Panda",
+        "Ailuropoda melanoleuca"
+      ],
+      "polysemy_triggers": [
+        "cute animal",
+        "Chinese food",
+        "lazy",
+        "endangered species",
+        "black and white"
+      ],
+      "clue_associations": [
+        "Chinese symbol",
+        "vegetarian diet",
+        "hibernation",
+        "zoological garden",
+        "iconic photo",
+        "bamboo eater",
+        "gentle giant"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Panda",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Frasier",
+      "category": "thing",
+      "aliases": [
+        "Frasier Crane",
+        "Dr. Frasier"
+      ],
+      "polysemy_triggers": [
+        "fraternal",
+        "Seattleite",
+        " psychiatrist",
+        "twin brother",
+        "snobbish"
+      ],
+      "clue_associations": [
+        "sitcom character",
+        "coffee snob",
+        "Brotherly love",
+        "Cafe Nervosa",
+        "KACL radio show",
+        "High-brow humor"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Frasier",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Taco",
+      "category": "thing",
+      "aliases": [
+        "tacos",
+        "tortillas",
+        "Mexican wrap"
+      ],
+      "polysemy_triggers": [
+        "shell",
+        "beef",
+        "dinner",
+        "Mexican food",
+        "fold"
+      ],
+      "clue_associations": [
+        "Southwestern cuisine",
+        "Austin's favorite food",
+        "Crunchwrap Supreme",
+        "Taco Tuesday",
+        "Baja-style",
+        "Authentic Mexican",
+        "Late-night snack"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Taco",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Simone Biles",
+      "category": "person",
+      "aliases": [
+        "Simone Biles",
+        "Biles"
+      ],
+      "polysemy_triggers": [
+        "Bileys",
+        "Olympic champion",
+        "Gymnastics star",
+        "Simone's skills",
+        "Rhythmic routines"
+      ],
+      "clue_associations": [
+        "gymnastics records",
+        "Olympic history",
+        "USA team member",
+        "athletic dominance",
+        " floor exercises",
+        "balance beam specialist"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Simone Biles",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Olympics",
+      "category": "thing",
+      "aliases": [
+        "Olympiad",
+        "Games"
+      ],
+      "polysemy_triggers": [
+        "ringing in medals",
+        "torch carrier",
+        "winter games",
+        "summer sports",
+        "gold standard"
+      ],
+      "clue_associations": [
+        "athletes' gathering",
+        "global competitions",
+        "medal count",
+        "opening ceremonies",
+        "world's biggest stage"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Olympics",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Pyramids of Giza",
+      "category": "place",
+      "aliases": [
+        "Pyramid of Giza",
+        "Giza Pyramids",
+        "The Great Pyramid"
+      ],
+      "polysemy_triggers": [
+        "ancient wonder",
+        "Egyptian hieroglyphics",
+        "sandcastle",
+        "pharaoh's tomb",
+        "architectural marvel"
+      ],
+      "clue_associations": [
+        "noble tombs",
+        "mysterious pyramids",
+        "River Nile",
+        "King Khufu",
+        "sphinx's gaze"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Pyramids of Giza",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Saxophone",
+      "category": "thing",
+      "aliases": [
+        "Saxy",
+        "Sax",
+        "Wooden Mouthpiece"
+      ],
+      "polysemy_triggers": [
+        "band instrument",
+        "French connection",
+        "long neck"
+      ],
+      "clue_associations": [
+        "jazz greats",
+        "smooth sounds",
+        "music hall of fame",
+        "legendary musicians",
+        "play a note",
+        "woodwind wonder"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Saxophone",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Penguin",
+      "category": "thing",
+      "aliases": [
+        "Penguins",
+        "Pengs"
+      ],
+      "polysemy_triggers": [
+        "flightless",
+        "cold climate",
+        "fashion icon",
+        "lovely feathers",
+        "Hollywood star"
+      ],
+      "clue_associations": [
+        "African wildlife",
+        "Emperor's finery",
+        "Cold-blooded",
+        "Flight-less friends",
+        "Frozen tundra",
+        "Southern Hemisphere",
+        "Antarctic explorer"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Penguin",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Cheers",
+      "category": "thing",
+      "aliases": [
+        "The Cheers Bar",
+        "Cheers Pub",
+        "Boston Cheers"
+      ],
+      "polysemy_triggers": [
+        "Cheers",
+        "Bar",
+        "Pub",
+        "Tavern",
+        "Regular"
+      ],
+      "clue_associations": [
+        "Classic TV",
+        "Sam Malone",
+        "Boston institution",
+        "Where everybody knows your name",
+        "Diane Chambers",
+        "Feng Shui",
+        "Norm Peterson"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Cheers",
+      "annotated": true
+    },
+    {
+      "canonical_name": "The Matrix",
+      "category": "thing",
+      "aliases": [
+        "The Matrix Trilogy",
+        "Matrix"
+      ],
+      "polysemy_triggers": [
+        "illusion",
+        "reality check",
+        "red pill",
+        "blue screen of death",
+        "simulacrum"
+      ],
+      "clue_associations": [
+        "science fiction classic",
+        "bullet time",
+        "virtual reality pioneer",
+        "Keanu Reeves' iconic role",
+        "influenced a generation of filmmakers",
+        " Wachowskis' magnum opus",
+        "Neo's journey"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "The Matrix",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Sushi",
+      "category": "thing",
+      "aliases": [
+        "Sushis",
+        "Maki",
+        "Nigiri"
+      ],
+      "polysemy_triggers": [
+        "roll",
+        "taste",
+        "vinegared",
+        "filling",
+        "raw deal"
+      ],
+      "clue_associations": [
+        "Japanese cuisine",
+        "raw fish",
+        "sushi bars",
+        "chef's specialty",
+        "Tokyo treat",
+        "rice bowl",
+        "seafood dish"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Sushi",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Sphinx",
+      "category": "place",
+      "aliases": [
+        "Giza Sphinx",
+        "Great Sphinx"
+      ],
+      "polysemy_triggers": [
+        "mystery",
+        "monument",
+        "ancient puzzle",
+        "lost city",
+        "whispering secrets"
+      ],
+      "clue_associations": [
+        "Egyptian secrets",
+        "Biblical enigma",
+        "Pyramid connection",
+        "Ancient wisdom",
+        "Hieroglyphic riddle",
+        "Desert guardian",
+        "Pharaoh's puzzle"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Sphinx",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Tiger Woods",
+      "category": "person",
+      "aliases": [],
+      "polysemy_triggers": [],
+      "clue_associations": [],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Tiger Woods",
+      "annotated": false
+    },
+    {
+      "canonical_name": "Flute",
+      "category": "thing",
+      "aliases": [
+        "Flutes",
+        "Wind Flute"
+      ],
+      "polysemy_triggers": [
+        "wind instrument",
+        "airline",
+        "breath of fresh air",
+        "tooting one's own horn",
+        "blowing hot and cold"
+      ],
+      "clue_associations": [
+        "classical music",
+        "folk instruments",
+        " woodwinds",
+        "recital hall",
+        "music to my ears"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Flute",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Dolphin",
+      "category": "thing",
+      "aliases": [
+        "dolphines",
+        "dolphins"
+      ],
+      "polysemy_triggers": [
+        "leap",
+        "train",
+        "playful",
+        "intelligent",
+        "marine"
+      ],
+      "clue_associations": [
+        "swimming with the dolphins",
+        " inteligent mammals",
+        " ocean creatures",
+        "marine life",
+        "acrobatic jumps",
+        "Disney movies",
+        "coastal residents"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Dolphin",
+      "annotated": true
+    },
+    {
+      "canonical_name": "March Madness",
+      "category": "thing",
+      "aliases": [
+        "Madness Tournament",
+        "The Big Dance",
+        "Bracket Busters"
+      ],
+      "polysemy_triggers": [
+        "mad",
+        "spring",
+        "bracket",
+        "tournament",
+        "hoops"
+      ],
+      "clue_associations": [
+        "March schedule",
+        "NCAA competition",
+        "Buzzer-beater moments",
+        "College sports excitement",
+        "Championship hopes",
+        "Sweet sixteen teams",
+        "Top seeds eliminated"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "March Madness",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Steph Curry",
+      "category": "person",
+      "aliases": [
+        "Stephen Curry",
+        "SC30"
+      ],
+      "polysemy_triggers": [
+        "curry",
+        "three-point",
+        "shooting guard",
+        "slam dunk",
+        "golden state"
+      ],
+      "clue_associations": [
+        "nba records",
+        "warriors legend",
+        "step-back shot",
+        "two-time MVP",
+        "number 30 jersey"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Steph Curry",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Inception",
+      "category": "thing",
+      "aliases": [],
+      "polysemy_triggers": [
+        "dream",
+        "heist",
+        "mindscape",
+        "subconscious",
+        "illusion"
+      ],
+      "clue_associations": [
+        "Christopher Nolan film",
+        "mind-bending action movie",
+        "diCaprio's role",
+        "Cobol's domain",
+        "spinning top trick",
+        "6 levels deep",
+        "Leonardo's character"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Inception",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Brad Pitt",
+      "category": "person",
+      "aliases": [],
+      "polysemy_triggers": [],
+      "clue_associations": [],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Brad Pitt",
+      "annotated": false
+    },
+    {
+      "canonical_name": "Ramen",
+      "category": "thing",
+      "aliases": [
+        "Ramen noodles",
+        "Japanese Ramen"
+      ],
+      "polysemy_triggers": [
+        "noodle soup",
+        "Japanese comfort food",
+        "Asian dish",
+        "steaming bowl",
+        "microwave meal"
+      ],
+      "clue_associations": [
+        "Tokyo street food",
+        "Sapporo winter favorite",
+        "University student staple",
+        "Late-night study aid",
+        "Instant gratification"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Ramen",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Petra",
+      "category": "place",
+      "aliases": [
+        "Al-Khazneh",
+        "Arabian Nights setting"
+      ],
+      "polysemy_triggers": [
+        "ancient",
+        "lost city",
+        "desert treasure",
+        "Jordan's crown jewel",
+        "rose-red"
+      ],
+      "clue_associations": [
+        "Nabatean ruins",
+        "Indiana Jones location",
+        "Rose-red city",
+        "UNESCO World Heritage Site",
+        "King's Highway stopover"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Petra",
+      "annotated": true
+    },
+    {
+      "canonical_name": "World Series",
+      "category": "thing",
+      "aliases": [
+        "WS",
+        "Fall Classic",
+        "MLB Championship"
+      ],
+      "polysemy_triggers": [
+        "fall classic",
+        "championship",
+        "sports title",
+        "home field",
+        "baseball history"
+      ],
+      "clue_associations": [
+        "October baseball",
+        "best of seven",
+        "Commissioner's Trophy",
+        "World champions",
+        "postseason excitement",
+        "fall finale",
+        "championship series"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "World Series",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Harp",
+      "category": "thing",
+      "aliases": [
+        "lyre"
+      ],
+      "polysemy_triggers": [
+        "lyre's musical cousin",
+        "ornate room decoration",
+        "stringed instrument's sound",
+        "musical chord",
+        "music to my ears"
+      ],
+      "clue_associations": [
+        "classical music",
+        "Scottish symbol",
+        "traditional Irish music",
+        "string quartet member",
+        "folk music staple"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Harp",
+      "annotated": true
+    },
+    {
+      "canonical_name": "The Dark Knight",
+      "category": "thing",
+      "aliases": [
+        "Batman movie",
+        "DK"
+      ],
+      "polysemy_triggers": [
+        "dark horse",
+        "night mare",
+        "knight errant",
+        "bat signal",
+        "gothic hero"
+      ],
+      "clue_associations": [
+        "caped crusader",
+        "heath ledger's iconic role",
+        "2008 summer blockbuster",
+        "dc comics legend",
+        "the joker's evil grin",
+        "batman's dark journey",
+        "chris nolan's masterpiece"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "The Dark Knight",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Whale",
+      "category": "thing",
+      "aliases": [
+        "Whales",
+        "Cetaceans",
+        "Marine Mammals",
+        "Sea Whales"
+      ],
+      "polysemy_triggers": [
+        "tail",
+        "belly flop",
+        "sea monster",
+        "whale of a time",
+        "deep dive"
+      ],
+      "clue_associations": [
+        "ocean dwellers",
+        "massive mammals",
+        "aquatic giants",
+        "migratory patterns",
+        "humpbacked creatures",
+        "orcas and companions"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Whale",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Patrick Mahomes",
+      "category": "person",
+      "aliases": [
+        "patrick mahomes ii",
+        "mahomes"
+      ],
+      "polysemy_triggers": [
+        "two-minute warning",
+        "quarterback sneak",
+        "field general",
+        "touchdown king",
+        "kansas city"
+      ],
+      "clue_associations": [
+        "nfl record holder",
+        "american football icon",
+        "super bowl champion",
+        "chiefs' leader",
+        "young gunslinger"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Patrick Mahomes",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Leonardo DiCaprio",
+      "category": "person",
+      "aliases": [],
+      "polysemy_triggers": [
+        "shark",
+        "beastly",
+        "Titanic",
+        "wolf of Wall Street",
+        "nature lover"
+      ],
+      "clue_associations": [
+        "Titanic sinking",
+        "Avatar success",
+        "climate change",
+        "Martin Scorsese collaboration",
+        "Oscar win",
+        "Revenant survival story"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Leonardo DiCaprio",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Pasta",
+      "category": "thing",
+      "aliases": [
+        "macaroni",
+        "fusilli",
+        "linguine",
+        "lasagna"
+      ],
+      "polysemy_triggers": [
+        "twirl",
+        "shape",
+        "dough",
+        "Italian",
+        "noodle"
+      ],
+      "clue_associations": [
+        "carb loading",
+        "pasta fazool",
+        "spaghetti westerns",
+        "Italian Stallion",
+        "Fettuccine Alfredo",
+        "carbonara love",
+        "twist of fate"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Pasta",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Accordion",
+      "category": "thing",
+      "aliases": [
+        "Keyboard Accordion",
+        "Bayan",
+        "Chromatic"
+      ],
+      "polysemy_triggers": [
+        "folded",
+        "squeeze",
+        "button down",
+        "handheld",
+        "keyed"
+      ],
+      "clue_associations": [
+        "musical instrument family",
+        "folk music staple",
+        "German heritage",
+        "Austrian composer connection",
+        "french term for 'folded'"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Accordion",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Acropolis",
+      "category": "place",
+      "aliases": [
+        "Acropolis of Athens",
+        "Citadel of Athens"
+      ],
+      "polysemy_triggers": [
+        "parthenon",
+        "hill top",
+        "ancient ruin",
+        "citadel",
+        "greek mythology"
+      ],
+      "clue_associations": [
+        "athens landmark",
+        "marble statues",
+        "philosophy and art",
+        "sunrise point",
+        "olympian gods",
+        "european history",
+        "architectural marvels"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Acropolis",
+      "annotated": true
+    },
+    {
+      "canonical_name": "NBA Finals",
+      "category": "thing",
+      "aliases": [
+        "NBA Championship Finals",
+        "Finals Series",
+        "The Big Game"
+      ],
+      "polysemy_triggers": [
+        "final shot",
+        "championship round",
+        "endgame showpiece",
+        "title showdown",
+        "last stand"
+      ],
+      "clue_associations": [
+        "Larry O'Brien Trophy",
+        "playoff series",
+        "NBA championship",
+        "Eastern/Western Conference",
+        "Michael Jordan/Kobe Bryant legacy",
+        "Celtics/Lakers rivalry",
+        " Magic Johnson/Larry Bird matchup"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "NBA Finals",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Shark",
+      "category": "thing",
+      "aliases": [
+        "Sharks",
+        "Selachimorpha"
+      ],
+      "polysemy_triggers": [
+        "fins",
+        "attack",
+        "shark tank",
+        "jaws",
+        "financier"
+      ],
+      "clue_associations": [
+        "great whites",
+        "ocean predators",
+        "Jaws movie",
+        "Bruce the shark",
+        "killer fish"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Shark",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Avatar",
+      "category": "thing",
+      "aliases": [
+        "Avatar: The Last Airbender",
+        "The Last Airbender"
+      ],
+      "polysemy_triggers": [
+        "blue people",
+        "end of life",
+        "pagan deity",
+        "James Cameron film",
+        "exotic locale"
+      ],
+      "clue_associations": [
+        "Jake Sully's transformation",
+        "human-Na'vi hybrid",
+        "2009 blockbuster hit",
+        "3D technology pioneer",
+        "epic romance in space"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Avatar",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Meryl Streep",
+      "category": "person",
+      "aliases": [
+        "Mery Streep",
+        "Mary Streep"
+      ],
+      "polysemy_triggers": [
+        "actress",
+        "Soprano",
+        "Iron Lady",
+        "diva",
+        "red carpet"
+      ],
+      "clue_associations": [
+        "Oscar record holder",
+        "adaptation queen",
+        "Kramer's wife",
+        "The Devil Wears Prada",
+        "Sophie's Choice",
+        "The Iron Lady",
+        "actress with most nominations"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Meryl Streep",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Niagara Falls",
+      "category": "place",
+      "aliases": [
+        "Niagara",
+        "Niagaras"
+      ],
+      "polysemy_triggers": [
+        "falls",
+        "waterfall",
+        "tourist destination",
+        "hydroelectric power",
+        "horseshoe"
+      ],
+      "clue_associations": [
+        "natural wonder",
+        "American icon",
+        " honeymoon spot",
+        "border crossing",
+        "thunder of the falls"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Niagara Falls",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Sandwich",
+      "category": "thing",
+      "aliases": [
+        "club sandwich",
+        "hero sandwich",
+        "hoagie",
+        "sub"
+      ],
+      "polysemy_triggers": [
+        "filling",
+        "breadwinner",
+        "dinner",
+        "lunchbox",
+        "subway"
+      ],
+      "clue_associations": [
+        "deli delights",
+        "finger food",
+        "afternoon snack",
+        "pub grub",
+        "picnic favorite",
+        "elevenses",
+        "gourmet option"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Sandwich",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Shohei Ohtani",
+      "category": "person",
+      "aliases": [
+        "Shohei Ohtani",
+        "Ohtani",
+        "The Phenom"
+      ],
+      "polysemy_triggers": [
+        "Japanese name",
+        "MLB nickname",
+        "Ohtani-san",
+        "Two-way threat",
+        "Baseball phenomenon"
+      ],
+      "clue_associations": [
+        "Japanese baseball star",
+        "Angels' ace",
+        "Pitching and hitting prodigy",
+        "MLB's best hitter and pitcher",
+        "Breaks barriers in sports"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Shohei Ohtani",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Octopus",
+      "category": "thing",
+      "aliases": [
+        "octopi",
+        "octopuses"
+      ],
+      "polysemy_triggers": [
+        "tentacles",
+        "inkredible",
+        "eight arms to hold onto",
+        "ocean deep",
+        " cephalopod"
+      ],
+      "clue_associations": [
+        "oceanside dwelling",
+        "underwater escape",
+        "color-changing ability",
+        "brainy creature",
+        "unusual feeding habits"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Octopus",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Blender",
+      "category": "thing",
+      "aliases": [
+        "Blender Software",
+        "The Blender Project"
+      ],
+      "polysemy_triggers": [
+        "smooth operator",
+        "blend of art",
+        "chop shop",
+        "mix master",
+        "cutting edge"
+      ],
+      "clue_associations": [
+        "CGI powerhouse",
+        "3D wizardry",
+        "video editing software",
+        "indie film tool",
+        "animation staple"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Blender",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Stanley Cup",
+      "category": "thing",
+      "aliases": [
+        "Stanley Cup",
+        "Stanley"
+      ],
+      "polysemy_triggers": [
+        "cup",
+        "championship",
+        "trophy",
+        "hockey",
+        "silver"
+      ],
+      "clue_associations": [
+        "NHL history",
+        "Boston Bruins",
+        "Conn Smythe Trophy winner",
+        "Montreal Canadiens",
+        "Hank Burris and Patrick Roy",
+        "Detroit Red Wings",
+        "Lord Stanley's Cup"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Stanley Cup",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Caitlin Clark",
+      "category": "person",
+      "aliases": [
+        "Caitlin Clark"
+      ],
+      "polysemy_triggers": [
+        "basketball star",
+        "Clark Kent's cousin",
+        "chick magnet",
+        "Hoosier legend",
+        "Iowa favorite"
+      ],
+      "clue_associations": [
+        "Big Ten hoops",
+        "March Madness",
+        "3-point specialist",
+        "Iowa City connection",
+        "Hawkeye hero"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Caitlin Clark",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Denzel Washington",
+      "category": "person",
+      "aliases": [],
+      "polysemy_triggers": [
+        "Washington",
+        "Denzel",
+        "Icon",
+        "Actor",
+        "Legend"
+      ],
+      "clue_associations": [
+        "Oscar wins",
+        "Fences drama",
+        "Training Day",
+        "Malcolm X",
+        "American Gangster",
+        "The Equalizer",
+        "Cornel West"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Denzel Washington",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Avengers Endgame",
+      "category": "thing",
+      "aliases": [
+        "Avengers Endgame Film",
+        "Endgame Avengers",
+        "The Avengers: End Game"
+      ],
+      "polysemy_triggers": [
+        "end game",
+        "assemble",
+        "assemble team",
+        "assemble members",
+        "assemble together"
+      ],
+      "clue_associations": [
+        "marvel cinematic universe",
+        "mcu film",
+        "2019 blockbuster",
+        "danvers and steve",
+        "ragnarok ending",
+        "avengers assemble",
+        "that's a wrap"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Avengers Endgame",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Wimbledon",
+      "category": "thing",
+      "aliases": [
+        "All England Lawn Tennis Club"
+      ],
+      "polysemy_triggers": [
+        "grass",
+        "championship",
+        "all-white",
+        "fashionable",
+        "regal"
+      ],
+      "clue_associations": [
+        "grassy knoll",
+        "lawn tennis",
+        "royalty and racket",
+        "the Championships",
+        "strawberry jam",
+        "English estate",
+        "gentleman's game"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Wimbledon",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Burrito",
+      "category": "thing",
+      "aliases": [
+        "wrap",
+        "rollup",
+        "Mexican wrap"
+      ],
+      "polysemy_triggers": [
+        "wrap",
+        "roll",
+        "filling",
+        "tortilla",
+        "Mexican"
+      ],
+      "clue_associations": [
+        "Southwestern cuisine",
+        "fast food chain",
+        "late-night snack",
+        "carb-heavy meal",
+        "Texas-sized meal",
+        "wrap-up a meal",
+        "burdened with rice"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Burrito",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Victoria Falls",
+      "category": "place",
+      "aliases": [
+        "Victoria Falls, Zimbabwe",
+        "Victoria Falls, Zambia",
+        "Mosi-oa-Tunya"
+      ],
+      "polysemy_triggers": [
+        "falls short",
+        "watering hole",
+        "Victoria's secret",
+        "beauty spot",
+        "rapid fire"
+      ],
+      "clue_associations": [
+        "Southern Africa landmark",
+        "Mosi-oa-Tunya meaning",
+        "Zambia border crossing",
+        "Tourist attraction and danger zone",
+        "Thundering waters of the Zambezi River"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Victoria Falls",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Toaster",
+      "category": "thing",
+      "aliases": [
+        "Toaster Oven",
+        "Electric Toaster",
+        "Pop-up Toaster"
+      ],
+      "polysemy_triggers": [
+        "heat up",
+        "breakfast",
+        "burn out",
+        "toasty",
+        "fire up"
+      ],
+      "clue_associations": [
+        "kitchen appliance",
+        "bagel toasting",
+        "crumb trap",
+        "bread winner",
+        "sizzling hot deal"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Toaster",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Giraffe",
+      "category": "thing",
+      "aliases": [
+        "Giraffo",
+        "Giraffe animal"
+      ],
+      "polysemy_triggers": [
+        "neck stretch",
+        "tall drink of water",
+        "spot a zebra",
+        "long in the tooth",
+        "high-rise"
+      ],
+      "clue_associations": [
+        "savanna inhabitant",
+        "Africa's tallest resident",
+        "blue moon sighting",
+        "striped patterns",
+        "wildlife wonder"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Giraffe",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Black Panther",
+      "category": "thing",
+      "aliases": [
+        "BP",
+        "Wakanda"
+      ],
+      "polysemy_triggers": [
+        "panther",
+        "blackout",
+        "kingdom",
+        " Wakanda Forever",
+        "shadows"
+      ],
+      "clue_associations": [
+        "African superhero",
+        "Marvel's kingdom of tech",
+        "T'Challa's role",
+        "High-tech nation",
+        "Rampage movie title",
+        "Avengers team member"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Black Panther",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Jennifer Aniston",
+      "category": "person",
+      "aliases": [
+        "Jennifer Aniston",
+        "Jen"
+      ],
+      "polysemy_triggers": [
+        " Friends star",
+        " hair icon",
+        " California girl",
+        " movie queen",
+        " romantic comedy"
+      ],
+      "clue_associations": [
+        "90s sitcom",
+        " iconic haircut",
+        "marriage in media",
+        "rom-com staple",
+        " Golden Globes winner",
+        " People's Choice awards",
+        " Hollywood favorite"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Jennifer Aniston",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Nachos",
+      "category": "thing",
+      "aliases": [
+        "Nachos",
+        "Tortilla Chips with Cheese"
+      ],
+      "polysemy_triggers": [
+        "Mexican dish",
+        "snack food",
+        "football party favorite",
+        "cheesy pleasure",
+        "tortilla chip"
+      ],
+      "clue_associations": [
+        "football Sundays",
+        "dipping sauce",
+        "festival fare",
+        "Super Bowl classic",
+        " stadium snack food",
+        "Texas plate"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Nachos",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Abraham Lincoln",
+      "category": "person",
+      "aliases": [
+        "Abe Lincoln",
+        "Honest Abe",
+        "Rail Splitter"
+      ],
+      "polysemy_triggers": [
+        "logician",
+        "stovepipe",
+        "honest",
+        "railsplitter",
+        "tall"
+      ],
+      "clue_associations": [
+        "emancipation proclamation",
+        "fort sumter",
+        "gettysburg address",
+        "united we stand",
+        "four score and seven"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Abraham Lincoln",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Masters",
+      "category": "thing",
+      "aliases": [
+        "Master's",
+        "Masters golf"
+      ],
+      "polysemy_triggers": [
+        "golf tournament",
+        "academic degree",
+        "master craftsman"
+      ],
+      "clue_associations": [
+        "Augusta National",
+        "Pinehurst heritage",
+        "Patricia Barker",
+        "Jack Nicklaus legacy",
+        "butterfly effect in sports"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Masters",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Yellowstone",
+      "category": "place",
+      "aliases": [
+        "Yellowsone National Park",
+        "Yellow Stone",
+        "America's Best Idea"
+      ],
+      "polysemy_triggers": [
+        "geyser",
+        "park ranger",
+        "Yellowstone note",
+        "TV series",
+        "National Park"
+      ],
+      "clue_associations": [
+        "volcanic activity",
+        "wildlife preserve",
+        "American treasure",
+        "John Dutton's home",
+        "prequel to Westworld"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Yellowstone",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Oven",
+      "category": "thing",
+      "aliases": [
+        "ovens",
+        "stove",
+        "range"
+      ],
+      "polysemy_triggers": [
+        "heat source",
+        "cooking method",
+        "heated space",
+        "kitchen appliance",
+        "baked goods"
+      ],
+      "clue_associations": [
+        "cooking show",
+        "appliances in the kitchen",
+        "thermo-regulation",
+        "baking essentials",
+        "hot dish",
+        "oven baked",
+        "heating up"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Oven",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Will Smith",
+      "category": "person",
+      "aliases": [
+        "Willard Smith",
+        "The Fresh Prince"
+      ],
+      "polysemy_triggers": [
+        "Fresh Prince",
+        "Iconic Actor",
+        "Celebrity Father",
+        "Box Office Smashes",
+        "Rap Artist"
+      ],
+      "clue_associations": [
+        "Men in Black",
+        "Genie in a Bottle",
+        "Independence Day",
+        "Summer Blockbusters",
+        "Red Carpet Appearances"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Will Smith",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Zebra",
+      "category": "thing",
+      "aliases": [
+        "Equus quagga",
+        "Zebroid",
+        "Dappled"
+      ],
+      "polysemy_triggers": [
+        "stripes",
+        "black and white",
+        "wild animal",
+        "equine",
+        "famous for being spotted"
+      ],
+      "clue_associations": [
+        "savannah inhabitant",
+        "striped pattern",
+        " endangered species",
+        "mountainous terrain",
+        "Kenya's national symbol"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Zebra",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Jurassic Park",
+      "category": "thing",
+      "aliases": [
+        "Jurassic World",
+        "Jurrasic Park 4",
+        "JP"
+      ],
+      "polysemy_triggers": [
+        "park",
+        "land before time",
+        "island getaway",
+        "dino-mite",
+        "pre-hysterical"
+      ],
+      "clue_associations": [
+        "theme park disaster",
+        "Michael Crichton novel",
+        "1993 film starring Sam Neill",
+        "Jurassic world of wonder",
+        "Cinematic masterstroke from Steven Spielberg",
+        "Island of adventure",
+        "Dino-filled spectacle"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Jurassic Park",
+      "annotated": true
+    },
+    {
+      "canonical_name": "George Washington",
+      "category": "person",
+      "aliases": [
+        "George Washington"
+      ],
+      "polysemy_triggers": [
+        "first president",
+        "military leader",
+        "money tree",
+        "washington Irving",
+        "founding father"
+      ],
+      "clue_associations": [
+        "continental army",
+        "mount vernon mansion",
+        "george's farewell address",
+        "revolutionary war hero",
+        "cherry blossom"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "George Washington",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Wings",
+      "category": "thing",
+      "aliases": [
+        "Wingz",
+        "Flying Wings",
+        "Chicken Wings"
+      ],
+      "polysemy_triggers": [
+        "aviation",
+        "meal",
+        "sports team",
+        "decorative item",
+        "injury"
+      ],
+      "clue_associations": [
+        "airborne",
+        "mid-air",
+        "flying high",
+        "spreads wings",
+        "soar to new heights",
+        "bird's eye view"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Wings",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Yosemite",
+      "category": "place",
+      "aliases": [
+        "Yosemite Valley",
+        "Yosemites"
+      ],
+      "polysemy_triggers": [
+        "valley of the giants",
+        "tree-mendous scenery",
+        "granite highlands",
+        "foggy mountainside",
+        "outdoor adventure"
+      ],
+      "clue_associations": [
+        "natural wonder of the world",
+        "california icon",
+        "hiking trail",
+        "elk habitat",
+        "waterfalls and trees"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Yosemite",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Stove",
+      "category": "thing",
+      "aliases": [
+        "cooker",
+        "stove top",
+        "range cooker"
+      ],
+      "polysemy_triggers": [
+        "burn",
+        "heat",
+        "cooking",
+        "fireplace",
+        "range"
+      ],
+      "clue_associations": [
+        "kitchen essentials",
+        "cooktop",
+        "oven temp",
+        "stovetop recipe",
+        "gas grill alternative"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Stove",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Rhino",
+      "category": "thing",
+      "aliases": [
+        "Rhino",
+        "Black Rhino",
+        "White Rhino"
+      ],
+      "polysemy_triggers": [
+        "beastly",
+        "sharp",
+        "horny",
+        "big game hunter",
+        "prehistoric"
+      ],
+      "clue_associations": [
+        "Savannah dwellers",
+        "Extinct giants",
+        "Hooves and horns",
+        "Wildlife wonderlands",
+        "Africa's majestic creatures"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Rhino",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Kentucky Derby",
+      "category": "thing",
+      "aliases": [
+        "Kentucky Derby",
+        "The Derby"
+      ],
+      "polysemy_triggers": [
+        "Derby",
+        "Horse racing",
+        "Bluegrass",
+        "Southern charm",
+        "Fast track"
+      ],
+      "clue_associations": [
+        "Run for the Roses",
+        "Twin Spires",
+        "Mint Julep time",
+        "Thoroughbred championship",
+        "Churchill Downs",
+        "First Saturday in May",
+        "American Pharoah"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Kentucky Derby",
+      "annotated": true
+    },
+    {
+      "canonical_name": "E.T.",
+      "category": "thing",
+      "aliases": [
+        "E.T. the Extra-Terrestrial",
+        "Elliott's friend"
+      ],
+      "polysemy_triggers": [
+        "phone home",
+        "alien invasion",
+        "stranger in a strange land",
+        "universal language",
+        "calling card"
+      ],
+      "clue_associations": [
+        "Steven Spielberg film",
+        "1982 summer blockbuster",
+        "phone call",
+        "Roswell connection",
+        "classic sci-fi character"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "E.T.",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Dwayne Johnson",
+      "category": "person",
+      "aliases": [
+        "Dwayne 'The Rock' Johnson",
+        "Rocky"
+      ],
+      "polysemy_triggers": [
+        "demigod",
+        "action hero",
+        "football player",
+        "the people's champion",
+        "Jumanji"
+      ],
+      "clue_associations": [
+        "Hobbs & Shaw",
+        "Fast & Furious franchise",
+        "The Rock",
+        "gridiron legend",
+        "Moana and Maui",
+        "Skyscraper, San Andreas, and Journey to the Center of the Earth"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Dwayne Johnson",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Martin Luther King Jr",
+      "category": "person",
+      "aliases": [
+        "MLK",
+        "Dr. King",
+        "Martin Luther King Jr."
+      ],
+      "polysemy_triggers": [
+        "king",
+        "martin",
+        "lutheran",
+        "peaceful",
+        "leader"
+      ],
+      "clue_associations": [
+        "civil rights movement",
+        "speeches on the mountaintop",
+        "nonviolent resistance",
+        "I have a dream speech",
+        "march on Washington"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Martin Luther King Jr",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Everest",
+      "category": "place",
+      "aliases": [
+        "Mt. Everest",
+        "Chomolungma"
+      ],
+      "polysemy_triggers": [
+        "mountain high",
+        "challenging climb",
+        "peak performance",
+        "summit of success",
+        "altitude adjustment"
+      ],
+      "clue_associations": [
+        "snow-capped peak",
+        "tallest mountain in the world",
+        "Sherpas and expeditions",
+        "death zone warning",
+        "conquering a giant"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Everest",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Daytona 500",
+      "category": "thing",
+      "aliases": [
+        "Daytona Five Hundred",
+        "Great American Race"
+      ],
+      "polysemy_triggers": [
+        "speedway",
+        "race day",
+        "tire pressure",
+        "pit stop",
+        "checkered flag"
+      ],
+      "clue_associations": [
+        "spring classic",
+        "NASCAR opener",
+        "stock car event",
+        "Florida speedway",
+        "February spectacle",
+        "Richard Petty's domain",
+        "Dale Earnhardt's track"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Daytona 500",
+      "annotated": true
+    },
+    {
+      "canonical_name": "BBQ Ribs",
+      "category": "thing",
+      "aliases": [
+        "Pork Ribs",
+        "Rack of Ribs",
+        "Baby Backs"
+      ],
+      "polysemy_triggers": [
+        "fall off the bone",
+        "finger lickin'",
+        "meat market",
+        "ribbiting",
+        "saucy"
+      ],
+      "clue_associations": [
+        "summer cookouts",
+        "Texas-style",
+        "Memphis BBQ",
+        "pork perfection",
+        "Southern comfort",
+        "BBQ joints",
+        "grilling favorites"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "BBQ Ribs",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Dishwasher",
+      "category": "thing",
+      "aliases": [
+        "dish washer",
+        "dish washing machine"
+      ],
+      "polysemy_triggers": [
+        "cleaner",
+        "machine",
+        "kitchen",
+        "load",
+        "cycle"
+      ],
+      "clue_associations": [
+        "food preparation",
+        "water saving",
+        "utility room",
+        "laundry day",
+        "dish duty",
+        "kitchen staple"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Dishwasher",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Jaws",
+      "category": "thing",
+      "aliases": [],
+      "polysemy_triggers": [],
+      "clue_associations": [],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Jaws",
+      "annotated": false
+    },
+    {
+      "canonical_name": "Hippo",
+      "category": "thing",
+      "aliases": [
+        "River Horse",
+        "Hippopotamus",
+        "Common Hippo"
+      ],
+      "polysemy_triggers": [
+        "large animal",
+        "river in Africa",
+        "hip-hop",
+        "hip replacement",
+        "hippie"
+      ],
+      "clue_associations": [
+        "savannah dweller",
+        "big mouth",
+        "bathing habits",
+        "aquatic mammals",
+        "African plains"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Hippo",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Albert Einstein",
+      "category": "person",
+      "aliases": [
+        "A. Einstein",
+        "Einstein",
+        "Al"
+      ],
+      "polysemy_triggers": [
+        "genius",
+        "relativity",
+        "mass",
+        "energy",
+        "brain"
+      ],
+      "clue_associations": [
+        "theoretical physics",
+        "famous equation",
+        "notable quotes",
+        "patent holder",
+        "German heritage"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Albert Einstein",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Fried Chicken",
+      "category": "thing",
+      "aliases": [
+        "FC",
+        "Cluckin' Good"
+      ],
+      "polysemy_triggers": [
+        "finger food",
+        "Southern comfort",
+        "chicken nuggets",
+        "bucket list",
+        "Sunday dinner"
+      ],
+      "clue_associations": [
+        "Kentucky Fried",
+        "secret recipe",
+        "fast food chain",
+        "picnic favorite",
+        "barbecue staple",
+        "KFC",
+        "deep-fried goodness"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Fried Chicken",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Scarlett Johansson",
+      "category": "person",
+      "aliases": [
+        "ScarJo",
+        "Scarlett O'Hara",
+        "Scarlatti Johansson"
+      ],
+      "polysemy_triggers": [
+        "Lucy",
+        "Avengers",
+        "Lost in Translation",
+        "Match Point",
+        "Under the Skin"
+      ],
+      "clue_associations": [
+        "blockbuster movies",
+        "Marvel universe",
+        "Woody Allen films",
+        "transgender advocacy",
+        "Hollywood A-lister",
+        "Lucy in the Sky with Diamonds",
+        "Lost at Sea"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Scarlett Johansson",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Tour de France",
+      "category": "thing",
+      "aliases": [
+        "TdF",
+        "Tour",
+        "Grand Boucle"
+      ],
+      "polysemy_triggers": [
+        "French connection",
+        "Grand tour",
+        "Ride the bike",
+        "Yellow jersey",
+        "Pedal power"
+      ],
+      "clue_associations": [
+        "Cycling championships",
+        "La course \u00e0 v\u00e9lo",
+        "French cycling legend",
+        "Mountain stage",
+        "Le Tour de la vie"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Tour de France",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Vacuum",
+      "category": "thing",
+      "aliases": [
+        "Hoover",
+        "Vacuums",
+        "Suction Machine"
+      ],
+      "polysemy_triggers": [
+        "clean",
+        "suck",
+        "aspiration",
+        "vacuum cleaner",
+        "hoover"
+      ],
+      "clue_associations": [
+        "household chore",
+        "carpet maintenance",
+        "dust collector",
+        "gutter cleaning",
+        "home improvement",
+        " suction power"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Vacuum",
+      "annotated": true
+    },
+    {
+      "canonical_name": "New York",
+      "category": "place",
+      "aliases": [
+        "NYC",
+        "The City",
+        "New York City",
+        "Gotham"
+      ],
+      "polysemy_triggers": [
+        "Empire State of Mind",
+        "Big Apple",
+        "City That Never Sleeps",
+        "Melting Pot",
+        "Five Boroughs"
+      ],
+      "clue_associations": [
+        "Skyscrapers",
+        "Statue of Liberty",
+        "Subway System",
+        "Broadway Shows",
+        "Yellow Cabs",
+        "Central Park",
+        "Five Points"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "New York",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Robert Downey Jr",
+      "category": "person",
+      "aliases": [
+        "Rob",
+        "Bob"
+      ],
+      "polysemy_triggers": [
+        "ironman",
+        "genius",
+        "actor",
+        "superhero",
+        "joker"
+      ],
+      "clue_associations": [
+        "marvelous career",
+        "hollywood star",
+        "iconic roles",
+        "comic book adaptation",
+        "titan of cinema",
+        "iron mask",
+        "kung-fu fighting"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Robert Downey Jr",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Koala",
+      "category": "thing",
+      "aliases": [
+        "koalas",
+        "kookie"
+      ],
+      "polysemy_triggers": [
+        "bear",
+        "Australian icon",
+        "tree-dweller",
+        "cuddle animal",
+        " marsupial"
+      ],
+      "clue_associations": [
+        "native to Australia",
+        "eucalyptus eater",
+        "nocturnal creature",
+        "pouch-bearing mammal",
+        "arboreal lifestyle"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Koala",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Rocky",
+      "category": "thing",
+      "aliases": [
+        "Rocky Balboa",
+        "The Italian Stallion"
+      ],
+      "polysemy_triggers": [
+        "fighter",
+        "movie",
+        "underdog",
+        "sweat",
+        "iconic music"
+      ],
+      "clue_associations": [
+        "boxers",
+        "Philadelphia story",
+        "training montage",
+        " Sylvester Stallone",
+        "punching above weight class",
+        "motivational speech",
+        "inspiring comebacks"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Rocky",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Los Angeles",
+      "category": "place",
+      "aliases": [
+        "LA",
+        "City of Angels"
+      ],
+      "polysemy_triggers": [
+        "city of angels",
+        "movie industry hub",
+        "turf war",
+        "traffic jam capital",
+        "beachside getaway"
+      ],
+      "clue_associations": [
+        "Hollywood stars",
+        "Dodger Stadium",
+        "Santa Ana winds",
+        "Gold Rush history",
+        "traffic on the 405",
+        "Dodie Fields and Dino DeMartinis",
+        "LA Lakers"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Los Angeles",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Nelson Mandela",
+      "category": "person",
+      "aliases": [
+        "Madiba",
+        "Rolihlahla Mandela",
+        "Nelson Rolihlahla Mandela"
+      ],
+      "polysemy_triggers": [
+        "mandate",
+        "freedom fighter",
+        "prisoner",
+        "apartheid",
+        "south africa"
+      ],
+      "clue_associations": [
+        "anti-apartheid leader",
+        "president of south africa",
+        "robin island",
+        "nobel peace prize winner",
+        "long walk to freedom"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Nelson Mandela",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Cheesecake",
+      "category": "thing",
+      "aliases": [
+        "Cheesecake Factory",
+        "Cream Cheese Delight",
+        "New York Cheesecake"
+      ],
+      "polysemy_triggers": [
+        "cake",
+        "dessert",
+        "cheese",
+        "fondue",
+        "key"
+      ],
+      "clue_associations": [
+        "Greek origins",
+        "New York City classic",
+        "Lady Gaga's favorite",
+        "Waffle House special",
+        "Key Largo treat",
+        "Dessert for grandpa",
+        "Fancy dinner option"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Cheesecake",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Kangaroo",
+      "category": "thing",
+      "aliases": [
+        "roo"
+      ],
+      "polysemy_triggers": [
+        "hopper",
+        "australian symbol",
+        " marsupial",
+        "pouch",
+        "Australian icon"
+      ],
+      "clue_associations": [
+        "aussie wildlife",
+        "outback animals",
+        "marsupials",
+        "national symbols of Australia",
+        "famous animal athletes"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Kangaroo",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Broom",
+      "category": "thing",
+      "aliases": [
+        "Brooms"
+      ],
+      "polysemy_triggers": [
+        "broomstick",
+        "sweeping changes",
+        "brush off",
+        "dusting up",
+        "clean sweep"
+      ],
+      "clue_associations": [
+        "witches' tool",
+        "household chore",
+        "magical aid",
+        "sports equipment",
+        "indoor game"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Broom",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Uno",
+      "category": "thing",
+      "aliases": [
+        "Uno game",
+        "Uno card game"
+      ],
+      "polysemy_triggers": [
+        "one",
+        "unit",
+        "card game",
+        "reverse",
+        "wild"
+      ],
+      "clue_associations": [
+        "50-52 card deck",
+        "easy to learn hard to master",
+        "colorful cards",
+        "reverse direction",
+        "action word",
+        "quick thinking"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Uno",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Chris Hemsworth",
+      "category": "person",
+      "aliases": [
+        "Chris Hemsworth"
+      ],
+      "polysemy_triggers": [
+        "Thor",
+        "Australian actor",
+        "Avengers team member",
+        "Hulk Buster",
+        "Brotherly love"
+      ],
+      "clue_associations": [
+        "Marvel movies",
+        "Thor's hammer",
+        "Beachy vibes",
+        "Chris Evans' rival",
+        "Gale force winds",
+        "Aussie charm"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Chris Hemsworth",
+      "annotated": true
+    },
+    {
+      "canonical_name": "The Wizard of Oz",
+      "category": "thing",
+      "aliases": [
+        "Oz",
+        "Classic Story"
+      ],
+      "polysemy_triggers": [
+        "yellow brick road",
+        "tornado warning",
+        "emerald city",
+        "wicked witch",
+        "follow the yellow"
+      ],
+      "clue_associations": [
+        "classical tale",
+        "famous tornado",
+        "iconic shoes",
+        "classic musical",
+        "flying monkeys",
+        "lullaby song"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "The Wizard of Oz",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Mahatma Gandhi",
+      "category": "person",
+      "aliases": [],
+      "polysemy_triggers": [],
+      "clue_associations": [],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Mahatma Gandhi",
+      "annotated": false
+    },
+    {
+      "canonical_name": "Brownie",
+      "category": "thing",
+      "aliases": [
+        "blondies",
+        "chocolate chip brownies",
+        "fudgy treats"
+      ],
+      "polysemy_triggers": [
+        "chocolate treat",
+        "brownie points",
+        "fudge surprise",
+        "mix-ins",
+        "campfire delight"
+      ],
+      "clue_associations": [
+        "baked desserts",
+        " Girl Scouts favorite",
+        " camping food",
+        "rich flavors",
+        "treats in a pan"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Brownie",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Cards Against Humanity",
+      "category": "thing",
+      "aliases": [
+        "CAH",
+        "Cards Against",
+        "Card Against Humanity"
+      ],
+      "polysemy_triggers": [
+        "humor",
+        "game",
+        "card",
+        "humanity",
+        "society"
+      ],
+      "clue_associations": [
+        "offbeat comedy",
+        "adult humor",
+        "party game",
+        "irreverent humor",
+        "dark humor",
+        "parody game",
+        "Taboo rival"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Cards Against Humanity",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Chicago",
+      "category": "place",
+      "aliases": [
+        "Chi-City",
+        "The Loop",
+        "Chicago River"
+      ],
+      "polysemy_triggers": [
+        "Second City",
+        "Windy City",
+        "Chi-Town",
+        "Chicago-style pizza",
+        "Deep Dish"
+      ],
+      "clue_associations": [
+        "Jazz legend born in Chicago",
+        "Iconic skyscraper",
+        "Home of the Cubs and White Sox",
+        "Lake Michigan city",
+        "Willis Tower",
+        "Famous jazz festivals"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Chicago",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Mop",
+      "category": "thing",
+      "aliases": [
+        "mophead",
+        "floor mopper"
+      ],
+      "polysemy_triggers": [
+        "clean sweep",
+        "messy situation",
+        "swabbing the decks",
+        "flooring it",
+        "dusting off"
+      ],
+      "clue_associations": [
+        "cleaning supplies",
+        "household chores",
+        "janitorial services",
+        "sweep and mop",
+        "hard to clean"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Mop",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Sloth",
+      "category": "thing",
+      "aliases": [
+        "Slowpoke",
+        "Sloths"
+      ],
+      "polysemy_triggers": [
+        "relaxed pace",
+        "tree dweller",
+        "hangry animal",
+        "arboreal creature",
+        "slow mover"
+      ],
+      "clue_associations": [
+        "rainforest habitat",
+        "arboreal life",
+        "unique adaptation",
+        "lazy animal",
+        "South American species",
+        "famous cartoon character"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Sloth",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Casablanca",
+      "category": "thing",
+      "aliases": [
+        "Casablanca, the movie",
+        "The White City"
+      ],
+      "polysemy_triggers": [
+        "white city",
+        "morocco connection",
+        "film classic",
+        "hump day",
+        "exile"
+      ],
+      "clue_associations": [
+        "bogart's last film",
+        "in a Moroccan mood",
+        "iconic movie lines",
+        "as time goes by",
+        "do you love me?",
+        "that's all folks"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Casablanca",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Cupcake",
+      "category": "thing",
+      "aliases": [
+        "cupcake",
+        "sweet treat",
+        "treat"
+      ],
+      "polysemy_triggers": [
+        "flour power",
+        "sweet tooth",
+        "dessert menu",
+        "treat",
+        "bakery tale"
+      ],
+      "clue_associations": [
+        "baker's delight",
+        "frosting or fail",
+        "cup of sweetness",
+        "topped with love",
+        "icing on the cake"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Cupcake",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Zendaya",
+      "category": "person",
+      "aliases": [
+        "Zendaya Maree Stoermer",
+        "Euphoria's Rue"
+      ],
+      "polysemy_triggers": [
+        "actress",
+        "singer",
+        "Euphoria character"
+      ],
+      "clue_associations": [
+        "Disney Channel star",
+        "Shake It Up fame",
+        "Wokoiki TikTok",
+        "Spider-Man: Homecoming casting",
+        "Malcolm X biopic role"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Zendaya",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Winston Churchill",
+      "category": "person",
+      "aliases": [],
+      "polysemy_triggers": [],
+      "clue_associations": [],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Winston Churchill",
+      "annotated": false
+    },
+    {
+      "canonical_name": "Exploding Kittens",
+      "category": "thing",
+      "aliases": [
+        "Exploding Kittens Card Game",
+        "E.K.",
+        "Kittens"
+      ],
+      "polysemy_triggers": [
+        "feline",
+        "card game",
+        "explosion",
+        "kitten",
+        "crazy"
+      ],
+      "clue_associations": [
+        "deck building",
+        "Russian roulette",
+        "humorists' creation",
+        "internet meme",
+        "sarcastic humor"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Exploding Kittens",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Bucket",
+      "category": "thing",
+      "aliases": [
+        "billy",
+        "pail",
+        "tub"
+      ],
+      "polysemy_triggers": [
+        "container",
+        "tool",
+        "storage",
+        "haul",
+        "drag"
+      ],
+      "clue_associations": [
+        "watering can",
+        "beach activity",
+        "farm equipment",
+        "large quantity",
+        "bucket list"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Bucket",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Las Vegas",
+      "category": "place",
+      "aliases": [
+        "Las Vegas Strip",
+        "Vegas"
+      ],
+      "polysemy_triggers": [
+        "little white city",
+        "city of sin",
+        "viva las vegas",
+        "vegas odds",
+        "casino night"
+      ],
+      "clue_associations": [
+        "strip show",
+        "high roller",
+        "neon lights",
+        "eclipse of reason",
+        "marriage capital",
+        "marriage chapel",
+        "famous hotels",
+        "fountains of fortune"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Las Vegas",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Flamingo",
+      "category": "thing",
+      "aliases": [
+        "Flamingos",
+        "Flamigos"
+      ],
+      "polysemy_triggers": [
+        "flame",
+        "pinky",
+        "flight",
+        "plumage",
+        "exotic"
+      ],
+      "clue_associations": [
+        "African lakeside",
+        "Pink feathers",
+        "Rare mating dance",
+        "Long legs",
+        "Unusual eating habits"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Flamingo",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Gone with the Wind",
+      "category": "thing",
+      "aliases": [
+        "GWTW",
+        "Mitchell's Novel",
+        "Vivien Leigh's claim to fame"
+      ],
+      "polysemy_triggers": [
+        "windfall",
+        "blown away",
+        "gust of change",
+        "breeze through",
+        "stormy relationship"
+      ],
+      "clue_associations": [
+        "Civil War epic",
+        "Scarlett O'Hara's story",
+        "Historic novel adaptation",
+        "Blockbuster film from the 1930s",
+        "Costume drama classic"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Gone with the Wind",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Timothee Chalamet",
+      "category": "person",
+      "aliases": [
+        "Timoth\u00e9e Chalamet"
+      ],
+      "polysemy_triggers": [
+        "Chal",
+        "Tim",
+        "French connection",
+        "Call me Tim",
+        "Heartthrob"
+      ],
+      "clue_associations": [
+        "Cinematic heartthrob",
+        "Young actor on the rise",
+        "Call Me By Your Name fame",
+        "Lady Bird and Dune star",
+        "Red carpet regular",
+        "Academy Award nominated",
+        "Controversy surrounding"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Timothee Chalamet",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Pancakes",
+      "category": "thing",
+      "aliases": [
+        "pancakes",
+        "griddle cakes",
+        "hotcakes"
+      ],
+      "polysemy_triggers": [
+        "breakfast",
+        "syrup",
+        "batter",
+        "mix-up",
+        "golden brown"
+      ],
+      "clue_associations": [
+        "Sunday brunch",
+        "buttermilk",
+        "flipping good time",
+        "maple syrup",
+        "short stack",
+        "diner staple"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Pancakes",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Miami",
+      "category": "place",
+      "aliases": [
+        "The Magic City",
+        "Miami FL",
+        "305"
+      ],
+      "polysemy_triggers": [
+        "Magic City",
+        "beach town",
+        "hurricane",
+        "art deco",
+        "vice"
+      ],
+      "clue_associations": [
+        "flamenco music",
+        "Art Deco architecture",
+        "super bowl locations",
+        "Everglades habitat",
+        "South Beach nightlife",
+        "Miami Vice TV show",
+        "Cuban culture"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Miami",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Queen Elizabeth II",
+      "category": "person",
+      "aliases": [
+        "Queen Lilibet",
+        "Liz II",
+        "The Queen"
+      ],
+      "polysemy_triggers": [
+        "monarch butterfly",
+        "elizabethan era",
+        "royal flush",
+        "crown jewel",
+        "throne"
+      ],
+      "clue_associations": [
+        "british royalty",
+        "wedding anniversary",
+        "longest reign",
+        "queen of hearts",
+        "commonwealth leader",
+        "diamond jubilee",
+        "scepter and crown"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Queen Elizabeth II",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Hammer",
+      "category": "thing",
+      "aliases": [
+        "Hammer",
+        "Hammers"
+      ],
+      "polysemy_triggers": [
+        "tool",
+        "music",
+        "force",
+        "hit",
+        "smash"
+      ],
+      "clue_associations": [
+        "blacksmith",
+        "nailing it",
+        "construction site",
+        "rockstar",
+        "wielding power",
+        "building a reputation"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Hammer",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Candy Land",
+      "category": "thing",
+      "aliases": [
+        "Candyland",
+        "Hasbro Land"
+      ],
+      "polysemy_triggers": [
+        "land of dreams",
+        "colorful journey",
+        "game piece",
+        "travel adventure",
+        "fairy tale"
+      ],
+      "clue_associations": [
+        "rainbow path",
+        "children's classic",
+        "board game nostalgia",
+        "iconic box art",
+        "young gamer's introduction"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Candy Land",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Peacock",
+      "category": "thing",
+      "aliases": [
+        "Pecock",
+        "Pea"
+      ],
+      "polysemy_triggers": [
+        "bird",
+        "broadcasting",
+        "feathered creature",
+        "streaming service",
+        "colorful"
+      ],
+      "clue_associations": [
+        "NBC",
+        "Orange is the New Black",
+        "The Office (US)",
+        "Will & Grace",
+        "Must-see TV"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Peacock",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Emma Stone",
+      "category": "person",
+      "aliases": [
+        "emmajean",
+        "miss stone"
+      ],
+      "polysemy_triggers": [
+        "stone wall",
+        "heartthrob",
+        "lone wolf",
+        "house of cards",
+        "lady luck"
+      ],
+      "clue_associations": [
+        "la la land",
+        "golden girl",
+        "oscars darling",
+        "young actress",
+        "hollywood sweetheart"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Emma Stone",
+      "annotated": true
+    },
+    {
+      "canonical_name": "The Sound of Music",
+      "category": "thing",
+      "aliases": [
+        "The Sound of Music Movie",
+        "Maria von Trapp Story"
+      ],
+      "polysemy_triggers": [
+        "musical note",
+        "movie title mistake",
+        "mountain echoes",
+        "sound waves",
+        "music to my ears"
+      ],
+      "clue_associations": [
+        " Rodgers and Hammerstein",
+        "Austrian Alps",
+        "Nuns with attitude",
+        "Climbing Maria's mountain",
+        "Do-Re-Mi singing"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "The Sound of Music",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Princess Diana",
+      "category": "person",
+      "aliases": [
+        "Diana",
+        "Lady Di"
+      ],
+      "polysemy_triggers": [
+        "royal pain",
+        "people's princess",
+        "charity work",
+        "dying wish",
+        "fairytale romance"
+      ],
+      "clue_associations": [
+        "Windsor family",
+        "landmine clearance",
+        "pancakes and kippers",
+        "republican campaign controversy",
+        "Paparazzi photo",
+        "Camilla Parker Bowles",
+        "Prince Charles scandal"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Princess Diana",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Chutes and Ladders",
+      "category": "thing",
+      "aliases": [
+        "Chutes and Ladders Game",
+        "Snakes and Ladders"
+      ],
+      "polysemy_triggers": [
+        "ladder up",
+        "game board",
+        "child's play",
+        "upturn",
+        "roll of the dice"
+      ],
+      "clue_associations": [
+        "children's game",
+        "educational tool",
+        "Monopoly variant",
+        "classic game night",
+        " childhood memory",
+        "random chance"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Chutes and Ladders",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Waffles",
+      "category": "thing",
+      "aliases": [
+        "waffle",
+        "wafl"
+      ],
+      "polysemy_triggers": [
+        "breakfast",
+        "Belgian",
+        "treat",
+        "cake",
+        "waffle iron"
+      ],
+      "clue_associations": [
+        "Sunday brunch",
+        "batter up",
+        "syrup on top",
+        "cereal killer",
+        "folding in half",
+        "egg-cellent",
+        "maple syrup"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Waffles",
+      "annotated": true
+    },
+    {
+      "canonical_name": "London",
+      "category": "place",
+      "aliases": [
+        "Londinium",
+        "The Big Smoke",
+        "City of London"
+      ],
+      "polysemy_triggers": [
+        "foggy city",
+        "royal treatment",
+        "bridge over time",
+        "Tower of Power",
+        "fish and chips"
+      ],
+      "clue_associations": [
+        "the British are coming",
+        "Big Ben's neighbor",
+        "wet weather forecast",
+        "London Bridge is falling down",
+        "world-class transportation hub"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "London",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Drill",
+      "category": "thing",
+      "aliases": [
+        "driller",
+        "spindle bit"
+      ],
+      "polysemy_triggers": [
+        "biting into",
+        "rotary tool",
+        "oil rig",
+        "cylinder press",
+        "excavation method"
+      ],
+      "clue_associations": [
+        "construction site",
+        "mining operation",
+        "earthwork",
+        "precision instrument",
+        "geology project"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Drill",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Owl",
+      "category": "thing",
+      "aliases": [
+        "Owlets",
+        "Night Birds",
+        "Wise Ones"
+      ],
+      "polysemy_triggers": [
+        "wise",
+        "hoot",
+        "owl-some",
+        "moon phase",
+        "nocturnal"
+      ],
+      "clue_associations": [
+        "wise eyes",
+        "night vision",
+        "forest dweller",
+        "silent hunter",
+        "bookworm's friend",
+        "symbol in heraldry",
+        "shakespearean reference"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Owl",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Friends",
+      "category": "thing",
+      "aliases": [
+        "Friends TV show",
+        "The One with the..."
+      ],
+      "polysemy_triggers": [
+        "TV show",
+        "group of friends",
+        "hangouts",
+        "laughter",
+        "coffee shop"
+      ],
+      "clue_associations": [
+        "six seasons",
+        "Central Perk",
+        "Ross's pet",
+        "How you doin'",
+        "That's a wrap!",
+        "Monica's apartment",
+        "Rachel's love life"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Friends",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Rosa Parks",
+      "category": "person",
+      "aliases": [
+        "Rosa Parks"
+      ],
+      "polysemy_triggers": [
+        "parks car",
+        "resistance leader",
+        "civil rights pioneer",
+        "bus stop",
+        " Montgomery"
+      ],
+      "clue_associations": [
+        "Montgomery bus boycott",
+        "nonviolent protest",
+        "Alabama connection",
+        "famous refusal to move",
+        "1950s icon"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Rosa Parks",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Bacon",
+      "category": "thing",
+      "aliases": [
+        "Bacon Strip",
+        "Streaky Bacon"
+      ],
+      "polysemy_triggers": [
+        "meat",
+        "cured",
+        "smoked",
+        "stripes",
+        "breakfast"
+      ],
+      "clue_associations": [
+        "pancake topping",
+        "BLT ingredient",
+        "barbecue favorite",
+        "morning staple",
+        "pork product"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Bacon",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Ryan Gosling",
+      "category": "person",
+      "aliases": [
+        "Ryan Gosling",
+        "Gosling"
+      ],
+      "polysemy_triggers": [
+        "Gosling for the kill",
+        "Leading man",
+        "Silver lining (Moonlight)",
+        "Handsome devil",
+        "La La Landlord"
+      ],
+      "clue_associations": [
+        "Crazy, Stupid Love actor",
+        "The Notebook heartthrob",
+        "Rom-com staple",
+        "Indie darling",
+        "Film festival favorite"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Ryan Gosling",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Operation",
+      "category": "thing",
+      "aliases": [
+        "ops",
+        "mission"
+      ],
+      "polysemy_triggers": [
+        "heist",
+        "medical procedure",
+        "business deal",
+        "diplomatic mission",
+        "spy operation"
+      ],
+      "clue_associations": [
+        "secret agents",
+        "high-stakes adventure",
+        "surgical precision",
+        "top-secret",
+        "government agency",
+        "disguise and deception"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Operation",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Saw",
+      "category": "thing",
+      "aliases": [
+        "The Saw Series"
+      ],
+      "polysemy_triggers": [
+        "cutting edge",
+        "torture device",
+        "horror movie trope",
+        "survival test",
+        "thriller franchise"
+      ],
+      "clue_associations": [
+        "Jigsaw's game",
+        "deadly puzzles",
+        "gruesome traps",
+        "killer plot twists",
+        "SPOILER ALERT"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Saw",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Paris",
+      "category": "place",
+      "aliases": [
+        "The City of Light",
+        "Paris, France",
+        "Capital of Fashion"
+      ],
+      "polysemy_triggers": [
+        "city of love",
+        "fashion capital",
+        "Eiffel Tower",
+        "Seine River cruise",
+        "Louvre Museum"
+      ],
+      "clue_associations": [
+        "love is in the air",
+        "artistic landmarks",
+        "French cuisine",
+        "River Seine stroll",
+        "Monet's home town"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Paris",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Parrot",
+      "category": "thing",
+      "aliases": [],
+      "polysemy_triggers": [
+        "colorful",
+        "beak",
+        "loud",
+        "flighty",
+        "squawk"
+      ],
+      "clue_associations": [
+        "tropical birds",
+        "rainforest residents",
+        "famous mimics",
+        "pet popularizers",
+        "South American species"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Parrot",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Margot Robbie",
+      "category": "person",
+      "aliases": [
+        "Margot Robbie"
+      ],
+      "polysemy_triggers": [
+        "Harley Quinn",
+        "Pirates of the Caribbean",
+        "Barbie doll",
+        "Wolf of Wall Street",
+        "Girl with a Pearl Earring"
+      ],
+      "clue_associations": [
+        "Australian actress",
+        "DC Comics villain",
+        "Martin Scorsese film",
+        "Neonatal care commercials",
+        "Period dramas"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Margot Robbie",
+      "annotated": true
+    },
+    {
+      "canonical_name": "The Office",
+      "category": "thing",
+      "aliases": [
+        "US Office",
+        "The U.S. version",
+        "Michael's world"
+      ],
+      "polysemy_triggers": [
+        "paperwork",
+        "dunder",
+        "munchies",
+        "9-to-5",
+        "branch office"
+      ],
+      "clue_associations": [
+        "comedy goldmine",
+        "mockumentary style",
+        "Dunder Mifflin",
+        "Scranton branch",
+        "Michael Scott's antics"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "The Office",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Avocado",
+      "category": "thing",
+      "aliases": [
+        "aguacate",
+        "alligator pear",
+        "avocado tree"
+      ],
+      "polysemy_triggers": [
+        "green machine",
+        "fruit of the earth",
+        "tree-mendous health benefits",
+        "guac to the future",
+        "healthy obsession"
+      ],
+      "clue_associations": [
+        "superfood",
+        "mexican delight",
+        "nutrient-rich",
+        "green goddess",
+        "trendy topping"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Avocado",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Facebook",
+      "category": "thing",
+      "aliases": [
+        "FaceBook",
+        "FB"
+      ],
+      "polysemy_triggers": [
+        "face book",
+        "facebook friends",
+        "like button",
+        "bookmarks",
+        "mark Zuckerberg"
+      ],
+      "clue_associations": [
+        "Mark's creation",
+        "social network",
+        "online community",
+        "news feed",
+        "instant messaging",
+        "Zuckerberg's idea"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Facebook",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Rome",
+      "category": "place",
+      "aliases": [
+        "Rome, Italy",
+        "Urbs Aeterna",
+        "The Eternal City"
+      ],
+      "polysemy_triggers": [
+        "capital city",
+        " ancient civilization",
+        "city-state",
+        "eternal city",
+        "center of power"
+      ],
+      "clue_associations": [
+        "Colosseum",
+        "Roman Empire",
+        "Vatican City",
+        "gladiators",
+        "Caesar",
+        "Forum Romanum",
+        "Pontifex Maximus"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Rome",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Wrench",
+      "category": "thing",
+      "aliases": [
+        "wrench",
+        "spanner"
+      ],
+      "polysemy_triggers": [
+        "handle",
+        "turn",
+        "tighten",
+        "loosen",
+        "socket"
+      ],
+      "clue_associations": [
+        "car repair",
+        " handyman tool",
+        "garage essential",
+        "fixing things",
+        " DIY icon"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Wrench",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Mouse Trap",
+      "category": "thing",
+      "aliases": [
+        "Mouse Trap Game"
+      ],
+      "polysemy_triggers": [
+        "trap",
+        "game",
+        "board game",
+        "classical music instrument",
+        "family entertainment"
+      ],
+      "clue_associations": [
+        "Rube Goldberg machine",
+        " childhood memories",
+        "classic toy",
+        " family gathering",
+        "1960s novelty item",
+        "wooden pieces"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Mouse Trap",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Toucan",
+      "category": "thing",
+      "aliases": [
+        "Toucan bird",
+        "Rainbow beak",
+        "Fruit-eating bird"
+      ],
+      "polysemy_triggers": [
+        "colorful bird",
+        "South American fruit",
+        "exotic location",
+        "rainforest resident",
+        "beak decoration"
+      ],
+      "clue_associations": [
+        "Central or South America",
+        "bright plumage",
+        "tropical weather",
+        "Amazonian habitat",
+        "Brazilian folklore"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Toucan",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Instagram",
+      "category": "thing",
+      "aliases": [
+        "IG",
+        "Insta"
+      ],
+      "polysemy_triggers": [
+        "gram",
+        "camera",
+        "filter",
+        "snap",
+        "follow"
+      ],
+      "clue_associations": [
+        "photo-sharing",
+        "social media sensation",
+        "fashion influencer platform",
+        "visual storytelling",
+        "Facebook acquisition"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Instagram",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Lady Gaga",
+      "category": "person",
+      "aliases": [
+        "Stefani Germanotta",
+        "Mother Monster"
+      ],
+      "polysemy_triggers": [
+        "gaga",
+        "star",
+        "monster",
+        "poker face",
+        "meat"
+      ],
+      "clue_associations": [
+        "born this way",
+        "pop icon",
+        "MTV award",
+        "LGBTQ ally",
+        "fashion risk-taker",
+        "paparazzi target"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Lady Gaga",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Breaking Bad",
+      "category": "thing",
+      "aliases": [
+        "Breaking Bad",
+        "BB"
+      ],
+      "polysemy_triggers": [
+        "bad behavior",
+        "culinary arts",
+        "chemical reactions",
+        "high stakes",
+        "emergence"
+      ],
+      "clue_associations": [
+        "Walter White",
+        "Heisenberg's reign",
+        "Saul Goodman",
+        " Albuquerque setting",
+        "crime drama genre",
+        "AMC series",
+        "TV addiction"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Breaking Bad",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Kale",
+      "category": "thing",
+      "aliases": [
+        "brassica",
+        "green leafy vegetable"
+      ],
+      "polysemy_triggers": [
+        "green food",
+        "superfood",
+        "cabbage-like",
+        "leafy greens",
+        "bitter taste"
+      ],
+      "clue_associations": [
+        "salad topping",
+        "smoothie ingredient",
+        "health craze",
+        "new year's resolution food",
+        "hippie favorite",
+        "supermarket produce section"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Kale",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Twister",
+      "category": "thing",
+      "aliases": [
+        "Twister game"
+      ],
+      "polysemy_triggers": [
+        "spinning",
+        "twist",
+        "tangled",
+        "turning point",
+        "mixed up"
+      ],
+      "clue_associations": [
+        "mat game",
+        "party favorite",
+        "adult playdate",
+        "social spin",
+        "lively evening",
+        "wobbly fun",
+        "slippery slope"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Twister",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Tokyo",
+      "category": "place",
+      "aliases": [
+        "Tokyo Metropolis",
+        "Edo",
+        "Shinjuku"
+      ],
+      "polysemy_triggers": [
+        "metropolis",
+        "rising sun",
+        "manga capital",
+        "anime hotspot",
+        " neon city"
+      ],
+      "clue_associations": [
+        "capital of Japan",
+        "summer Olympics host",
+        " skyscrapers and technology",
+        " ancient temples and gardens",
+        " bustling streets and markets",
+        " Tokyo Tower or Shibuya Crossing"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Tokyo",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Jeans",
+      "category": "thing",
+      "aliases": [
+        "J's",
+        "Jeanswear"
+      ],
+      "polysemy_triggers": [
+        "denim heaven",
+        "pockets of history",
+        "blue collar",
+        "rivets and threads",
+        "fashion staple"
+      ],
+      "clue_associations": [
+        "fashion icons",
+        "hip hop roots",
+        "music festival style",
+        "iconic accessories",
+        "retro wardrobe",
+        "summer essentials"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Jeans",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Game of Thrones",
+      "category": "thing",
+      "aliases": [
+        "Game of Thrones series",
+        "GoT"
+      ],
+      "polysemy_triggers": [
+        "throne",
+        "iron",
+        "game",
+        "warhammer",
+        "seven"
+      ],
+      "clue_associations": [
+        "HBO series",
+        "Stark family",
+        "red wedding",
+        "dragon fire",
+        "Winterfell",
+        "King's Landing",
+        "Lannister drama"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Game of Thrones",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Screwdriver",
+      "category": "thing",
+      "aliases": [
+        "Screw Driver"
+      ],
+      "polysemy_triggers": [
+        "turn",
+        "driver",
+        "hand tool",
+        "tighten",
+        "loosen"
+      ],
+      "clue_associations": [
+        "construction site",
+        "car maintenance",
+        "DIY project",
+        "home improvement",
+        "gadget",
+        "craftsman's best friend",
+        "tight spot"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Screwdriver",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Twitter",
+      "category": "thing",
+      "aliases": [
+        "Tweeps",
+        "The Twitter",
+        "Twit"
+      ],
+      "polysemy_triggers": [
+        "tweet",
+        "bird",
+        "140 characters",
+        "social media giant",
+        "share"
+      ],
+      "clue_associations": [
+        "microblogging",
+        "hashtag challenge",
+        "Twitterverse",
+        "Timelines",
+        " Character limit"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Twitter",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Drake",
+      "category": "person",
+      "aliases": [
+        "Aubrey Drake Graham"
+      ],
+      "polysemy_triggers": [
+        "6 God",
+        "raptor",
+        "October's Very Own",
+        "D6",
+        "The Boy"
+      ],
+      "clue_associations": [
+        "Toronto rapper",
+        "Grammy Awards record holder",
+        "Young Money artist",
+        "Migos collaborator",
+        " Drake and Josh connection"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Drake",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Taj Mahal",
+      "category": "place",
+      "aliases": [
+        "Taj Mahal Palace",
+        "Royal Monuments of India",
+        "The Taj"
+      ],
+      "polysemy_triggers": [
+        "marble building",
+        "love letter to a king",
+        "white monument",
+        "indian palace",
+        "symbol of love"
+      ],
+      "clue_associations": [
+        "south asian architecture",
+        "shah jahan's legacy",
+        "one of the seven wonders",
+        "romantic getaway in india",
+        "agra's crown jewel",
+        "mosque and mausoleum",
+        "perfect symmetry"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Taj Mahal",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Pictionary",
+      "category": "thing",
+      "aliases": [
+        "Pict",
+        "The Drawing Game"
+      ],
+      "polysemy_triggers": [
+        "draw",
+        "guess",
+        "art",
+        "competition",
+        "team"
+      ],
+      "clue_associations": [
+        "drawing game",
+        "TV challenge",
+        "charades",
+        "doodle",
+        "sketch show",
+        "board game variant"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Pictionary",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Ladder",
+      "category": "thing",
+      "aliases": [
+        "ladder system",
+        "staircase",
+        "elevator"
+      ],
+      "polysemy_triggers": [
+        "rise to the occasion",
+        "step up",
+        "reach new heights",
+        "climb the ranks",
+        "ascent"
+      ],
+      "clue_associations": [
+        "Jacob's ladder",
+        "rung out",
+        "leap of faith",
+        "rung in a good time",
+        "high point"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Ladder",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Beijing",
+      "category": "place",
+      "aliases": [
+        "Beijing",
+        "Peking",
+        "Pechin"
+      ],
+      "polysemy_triggers": [
+        "capital",
+        "beijing opera",
+        "great wall city",
+        "Forbidden City's neighbor",
+        "Olympic Games host"
+      ],
+      "clue_associations": [
+        "Great Wall of China",
+        "Communist Party HQ",
+        "Peking duck capital",
+        "Chinese New Year celebrations",
+        "Forbidden City palace",
+        "Summer Olympics 2008 location",
+        "Silk Road terminus"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Beijing",
+      "annotated": true
+    },
+    {
+      "canonical_name": "The Simpsons",
+      "category": "thing",
+      "aliases": [
+        "The Simpsons",
+        "Simpsons"
+      ],
+      "polysemy_triggers": [
+        "yellow",
+        "d'oh",
+        "donut",
+        "kiss",
+        "treehouse"
+      ],
+      "clue_associations": [
+        "animated sitcom",
+        "springfield",
+        "marge",
+        "homer's job",
+        "apocalypse",
+        "trevor donovan",
+        "dan castellaneta"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "The Simpsons",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Adele",
+      "category": "person",
+      "aliases": [
+        "Adele Laurie Blue Adkins"
+      ],
+      "polysemy_triggers": [
+        "heartbreak",
+        "southern belle",
+        "British invasion",
+        "hello",
+        "rolling in the"
+      ],
+      "clue_associations": [
+        "soulful voice",
+        "hit songs like Someone Like You",
+        "Rolling in the Deep fame",
+        "Grammy winner",
+        "London roots"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Adele",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Sneakers",
+      "category": "thing",
+      "aliases": [
+        "running shoes",
+        "kicks",
+        "shoes"
+      ],
+      "polysemy_triggers": [
+        "run",
+        "step",
+        "fast",
+        "footwear",
+        "kick"
+      ],
+      "clue_associations": [
+        "athletes wear them",
+        "Michael Jordan's iconic brand",
+        "high-top or low",
+        "lace up and get moving",
+        "sneaky good deals on last season's models",
+        "Kicks for days",
+        "sole mates"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Sneakers",
+      "annotated": true
+    },
+    {
+      "canonical_name": "TikTok",
+      "category": "thing",
+      "aliases": [
+        "Tik Tok",
+        ""
+      ],
+      "polysemy_triggers": [
+        "tok",
+        "short-form video",
+        "lip sync",
+        "musical performance",
+        "meme"
+      ],
+      "clue_associations": [
+        "for-you page",
+        "BeReal competition",
+        "Zhilong's platform",
+        "ByteDance creation",
+        "Douyin connection",
+        "Short-form sensation",
+        "K-pop influence"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "TikTok",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Colosseum",
+      "category": "place",
+      "aliases": [
+        "Colosseum",
+        "Flavian Amphitheatre",
+        "Amphitheatrum Flavium"
+      ],
+      "polysemy_triggers": [
+        "gladiator",
+        "arena",
+        "rome",
+        "amphitheater",
+        "spectacle"
+      ],
+      "clue_associations": [
+        "roman ruins",
+        "ancient games",
+        "jousting tournaments",
+        "flavius constantine",
+        "italian icon",
+        "medieval sports"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Colosseum",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Dubai",
+      "category": "place",
+      "aliases": [
+        "Dubai city",
+        "Emirate of Dubai",
+        "Deira"
+      ],
+      "polysemy_triggers": [
+        "Pearl of the Gulf",
+        "Desert metropolis",
+        "Luxury lifestyle",
+        "7-star rating",
+        "Sheikh's kingdom"
+      ],
+      "clue_associations": [
+        "Burj Khalifa",
+        "Palm islands",
+        "Dubai Mall",
+        "Gold souks",
+        "Middle Eastern marvel",
+        "Desert wonderland",
+        "Falconry tradition"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Dubai",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Sunglasses",
+      "category": "thing",
+      "aliases": [
+        "Sunshades",
+        "Glasses",
+        "Eye Protection"
+      ],
+      "polysemy_triggers": [
+        "shades",
+        "glasses",
+        "specs",
+        "cool factor",
+        "eye candy"
+      ],
+      "clue_associations": [
+        "fashion accessory",
+        "movie tropes",
+        "celebrity icon",
+        "summer vibes",
+        "optical illusions"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Sunglasses",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Charades",
+      "category": "thing",
+      "aliases": [
+        "Charades Show",
+        "Guess the Action"
+      ],
+      "polysemy_triggers": [
+        "act out",
+        "mime show",
+        "silent performance",
+        "guess the action",
+        "pantomime"
+      ],
+      "clue_associations": [
+        "guessing game",
+        "acting without words",
+        "silent comedy",
+        "stage presence",
+        "audience participation",
+        "theatre sport"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Charades",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Bicycle",
+      "category": "thing",
+      "aliases": [
+        "bike",
+        "cycle",
+        "velo"
+      ],
+      "polysemy_triggers": [
+        "wheel deal",
+        "pedal power",
+        "two-wheeler",
+        "cycle of life",
+        "spinning out"
+      ],
+      "clue_associations": [
+        " Lance Armstrong",
+        " Tour de France",
+        " Schwinn bike",
+        "spokesperson",
+        "chain reaction",
+        "road to success"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Bicycle",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Seinfeld",
+      "category": "thing",
+      "aliases": [
+        "Seinfeld show",
+        "Nothing"
+      ],
+      "polysemy_triggers": [
+        "jerry",
+        "kramer",
+        "neurotic",
+        "cosmopolitan",
+        "nothing"
+      ],
+      "clue_associations": [
+        "comedy classic",
+        "90s sitcom",
+        "elaine benes",
+        "monk's cafe",
+        "no hugging, no learning"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Seinfeld",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Ed Sheeran",
+      "category": "person",
+      "aliases": [
+        "Ed Sheeran"
+      ],
+      "polysemy_triggers": [
+        "ivy",
+        "songbird",
+        "pop sensation",
+        "London calling",
+        "grime wave"
+      ],
+      "clue_associations": [
+        "British invasion",
+        "guitar virtuoso",
+        "heartbreak ballads",
+        "royal connections",
+        "chart-topping hits"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Ed Sheeran",
+      "annotated": true
+    },
+    {
+      "canonical_name": "The Shawshank Redemption",
+      "category": "thing",
+      "aliases": [
+        "The Shawshank Redemption (1994)",
+        "Shawshank",
+        "Rita Hayworth and Shawshank Redemption"
+      ],
+      "polysemy_triggers": [
+        "redemption arc",
+        "prison break",
+        "hopeful tale",
+        "escape route",
+        "timely classic"
+      ],
+      "clue_associations": [
+        "Oscar sweepstakes",
+        "freedom fighter",
+        "timeless drama",
+        "morally complex",
+        "imprisoned genius"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "The Shawshank Redemption",
+      "annotated": true
+    },
+    {
+      "canonical_name": "YouTube",
+      "category": "thing",
+      "aliases": [
+        "You Tube",
+        "YouTube.com"
+      ],
+      "polysemy_triggers": [
+        "tube",
+        "video",
+        "upload",
+        "stream",
+        "channel"
+      ],
+      "clue_associations": [
+        "video sharing platform",
+        "Google acquisition",
+        "user-generated content",
+        "advertising revenue",
+        " Creator economy",
+        "algorithm-driven homepage"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "YouTube",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Sydney",
+      "category": "place",
+      "aliases": [],
+      "polysemy_triggers": [],
+      "clue_associations": [],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Sydney",
+      "annotated": false
+    },
+    {
+      "canonical_name": "Machu Picchu",
+      "category": "place",
+      "aliases": [
+        "Machu Picchu Mountain",
+        "The Lost City of the Incas",
+        "Sun Gate"
+      ],
+      "polysemy_triggers": [
+        "inca city",
+        "mountain peak",
+        "lost city",
+        "andean wonder",
+        "sacred site"
+      ],
+      "clue_associations": [
+        "south american ruins",
+        "historical monument",
+        "peruvian mystery",
+        "tourist hotspot",
+        "jungle trek",
+        "ancient architecture",
+        "world wonder"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Machu Picchu",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Skateboard",
+      "category": "thing",
+      "aliases": [
+        "skate board",
+        "boards"
+      ],
+      "polysemy_triggers": [
+        "board games",
+        "vertical takeoff",
+        "surfing wave",
+        "balance beam",
+        "inline skating"
+      ],
+      "clue_associations": [
+        "extreme sports",
+        "half pipe",
+        "Olympic events",
+        "x games athlete",
+        "vert tricks"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Skateboard",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Hat",
+      "category": "thing",
+      "aliases": [
+        "topper",
+        "headpiece",
+        "chapeau"
+      ],
+      "polysemy_triggers": [
+        "chapeau",
+        "cover",
+        "headgear",
+        "top hat",
+        "beanie"
+      ],
+      "clue_associations": [
+        "fashion accessory",
+        "hat tricks",
+        "wearing your heart on your sleeve",
+        "top of the class",
+        "crowning glory",
+        "on one's head"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Hat",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Taboo",
+      "category": "thing",
+      "aliases": [
+        "The Taboo Game",
+        "Forbidden Topic"
+      ],
+      "polysemy_triggers": [
+        "Forbidden",
+        "Word game",
+        "Interchangeable parts",
+        "Taboo topics",
+        "Prohibited"
+      ],
+      "clue_associations": [
+        "Restricted conversation",
+        "Board game challenge",
+        "Silent treatment",
+        "No talking allowed",
+        "Blindfolded guessing",
+        "Stealthy answers",
+        "Muted signals"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Taboo",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Ariana Grande",
+      "category": "person",
+      "aliases": [
+        "Ari",
+        "AG"
+      ],
+      "polysemy_triggers": [
+        "sweet",
+        "high note",
+        "thank u next",
+        "pop star",
+        "Manchester"
+      ],
+      "clue_associations": [
+        "VMA performances",
+        "Thank U, Next album",
+        "The Voice UK judge",
+        "Donut inspiration",
+        "Scream Queens guest appearance"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Ariana Grande",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Stranger Things",
+      "category": "thing",
+      "aliases": [
+        "Stranger Things, The Upside Down"
+      ],
+      "polysemy_triggers": [
+        "thing",
+        "stranger",
+        "kids show",
+        "nostalgia",
+        " Hawkins"
+      ],
+      "clue_associations": [
+        "1980s horror",
+        "Indiana Jones sequel",
+        "kids disappear",
+        "Duffer brothers",
+        "Winona Ryder",
+        "Eleven's powers"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Stranger Things",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Tesla",
+      "category": "thing",
+      "aliases": [
+        "Tesla Motors",
+        "TSLA"
+      ],
+      "polysemy_triggers": [
+        "electric vehicle",
+        "company founded by Elon Musk",
+        "innovative technology",
+        "luxury car brand",
+        "sustainable energy"
+      ],
+      "clue_associations": [
+        "electrifying the automotive industry",
+        "founding father of electric cars",
+        "model S, model X, and more",
+        "going green with a twist",
+        "Silicon Valley innovator's brainchild"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Tesla",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Stonehenge",
+      "category": "place",
+      "aliases": [
+        "Stonehenge Monument",
+        "English Megalith",
+        "Wiltshire Circle"
+      ],
+      "polysemy_triggers": [
+        "ring",
+        "circle of friends",
+        "standing stone",
+        "english heritage",
+        "heathen"
+      ],
+      "clue_associations": [
+        "prehistoric monument",
+        "wiltshire wonder",
+        "new age gathering place",
+        "british history mystery",
+        "summer solstice site"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Stonehenge",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Boggle",
+      "category": "thing",
+      "aliases": [
+        "Bogglers",
+        "Word Game"
+      ],
+      "polysemy_triggers": [
+        "word search",
+        "linguistic puzzle",
+        "board game"
+      ],
+      "clue_associations": [
+        "find the words",
+        "word grid challenge",
+        "lexicographical game",
+        "mental exercise",
+        "thinking outside the box",
+        "verbal maze"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Boggle",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Rio de Janeiro",
+      "category": "place",
+      "aliases": [
+        "Rio",
+        "RJ",
+        "Cidade Maravilhosa"
+      ],
+      "polysemy_triggers": [
+        "beach city",
+        "Brazilian capital",
+        " Carnaval town",
+        "Rio Grande connection",
+        "Christ the Redeemer landmark"
+      ],
+      "clue_associations": [
+        "Carnival celebrations",
+        "Sugarloaf Mountain view",
+        "New Year's Eve party",
+        "Favela life",
+        "Copacabana stroll",
+        "Rainforest preservation effort",
+        "Olympic Games host city"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Rio de Janeiro",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Arrested Development",
+      "category": "thing",
+      "aliases": [
+        "AD",
+        "Arrested Devs"
+      ],
+      "polysemy_triggers": [
+        "development",
+        "arrested",
+        "family",
+        "television"
+      ],
+      "clue_associations": [
+        "Fox sitcom",
+        "Mitchell family",
+        "George Bluth",
+        "Lucille Bluth",
+        "Gob's magic tricks"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Arrested Development",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Scooter",
+      "category": "thing",
+      "aliases": [
+        "Skate Scooter",
+        "Electric Scooter",
+        "Kick Scooter"
+      ],
+      "polysemy_triggers": [
+        "transportation mode",
+        "pet name",
+        "skateboard cousin",
+        "mini vehicle",
+        "short trip"
+      ],
+      "clue_associations": [
+        "ride-sharing pioneer",
+        "walkability",
+        "childhood joy",
+        "neighborhood nuisance",
+        "carbon footprint"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Scooter",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Scarf",
+      "category": "thing",
+      "aliases": [
+        "Neckpiece",
+        "Headgear",
+        "Garment"
+      ],
+      "polysemy_triggers": [
+        "cover-up",
+        "neckwear",
+        "food wrapper",
+        "face mask",
+        "chin strap"
+      ],
+      "clue_associations": [
+        "fashion accessory",
+        "table setting",
+        "dining etiquette",
+        "formal wear",
+        "outdoor gear",
+        "functional item"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Scarf",
+      "annotated": true
+    },
+    {
+      "canonical_name": "iPhone",
+      "category": "thing",
+      "aliases": [
+        "iPhone X",
+        "iPhones"
+      ],
+      "polysemy_triggers": [
+        "ring",
+        "revolution",
+        "applause",
+        "miniature",
+        "smart"
+      ],
+      "clue_associations": [
+        "Steve Jobs",
+        "Apple fanboy",
+        "touchscreen",
+        "iOS",
+        "iPod legacy"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "iPhone",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Billie Eilish",
+      "category": "person",
+      "aliases": [
+        "Billie",
+        "Bille"
+      ],
+      "polysemy_triggers": [
+        "bad",
+        "young adult",
+        "pop sensation",
+        "scream queen",
+        "dark horse"
+      ],
+      "clue_associations": [
+        "Bad Guy",
+        "Teen pop icon",
+        "Grammys",
+        "James Bond theme song",
+        "Euphoric soundtracks"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Billie Eilish",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Sydney Opera House",
+      "category": "place",
+      "aliases": [
+        "Syd Opera House",
+        "SOH",
+        "Opera House of Sydney"
+      ],
+      "polysemy_triggers": [
+        "harbor",
+        "performance",
+        "house of worship",
+        "opera singer",
+        "music venue"
+      ],
+      "clue_associations": [
+        "Australian landmark",
+        "UNESCO World Heritage Site",
+        "iconic building",
+        "Sydney's crown jewel",
+        "tourist attraction",
+        "iconic performance space",
+        "world-renowned architecture"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Sydney Opera House",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Barcelona",
+      "category": "place",
+      "aliases": [
+        "Barca",
+        "BCN"
+      ],
+      "polysemy_triggers": [
+        "Gaud\u00ed",
+        "football team",
+        "catalan cuisine",
+        "beach destination",
+        "stadium name"
+      ],
+      "clue_associations": [
+        "La Sagrada Familia",
+        "Spanish football",
+        "tapas and paella",
+        "Dr. Tarrag\u00f3",
+        "Casa Batll\u00f3"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Barcelona",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Yahtzee",
+      "category": "thing",
+      "aliases": [
+        "Yahtzee Game",
+        "Yatzee",
+        "Yahtz"
+      ],
+      "polysemy_triggers": [
+        "dice game",
+        "scorebook",
+        "luck of the draw",
+        "roll with it",
+        "numbers game"
+      ],
+      "clue_associations": [
+        "scoring system",
+        "five dice high",
+        "probability puzzle",
+        "casino classic",
+        "tabletop strategy",
+        "roll and write"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Yahtzee",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Motorcycle",
+      "category": "thing",
+      "aliases": [
+        "motorbike', 'bikie, 'two-wheeler"
+      ],
+      "polysemy_triggers": [
+        "cycle",
+        "bike",
+        "wheel",
+        "speedster",
+        "engine"
+      ],
+      "clue_associations": [
+        "two-wheeled",
+        "highway patrol",
+        "Harley-Davidson",
+        "Road Warrior",
+        "freedom rider",
+        "Beach Boys song",
+        "Easy Rider film"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Motorcycle",
+      "annotated": true
+    },
+    {
+      "canonical_name": "The Crown",
+      "category": "thing",
+      "aliases": [
+        "The Crown TV series",
+        "Crown"
+      ],
+      "polysemy_triggers": [
+        "regal",
+        "royal",
+        "throne",
+        "crown jewel",
+        "kingdom"
+      ],
+      "clue_associations": [
+        "BBC drama",
+        "Netflix original",
+        "Colin Firth",
+        "Claire Foy",
+        "Queen Elizabeth II"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "The Crown",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Tie",
+      "category": "thing",
+      "aliases": [
+        "drawn game",
+        "stalemate",
+        "even split"
+      ],
+      "polysemy_triggers": [
+        "equal",
+        "level",
+        "balance",
+        "draw",
+        "score"
+      ],
+      "clue_associations": [
+        "sports outcome",
+        "winning conditions",
+        "shared victory",
+        "no winner",
+        "two-way tie",
+        "high score",
+        "dead heat"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Tie",
+      "annotated": true
+    },
+    {
+      "canonical_name": "The Weeknd",
+      "category": "person",
+      "aliases": [],
+      "polysemy_triggers": [],
+      "clue_associations": [],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "The Weeknd",
+      "annotated": false
+    },
+    {
+      "canonical_name": "Amsterdam",
+      "category": "place",
+      "aliases": [
+        "Amst",
+        "City of Canals"
+      ],
+      "polysemy_triggers": [
+        "windmill",
+        "art museum",
+        "coffee culture",
+        "canal boat",
+        "tulip fields"
+      ],
+      "clue_associations": [
+        "Venice of the North",
+        "Rembrandt's city",
+        "flower market",
+        "Jordaan neighborhood",
+        "bicycle friendly"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Amsterdam",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Burj Khalifa",
+      "category": "place",
+      "aliases": [
+        "Burj Khalifa Tower",
+        "Khalifa Tower"
+      ],
+      "polysemy_triggers": [
+        "khalifa",
+        "burj",
+        "dubai tower",
+        "tallest building",
+        "skyscraper"
+      ],
+      "clue_associations": [
+        "middle eastern monument",
+        "uae landmark",
+        "record holder",
+        "architectural marvel",
+        "sheikh mohammed's pride",
+        "dubai skyline icon"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Burj Khalifa",
+      "annotated": true
+    },
+    {
+      "canonical_name": "PlayStation",
+      "category": "thing",
+      "aliases": [
+        "Playstation",
+        "Sony PlayStation",
+        "PlayStation console"
+      ],
+      "polysemy_triggers": [
+        "console",
+        "Sony",
+        "gaming",
+        "entertainment",
+        "play"
+      ],
+      "clue_associations": [
+        "controller",
+        "exclusive games",
+        "next-gen",
+        "gamer's delight",
+        "Japanese electronics",
+        "Santa Monica studio",
+        "PS4, PS5 game"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "PlayStation",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Dominoes",
+      "category": "thing",
+      "aliases": [
+        "dominos",
+        "two by four"
+      ],
+      "polysemy_triggers": [
+        "game of skill",
+        "tiles",
+        "building blocks",
+        "artistic expression",
+        "folding"
+      ],
+      "clue_associations": [
+        "fallen tiles",
+        "classic party game",
+        "casino table",
+        "russian roulette",
+        "table game",
+        "luck and chance"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Dominoes",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Submarine",
+      "category": "thing",
+      "aliases": [
+        "sub",
+        "uboat",
+        "underseas vessel"
+      ],
+      "polysemy_triggers": [
+        "deep dive",
+        "underwater",
+        "attack from below",
+        "naval history",
+        "imminent threat"
+      ],
+      "clue_associations": [
+        "ocean exploration",
+        "wartime vessels",
+        "submariner",
+        "sonar technology",
+        "sea monster sightings",
+        "diving deep"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Submarine",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Belt",
+      "category": "thing",
+      "aliases": [
+        "Buckles and Straps",
+        "Girdle",
+        "Sash"
+      ],
+      "polysemy_triggers": [
+        "cinch",
+        "strap",
+        "loop",
+        "girdle",
+        "holder"
+      ],
+      "clue_associations": [
+        "carrying tools",
+        "waistline",
+        "fashion accessory",
+        "hiking gear",
+        "dress code",
+        "utility belt",
+        "safety harness"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Belt",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Kanye West",
+      "category": "person",
+      "aliases": [
+        "Ye",
+        "Yeezy"
+      ],
+      "polysemy_triggers": [
+        "yeezy",
+        "west bank",
+        "heartbreak",
+        "rap god",
+        "celebrity",
+        "fashion icon",
+        "designer"
+      ],
+      "clue_associations": [
+        "musical genius",
+        "controversial figure",
+        "fashion designer",
+        "Grammys controversy",
+        "proposed running mate",
+        "Jesus Christ comparison",
+        "diva behavior"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Kanye West",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Xbox",
+      "category": "thing",
+      "aliases": [],
+      "polysemy_triggers": [],
+      "clue_associations": [],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Xbox",
+      "annotated": false
+    },
+    {
+      "canonical_name": "The Sopranos",
+      "category": "thing",
+      "aliases": [
+        "The Sopranos TV series",
+        "Sopranos",
+        "Bada Bing Girls"
+      ],
+      "polysemy_triggers": [
+        "mafia",
+        "family",
+        "New Jersey",
+        "TV",
+        "binge-watching"
+      ],
+      "clue_associations": [
+        "Tony Soprano",
+        "Garden State",
+        "bada-bing",
+        "fictitious mob boss",
+        "HBO show",
+        "crime drama",
+        "David Chase"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "The Sopranos",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Empire State Building",
+      "category": "place",
+      "aliases": [
+        "ESB",
+        "Empire State"
+      ],
+      "polysemy_triggers": [
+        "skyscraper",
+        "building block",
+        "state of mind",
+        "empire builder",
+        "tall tale"
+      ],
+      "clue_associations": [
+        "New York icon",
+        "art deco architecture",
+        "chick magnet",
+        "high rise",
+        "manhattan landmark"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Empire State Building",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Venice",
+      "category": "place",
+      "aliases": [
+        "City of Water",
+        "The Floating City",
+        "Veneto"
+      ],
+      "polysemy_triggers": [
+        "canal city",
+        "marriage proposal",
+        "water taxi",
+        "gondola song",
+        "mask"
+      ],
+      "clue_associations": [
+        "St. Mark's Square",
+        "Grand Canal tour",
+        "Venetian glass",
+        "doge's palace",
+        "La Serenissima"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Venice",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Poker",
+      "category": "thing",
+      "aliases": [
+        "Pokers",
+        "Card Game",
+        "The Poker Game"
+      ],
+      "polysemy_triggers": [
+        "draw",
+        "bet",
+        "game night",
+        "bluff",
+        "raise the stakes"
+      ],
+      "clue_associations": [
+        "Texas Hold'em",
+        "high roller",
+        "poker face",
+        "all-in",
+        "full house",
+        "royal flush",
+        "pocket pair"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Poker",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Watch",
+      "category": "thing",
+      "aliases": [
+        "viewing",
+        "visuals"
+      ],
+      "polysemy_triggers": [
+        "look at",
+        "see",
+        "view",
+        "show",
+        "watch out"
+      ],
+      "clue_associations": [
+        "TV time",
+        "screen",
+        "programming",
+        "broadcast",
+        "schedule",
+        "episode",
+        "series"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Watch",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Helicopter",
+      "category": "thing",
+      "aliases": [
+        "helico",
+        "rotorplane"
+      ],
+      "polysemy_triggers": [
+        "whirlybird",
+        "chopper",
+        "rotorcraft",
+        "copter",
+        "helipad"
+      ],
+      "clue_associations": [
+        "airborne transportation",
+        "emergency services",
+        "flyboy",
+        "flight control",
+        "vertical takeoff",
+        "aviation pioneer",
+        "military assault",
+        "rescue missions"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Helicopter",
+      "annotated": true
+    },
+    {
+      "canonical_name": "The Wire",
+      "category": "thing",
+      "aliases": [
+        "The Wire TV show",
+        "Wire the series"
+      ],
+      "polysemy_triggers": [
+        "wireless",
+        "cable",
+        "news",
+        "netflix",
+        "tangled"
+      ],
+      "clue_associations": [
+        "HBO series",
+        "Baltimore setting",
+        "Dexter Morgan comparison",
+        "moral complexity",
+        "Golden Globe winner",
+        "TV epic",
+        "writer David Simon"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "The Wire",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Jay-Z",
+      "category": "person",
+      "aliases": [
+        "Jigga",
+        "Young Hov",
+        "Hova"
+      ],
+      "polysemy_triggers": [
+        "hip hop mogul",
+        "cartoon character (Marge's husband)",
+        "New York neighborhood"
+      ],
+      "clue_associations": [
+        "Grammys record holder",
+        "Roc-A-Fella Records founder",
+        "Empire State of Mind collaborator",
+        "Marriage to Beyonc\u00e9",
+        "Shawn Carter"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Jay-Z",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Nintendo",
+      "category": "thing",
+      "aliases": [
+        "Nintendo Co.",
+        "Nintendoland"
+      ],
+      "polysemy_triggers": [
+        "playstation",
+        "gameboy",
+        "controller",
+        "wii",
+        "console"
+      ],
+      "clue_associations": [
+        "family gaming",
+        "zelda",
+        "mario",
+        "nes",
+        "snes",
+        "classic games",
+        "super smash bros"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Nintendo",
+      "annotated": true
+    },
+    {
+      "canonical_name": "White House",
+      "category": "place",
+      "aliases": [
+        "The White House",
+        "1600 Pennsylvania Avenue NW",
+        "Executive Mansion"
+      ],
+      "polysemy_triggers": [
+        "residence",
+        "office building",
+        "address",
+        "presidential palace",
+        "executive estate"
+      ],
+      "clue_associations": [
+        "first family",
+        "president's home",
+        "1600 Pennsylvania Avenue",
+        "west wing",
+        " Oval Office",
+        "state dinners",
+        "press corps"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "White House",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Blackjack",
+      "category": "thing",
+      "aliases": [
+        "21",
+        "Twenty-One"
+      ],
+      "polysemy_triggers": [
+        "hit",
+        "win",
+        "21",
+        "card game",
+        "casino"
+      ],
+      "clue_associations": [
+        "card counting",
+        "dealer's upcard",
+        "insurance policy",
+        "splitting pairs",
+        "going bust"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Blackjack",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Airplane",
+      "category": "thing",
+      "aliases": [
+        "plane",
+        "aircraft"
+      ],
+      "polysemy_triggers": [
+        "fly by night",
+        "air mail",
+        "flight risk",
+        "flying high",
+        "soar to new heights"
+      ],
+      "clue_associations": [
+        "aviation industry",
+        "jet set lifestyle",
+        "landing strip",
+        "turbulent past",
+        "clear for takeoff",
+        "in flight entertainment",
+        "baggage claim"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Airplane",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Prague",
+      "category": "place",
+      "aliases": [
+        "Prague city",
+        "Praha",
+        "1000 Years Festival"
+      ],
+      "polysemy_triggers": [
+        "beer capital",
+        "royal city",
+        "city of spires",
+        "spring festival",
+        "Charles Bridge"
+      ],
+      "clue_associations": [
+        "capital of Czechia",
+        "old town charm",
+        "central European hub",
+        "world's most beautiful cities",
+        "Astronomical Clock landmark"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Prague",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Buckingham Palace",
+      "category": "place",
+      "aliases": [
+        "Buck House",
+        "The Palace"
+      ],
+      "polysemy_triggers": [
+        "royal family",
+        "palace hotel",
+        "buckinghamshire village",
+        "queen's home",
+        "monarch's residence"
+      ],
+      "clue_associations": [
+        "British royalty",
+        "annual garden party",
+        "changing of the guard",
+        "official London residence",
+        "British history"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Buckingham Palace",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Rihanna",
+      "category": "person",
+      "aliases": [
+        "Robyn Rihanna Fenty",
+        "RiRi"
+      ],
+      "polysemy_triggers": [
+        "Bajan queen",
+        "Pop icon",
+        "Autotune pioneer",
+        "Bad gal singer",
+        "Gucci ambassador"
+      ],
+      "clue_associations": [
+        "Island beauty",
+        "Music industry powerhouse",
+        "Unapologetic lyrics",
+        "Fashion magazine covers",
+        "MTV Video Music Awards wins"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Rihanna",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Ring",
+      "category": "thing",
+      "aliases": [],
+      "polysemy_triggers": [],
+      "clue_associations": [],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Ring",
+      "annotated": false
+    },
+    {
+      "canonical_name": "Roulette",
+      "category": "thing",
+      "aliases": [
+        "Roulette wheel",
+        "French wheel"
+      ],
+      "polysemy_triggers": [
+        "round",
+        "wheel of fortune",
+        "bet",
+        "win big",
+        "gamble"
+      ],
+      "clue_associations": [
+        "high stakes",
+        "casino game",
+        "lucky number",
+        "European classic",
+        "Russian roulette",
+        "even chance"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Roulette",
+      "annotated": true
+    },
+    {
+      "canonical_name": "Necklace",
+      "category": "thing",
+      "aliases": [
+        "Neckpiece",
+        "Collar",
+        "Throatpiece",
+        "Adornment",
+        "Jewel"
+      ],
+      "polysemy_triggers": [
+        "chain of love",
+        "adornment",
+        "collarbone",
+        "vestment",
+        "link"
+      ],
+      "clue_associations": [
+        "jewelry box",
+        "accessory",
+        "ornament",
+        "fashion statement",
+        "neck and neck",
+        "string theory"
+      ],
+      "recency_score": 0.5,
+      "source": "curated_trivia_list",
+      "name": "Necklace",
+      "annotated": true
+    }
+  ]
+}

@@ -64,6 +64,19 @@ PUZZLES = [
         target_clue=2,
         min_confidence=75.0
     ),
+    PuzzleTest(
+        name="Eiffel Tower",
+        clues=[
+            "Named after Eiffel",
+            "Iron lady of Paris",
+            "Built for an exposition",
+            "World's most visited paid monument",
+            "1000 feet of French engineering"
+        ],
+        answer="Eiffel Tower",
+        target_clue=1,  # Should get it immediately on first clue!
+        min_confidence=75.0
+    ),
 ]
 
 

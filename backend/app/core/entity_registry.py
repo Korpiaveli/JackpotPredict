@@ -282,10 +282,22 @@ class EntityRegistry:
         # Build search corpus from entity metadata
         entity_texts = []
         for entity in entities:
-            # Combine all searchable fields
+            # Extract individual words from canonical name for better matching
+            # e.g., "Eiffel Tower" -> adds both "Eiffel" and "Tower" as separate terms
+            # This ensures "eiffel" query matches "Eiffel Tower" strongly
+            name_words = entity.canonical_name.split()
+
+            # Extract words from aliases too
+            alias_words = []
+            for alias in entity.aliases:
+                alias_words.extend(alias.split())
+
+            # Combine all searchable fields with name words emphasized
             text_parts = [
                 entity.canonical_name,
+                *name_words,  # Individual name components for better TF-IDF matching
                 *entity.aliases,
+                *alias_words,  # Individual alias components
                 *entity.polysemy_triggers,
                 *entity.clue_associations
             ]
