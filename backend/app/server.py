@@ -40,7 +40,7 @@ async def lifespan(app: FastAPI):
     """
     # Startup
     start_time = time.time()
-    logger.info("🚀 JackpotPredict API starting up...")
+    logger.info("[STARTUP] JackpotPredict API starting up...")
 
     try:
         # Initialize entity registry (singleton pattern handled in routes.py)
@@ -50,30 +50,30 @@ async def lifespan(app: FastAPI):
         entity_count = registry.get_entity_count()
         startup_time = time.time() - start_time
 
-        logger.info(f"✅ Entity registry loaded: {entity_count} entities")
-        logger.info(f"✅ Startup complete in {startup_time:.2f}s")
-        logger.info("📡 API server ready at http://localhost:8000")
-        logger.info("📚 API docs available at http://localhost:8000/docs")
+        logger.info(f"[OK] Entity registry loaded: {entity_count} entities")
+        logger.info(f"[OK] Startup complete in {startup_time:.2f}s")
+        logger.info("[READY] API server ready at http://localhost:8000")
+        logger.info("[DOCS] API docs available at http://localhost:8000/docs")
 
     except Exception as e:
-        logger.error(f"❌ Startup failed: {e}", exc_info=True)
+        logger.error(f"[ERROR] Startup failed: {e}", exc_info=True)
         raise
 
     yield
 
     # Shutdown
-    logger.info("🛑 JackpotPredict API shutting down...")
+    logger.info("[SHUTDOWN] JackpotPredict API shutting down...")
     try:
         # Close entity registry connection
         from app.api.routes import _entity_registry
         if _entity_registry:
             _entity_registry.close()
-            logger.info("✅ Entity registry closed")
+            logger.info("[OK] Entity registry closed")
 
-        logger.info("✅ Shutdown complete")
+        logger.info("[OK] Shutdown complete")
 
     except Exception as e:
-        logger.error(f"❌ Shutdown error: {e}", exc_info=True)
+        logger.error(f"[ERROR] Shutdown error: {e}", exc_info=True)
 
 
 # Create FastAPI application

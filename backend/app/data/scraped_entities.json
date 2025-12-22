@@ -1,0 +1,427 @@
+{
+  "metadata": {
+    "scraped_at": "2025-12-21T23:22:31.224693",
+    "total_entities": 83,
+    "sources": [
+      "manual",
+      "wikipedia"
+    ]
+  },
+  "entities": [
+    {
+      "name": "Monopoly",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Scrabble",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Chess",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Checkers",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Clue",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Risk",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Trivial Pursuit",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Jenga",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Connect Four",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Battleship",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Oreo",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "M&M's",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Skittles",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Pizza",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Hamburger",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Hot Dog",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Birthday Cake",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Ice Cream",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Popcorn",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "S'mores",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "French Fries",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Donut",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Nike",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Apple",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Coca-Cola",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "McDonald's",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Starbucks",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Amazon",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Google",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Disney",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Netflix",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Bowling",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Golf",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Basketball",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Football",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Baseball",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Tennis",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Swimming",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Pickleball",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Statue of Liberty",
+      "category": "place",
+      "source": "manual"
+    },
+    {
+      "name": "Eiffel Tower",
+      "category": "place",
+      "source": "manual"
+    },
+    {
+      "name": "Mt. Rushmore",
+      "category": "place",
+      "source": "manual"
+    },
+    {
+      "name": "Grand Canyon",
+      "category": "place",
+      "source": "manual"
+    },
+    {
+      "name": "Hollywood",
+      "category": "place",
+      "source": "manual"
+    },
+    {
+      "name": "Times Square",
+      "category": "place",
+      "source": "manual"
+    },
+    {
+      "name": "Golden Gate Bridge",
+      "category": "place",
+      "source": "manual"
+    },
+    {
+      "name": "Big Ben",
+      "category": "place",
+      "source": "manual"
+    },
+    {
+      "name": "Great Wall of China",
+      "category": "place",
+      "source": "manual"
+    },
+    {
+      "name": "Barbie",
+      "category": "person",
+      "source": "manual"
+    },
+    {
+      "name": "Mickey Mouse",
+      "category": "person",
+      "source": "manual"
+    },
+    {
+      "name": "Santa Claus",
+      "category": "person",
+      "source": "manual"
+    },
+    {
+      "name": "Superman",
+      "category": "person",
+      "source": "manual"
+    },
+    {
+      "name": "Batman",
+      "category": "person",
+      "source": "manual"
+    },
+    {
+      "name": "Spider-Man",
+      "category": "person",
+      "source": "manual"
+    },
+    {
+      "name": "Elsa",
+      "category": "person",
+      "source": "manual"
+    },
+    {
+      "name": "Harry Potter",
+      "category": "person",
+      "source": "manual"
+    },
+    {
+      "name": "Taylor Swift",
+      "category": "person",
+      "source": "manual"
+    },
+    {
+      "name": "LeBron James",
+      "category": "person",
+      "source": "manual"
+    },
+    {
+      "name": "Beyonc\u00e9",
+      "category": "person",
+      "source": "manual"
+    },
+    {
+      "name": "Tom Cruise",
+      "category": "person",
+      "source": "manual"
+    },
+    {
+      "name": "Oprah Winfrey",
+      "category": "person",
+      "source": "manual"
+    },
+    {
+      "name": "Michael Jordan",
+      "category": "person",
+      "source": "manual"
+    },
+    {
+      "name": "Paris Hilton",
+      "category": "person",
+      "source": "manual"
+    },
+    {
+      "name": "Titanic",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Star Wars",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "The Lion King",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Frozen",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Umbrella",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Piano",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Bicycle",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Camera",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Clock",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Mirror",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Candle",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Book",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Toothbrush",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Refrigerator",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Television",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Microwave",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Elephant",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Lion",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Tiger",
+      "category": "thing",
+      "source": "manual"
+    },
+    {
+      "name": "Eagle",
+      "category": "thing",
+      "source": "manual"
+    }
+  ]
+}

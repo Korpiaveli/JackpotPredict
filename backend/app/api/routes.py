@@ -34,6 +34,7 @@ from app.api.models import (
 from app.core.jackpot_predict import JackpotPredict
 from app.core.spelling_validator import SpellingValidator
 from app.core.entity_registry import EntityRegistry
+from app.core.clue_analyzer import ClueAnalyzer
 
 logger = logging.getLogger(__name__)
 
@@ -45,6 +46,7 @@ _sessions: Dict[str, JackpotPredict] = {}
 _session_timestamps: Dict[str, datetime] = {}
 _server_start_time = datetime.now()
 _entity_registry: Optional[EntityRegistry] = None
+_clue_analyzer: Optional[ClueAnalyzer] = None
 _spelling_validator: Optional[SpellingValidator] = None
 
 # Session expiry time (5 minutes)
@@ -58,6 +60,15 @@ def get_entity_registry() -> EntityRegistry:
         _entity_registry = EntityRegistry()
         logger.info(f"Entity registry initialized with {_entity_registry.get_entity_count()} entities")
     return _entity_registry
+
+
+def get_clue_analyzer() -> ClueAnalyzer:
+    """Get or initialize the clue analyzer singleton."""
+    global _clue_analyzer
+    if _clue_analyzer is None:
+        _clue_analyzer = ClueAnalyzer()
+        logger.info("Clue analyzer initialized")
+    return _clue_analyzer
 
 
 def get_spelling_validator() -> SpellingValidator:
@@ -106,7 +117,10 @@ def get_or_create_session(session_id: Optional[str] = None) -> tuple[str, Jackpo
     # Create new session if no ID provided or session doesn't exist
     if session_id is None or session_id not in _sessions:
         new_session_id = str(uuid.uuid4())
-        predictor = JackpotPredict()
+        predictor = JackpotPredict(
+            entity_registry=get_entity_registry(),
+            clue_analyzer=get_clue_analyzer()
+        )
         _sessions[new_session_id] = predictor
         _session_timestamps[new_session_id] = datetime.now()
         logger.info(f"Created new session: {new_session_id}")
@@ -147,7 +161,7 @@ async def predict(request: ClueRequest) -> PredictionResponse:
             Prediction(
                 rank=i + 1,
                 answer=pred.answer,
-                confidence=pred.confidence,
+                confidence=pred.confidence / 100.0,  # Convert from percentage (0-100) to fraction (0-1)
                 category=EntityCategory(pred.category),
                 reasoning=pred.reasoning
             )
@@ -314,15 +328,4 @@ async def health() -> HealthResponse:
         )
 
 
-# Exception handler for validation errors
-@router.exception_handler(HTTPException)
-async def http_exception_handler(request, exc: HTTPException):
-    """Custom exception handler for HTTP errors."""
-    return JSONResponse(
-        status_code=exc.status_code,
-        content=ErrorResponse(
-            error=exc.__class__.__name__,
-            message=exc.detail,
-            detail=None
-        ).model_dump()
-    )
+# Exception handlers are now in server.py

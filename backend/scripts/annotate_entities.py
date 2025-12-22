@@ -316,7 +316,7 @@ async def main():
 
     # Load input entities
     if not args.input.exists():
-        print(f"❌ Input file not found: {args.input}")
+        print(f"ERROR: Input file not found: {args.input}")
         return
 
     with open(args.input, 'r', encoding='utf-8') as f:
@@ -338,17 +338,17 @@ async def main():
     # Initialize annotator
     try:
         if args.use_ollama:
-            print(f"\n🤖 Using Ollama (local) with model: {args.ollama_model}")
+            print(f"\n[AI] Using Ollama (local) with model: {args.ollama_model}")
             print("Make sure Ollama is running: ollama serve")
             annotator = EntityAnnotator(
                 use_ollama=True,
                 ollama_model=args.ollama_model
             )
         else:
-            print(f"\n🤖 Using Claude API")
+            print(f"\n[AI] Using Claude API")
             annotator = EntityAnnotator()
     except ValueError as e:
-        print(f"❌ {e}")
+        print(f"ERROR: {e}")
         if not args.use_ollama:
             print("Set ANTHROPIC_API_KEY environment variable or use .env file")
             print("Or use --use-ollama flag for free local annotation")
@@ -358,13 +358,13 @@ async def main():
         # Annotate entities
         model_name = args.ollama_model if args.use_ollama else "Claude API"
         est_time_per_entity = 10 if args.use_ollama else 5
-        print(f"\n🤖 Starting AI annotation with {model_name}...")
+        print(f"\n[AI] Starting AI annotation with {model_name}...")
         print(f"Entities to annotate: {len(entities)}")
         print(f"Estimated time: ~{len(entities) * est_time_per_entity} seconds (with rate limiting)")
         if args.use_ollama:
-            print(f"💰 Cost: $0 (100% local)")
+            print(f"Cost: $0 (100% local)")
         else:
-            print(f"💰 Estimated cost: ${len(entities) * 0.005:.2f}")
+            print(f"Estimated cost: ${len(entities) * 0.005:.2f}")
         print()
 
         annotated = await annotator.annotate_batch(entities, max_concurrent=3)
@@ -382,7 +382,7 @@ async def main():
             }, f, indent=2)
 
         successful = sum(1 for e in annotated if e.get("annotated", False))
-        print(f"\n✅ Annotation complete!")
+        print(f"\n[SUCCESS] Annotation complete!")
         print(f"Successfully annotated: {successful}/{len(annotated)}")
         print(f"Saved to: {args.output}")
 

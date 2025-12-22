@@ -1,0 +1,2112 @@
+{
+  "metadata": {
+    "annotated_at": "2025-12-21T23:50:59.914619",
+    "total_entities": 83,
+    "successfully_annotated": 82
+  },
+  "entities": [
+    {
+      "name": "Google",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "search",
+        "alphabet",
+        "map",
+        "book",
+        "engine"
+      ],
+      "clue_associations": [
+        "internet giant",
+        "Larry Page's baby",
+        "algorithm",
+        " Mountain View",
+        "Android creator",
+        " Chrome users rejoice"
+      ],
+      "aliases": [
+        "Goggle",
+        "Goog"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Michael Jordan",
+      "category": "person",
+      "source": "manual",
+      "polysemy_triggers": [
+        "jumpman",
+        "winning streak",
+        "air",
+        "flight risk",
+        "sky's the limit"
+      ],
+      "clue_associations": [
+        "basketball legend",
+        "Chicago Bulls",
+        "Air Jordan sneakers",
+        "sixth man",
+        "greatest of all time",
+        "Michael vs. Larry",
+        "three-peat"
+      ],
+      "aliases": [
+        "MJ",
+        "Air Jordan"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Disney",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "mickey mouse club",
+        "snow white storybook",
+        "magic kingdom",
+        "villainous characters",
+        "princess"
+      ],
+      "clue_associations": [
+        "enchanted forest",
+        "prince charming",
+        "be our guest",
+        "cinderella's coach",
+        "happily ever after",
+        "fairy tale world",
+        "disneyland magic"
+      ],
+      "aliases": [
+        "The Happiest Place on Earth",
+        "Mickey Mouse Enterprises",
+        "Disney Studios"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Paris Hilton",
+      "category": "person",
+      "source": "manual",
+      "polysemy_triggers": [
+        "hot hotel heiress",
+        "socialite spotlight",
+        "celebrity scandal",
+        "simple living TV star",
+        "hotel heir"
+      ],
+      "clue_associations": [
+        "reality TV fame",
+        "2000s celebrity culture",
+        "that's hot gossip",
+        "DJing skills",
+        "heir to a fortune"
+      ],
+      "aliases": [
+        "Paris Whitney Hilton"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Netflix",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "streaming service",
+        "red envelope",
+        "binge-watching",
+        "content creator",
+        "monthly subscription"
+      ],
+      "clue_associations": [
+        "original content",
+        "scripted series",
+        "unlimited access",
+        "online originals",
+        "new releases weekly"
+      ],
+      "aliases": [
+        "NFlix",
+        "Netflix Inc."
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Titanic",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "ocean liner",
+        "movie disaster",
+        "ship of dreams",
+        "iceberg",
+        "unsinkable"
+      ],
+      "clue_associations": [
+        "sinking feeling",
+        "maritime tragedy",
+        "Leo's film debut",
+        "cursed voyage",
+        "unforgettable epic",
+        "Jack and Rose's tale"
+      ],
+      "aliases": [
+        "Titan",
+        "The Ship of Dreams"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Chess",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "move",
+        "checkmate",
+        "board game",
+        "strategic",
+        "opening"
+      ],
+      "clue_associations": [
+        "strategy game",
+        "world championship",
+        "Elo rating system",
+        "analysis paralysis",
+        " checkered past"
+      ],
+      "aliases": [
+        "chess game",
+        "the royal game"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Bowling",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "strike",
+        "pin down",
+        "roll out",
+        "spare time",
+        "knockdown"
+      ],
+      "clue_associations": [
+        "gutter instincts",
+        "pinpoint accuracy",
+        "a strike in the right direction",
+        "foul play",
+        "in the black",
+        "split decision",
+        "rolling with the punches"
+      ],
+      "aliases": [
+        "tenpins",
+        "bowling alley",
+        "strike zone"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Star Wars",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "lightsaber",
+        "space battle",
+        "jedi master"
+      ],
+      "clue_associations": [
+        "galactic saga",
+        "geek icon",
+        "may the force",
+        "yoda's home planet",
+        "a long time ago in a galaxy far away",
+        "trench warfare",
+        "death star"
+      ],
+      "aliases": [
+        "SW",
+        "Star Wars Franchise",
+        "A Galaxy Far, Far Away..."
+      ],
+      "annotated": true
+    },
+    {
+      "name": "The Lion King",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "king of beasts",
+        "disney classic",
+        "pride rock",
+        "simba's story",
+        "circle of life"
+      ],
+      "clue_associations": [
+        "disney animation",
+        "african savanna",
+        "simba's journey",
+        "hakuna matata",
+        "timon and pumbaa"
+      ],
+      "aliases": [
+        "lion king movie",
+        "tlk",
+        "simba"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Golf",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "links",
+        "clubbing",
+        "par",
+        "birdie",
+        "fore"
+      ],
+      "clue_associations": [
+        "strokes of genius",
+        "links courses",
+        "green fees",
+        "swing into action",
+        "the Masters tournament",
+        "tiger woods",
+        "major championships"
+      ],
+      "aliases": [
+        "golfsport",
+        "links golf",
+        "nine holes"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Scrabble",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "board game",
+        "word game",
+        "dictionary",
+        "vocabulary",
+        "linguistics"
+      ],
+      "clue_associations": [
+        "wordplay",
+        "linguistic puzzle",
+        "board game staple",
+        "nerd culture",
+        "anagram fanatics",
+        "game night classic",
+        "competitive wordplay"
+      ],
+      "aliases": [
+        "Scrabble board game",
+        "Word Game Showdown",
+        "Language Lover's Delight"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Checkers",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "check",
+        "board",
+        "piece",
+        "game",
+        "strategy"
+      ],
+      "clue_associations": [
+        "move forward",
+        "king me",
+        "jump over",
+        "corner piece",
+        "captured by",
+        "end goal",
+        "classic game"
+      ],
+      "aliases": [
+        "Chequers",
+        "English Draughts"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Frozen",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "frozen food",
+        "cold spell",
+        "ice queen",
+        "blockbuster movie",
+        "chilling performance"
+      ],
+      "clue_associations": [
+        "Elsa's powers",
+        "snowflake formation",
+        "summer replacement",
+        "Disney princess",
+        "Let It Go soundtrack"
+      ],
+      "aliases": [
+        "The Snow Queen",
+        "Snow White's cousin",
+        "Frozen Franchise"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Football",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "ball",
+        "field day",
+        "end zone",
+        "quarterback",
+        "touchdown"
+      ],
+      "clue_associations": [
+        "gridiron",
+        "fourth down",
+        "Super Bowl",
+        "Monday Night Football",
+        "two-minute warning",
+        "stadium",
+        "kickoff"
+      ],
+      "aliases": [
+        "Gridiron",
+        "The Beautiful Game",
+        "American Footy"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Umbrella",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "shelter from the storm",
+        "rainy days",
+        "protection from UV",
+        "fashion accessory",
+        "stormy weather"
+      ],
+      "clue_associations": [
+        "weather phenomena",
+        "James Bond gadget",
+        "Beatrix Potter's friend",
+        "literary reference",
+        "British author",
+        "Mary Poppins' favorite item"
+      ],
+      "aliases": [
+        "Brolly",
+        "Gore-Tex",
+        "Parasol"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Baseball",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "ballad",
+        "diamond",
+        "strike",
+        "pitch",
+        "home"
+      ],
+      "clue_associations": [
+        "America's Pastime",
+        "spring training",
+        "the crack of the bat",
+        "a home run",
+        "Umpire's call",
+        "base running",
+        "grand slam"
+      ],
+      "aliases": [
+        "Kanga Cricket",
+        "Rounders",
+        "Hardball"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Clue",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "enigmatic",
+        "mystery",
+        "whodunit",
+        "sleuth",
+        "riddle"
+      ],
+      "clue_associations": [
+        "Agatha Christie",
+        "Poirot",
+        "Miss Marple",
+        "Murder on the Orient Express",
+        "who did it",
+        "case cracked"
+      ],
+      "aliases": [
+        "Cluedo",
+        "Murder Mystery Board Game",
+        "Famous Detective Game"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Tennis",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "ace",
+        "serve",
+        "racket",
+        "volley",
+        "grand slam"
+      ],
+      "clue_associations": [
+        "grass court",
+        " Wimbledon champion",
+        "French Open winner",
+        "Davis Cup team",
+        "backhand special"
+      ],
+      "aliases": [
+        "Tennis",
+        "Tourney"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Piano",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "black",
+        "white",
+        "keys",
+        "strings",
+        "instrument"
+      ],
+      "clue_associations": [
+        "sheet music",
+        "Musical theatre",
+        "Classical music",
+        "Digital music production",
+        "Recital performance"
+      ],
+      "aliases": [
+        "Pianoforte",
+        "Piano Forte",
+        "Upright Piano"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Risk",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "board game",
+        "betrayal",
+        "gamble",
+        "strategy",
+        "conquer"
+      ],
+      "clue_associations": [
+        "game night",
+        "world domination",
+        "Axis powers",
+        "diplomacy",
+        "European conflict",
+        "1930s politics"
+      ],
+      "aliases": [
+        "Risk game",
+        "Lippincott's Game of Risk"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Trivial Pursuit",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "pursuit",
+        "game show",
+        "trivial",
+        "chase",
+        "hobby"
+      ],
+      "clue_associations": [
+        "board game",
+        "1980s classic",
+        "family fun",
+        "question mark",
+        "wedge-shaped"
+      ],
+      "aliases": [
+        "TP",
+        "Trivia Pursuit Game"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Swimming",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "dive",
+        "strokes",
+        "pool",
+        "splish splash",
+        "deep end"
+      ],
+      "clue_associations": [
+        "olympics",
+        "Michael Phelps",
+        "summer games",
+        "cannonball",
+        "lap records",
+        "FINA",
+        "stroke rates"
+      ],
+      "aliases": [
+        "swim",
+        "aquatics"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Bicycle",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "pedal",
+        "wheel",
+        "spokesperson",
+        "rider",
+        "chain reaction"
+      ],
+      "clue_associations": [
+        "two-wheeled friend",
+        "cycling event",
+        "transportation revolution",
+        "exercise routine",
+        "freedom on wheels",
+        "tour de force",
+        "spinning story"
+      ],
+      "aliases": [
+        "bike",
+        "cycle",
+        "velo",
+        "cycles"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Jenga",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "balance",
+        "removal",
+        "physical challenge",
+        "stacked",
+        "wooden"
+      ],
+      "clue_associations": [
+        "table top game",
+        "party classic",
+        "famous fumbles",
+        "garden party",
+        "gentle giant game"
+      ],
+      "aliases": [],
+      "annotated": true
+    },
+    {
+      "name": "Pickleball",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "pickle",
+        "ball",
+        "game",
+        "racquet",
+        "volley"
+      ],
+      "clue_associations": [
+        "table tennis rival",
+        "outdoor sport",
+        "tennis-like game",
+        "yard fun",
+        "senior citizen activity"
+      ],
+      "aliases": [],
+      "annotated": true
+    },
+    {
+      "name": "Camera",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "eye",
+        "viewfinder",
+        "lens",
+        "shot",
+        "focus"
+      ],
+      "clue_associations": [
+        "film industry",
+        "movie magic",
+        "photography",
+        "visuals",
+        "zoom in",
+        "capturing moments"
+      ],
+      "aliases": [
+        "camcorder",
+        "videocamera",
+        "movie camera"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Clock",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [],
+      "clue_associations": [],
+      "aliases": [],
+      "annotated": false
+    },
+    {
+      "name": "Connect Four",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "four seasons",
+        "board game",
+        "checkmate",
+        "winning combination",
+        "grid system"
+      ],
+      "clue_associations": [
+        "towers of power",
+        "vertical strategy",
+        "drop it like it's hot",
+        "two players one goal",
+        "chess in a box"
+      ],
+      "aliases": [
+        "CF",
+        "4-in-a-row"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Statue of Liberty",
+      "category": "place",
+      "source": "manual",
+      "polysemy_triggers": [
+        "freedom",
+        "island",
+        "liberty",
+        "iconic",
+        "symbol"
+      ],
+      "clue_associations": [
+        "new york harbor",
+        "france gift",
+        "bedrock landmark",
+        "pedestal fame",
+        "torch bearer",
+        "national monument",
+        "world wonder"
+      ],
+      "aliases": [
+        "Statue of Liberty Island",
+        "Lady Liberty",
+        "The Lady"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Mirror",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "reflect",
+        "image",
+        "glass",
+        "silhouette",
+        "dual"
+      ],
+      "clue_associations": [
+        "self-portrait",
+        "vanity",
+        "fashion accessory",
+        "magical portal",
+        "reality TV star's obsession"
+      ],
+      "aliases": [
+        "looking glass",
+        "glass surface"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Eiffel Tower",
+      "category": "place",
+      "source": "manual",
+      "polysemy_triggers": [
+        "iron work",
+        "Paris attraction",
+        "love lock landmark",
+        "Gustave's pride",
+        "city high"
+      ],
+      "clue_associations": [
+        "famous ironwork",
+        "French icon",
+        "engineering feat",
+        "Romance in the city",
+        "Built for an event",
+        "International symbol of France"
+      ],
+      "aliases": [
+        "Eiffel Tower, Paris",
+        "Tour Eiffel",
+        "Iron Lady"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Battleship",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "shipyard",
+        "vessel",
+        "military operation",
+        "naval warfare",
+        "sea battle"
+      ],
+      "clue_associations": [
+        "WWII battleship",
+        "destroyer of enemy ships",
+        "navy game strategy",
+        "sinking the competition",
+        "battle at sea",
+        "ship of war",
+        "military might"
+      ],
+      "aliases": [
+        "Battleships (game)",
+        "Naval Warfare Game",
+        "Shipyard Game",
+        "Sea Battle"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Oreo",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "twist of fate",
+        "ring leader",
+        "cookie cutter",
+        "wafers of wisdom",
+        "filling a void"
+      ],
+      "clue_associations": [
+        "double stuff",
+        "cream filling",
+        "chocolate sandwich",
+        "twin treats",
+        "classic snack",
+        " Nabisco favorite"
+      ],
+      "aliases": [
+        "Oreos"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Candle",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "wax",
+        "light source",
+        "romance",
+        "burning issue",
+        "melting point"
+      ],
+      "clue_associations": [
+        "wedding traditions",
+        "scented room",
+        "votive",
+        "flickering flame",
+        "diy decoration",
+        "cozy atmosphere"
+      ],
+      "aliases": [
+        "candles",
+        "taper"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Mt. Rushmore",
+      "category": "place",
+      "source": "manual",
+      "polysemy_triggers": [
+        "mountain high",
+        "presidential seal",
+        "face value",
+        "sculpted",
+        "rocky terrain"
+      ],
+      "clue_associations": [
+        "geological wonder",
+        "American icons",
+        "South Dakota landmark",
+        " presidential monument",
+        "shaped by time",
+        " granite surface",
+        "iconic carving"
+      ],
+      "aliases": [
+        "Mount Rushmore",
+        "Rushmore",
+        "the Monolith"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Book",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "shelf",
+        "cover story",
+        "read between the lines",
+        "best seller",
+        "novel approach"
+      ],
+      "clue_associations": [
+        "book club",
+        "fictional characters",
+        "classic novels",
+        "author's pen name",
+        "book reviews",
+        "library catalog",
+        "page turner"
+      ],
+      "aliases": [
+        "novel",
+        "opus",
+        "masterpiece"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "M&M's",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "melts in your mouth",
+        "colorful candies",
+        "retail stores",
+        "marketing campaigns",
+        "food fights"
+      ],
+      "clue_associations": [
+        "colorful treats",
+        "iconic candy",
+        "chocolate brands",
+        "spokes-characters",
+        "fun-sized fun"
+      ],
+      "aliases": [
+        "M&Ms",
+        "M and Ms",
+        "Eminem's candies"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Grand Canyon",
+      "category": "place",
+      "source": "manual",
+      "polysemy_triggers": [
+        "deep gorge",
+        "natural wonder",
+        "Arizona attraction",
+        " Colorado River landmark",
+        "US treasure"
+      ],
+      "clue_associations": [
+        "one of the wonders of the world",
+        "a steep price to pay",
+        "a great divide",
+        "where the road ends",
+        "over a mile deep",
+        " carved by time and water",
+        "famous for its vistas"
+      ],
+      "aliases": [
+        "Grand Canyon National Park",
+        "GCNP",
+        "The Grand"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Toothbrush",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "brush up",
+        "clean sweep",
+        "morning routine",
+        "dental care",
+        "personal hygiene"
+      ],
+      "clue_associations": [
+        "oral health",
+        "daily habit",
+        "plaque and tartar",
+        "fluoride benefits",
+        "flossing technique",
+        "ADA guidelines"
+      ],
+      "aliases": [
+        "Tooth Brush",
+        "Dental Brush"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Skittles",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "sweet",
+        "rainbow",
+        "colors",
+        "taste",
+        "candy"
+      ],
+      "clue_associations": [
+        "fruit flavors",
+        "kids' snack",
+        "Halloween treat",
+        "sugar rush",
+        "chocolatey",
+        "wriggles tongue"
+      ],
+      "aliases": [
+        "Skittles",
+        "Sour Skittles",
+        "Sweet Skittles"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Hollywood",
+      "category": "place",
+      "source": "manual",
+      "polysemy_triggers": [
+        "red carpet",
+        "star-studded",
+        "movie magic",
+        "behind the scenes",
+        "silver screen"
+      ],
+      "clue_associations": [
+        "Tinseltown",
+        "Walk of Fame",
+        "A-list celebrities",
+        "Premiere night",
+        "Golden Globes",
+        "Behind-the-scenes drama"
+      ],
+      "aliases": [
+        "Hollywood Hills",
+        "Tinsel Town",
+        "La-La Land"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Pizza",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "dough",
+        "topping",
+        "pie",
+        "slice",
+        "cheesy"
+      ],
+      "clue_associations": [
+        "Italian food",
+        "deli favorite",
+        "party platter",
+        "greek god's snack",
+        "Friday night dinner",
+        "late-night craving",
+        "New York classic"
+      ],
+      "aliases": [
+        "pizza pie",
+        "pita",
+        "flatbread"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Times Square",
+      "category": "place",
+      "source": "manual",
+      "polysemy_triggers": [
+        "square deal",
+        "advertising hub",
+        "square footage",
+        "big lights",
+        "grid system"
+      ],
+      "clue_associations": [
+        "New Year's Eve celebrations",
+        "Broadway shows",
+        "billboards and signage",
+        "Elvis performances",
+        "Times Square Ball drop"
+      ],
+      "aliases": [
+        "The Crossroads of the World",
+        "The Great White Way",
+        "New York City's Times Square"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Refrigerator",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "cool",
+        "chill",
+        "icebox",
+        "frosty",
+        "fresh"
+      ],
+      "clue_associations": [
+        "kitchen staple",
+        "coolest feature",
+        " appliance",
+        "keep it cold",
+        "smart fridge",
+        "food storage",
+        "household necessity"
+      ],
+      "aliases": [
+        "fridge",
+        "icebox",
+        "cold storage unit"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Television",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "screen time",
+        "remote control",
+        "channel surfing",
+        "picture perfect",
+        "viewership"
+      ],
+      "clue_associations": [
+        "shows to stay home for",
+        "couch potatoes' best friend",
+        "entertainment news",
+        "pop culture phenomenon",
+        "binge-watching"
+      ],
+      "aliases": [
+        "TV",
+        "teevee"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Golden Gate Bridge",
+      "category": "place",
+      "source": "manual",
+      "polysemy_triggers": [
+        "gate",
+        "bridge",
+        "gold",
+        "span",
+        "iconic"
+      ],
+      "clue_associations": [
+        "San Francisco landmark",
+        "wire suspension wonder",
+        "toll bridge",
+        "engineering marvel",
+        "road to nowhere",
+        "California dreamin'",
+        "Pacific coast icon"
+      ],
+      "aliases": [
+        "Golden Gate",
+        "GG Bridge"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Hamburger",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "beefy",
+        "patty",
+        "bun",
+        "sandwich",
+        "fast food"
+      ],
+      "clue_associations": [
+        "juicy patty",
+        "condiment overload",
+        "drive-thru favorite",
+        "gourmet variation",
+        "classic combo",
+        "ballpark snack",
+        "breakfast option"
+      ],
+      "aliases": [
+        "Hammy",
+        "Burger",
+        "Patty Melt"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Big Ben",
+      "category": "place",
+      "source": "manual",
+      "polysemy_triggers": [
+        "timepiece",
+        "clock tower",
+        "London landmark",
+        "big event",
+        "great size"
+      ],
+      "clue_associations": [
+        "London Eye view",
+        "palace proximity",
+        "chimes ringing",
+        "Elizabethan era",
+        "famous clock strikes"
+      ],
+      "aliases": [
+        "Big Ben Clock",
+        "House of Parliament"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Microwave",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "wave",
+        "heat up",
+        "cook",
+        "defrost",
+        "nuclear"
+      ],
+      "clue_associations": [
+        "kitchen essential",
+        "leftover saver",
+        "TV dinner",
+        "fast food",
+        "science experiment gone wrong",
+        "50s innovation",
+        "convenience appliance"
+      ],
+      "aliases": [
+        "Microwave Oven, MWO"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Hot Dog",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "bun",
+        "frankly",
+        "top dog",
+        "hot mess",
+        "condiment"
+      ],
+      "clue_associations": [
+        "ballpark food",
+        "wiener wonder",
+        "grilling out",
+        "ketchup or mustard",
+        "summer snack",
+        "fair fare",
+        "tailgating treat"
+      ],
+      "aliases": [
+        "wiener",
+        "frank",
+        "dog"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Elephant",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "memory",
+        "large ears",
+        "tusks",
+        "trunk show",
+        "pachyderm"
+      ],
+      "clue_associations": [
+        "savannah dwellers",
+        "big game hunters",
+        "circus acts",
+        "conservation efforts",
+        "Asian cultures"
+      ],
+      "aliases": [
+        "elephantidae",
+        "pachyderms"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Great Wall of China",
+      "category": "place",
+      "source": "manual",
+      "polysemy_triggers": [
+        "wall",
+        "china",
+        "long",
+        "fortress",
+        " ancient"
+      ],
+      "clue_associations": [
+        "marathon walk",
+        "imperial history",
+        "dragon's path",
+        "Great Barrier alternative",
+        "UNESCO world heritage",
+        " longest man-made structure",
+        " Beijing must-see"
+      ],
+      "aliases": [
+        "The Great Wall",
+        "Long Wall of China",
+        "Chinese Fortification"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Birthday Cake",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "treat",
+        "celebration",
+        "flavor",
+        "party",
+        "sweet"
+      ],
+      "clue_associations": [
+        "chocolate delight",
+        "frosting on top",
+        "kid's birthday",
+        "candy bar",
+        "icing on the cake",
+        "cupcake craze",
+        "dessert tradition"
+      ],
+      "aliases": [
+        "birthday dessert",
+        "sweet treat",
+        "party food"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Ice Cream",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "cool treat",
+        "brain freeze",
+        "churn out",
+        "frosty reception",
+        "sweet deal"
+      ],
+      "clue_associations": [
+        "summertime pleasure",
+        "colorful flavors",
+        "scoops and toppings",
+        "ice, ice, baby!",
+        "a cold comfort"
+      ],
+      "aliases": [
+        "ice cream cone",
+        "sundae",
+        "gelato"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Barbie",
+      "category": "person",
+      "source": "manual",
+      "polysemy_triggers": [
+        "dollhouse",
+        "fashionista",
+        "iconic blonde",
+        "toys and playsets",
+        "plastic perfection"
+      ],
+      "clue_associations": [
+        "childhood favorite",
+        "Ken doll companion",
+        "Mattel brand",
+        "feminist icon controversy",
+        "beach and vacation themes",
+        "Malibu mansion"
+      ],
+      "aliases": [
+        "Barbie Doll",
+        "Babs",
+        "Malibu Barbie"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Lion",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "king of beasts",
+        "Safari vehicle",
+        "Prada logo",
+        "regal crown",
+        "roar with laughter"
+      ],
+      "clue_associations": [
+        "Pride lands",
+        "King of the jungle",
+        "Mane attraction",
+        "Roaring success",
+        "Wildlife reserve",
+        "Furry friends",
+        "Savannah sojourn"
+      ],
+      "aliases": [
+        "Panthera leo",
+        "Lioness",
+        "The Lion King"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Mickey Mouse",
+      "category": "person",
+      "source": "manual",
+      "polysemy_triggers": [
+        "mousepad",
+        "lab rat",
+        "iconic face",
+        "cartoon character",
+        "disneyland"
+      ],
+      "clue_associations": [
+        "disneyland",
+        "walt disney",
+        "minnie mouse",
+        "classic cartoons",
+        "sorcerer's apprentice"
+      ],
+      "aliases": [
+        "Mickey Mouse",
+        "The Main Mouse"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Popcorn",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "snack time",
+        "movie night",
+        "kernel of truth",
+        "popped up",
+        "corny joke"
+      ],
+      "clue_associations": [
+        "cineplex staple",
+        "flavorful topping",
+        "buttery delight",
+        "salty snack",
+        "at the movies",
+        "yum factor"
+      ],
+      "aliases": [
+        "pop corn",
+        "poppies"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Tiger",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "stripes",
+        "fierce competitor",
+        "predator",
+        "beastly",
+        "big cat"
+      ],
+      "clue_associations": [
+        "jungle animal",
+        "Indian symbol",
+        "Singapore's national animal",
+        "Disney movie hero",
+        "golf course hazard"
+      ],
+      "aliases": [
+        "Tigers",
+        "Panthera tigris",
+        "Bengal tiger"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Eagle",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "bird of prey",
+        "national symbol",
+        "freedom icon",
+        "flight simulator",
+        "sharp eye"
+      ],
+      "clue_associations": [
+        "feathered friends",
+        "American pride",
+        "airborne animals",
+        "flying high",
+        "talons and claws",
+        "soaring spirits"
+      ],
+      "aliases": [
+        "Bird of Prey",
+        "National Bird"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "S'mores",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "marshmallow treats",
+        "campfire delight",
+        "sweet indulgence",
+        "gathering food",
+        "toasted goodness"
+      ],
+      "clue_associations": [
+        "summer campfires",
+        "scout troop snacks",
+        "indoor s'mores bar",
+        "holiday party dessert",
+        "picnic favorites",
+        "camping staples"
+      ],
+      "aliases": [
+        "Smores",
+        "S'Mores",
+        "Campfire Treats"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Santa Claus",
+      "category": "person",
+      "source": "manual",
+      "polysemy_triggers": [
+        "jolly good fellow",
+        "winter wonderland",
+        "naughty or nice list",
+        "red suit",
+        "reindeer games"
+      ],
+      "clue_associations": [
+        "North Pole residence",
+        "toy delivery system",
+        "December 24th visitor",
+        "gift-giving expert",
+        "Sleigh all day",
+        "Snow much fun"
+      ],
+      "aliases": [
+        "St. Nicholas",
+        "Kris Kringle",
+        "Father Christmas"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Donut",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "holey",
+        "ring leader",
+        "treat",
+        "filling",
+        "doughnut"
+      ],
+      "clue_associations": [
+        "breakfast staple",
+        "pastry problem",
+        "tasty temptation",
+        "sweet indulgence",
+        "glazed over",
+        "flaky reputation"
+      ],
+      "aliases": [
+        "Doughnut",
+        "Donut",
+        "Beignet"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "French Fries",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "frites",
+        "chips",
+        "spuds",
+        "taters",
+        "fry"
+      ],
+      "clue_associations": [
+        "salty snack",
+        "French cuisine",
+        "dipping sauce",
+        "fast food favorite",
+        "ketchup companion",
+        "side dish",
+        "galette de pommes"
+      ],
+      "aliases": [
+        "Frites",
+        "Fries",
+        "Pomme Frites"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Superman",
+      "category": "person",
+      "source": "manual",
+      "polysemy_triggers": [
+        "supermodel",
+        "cape",
+        "man of steel",
+        "metropolis",
+        "kryptonite"
+      ],
+      "clue_associations": [
+        "DC Comics",
+        "Krypton origin story",
+        "iconic costume",
+        "superhero legend",
+        "up, up and away",
+        "truth, justice, and the American way",
+        "faster than a speeding bullet"
+      ],
+      "aliases": [
+        "Kal-El",
+        "Man of Steel",
+        "The Last Son of Krypton"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Batman",
+      "category": "person",
+      "source": "manual",
+      "polysemy_triggers": [
+        "dark knight",
+        "caped crusader",
+        "bat symbol",
+        "gotham city",
+        "robin's partner"
+      ],
+      "clue_associations": [
+        "gadgets and gizmos",
+        "villainous plots",
+        "bat signal",
+        "wayne family legacy",
+        "justice seeker"
+      ],
+      "aliases": [
+        "Bruce Wayne",
+        "The Caped Crusader",
+        "The Dark Knight"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Nike",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "Swoosh",
+        "Fly",
+        "Run",
+        "Just Do It",
+        "Air"
+      ],
+      "clue_associations": [
+        "sneaker culture",
+        "endorser Michael Jordan",
+        "world's largest athletic brand",
+        "popular among runners and athletes",
+        "high-end fashion collaboration",
+        " iconic 'waffles'",
+        " association with major sporting events"
+      ],
+      "aliases": [
+        "Nike",
+        "Niketown"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Spider-Man",
+      "category": "person",
+      "source": "manual",
+      "polysemy_triggers": [
+        "spider web",
+        "web sleuth",
+        "superhero",
+        "bug catcher",
+        "eight-legged"
+      ],
+      "clue_associations": [
+        "Marvel hero",
+        "New York City resident",
+        "swing from skyscrapers",
+        "science fiction inspiration",
+        "comic book icon",
+        "Peter Parker's alter ego"
+      ],
+      "aliases": [
+        "Spidey",
+        "Your Friendly Neighborhood Spider-Man",
+        "The Web-Slinger"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Elsa",
+      "category": "person",
+      "source": "manual",
+      "polysemy_triggers": [
+        "snow queen",
+        "ice princess",
+        "frozen moment",
+        "cold shoulder",
+        "thawing emotions"
+      ],
+      "clue_associations": [
+        "arenda's powers",
+        "queen of ice",
+        "disney icon",
+        "let it go",
+        "winter wonderland"
+      ],
+      "aliases": [
+        "Elsa the Snow Queen",
+        "Queen Elsa"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Apple",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "Forbidden fruit",
+        "Computer brand",
+        "Tree type",
+        "Company co-founder",
+        "New iPhone"
+      ],
+      "clue_associations": [
+        "Fruit of knowledge",
+        "Garden variety",
+        "Eden's choice",
+        "Newton's tech",
+        "Store logo"
+      ],
+      "aliases": [
+        "Big Apple",
+        "AAPL",
+        "iFruit"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Monopoly",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "flavors/editions",
+        "market control",
+        "property game",
+        "go around",
+        "cash rich"
+      ],
+      "clue_associations": [
+        "boardwalk",
+        "Chance and Community Chest",
+        "free parking",
+        "buying up",
+        "Scottie dog",
+        "monopolizing the market",
+        "Park Place"
+      ],
+      "aliases": [
+        "Monopoly Game",
+        "The Monopoly Board Game",
+        "Classic Monopoly"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Harry Potter",
+      "category": "person",
+      "source": "manual",
+      "polysemy_triggers": [
+        "boy who lived",
+        "magic school",
+        "scar-free",
+        "owl delivery",
+        "Hogwarts express"
+      ],
+      "clue_associations": [
+        "young wizard",
+        "British boarding school",
+        "flying broomsticks",
+        "quidditch players",
+        "Gryffindor bravery"
+      ],
+      "aliases": [
+        "Harry Potter",
+        "The Boy Who Lived"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Coca-Cola",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "classic",
+        "bubbly",
+        "contour",
+        "fountain",
+        "real thing"
+      ],
+      "clue_associations": [
+        "iconic logo",
+        "vending machine staple",
+        "summer drink",
+        "beverage wars",
+        "New Coke",
+        "world's best-selling",
+        "Atlanta origins"
+      ],
+      "aliases": [
+        "Coke",
+        "Cola"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Basketball",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "net",
+        "hoop",
+        "ball",
+        "fast break",
+        "full court"
+      ],
+      "clue_associations": [
+        "NBA",
+        "March Madness",
+        "Slam dunk",
+        "Full court press",
+        "Assist",
+        "Fastbreak",
+        "Court vision"
+      ],
+      "aliases": [
+        "Hoops",
+        "Cagers",
+        "The Game of Height"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Taylor Swift",
+      "category": "person",
+      "source": "manual",
+      "polysemy_triggers": [
+        "swift wind",
+        "speed",
+        "lyrics songstress",
+        "bird name",
+        "flying high"
+      ],
+      "clue_associations": [
+        "country roads",
+        "pop culture icon",
+        "grammys galore",
+        "cat lady",
+        "reputation repair"
+      ],
+      "aliases": [
+        "T-Swift",
+        "Taylor"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "McDonald's",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "golden arches",
+        "big mac attack",
+        "fries before guys",
+        "lunch break",
+        "fast food"
+      ],
+      "clue_associations": [
+        "breakfast staple",
+        "hamburglar's target",
+        " Ronald's hat",
+        "drive-thru delight",
+        "fancy fries"
+      ],
+      "aliases": [
+        "McD's",
+        "Micky D's"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "LeBron James",
+      "category": "person",
+      "source": "manual",
+      "polysemy_triggers": [
+        "king",
+        "champion",
+        "cavalry",
+        "lone ranger",
+        "hero"
+      ],
+      "clue_associations": [
+        "NBA record book",
+        "Cleveland Cavaliers",
+        "Miami Heat",
+        "The Decision",
+        "Four-Leaf Clover",
+        "King James",
+        " Akron Ohio"
+      ],
+      "aliases": [
+        "LBJ",
+        "The King"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Starbucks",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "star",
+        "beverage",
+        "coffee shop",
+        "addictive",
+        "ritual"
+      ],
+      "clue_associations": [
+        "Java culture",
+        "Seattle connection",
+        "overpriced coffee",
+        "morning routine",
+        "store with a siren logo",
+        "cup of joe"
+      ],
+      "aliases": [
+        "Starbuck",
+        "SBUX"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Beyonc\u00e9",
+      "category": "person",
+      "source": "manual",
+      "polysemy_triggers": [
+        "queen",
+        "iconic style",
+        "empowered woman",
+        "music sensation",
+        "cultural icon"
+      ],
+      "clue_associations": [
+        "pop music legend",
+        "tour de force",
+        "solo act",
+        "Grammy wins",
+        "wife of Jay-Z",
+        "pregnancy announcement",
+        "Lemonade album"
+      ],
+      "aliases": [
+        "Beyonce",
+        ""
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Amazon",
+      "category": "thing",
+      "source": "manual",
+      "polysemy_triggers": [
+        "river (Andes)",
+        "online marketplace",
+        "Alexa's owner",
+        "forest giant",
+        "founding father of the internet age"
+      ],
+      "clue_associations": [
+        "cloud computing",
+        "streaming service",
+        "dot com bubble",
+        "web services pioneer",
+        "Seattle tech giant",
+        "Prime example of innovation"
+      ],
+      "aliases": [
+        "Amazon Web Services (AWS)"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Oprah Winfrey",
+      "category": "person",
+      "source": "manual",
+      "polysemy_triggers": [
+        "talk show host",
+        "philanthropist",
+        "media mogul",
+        "book club",
+        "inspirational figure"
+      ],
+      "clue_associations": [
+        "harvesting knowledge",
+        "favorite things",
+        "book club founder",
+        "philanthropic efforts",
+        "television icon",
+        "golden globe winner",
+        "aunt jenny"
+      ],
+      "aliases": [
+        "the oprah",
+        "oprah gail winfrey"
+      ],
+      "annotated": true
+    },
+    {
+      "name": "Tom Cruise",
+      "category": "person",
+      "source": "manual",
+      "polysemy_triggers": [
+        "Maverick",
+        "Actor",
+        "Mission Impossible",
+        "Top Gun",
+        "Eternal"
+      ],
+      "clue_associations": [
+        "Hollywood A-lister",
+        "Blockbuster films",
+        "Falcon and Hawk movies",
+        "Globe-trotting adventures",
+        "Dramatic stunts",
+        "Risk-taking hero",
+        "Summer blockbuster"
+      ],
+      "aliases": [
+        "Tom Cruise",
+        "T.C.",
+        "The Top Gun"
+      ],
+      "annotated": true
+    }
+  ]
+}
