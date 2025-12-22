@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-white font-mono;
+  }
+}
+
+@layer components {
+  .confidence-bar {
+    @apply h-2 rounded-full transition-all duration-500;
+  }
+
+  .confidence-high {
+    @apply bg-primary;
+  }
+
+  .confidence-medium {
+    @apply bg-warning;
+  }
+
+  .confidence-low {
+    @apply bg-danger;
+  }
+
+  .clue-card {
+    @apply bg-gray-900 border border-gray-800 rounded-lg p-4;
+  }
+
+  .prediction-card {
+    @apply bg-gray-900 border-2 border-gray-800 rounded-xl p-6 hover:border-primary transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-background px-6 py-3 rounded-lg font-bold hover:bg-opacity-80 transition-all duration-200;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-800 text-white px-6 py-3 rounded-lg font-bold hover:bg-gray-700 transition-all duration-200;
+  }
+}
