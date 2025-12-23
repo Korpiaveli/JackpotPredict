@@ -1,0 +1,324 @@
+[
+  {
+    "category": "thing",
+    "clues": ["Savors many flavors", "Round and round", "A hostile takeover", "Trespassing will cost you", "Jail time can be dicey"],
+    "answer": "Monopoly",
+    "clue_solved_at": 3,
+    "key_insight": "'hostile takeover' is business term used in the board game; 'dicey' refers to dice"
+  },
+  {
+    "category": "person",
+    "clues": ["Back to the basics", "Loud with the crowd", "A sensation and a destination", "Her family is extremely hospitable", "Named after a romantic city? That's hot."],
+    "answer": "Paris Hilton",
+    "clue_solved_at": 4,
+    "key_insight": "'hospitable' -> Hilton Hotels -> Paris Hilton; 'That's hot' is her catchphrase"
+  },
+  {
+    "category": "place",
+    "clues": ["Natural but not natural", "Presidential faces", "South Dakota landmark", "Carved in granite", "Four founding fathers"],
+    "answer": "Mt. Rushmore",
+    "clue_solved_at": 2,
+    "key_insight": "'Presidential faces' directly references the monument's carvings"
+  },
+  {
+    "category": "place",
+    "clues": ["Named after Eiffel", "Iron lady of Paris", "Built for an exposition", "World's most visited paid monument", "1000 feet of French engineering"],
+    "answer": "Eiffel Tower",
+    "clue_solved_at": 1,
+    "key_insight": "First clue directly names the person (Gustave Eiffel) the tower is named after"
+  },
+  {
+    "category": "thing",
+    "clues": ["A long time ago", "The force is strong", "Dark side vs light", "Darth Vader's saga", "May the force be with you"],
+    "answer": "Star Wars",
+    "clue_solved_at": 3,
+    "key_insight": "'A long time ago' references the famous opening crawl; 'the force' is key terminology"
+  },
+  {
+    "category": "thing",
+    "clues": ["Unsinkable they said", "An icy ending", "Jack and Rose", "Heart of the ocean", "King of the world"],
+    "answer": "Titanic",
+    "clue_solved_at": 3,
+    "key_insight": "'Jack and Rose' are the movie characters; 'Heart of the ocean' is the famous necklace"
+  },
+  {
+    "category": "person",
+    "clues": ["Air time legend", "Six championship rings", "Number 23 forever", "Space Jam star", "His Airness from Chicago"],
+    "answer": "Michael Jordan",
+    "clue_solved_at": 3,
+    "key_insight": "'Air' relates to Air Jordan brand; 'His Airness' is his nickname"
+  },
+  {
+    "category": "thing",
+    "clues": ["Started in a garage", "Don't be evil", "Search for anything", "The number one search engine", "Googol inspired its name"],
+    "answer": "Google",
+    "clue_solved_at": 3,
+    "key_insight": "'Don't be evil' was their former motto; 'Googol' is the mathematical term inspiring the name"
+  },
+  {
+    "category": "place",
+    "clues": ["A gift from France", "Torch bearer", "Lady in the harbor", "Welcome to America", "Liberty enlightening the world"],
+    "answer": "Statue of Liberty",
+    "clue_solved_at": 2,
+    "key_insight": "'Lady in the harbor' and 'torch bearer' are descriptive; France gifted it to the US"
+  },
+  {
+    "category": "thing",
+    "clues": ["A magical kingdom", "Where dreams come true", "Started with a mouse", "The happiest place on Earth", "Walt's vision"],
+    "answer": "Disney",
+    "clue_solved_at": 3,
+    "key_insight": "'Started with a mouse' refers to Mickey Mouse; 'happiest place on Earth' is their slogan"
+  },
+  {
+    "category": "place",
+    "clues": ["Not actually golden", "San Francisco icon", "International orange", "Spans the bay", "Art deco beauty"],
+    "answer": "Golden Gate Bridge",
+    "clue_solved_at": 2,
+    "key_insight": "'International orange' is the actual color of the bridge, not gold"
+  },
+  {
+    "category": "person",
+    "clues": ["You get a car!", "The queen of daytime", "Book club sensation", "OWN network founder", "Chicago media mogul"],
+    "answer": "Oprah Winfrey",
+    "clue_solved_at": 2,
+    "key_insight": "'You get a car!' is her famous giveaway moment; OWN is her network"
+  },
+  {
+    "category": "person",
+    "clues": ["The King", "Hound dog howler", "Graceland resident", "Blue suede shoes", "Memphis legend"],
+    "answer": "Elvis Presley",
+    "clue_solved_at": 2,
+    "key_insight": "'The King' is his universal nickname; Graceland is his famous mansion"
+  },
+  {
+    "category": "person",
+    "clues": ["Relatively famous", "E equals MC squared", "Wild hair genius", "Princeton professor", "Nobel Prize physicist"],
+    "answer": "Albert Einstein",
+    "clue_solved_at": 2,
+    "key_insight": "'Relatively famous' is wordplay on relativity theory; E=MC² is his famous equation"
+  },
+  {
+    "category": "person",
+    "clues": ["Queen Bey", "Destiny's child", "Single ladies anthem", "Lemonade maker", "Houston superstar"],
+    "answer": "Beyonce",
+    "clue_solved_at": 2,
+    "key_insight": "'Queen Bey' is her nickname; Destiny's Child was her group"
+  },
+  {
+    "category": "person",
+    "clues": ["Finally got his Oscar", "King of the world (again)", "Wolf of Wall Street", "Environmental activist", "Dating models exclusively"],
+    "answer": "Leonardo DiCaprio",
+    "clue_solved_at": 3,
+    "key_insight": "'King of the world' references Titanic; famous for long Oscar wait"
+  },
+  {
+    "category": "place",
+    "clues": ["A big hole in the ground", "Arizona wonder", "Colorado River carved it", "Mile deep marvel", "Red rock majesty"],
+    "answer": "Grand Canyon",
+    "clue_solved_at": 2,
+    "key_insight": "'Arizona wonder' and 'Colorado River' are direct geographic hints"
+  },
+  {
+    "category": "place",
+    "clues": ["Sin City", "What happens here stays here", "Desert oasis of gambling", "The Strip", "Nevada neon lights"],
+    "answer": "Las Vegas",
+    "clue_solved_at": 2,
+    "key_insight": "'Sin City' is the famous nickname; 'What happens here stays here' is the slogan"
+  },
+  {
+    "category": "place",
+    "clues": ["Visible from space? Not really", "Dragon's backbone", "Ancient defense system", "Thousands of miles long", "Ming Dynasty marvel"],
+    "answer": "Great Wall of China",
+    "clue_solved_at": 3,
+    "key_insight": "Common myth about space visibility; 'Dragon's backbone' is a poetic Chinese description"
+  },
+  {
+    "category": "place",
+    "clues": ["Tinseltown", "Where dreams are made", "Big white letters on a hill", "Movie magic central", "California's entertainment capital"],
+    "answer": "Hollywood",
+    "clue_solved_at": 2,
+    "key_insight": "'Tinseltown' is the classic nickname; famous Hollywood sign on the hill"
+  },
+  {
+    "category": "place",
+    "clues": ["New Year's Eve destination", "The crossroads of the world", "Bright lights big city", "Broadway's heart", "Manhattan's neon jungle"],
+    "answer": "Times Square",
+    "clue_solved_at": 2,
+    "key_insight": "Famous New Year's ball drop; 'crossroads of the world' is official nickname"
+  },
+  {
+    "category": "thing",
+    "clues": ["Revolutionized the smartphone", "One more thing", "Cupertino's cash cow", "Steve Jobs' legacy", "iOS runs on it"],
+    "answer": "iPhone",
+    "clue_solved_at": 3,
+    "key_insight": "'One more thing' was Jobs' famous presentation phrase; Cupertino is Apple HQ"
+  },
+  {
+    "category": "thing",
+    "clues": ["The real thing", "Secret formula", "Santa's favorite drink", "Atlanta original", "Open happiness"],
+    "answer": "Coca-Cola",
+    "clue_solved_at": 2,
+    "key_insight": "'The real thing' and 'Open happiness' are slogans; headquarters in Atlanta"
+  },
+  {
+    "category": "thing",
+    "clues": ["Just do it", "Swoosh symbol", "Air Jordan maker", "Greek goddess of victory", "Phil Knight's creation"],
+    "answer": "Nike",
+    "clue_solved_at": 2,
+    "key_insight": "'Just do it' is the famous slogan; Nike is Greek goddess of victory"
+  },
+  {
+    "category": "thing",
+    "clues": ["Golden arches", "I'm lovin' it", "Happy Meals", "Big Mac birthplace", "Fast food empire"],
+    "answer": "McDonald's",
+    "clue_solved_at": 2,
+    "key_insight": "'Golden arches' is the iconic logo shape; 'I'm lovin' it' is current slogan"
+  },
+  {
+    "category": "thing",
+    "clues": ["Electric dreams", "Elon's baby", "Not just a scientist's name", "Autopilot pioneer", "Cybertruck creator"],
+    "answer": "Tesla",
+    "clue_solved_at": 2,
+    "key_insight": "Named after Nikola Tesla; Elon Musk is CEO; famous for electric vehicles"
+  },
+  {
+    "category": "thing",
+    "clues": ["Winter is coming", "Iron throne seeker", "Dragons and direwolves", "Red wedding horror", "HBO fantasy epic"],
+    "answer": "Game of Thrones",
+    "clue_solved_at": 2,
+    "key_insight": "'Winter is coming' is the famous Stark house words; Red Wedding is infamous episode"
+  },
+  {
+    "category": "thing",
+    "clues": ["Fab Four", "British invasion leaders", "Abbey Road crossers", "Lennon and McCartney", "Yeah yeah yeah"],
+    "answer": "The Beatles",
+    "clue_solved_at": 2,
+    "key_insight": "'Fab Four' is their nickname; Abbey Road is famous album/crosswalk photo"
+  },
+  {
+    "category": "thing",
+    "clues": ["The boy who lived", "Hogwarts student", "Lightning bolt scar", "Quidditch seeker", "J.K. Rowling's wizard"],
+    "answer": "Harry Potter",
+    "clue_solved_at": 2,
+    "key_insight": "'The boy who lived' is his title in the books; lightning scar is his trademark"
+  },
+  {
+    "category": "thing",
+    "clues": ["Big game Sunday", "Halftime show spectacular", "Expensive commercials", "Lombardi Trophy", "NFL championship"],
+    "answer": "Super Bowl",
+    "clue_solved_at": 2,
+    "key_insight": "Lombardi Trophy is the winner's prize; famous for expensive advertising"
+  },
+  {
+    "category": "thing",
+    "clues": ["And chill", "Red envelope origins", "Binge watching enabler", "Stranger Things home", "Streaming giant"],
+    "answer": "Netflix",
+    "clue_solved_at": 2,
+    "key_insight": "'Netflix and chill' is cultural phrase; started as DVD mail service (red envelopes)"
+  },
+  {
+    "category": "thing",
+    "clues": ["A river runs through it", "Rainforest and retail", "Prime delivery", "Jeff's everything store", "Alexa's parent"],
+    "answer": "Amazon",
+    "clue_solved_at": 3,
+    "key_insight": "Double meaning: river AND company; 'Prime' is their service; Jeff Bezos founded it"
+  },
+  {
+    "category": "thing",
+    "clues": ["Forbidden fruit", "Think different", "One byte at a time", "Cupertino campus", "Steve's garage startup"],
+    "answer": "Apple",
+    "clue_solved_at": 3,
+    "key_insight": "'Forbidden fruit' and 'byte/bite' are wordplay; 'Think different' is slogan"
+  },
+  {
+    "category": "thing",
+    "clues": ["Underground transportation", "Five dollar footlong", "Eat fresh", "Sandwich artist", "Jared's former employer"],
+    "answer": "Subway",
+    "clue_solved_at": 3,
+    "key_insight": "Double meaning: train system AND sandwich chain; 'Eat fresh' is their slogan"
+  },
+  {
+    "category": "thing",
+    "clues": ["The red planet", "Candy bar sweetness", "Bruno's surname", "Fourth from the sun", "Elon's destination"],
+    "answer": "Mars",
+    "clue_solved_at": 3,
+    "key_insight": "Triple meaning: planet, candy company, and Bruno Mars; SpaceX Mars mission"
+  },
+  {
+    "category": "thing",
+    "clues": ["Bohemian Rhapsody rockers", "Royal title", "Freddie's band", "Chess piece", "We will rock you"],
+    "answer": "Queen",
+    "clue_solved_at": 2,
+    "key_insight": "Multiple meanings: band, royalty, chess; Freddie Mercury was lead singer"
+  },
+  {
+    "category": "person",
+    "clues": ["Honest Abe", "Freed the slaves", "Tall hat wearer", "Ford's Theatre tragedy", "16th President"],
+    "answer": "Abraham Lincoln",
+    "clue_solved_at": 2,
+    "key_insight": "'Honest Abe' is his nickname; assassinated at Ford's Theatre"
+  },
+  {
+    "category": "person",
+    "clues": ["Queen of the Nile", "Asp's victim", "Caesar's lover", "Egyptian ruler", "Mark Antony's romance"],
+    "answer": "Cleopatra",
+    "clue_solved_at": 2,
+    "key_insight": "Died by asp (snake) bite; famous romances with Caesar and Mark Antony"
+  },
+  {
+    "category": "person",
+    "clues": ["I have a dream", "Civil rights leader", "Nobel Peace Prize 1964", "March on Washington", "Atlanta's son"],
+    "answer": "Martin Luther King Jr.",
+    "clue_solved_at": 2,
+    "key_insight": "'I have a dream' is most famous speech; born in Atlanta, Georgia"
+  },
+  {
+    "category": "person",
+    "clues": ["Float like a butterfly", "The Greatest", "Cassius Clay transformed", "Rumble in the jungle", "Louisville Lip"],
+    "answer": "Muhammad Ali",
+    "clue_solved_at": 2,
+    "key_insight": "'Float like a butterfly, sting like a bee' quote; born Cassius Clay"
+  },
+  {
+    "category": "thing",
+    "clues": ["Five rings", "Go for gold", "Faster higher stronger", "Every four years", "Ancient Greece tradition"],
+    "answer": "Olympics",
+    "clue_solved_at": 2,
+    "key_insight": "Five rings logo; 'Citius, Altius, Fortius' (Faster, Higher, Stronger) is motto"
+  },
+  {
+    "category": "thing",
+    "clues": ["The beautiful game's biggest prize", "Every four years fever", "National teams compete", "Soccer's holy grail", "One billion viewers"],
+    "answer": "FIFA World Cup",
+    "clue_solved_at": 3,
+    "key_insight": "Soccer/football is 'the beautiful game'; largest viewed sporting event"
+  },
+  {
+    "category": "thing",
+    "clues": ["Double helix", "Genetic blueprint", "Watson and Crick", "ATCG code", "Life's building blocks"],
+    "answer": "DNA",
+    "clue_solved_at": 2,
+    "key_insight": "Watson and Crick discovered structure; ATCG are the nucleotide bases"
+  },
+  {
+    "category": "thing",
+    "clues": ["World wide web", "Information superhighway", "ARPANET evolved", "Cat videos home", "Global network"],
+    "answer": "Internet",
+    "clue_solved_at": 2,
+    "key_insight": "WWW runs on it; ARPANET was military predecessor; 'information superhighway' was 90s term"
+  },
+  {
+    "category": "thing",
+    "clues": ["Italian pie", "Cheese and tomato", "New York vs Chicago style", "Delivery in 30 minutes", "Pepperoni favorite"],
+    "answer": "Pizza",
+    "clue_solved_at": 2,
+    "key_insight": "NY thin crust vs Chicago deep dish debate; originated in Italy"
+  },
+  {
+    "category": "thing",
+    "clues": ["Mermaid logo", "Grande venti tall", "Seattle coffee culture", "Pumpkin spice pusher", "Green apron baristas"],
+    "answer": "Starbucks",
+    "clue_solved_at": 2,
+    "key_insight": "Siren/mermaid logo; Italian-inspired size names; started in Seattle"
+  }
+]

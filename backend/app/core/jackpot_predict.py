@@ -1,139 +1,130 @@
 """
 JackpotPredict - Main orchestrator for trivia answer prediction.
 
-This is the public API that coordinates all core components to analyze clues
-and generate ranked predictions with confidence scores and reasoning.
+GEMINI-FIRST ARCHITECTURE (v2.0)
+================================
+This is the simplified, Gemini-first prediction engine that replaces the
+previous hybrid Bayesian+LLM system.
+
+Key components:
+- GeminiPredictor: Primary prediction engine (Gemini 2.0 Flash)
+- SpellingValidator: Critical canonical name validation (prevents elimination)
+- ContextManager: Few-shot example selection from history.json
+
+The Bayesian, ClueAnalyzer, and LLM Interpreter modules have been removed
+as Gemini handles all reasoning natively with better accuracy.
 """
 
-from typing import List, Dict, Optional
-from dataclasses import dataclass
+from typing import List, Dict, Optional, Any
+from dataclasses import dataclass, field
 from uuid import uuid4
 import time
 import logging
 
 from .entity_registry import EntityRegistry, EntityCategory
-from .clue_analyzer import ClueAnalyzer, ClueAnalysis
-from .bayesian_updater import BayesianUpdater, EntityProbability
 from .spelling_validator import SpellingValidator
+from .gemini_predictor import (
+    get_gemini_predictor,
+    GeminiPredictor,
+    GeminiResponse,
+    GeminiPrediction
+)
+from .response_validator import (
+    Prediction,
+    PredictionResponse,
+    GuessRecommendation,
+    build_guess_recommendation,
+    build_category_probabilities,
+    create_wait_response,
+    create_error_response
+)
 
 logger = logging.getLogger(__name__)
-
-
-@dataclass
-class Prediction:
-    """
-    Single prediction result with all metadata.
-
-    Attributes:
-        rank: Position in top predictions (1, 2, 3)
-        answer: Canonical spelling of predicted answer
-        confidence: Confidence percentage (0-100)
-        reasoning: Human-readable explanation
-        category: Entity category (thing/place/person)
-        clues_analyzed: Number of clues analyzed so far
-    """
-    rank: int
-    answer: str
-    confidence: float  # 0-100
-    reasoning: str
-    category: str
-    clues_analyzed: int
-
-    def to_dict(self) -> Dict:
-        """Convert to dictionary for API responses."""
-        return {
-            "rank": self.rank,
-            "answer": self.answer,
-            "confidence": round(self.confidence, 1),
-            "reasoning": self.reasoning,
-            "category": self.category,
-            "clues_analyzed": self.clues_analyzed
-        }
-
-
-@dataclass
-class PredictionResponse:
-    """
-    Complete response with predictions and metadata.
-
-    Attributes:
-        predictions: Top 3 predictions ranked by confidence
-        session_id: Unique session identifier
-        clue_number: Current clue number (1-5)
-        elapsed_time: Processing time in seconds
-        should_guess: Recommendation whether to guess now (based on confidence)
-    """
-    predictions: List[Prediction]
-    session_id: str
-    clue_number: int
-    elapsed_time: float
-    should_guess: bool
-
-    def to_dict(self) -> Dict:
-        """Convert to dictionary for API responses."""
-        return {
-            "predictions": [p.to_dict() for p in self.predictions],
-            "session_id": self.session_id,
-            "clue_number": self.clue_number,
-            "elapsed_time": round(self.elapsed_time, 3),
-            "should_guess": self.should_guess
-        }
 
 
 class JackpotPredict:
     """
     Main orchestrator for the trivia prediction engine.
 
-    Coordinates EntityRegistry, ClueAnalyzer, BayesianUpdater, and SpellingValidator
-    to produce high-confidence predictions within <2 second latency requirement.
+    GEMINI-FIRST ARCHITECTURE:
+    1. GeminiPredictor gets top 3 predictions with reasoning
+    2. SpellingValidator ensures canonical name accuracy (critical!)
+    3. ResponseValidator formats for frontend API contract
+
+    The old Bayesian/ClueAnalyzer/HybridCombiner system has been removed
+    in favor of simpler, more accurate Gemini-only prediction.
     """
 
-    # Confidence thresholds for guess recommendations (based on clue number)
-    GUESS_THRESHOLDS = {
-        1: 50.0,  # Very rare to guess on Clue 1
-        2: 65.0,  # Two clues align perfectly
-        3: 75.0,  # Pop culture pivot confirms hypothesis
-        4: 85.0,  # Direct hint validates; most winners here
-        5: 0.0,   # Must guess on final clue (no choice)
-    }
-
-    # Category priors (60/25/15 distribution from PRD)
+    # Category priors (60/25/15 distribution from game statistics)
     DEFAULT_CATEGORY_PRIORS = {
-        EntityCategory.THING: 0.60,
-        EntityCategory.PLACE: 0.25,
-        EntityCategory.PERSON: 0.15,
+        "thing": 0.60,
+        "place": 0.25,
+        "person": 0.15,
     }
 
     def __init__(
         self,
         entity_registry: EntityRegistry,
-        clue_analyzer: ClueAnalyzer,
         spelling_validator: Optional[SpellingValidator] = None
     ):
         """
         Initialize JackpotPredict orchestrator.
 
         Args:
-            entity_registry: Initialized EntityRegistry
-            clue_analyzer: Initialized ClueAnalyzer
+            entity_registry: Initialized EntityRegistry for spelling validation
             spelling_validator: Optional SpellingValidator (will create if None)
         """
         self.registry = entity_registry
-        self.analyzer = clue_analyzer
         self.validator = spelling_validator or SpellingValidator(entity_registry)
 
-        self.bayesian = BayesianUpdater()
+        # Session state
         self.session_id = str(uuid4())
         self.clue_count = 0
+        self.clue_history: List[str] = []
         self.category_probs = self.DEFAULT_CATEGORY_PRIORS.copy()
+
+        # Gemini predictor (lazy initialized)
+        self._gemini: Optional[GeminiPredictor] = None
 
         logger.info(f"JackpotPredict initialized (session: {self.session_id})")
 
+    async def _get_gemini(self) -> GeminiPredictor:
+        """Get or create Gemini predictor."""
+        if self._gemini is None:
+            self._gemini = await get_gemini_predictor()
+        return self._gemini
+
     def add_clue(self, clue_text: str) -> PredictionResponse:
         """
-        Analyze a new clue and generate updated predictions.
+        DEPRECATED: Use add_clue_async() for Gemini predictions.
+
+        This synchronous method is kept for backwards compatibility
+        but returns a WAIT response directing to use async.
+        """
+        logger.warning("Synchronous add_clue() called - use add_clue_async() for Gemini predictions")
+
+        self.clue_count += 1
+        self.clue_history.append(clue_text)
+
+        return create_wait_response(
+            session_id=self.session_id,
+            clue_number=self.clue_count,
+            clue_history=self.clue_history,
+            reason="Use async API for Gemini predictions"
+        )
+
+    async def add_clue_async(self, clue_text: str) -> PredictionResponse:
+        """
+        Analyze a new clue with Gemini-first prediction.
 
         This is the main entry point for the prediction engine.
+
+        Flow:
+        1. Build context with clue history
+        2. Get predictions from Gemini (top 3 with reasoning)
+        3. Validate spelling of all predictions
+        4. Build guess recommendation
+        5. Format response for frontend
 
         Args:
             clue_text: The clue text to analyze
@@ -145,114 +136,138 @@ class JackpotPredict:
 
         # Increment clue counter
         self.clue_count += 1
+        self.clue_history.append(clue_text)
         logger.info(f"Processing Clue {self.clue_count}: '{clue_text}'")
 
-        # Step 1: Analyze clue with NLP
-        clue_analysis = self.analyzer.analyze(
-            clue_text=clue_text,
-            clue_number=self.clue_count,
-            previous_category_probs=self.category_probs
+        # Determine category hint from previous predictions or priors
+        category_hint = self._get_category_hint()
+
+        # Get Gemini predictions
+        gemini = await self._get_gemini()
+        gemini_response = await gemini.predict(
+            clues=self.clue_history,
+            category_hint=category_hint
         )
 
-        # Update category probabilities for next clue
-        self.category_probs = clue_analysis.category_probs
-
-        # Step 2: Search entity registry with keywords
-        search_results = self.registry.search_by_keywords(
-            keywords=clue_analysis.keywords,
-            category=None,  # Don't filter by category yet
-            top_k=50,  # Get more candidates for Bayesian filtering
-            min_score=0.01  # Lowered to catch weak polysemy matches like "flavors/editions"
-        )
-
-        # Step 3: Initialize Bayesian priors on first clue
-        if self.clue_count == 1:
-            all_entities = [entity for entity, _ in search_results]
-            # Get more entities if search returned few
-            if len(all_entities) < 100:
-                additional = self.registry._get_all_entities()[:200]
-                all_entities.extend(additional)
-
-            self.bayesian.initialize_priors(all_entities, self.DEFAULT_CATEGORY_PRIORS)
-
-        # Step 4: Update probabilities with Bayesian inference
-        entity_probabilities = self.bayesian.update_probabilities(
-            clue_analysis=clue_analysis,
-            entity_search_results=search_results
-        )
-
-        # Step 5: Get top 3 predictions
-        top_3 = entity_probabilities[:3]
-
-        # Step 6: Validate spelling and format
-        predictions = []
-        for rank, entity_prob in enumerate(top_3, start=1):
-            # Validate canonical spelling
-            validation = self.validator.validate(entity_prob.entity.canonical_name)
-
-            if not validation.is_valid:
-                logger.warning(f"Validation failed for {entity_prob.entity.canonical_name}: {validation.error_message}")
-                # Use formatted answer if available, otherwise canonical
-                answer = validation.formatted_answer or entity_prob.entity.canonical_name
-            else:
-                answer = validation.formatted_answer
-
-            # Use confidence score (already 0-1), convert to percentage
-            confidence_pct = entity_prob.confidence * 100
-
-            # Build reasoning (limit to 100 chars for UI)
-            reasoning = entity_prob.reasoning
-            if len(reasoning) > 100:
-                reasoning = reasoning[:97] + "..."
-
-            prediction = Prediction(
-                rank=rank,
-                answer=answer,
-                confidence=confidence_pct,
-                reasoning=reasoning,
-                category=entity_prob.entity.category.value,
-                clues_analyzed=self.clue_count
+        # Handle Gemini failure
+        if not gemini_response or not gemini_response.predictions:
+            logger.error("Gemini returned no predictions")
+            elapsed = time.time() - start_time
+            return create_error_response(
+                session_id=self.session_id,
+                clue_number=self.clue_count,
+                clue_history=self.clue_history,
+                error_message="Gemini prediction failed"
             )
-            predictions.append(prediction)
 
-        # Step 7: Determine guess recommendation
-        should_guess = self._should_guess_now(predictions)
+        # Process and validate predictions
+        validated_predictions = self._validate_predictions(gemini_response.predictions)
 
-        # Calculate elapsed time
+        # Update category probabilities from predictions
+        self.category_probs = build_category_probabilities(validated_predictions)
+
+        # Build guess recommendation
+        top_confidence = validated_predictions[0].confidence if validated_predictions else 0.0
+        guess_rec = build_guess_recommendation(
+            top_confidence=top_confidence,
+            clue_number=self.clue_count,
+            key_insight=gemini_response.key_insight
+        )
+
         elapsed_time = time.time() - start_time
 
-        logger.info(f"Clue {self.clue_count} processed in {elapsed_time:.3f}s. "
-                   f"Top prediction: {predictions[0].answer} ({predictions[0].confidence:.1f}%)")
+        # Log result
+        top_pred = validated_predictions[0] if validated_predictions else None
+        if top_pred:
+            logger.info(
+                f"Clue {self.clue_count} processed in {elapsed_time:.3f}s. "
+                f"Top: {top_pred.answer} ({top_pred.confidence:.0%}) - "
+                f"Guess: {guess_rec.should_guess}"
+            )
 
         return PredictionResponse(
-            predictions=predictions,
             session_id=self.session_id,
             clue_number=self.clue_count,
+            predictions=validated_predictions,
+            guess_recommendation=guess_rec,
             elapsed_time=elapsed_time,
-            should_guess=should_guess
+            clue_history=self.clue_history.copy(),
+            category_probabilities=self.category_probs,
+            key_insight=gemini_response.key_insight
         )
 
-    def _should_guess_now(self, predictions: List[Prediction]) -> bool:
+    def _get_category_hint(self) -> Optional[str]:
+        """Get category hint from current probabilities."""
+        if not self.category_probs:
+            return None
+
+        # Return category with highest probability
+        top_cat = max(self.category_probs.items(), key=lambda x: x[1])
+        if top_cat[1] > 0.5:  # Only hint if confident
+            return top_cat[0]
+        return None
+
+    def _validate_predictions(
+        self,
+        gemini_predictions: List[GeminiPrediction]
+    ) -> List[Prediction]:
         """
-        Determine if user should guess now based on confidence threshold.
+        Validate and format Gemini predictions.
+
+        CRITICAL: Spelling validation prevents elimination in the game.
+        One typo = you're out.
 
         Args:
-            predictions: Current top predictions
+            gemini_predictions: Raw predictions from Gemini
 
         Returns:
-            True if confidence exceeds threshold for current clue number
+            List of validated Prediction objects
         """
-        if not predictions:
-            return False
+        validated = []
 
-        top_confidence = predictions[0].confidence
-        threshold = self.GUESS_THRESHOLDS.get(self.clue_count, 75.0)
+        for pred in gemini_predictions:
+            # Skip WAIT responses
+            if pred.answer.upper() == "WAIT":
+                validated.append(Prediction(
+                    answer="WAIT",
+                    confidence=0.0,
+                    category=pred.category,
+                    reasoning="Waiting for more clues",
+                    spelling_valid=True,
+                    canonical_name=None
+                ))
+                continue
 
-        # Always recommend guessing on Clue 5 (last chance)
-        if self.clue_count >= 5:
-            return True
+            # Validate spelling against entity database
+            validation = self.validator.validate(pred.answer)
 
-        return top_confidence >= threshold
+            if validation.is_valid:
+                # Use canonical spelling from database
+                canonical = validation.formatted_answer
+                spelling_valid = True
+                logger.debug(f"Spelling valid: '{pred.answer}' -> '{canonical}'")
+            else:
+                # Validation already does fuzzy matching and provides suggestion
+                if validation.suggestion:
+                    canonical = validation.suggestion
+                    spelling_valid = True
+                    logger.info(f"Fuzzy match: '{pred.answer}' -> '{canonical}'")
+                else:
+                    # Use LLM answer as-is (risky but better than nothing)
+                    canonical = pred.answer
+                    spelling_valid = False
+                    logger.warning(f"No spelling match for: '{pred.answer}'")
+
+            validated.append(Prediction(
+                answer=canonical,
+                confidence=pred.confidence,
+                category=pred.category,
+                reasoning=pred.reasoning,
+                spelling_valid=spelling_valid,
+                canonical_name=canonical if spelling_valid else None
+            ))
+
+        return validated
 
     def reset(self):
         """
@@ -260,9 +275,9 @@ class JackpotPredict:
 
         Clears clue history, probabilities, and generates new session ID.
         """
-        self.bayesian.reset()
         self.session_id = str(uuid4())
         self.clue_count = 0
+        self.clue_history.clear()
         self.category_probs = self.DEFAULT_CATEGORY_PRIORS.copy()
 
         logger.info(f"Session reset. New session ID: {self.session_id}")
@@ -277,15 +292,13 @@ class JackpotPredict:
         return {
             "session_id": self.session_id,
             "clues_analyzed": self.clue_count,
-            "category_probs": {
-                cat.value: round(prob, 3)
-                for cat, prob in self.category_probs.items()
-            }
+            "clue_history": self.clue_history.copy(),
+            "category_probs": self.category_probs.copy()
         }
 
-    def predict_all_clues(self, clues: List[str]) -> List[PredictionResponse]:
+    async def predict_all_clues(self, clues: List[str]) -> List[PredictionResponse]:
         """
-        Convenience method: Process all 5 clues sequentially.
+        Process all clues sequentially (async version).
 
         Useful for batch testing with historical puzzles.
 
@@ -299,7 +312,7 @@ class JackpotPredict:
         responses = []
 
         for clue_text in clues:
-            response = self.add_clue(clue_text)
+            response = await self.add_clue_async(clue_text)
             responses.append(response)
 
         return responses
@@ -308,36 +321,28 @@ class JackpotPredict:
         """
         Get the current top predicted answer.
 
-        Returns:
-            Top answer string, or None if no predictions yet
-        """
-        if self.clue_count == 0:
-            return None
-
-        top_predictions = self.bayesian.get_top_predictions(top_k=1)
-        if top_predictions:
-            return top_predictions[0].entity.canonical_name
-
-        return None
-
-    def get_confidence_at_clue(self, clue_number: int) -> Optional[float]:
-        """
-        Get top prediction confidence after specific clue number.
-
-        Useful for performance analysis (e.g., "confidence at Clue 3").
-
-        Args:
-            clue_number: Clue number (1-5)
+        Note: In Gemini-first architecture, we don't track predictions
+        between clues. Use the response from add_clue_async() instead.
 
         Returns:
-            Confidence percentage, or None if that clue hasn't been processed
+            None (deprecated - use response from add_clue_async)
         """
-        if clue_number > self.clue_count:
-            return None
-
-        # Get current top prediction
-        top_predictions = self.bayesian.get_top_predictions(top_k=1)
-        if top_predictions:
-            return top_predictions[0].probability * 100
-
+        logger.warning("get_top_answer() deprecated in Gemini-first architecture")
         return None
+
+
+# ============================================================================
+# FACTORY FUNCTION
+# ============================================================================
+
+def create_jackpot_predict(entity_registry: EntityRegistry) -> JackpotPredict:
+    """
+    Factory function to create JackpotPredict instance.
+
+    Args:
+        entity_registry: Initialized EntityRegistry
+
+    Returns:
+        Configured JackpotPredict instance
+    """
+    return JackpotPredict(entity_registry=entity_registry)

@@ -1,6 +1,11 @@
 """
 FastAPI Server - Main application entry point.
 
+GEMINI-FIRST ARCHITECTURE (v2.0)
+================================
+Simplified server using Gemini API as the primary LLM.
+Removed Ollama warmup as cloud APIs don't require it.
+
 Run with:
     uvicorn app.server:app --reload --port 8000
 """
@@ -15,6 +20,7 @@ from fastapi.responses import JSONResponse
 
 from app.api.routes import router
 from app.core.entity_registry import EntityRegistry
+from app.core.gemini_predictor import warmup_gemini
 
 # Configure logging
 logging.basicConfig(
@@ -31,12 +37,10 @@ async def lifespan(app: FastAPI):
 
     On startup:
     - Initialize entity registry
-    - Load entities from database
-    - Log startup metrics
+    - Verify Gemini API availability
 
     On shutdown:
     - Close database connections
-    - Log shutdown metrics
     """
     # Startup
     start_time = time.time()
@@ -48,9 +52,17 @@ async def lifespan(app: FastAPI):
         registry = get_entity_registry()
 
         entity_count = registry.get_entity_count()
-        startup_time = time.time() - start_time
-
         logger.info(f"[OK] Entity registry loaded: {entity_count} entities")
+
+        # Verify Gemini API is available
+        # Note: Cloud APIs don't need warmup, just availability check
+        gemini_ready = await warmup_gemini()
+        if gemini_ready:
+            logger.info("[OK] Gemini API ready")
+        else:
+            logger.warning("[WARN] Gemini API not available - predictions will fail")
+
+        startup_time = time.time() - start_time
         logger.info(f"[OK] Startup complete in {startup_time:.2f}s")
         logger.info("[READY] API server ready at http://localhost:8000")
         logger.info("[DOCS] API docs available at http://localhost:8000/docs")
@@ -82,14 +94,17 @@ app = FastAPI(
     description="""
     AI-powered real-time inference engine for Netflix's Best Guess Live game show.
 
+    **GEMINI-FIRST ARCHITECTURE (v2.0)**
+
     Submit clues sequentially (1-5) and receive top 3 predictions with confidence scores.
 
     ## Key Features
-    - 🎯 Bayesian probability updates with polysemy detection
-    - ⚡ <2s response time for real-time gameplay
-    - 🔍 Spelling validation (100% accuracy requirement)
-    - 📊 Session management with 5-minute expiry
-    - 🎲 Guess recommendations based on confidence thresholds
+    - Gemini 2.0 Flash for intelligent trivia prediction
+    - Few-shot learning from 45+ historical games
+    - Wordplay and lateral thinking detection
+    - Spelling validation (100% accuracy requirement)
+    - Session management with 5-minute expiry
+    - Guess recommendations based on confidence thresholds
 
     ## Workflow
     1. POST /api/predict - Submit Clue 1 (returns session_id)
@@ -103,7 +118,7 @@ app = FastAPI(
     - Place: 25% (landmarks, cities, buildings)
     - Person: 15% (celebrities, characters)
     """,
-    version="1.0.0",
+    version="2.0.0",
     lifespan=lifespan,
     docs_url="/docs",
     redoc_url="/redoc",
@@ -150,7 +165,8 @@ async def root():
     """Root endpoint - API information."""
     return {
         "name": "JackpotPredict API",
-        "version": "1.0.0",
+        "version": "2.0.0",
+        "architecture": "Gemini-First",
         "description": "AI-powered trivia answer prediction engine",
         "docs": "/docs",
         "health": "/api/health",
@@ -158,6 +174,7 @@ async def root():
             "predict": "POST /api/predict",
             "reset": "POST /api/reset",
             "validate": "POST /api/validate",
+            "feedback": "POST /api/feedback",
             "health": "GET /api/health"
         }
     }

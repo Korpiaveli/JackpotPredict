@@ -1,10 +1,16 @@
 """
 FastAPI Routes - REST API endpoints for JackpotPredict.
 
+GEMINI-FIRST ARCHITECTURE (v2.0)
+================================
+Simplified routes using Gemini as the primary prediction engine.
+Removed hybrid/Bayesian endpoints as they're no longer needed.
+
 Endpoints:
 - POST /api/predict - Submit clue and get predictions
 - POST /api/reset - Reset session for new puzzle
 - POST /api/validate - Validate answer spelling
+- POST /api/feedback - Submit puzzle feedback for learning
 - GET /api/health - Health check and metrics
 """
 
@@ -29,12 +35,13 @@ from app.api.models import (
     ValidationResponse,
     HealthResponse,
     ErrorResponse,
-    EntityCategory
+    EntityCategory,
+    FeedbackRequest,
+    FeedbackResponse
 )
 from app.core.jackpot_predict import JackpotPredict
 from app.core.spelling_validator import SpellingValidator
 from app.core.entity_registry import EntityRegistry
-from app.core.clue_analyzer import ClueAnalyzer
 
 logger = logging.getLogger(__name__)
 
@@ -46,7 +53,6 @@ _sessions: Dict[str, JackpotPredict] = {}
 _session_timestamps: Dict[str, datetime] = {}
 _server_start_time = datetime.now()
 _entity_registry: Optional[EntityRegistry] = None
-_clue_analyzer: Optional[ClueAnalyzer] = None
 _spelling_validator: Optional[SpellingValidator] = None
 
 # Session expiry time (5 minutes)
@@ -60,15 +66,6 @@ def get_entity_registry() -> EntityRegistry:
         _entity_registry = EntityRegistry()
         logger.info(f"Entity registry initialized with {_entity_registry.get_entity_count()} entities")
     return _entity_registry
-
-
-def get_clue_analyzer() -> ClueAnalyzer:
-    """Get or initialize the clue analyzer singleton."""
-    global _clue_analyzer
-    if _clue_analyzer is None:
-        _clue_analyzer = ClueAnalyzer()
-        logger.info("Clue analyzer initialized")
-    return _clue_analyzer
 
 
 def get_spelling_validator() -> SpellingValidator:
@@ -118,8 +115,7 @@ def get_or_create_session(session_id: Optional[str] = None) -> tuple[str, Jackpo
     if session_id is None or session_id not in _sessions:
         new_session_id = str(uuid.uuid4())
         predictor = JackpotPredict(
-            entity_registry=get_entity_registry(),
-            clue_analyzer=get_clue_analyzer()
+            entity_registry=get_entity_registry()
         )
         _sessions[new_session_id] = predictor
         _session_timestamps[new_session_id] = datetime.now()
@@ -136,15 +132,20 @@ def get_or_create_session(session_id: Optional[str] = None) -> tuple[str, Jackpo
     response_model=PredictionResponse,
     status_code=status.HTTP_200_OK,
     summary="Submit clue and get predictions",
-    description="Analyze a clue and return top 3 predictions with confidence scores"
+    description="Analyze a clue with Gemini AI and return top 3 predictions with confidence scores"
 )
 async def predict(request: ClueRequest) -> PredictionResponse:
     """
     Submit a clue and get top 3 predictions.
 
     This is the main endpoint for the prediction engine. Submit clues sequentially
-    (1-5) and the system will maintain session state, updating probabilities
+    (1-5) and the system will maintain session state, providing predictions
     based on all clues seen so far.
+
+    Uses Gemini 2.0 Flash for intelligent trivia prediction with:
+    - Few-shot learning from historical games
+    - Wordplay and lateral thinking detection
+    - Confidence calibration per clue number
     """
     start_time = time.time()
 
@@ -152,64 +153,46 @@ async def predict(request: ClueRequest) -> PredictionResponse:
         # Get or create session
         session_id, predictor, is_new = get_or_create_session(request.session_id)
 
-        # Add clue to predictor
+        # Add clue to predictor (async for Gemini API call)
         logger.info(f"Session {session_id}: Processing clue #{predictor.clue_count + 1}: '{request.clue_text}'")
-        prediction_result = predictor.add_clue(request.clue_text)
+        prediction_result = await predictor.add_clue_async(request.clue_text)
 
         # Convert to API response format
         predictions = [
             Prediction(
                 rank=i + 1,
                 answer=pred.answer,
-                confidence=pred.confidence / 100.0,  # Convert from percentage (0-100) to fraction (0-1)
+                confidence=pred.confidence,  # Already 0-1 scale
                 category=EntityCategory(pred.category),
                 reasoning=pred.reasoning
             )
             for i, pred in enumerate(prediction_result.predictions)
         ]
 
-        # Build guess recommendation
-        # Get threshold for current clue number (from JackpotPredict.GUESS_THRESHOLDS)
-        threshold_map = {1: 0.50, 2: 0.65, 3: 0.75, 4: 0.85, 5: 0.0}
-        threshold = threshold_map.get(predictor.clue_count, 0.75)
-
-        # Build rationale string
-        top_conf = predictions[0].confidence if predictions else 0.0
-        if prediction_result.should_guess:
-            rationale = f"Clue {predictor.clue_count}: Confidence {top_conf:.0%} exceeds {threshold:.0%} threshold - recommended to guess"
-        else:
-            rationale = f"Clue {predictor.clue_count}: Confidence {top_conf:.0%} below {threshold:.0%} threshold - continue to next clue"
-
+        # Use the guess recommendation from the predictor
         guess_rec = GuessRecommendation(
-            should_guess=prediction_result.should_guess,
-            confidence_threshold=threshold,
-            rationale=rationale
+            should_guess=prediction_result.guess_recommendation.should_guess,
+            confidence_threshold=prediction_result.guess_recommendation.confidence_threshold,
+            rationale=prediction_result.guess_recommendation.rationale
         )
 
         # Calculate elapsed time
         elapsed = time.time() - start_time
 
-        # Build clue history from Bayesian updater's stored clue texts
-        clue_texts = [clue.clue_text for clue in predictor.bayesian.clue_history]
-
         response = PredictionResponse(
             session_id=session_id,
-            clue_number=predictor.clue_count,
+            clue_number=prediction_result.clue_number,
             predictions=predictions,
             guess_recommendation=guess_rec,
             elapsed_time=elapsed,
-            clue_history=clue_texts,
-            category_probabilities={
-                "thing": predictor.category_probs.get(EntityCategory.THING, 0.0),
-                "place": predictor.category_probs.get(EntityCategory.PLACE, 0.0),
-                "person": predictor.category_probs.get(EntityCategory.PERSON, 0.0)
-            }
+            clue_history=prediction_result.clue_history,
+            category_probabilities=prediction_result.category_probabilities
         )
 
         logger.info(
-            f"Session {session_id}: Clue #{predictor.clue_count} processed in {elapsed:.2f}s "
+            f"Session {session_id}: Clue #{prediction_result.clue_number} processed in {elapsed:.2f}s "
             f"- Top: {predictions[0].answer if predictions else 'None'} "
-            f"({predictions[0].confidence:.2%} confidence)" if predictions else ""
+            f"({predictions[0].confidence:.0%} confidence)" if predictions else ""
         )
 
         return response
@@ -247,7 +230,9 @@ async def reset(request: ResetRequest) -> ResetResponse:
 
         # Create new session
         new_session_id = str(uuid.uuid4())
-        predictor = JackpotPredict()
+        predictor = JackpotPredict(
+            entity_registry=get_entity_registry()
+        )
         _sessions[new_session_id] = predictor
         _session_timestamps[new_session_id] = datetime.now()
 
@@ -328,7 +313,7 @@ async def health() -> HealthResponse:
 
         return HealthResponse(
             status="healthy",
-            version="1.0.0",
+            version="2.0.0",  # Updated version for Gemini-first
             entity_count=registry.get_entity_count(),
             active_sessions=len(_sessions),
             uptime_seconds=uptime
@@ -339,6 +324,59 @@ async def health() -> HealthResponse:
         raise HTTPException(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
             detail=f"Service unhealthy: {str(e)}"
+        )
+
+
+@router.post(
+    "/feedback",
+    response_model=FeedbackResponse,
+    status_code=status.HTTP_200_OK,
+    summary="Submit puzzle feedback",
+    description="Submit the correct answer after a puzzle for learning improvement"
+)
+async def submit_feedback(request: FeedbackRequest) -> FeedbackResponse:
+    """
+    Submit puzzle feedback for continuous learning.
+
+    Records the correct answer and clues to history.json for
+    few-shot learning improvement in the Gemini context.
+    """
+    try:
+        from app.core.context_manager import get_context_manager
+
+        manager = get_context_manager()
+
+        # Convert EntityCategory enum to string for context manager
+        category_str = request.category.value
+
+        success = manager.add_game_result(
+            category=category_str,
+            clues=request.clues,
+            answer=request.correct_answer,
+            solved_at_clue=request.solved_at_clue or len(request.clues),
+            key_insight=request.key_insight or ""
+        )
+
+        if success:
+            logger.info(
+                f"Feedback recorded: {request.correct_answer} ({category_str}) "
+                f"with {len(request.clues)} clues"
+            )
+            return FeedbackResponse(
+                success=True,
+                message="Feedback recorded successfully. Thank you for helping improve predictions!"
+            )
+        else:
+            return FeedbackResponse(
+                success=False,
+                message="Failed to save feedback to history"
+            )
+
+    except Exception as e:
+        logger.error(f"Error submitting feedback: {e}", exc_info=True)
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to submit feedback: {str(e)}"
         )
 
 
