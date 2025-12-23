@@ -49,3 +49,17 @@ export interface HealthResponse {
   active_sessions: number
   uptime_seconds: number
 }
+
+export interface FeedbackRequest {
+  session_id: string
+  correct_answer: string
+  category: EntityCategory
+  clues: string[]
+  solved_at_clue?: number
+  key_insight?: string
+}
+
+export interface FeedbackResponse {
+  success: boolean
+  message: string
+}

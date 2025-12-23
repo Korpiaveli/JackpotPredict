@@ -1,20 +1,54 @@
-import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import CountdownTimer from './CountdownTimer'
 import PredictionCard from './PredictionCard'
 import ClueInput from './ClueInput'
-import { useSubmitClue, useResetPuzzle, useHealth } from '../hooks/usePredictions'
+import AnswerFeedback from './AnswerFeedback'
+import { useSubmitClue, useResetPuzzle, useHealth, useSubmitFeedback } from '../hooks/usePredictions'
 import { usePuzzleStore } from '../store/puzzleStore'
+import type { EntityCategory } from '../types/api'
 
 export default function Dashboard() {
-  const { latestPrediction, clueHistory, isLoading, error } = usePuzzleStore()
+  const {
+    latestPrediction,
+    clueHistory,
+    isLoading,
+    error,
+    timerKey,
+    gameStarted,
+    responseTimes,
+    puzzleComplete,
+    startGame,
+    resetTimer,
+    addResponseTime,
+    completePuzzle,
+    reset: resetStore
+  } = usePuzzleStore()
   const submitClueMutation = useSubmitClue()
   const resetMutation = useResetPuzzle()
+  const submitFeedbackMutation = useSubmitFeedback()
   const { data: healthData } = useHealth()
 
   const handleSubmitClue = async (clueText: string) => {
     try {
-      await submitClueMutation.mutateAsync(clueText)
+      // Start the game on first clue submission
+      if (!gameStarted) {
+        startGame()
+      }
+
+      const result = await submitClueMutation.mutateAsync(clueText)
+
+      // Track response time
+      if (result?.elapsed_time) {
+        addResponseTime(result.elapsed_time)
+      }
+
+      // Reset timer after successful submission
+      resetTimer()
+
+      // Check if puzzle is complete (5 clues)
+      if (result?.clue_number >= 5) {
+        completePuzzle()
+      }
     } catch (err) {
       console.error('Failed to submit clue:', err)
     }
@@ -23,9 +57,34 @@ export default function Dashboard() {
   const handleReset = async () => {
     try {
       await resetMutation.mutateAsync()
+      resetStore()
     } catch (err) {
       console.error('Failed to reset:', err)
     }
+  }
+
+  const handleSubmitFeedback = async (
+    correctAnswer: string,
+    category: EntityCategory,
+    solvedAtClue?: number,
+    keyInsight?: string
+  ) => {
+    try {
+      await submitFeedbackMutation.mutateAsync({
+        correctAnswer,
+        category,
+        solvedAtClue,
+        keyInsight
+      })
+      // After successful feedback, reset for a new puzzle
+      await handleReset()
+    } catch (err) {
+      console.error('Failed to submit feedback:', err)
+    }
+  }
+
+  const handleSkipFeedback = () => {
+    handleReset()
   }
 
   const currentClueNumber = (latestPrediction?.clue_number || 0) + 1
@@ -69,7 +128,9 @@ export default function Dashboard() {
             {/* Countdown Timer */}
             <CountdownTimer
               initialSeconds={20}
-              isActive={!isLoading && currentClueNumber <= 5}
+              isActive={gameStarted && !isLoading && !puzzleComplete}
+              resetKey={timerKey}
+              showIdle={!gameStarted}
             />
 
             {/* Session Info */}
@@ -199,6 +260,30 @@ export default function Dashboard() {
               </div>
             )}
 
+            {/* Clue History with Response Times */}
+            {clueHistory.length > 0 && (
+              <div className="clue-card">
+                <div className="text-xs text-gray-500 uppercase tracking-wide mb-3">
+                  Clue History
+                </div>
+                <div className="space-y-2">
+                  {clueHistory.map((clue, index) => (
+                    <div key={index} className="flex justify-between items-start gap-2 text-sm">
+                      <div className="flex gap-2">
+                        <span className="text-primary font-mono">#{index + 1}</span>
+                        <span className="text-gray-300">{clue}</span>
+                      </div>
+                      {responseTimes[index] !== undefined && (
+                        <span className="text-xs text-gray-500 font-mono whitespace-nowrap">
+                          {responseTimes[index].toFixed(2)}s
+                        </span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Clue Input */}
             <div className="clue-card">
               <ClueInput
@@ -206,12 +291,12 @@ export default function Dashboard() {
                 clueNumber={currentClueNumber}
                 previousClues={clueHistory}
                 isLoading={isLoading}
-                disabled={currentClueNumber > 5}
+                disabled={currentClueNumber > 5 || puzzleComplete}
               />
             </div>
 
             {/* Welcome Message */}
-            {!latestPrediction && (
+            {!latestPrediction && !puzzleComplete && (
               <motion.div
                 className="text-center py-12"
                 initial={{ opacity: 0 }}
@@ -226,6 +311,18 @@ export default function Dashboard() {
                 </p>
               </motion.div>
             )}
+
+            {/* Feedback Form - shown when puzzle is complete */}
+            {puzzleComplete && latestPrediction && (
+              <AnswerFeedback
+                sessionId={latestPrediction.session_id}
+                clues={clueHistory}
+                topPrediction={topPrediction?.answer}
+                onSubmit={handleSubmitFeedback}
+                onSkip={handleSkipFeedback}
+                isLoading={submitFeedbackMutation.isPending}
+              />
+            )}
           </div>
         </div>
       </main>
@@ -233,7 +330,7 @@ export default function Dashboard() {
       {/* Footer */}
       <footer className="max-w-7xl mx-auto mt-12 pt-6 border-t border-gray-800 text-center text-sm text-gray-500">
         <p>
-          Powered by Bayesian inference + NLP polysemy detection • {' '}
+          Powered by Gemini 2.0 Flash • {' '}
           <a href="/api/docs" target="_blank" className="text-primary hover:underline">
             API Docs
           </a>

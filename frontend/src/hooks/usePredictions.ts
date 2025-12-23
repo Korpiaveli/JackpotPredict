@@ -1,6 +1,7 @@
 import { useMutation, useQuery } from '@tanstack/react-query'
 import { api } from '../lib/api'
 import { usePuzzleStore } from '../store/puzzleStore'
+import type { EntityCategory } from '../types/api'
 
 export function useSubmitClue() {
   const { sessionId, setPrediction, setLoading, setError } = usePuzzleStore()
@@ -45,5 +46,33 @@ export function useHealth() {
     queryKey: ['health'],
     queryFn: () => api.health(),
     refetchInterval: 30000, // Refetch every 30 seconds
+  })
+}
+
+export function useSubmitFeedback() {
+  const { sessionId, clueHistory } = usePuzzleStore()
+
+  return useMutation({
+    mutationFn: ({
+      correctAnswer,
+      category,
+      solvedAtClue,
+      keyInsight
+    }: {
+      correctAnswer: string
+      category: EntityCategory
+      solvedAtClue?: number
+      keyInsight?: string
+    }) => {
+      if (!sessionId) throw new Error('No active session')
+      return api.submitFeedback({
+        session_id: sessionId,
+        correct_answer: correctAnswer,
+        category,
+        clues: clueHistory,
+        solved_at_clue: solvedAtClue,
+        key_insight: keyInsight
+      })
+    }
   })
 }

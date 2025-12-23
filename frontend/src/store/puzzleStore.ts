@@ -8,6 +8,14 @@ interface PuzzleState {
   isLoading: boolean
   error: string | null
 
+  // Timer state
+  timerKey: number              // Increment to force timer reset
+  gameStarted: boolean          // Timer only runs after first clue
+  responseTimes: number[]       // Track elapsed_time per clue
+
+  // Puzzle completion state
+  puzzleComplete: boolean       // True when puzzle is finished
+
   // Actions
   setSessionId: (id: string) => void
   addClue: (clue: string) => void
@@ -15,6 +23,14 @@ interface PuzzleState {
   setLoading: (loading: boolean) => void
   setError: (error: string | null) => void
   reset: () => void
+
+  // Timer actions
+  startGame: () => void
+  resetTimer: () => void
+  addResponseTime: (time: number) => void
+
+  // Puzzle completion actions
+  completePuzzle: () => void
 }
 
 export const usePuzzleStore = create<PuzzleState>((set) => ({
@@ -23,6 +39,14 @@ export const usePuzzleStore = create<PuzzleState>((set) => ({
   latestPrediction: null,
   isLoading: false,
   error: null,
+
+  // Timer state
+  timerKey: 0,
+  gameStarted: false,
+  responseTimes: [],
+
+  // Puzzle completion state
+  puzzleComplete: false,
 
   setSessionId: (id) => set({ sessionId: id }),
 
@@ -49,5 +73,22 @@ export const usePuzzleStore = create<PuzzleState>((set) => ({
       latestPrediction: null,
       isLoading: false,
       error: null,
+      timerKey: 0,
+      gameStarted: false,
+      responseTimes: [],
+      puzzleComplete: false,
     }),
+
+  // Timer actions
+  startGame: () => set({ gameStarted: true }),
+
+  resetTimer: () => set((state) => ({ timerKey: state.timerKey + 1 })),
+
+  addResponseTime: (time) =>
+    set((state) => ({
+      responseTimes: [...state.responseTimes, time],
+    })),
+
+  // Puzzle completion actions
+  completePuzzle: () => set({ puzzleComplete: true }),
 }))
