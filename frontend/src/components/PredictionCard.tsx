@@ -10,10 +10,30 @@ interface PredictionCardProps {
 const MEDALS = ['🥇', '🥈', '🥉']
 const RANK_LABELS = ['1ST', '2ND', '3RD']
 
+const SEMANTIC_MATCH_CONFIG = {
+  strong: {
+    label: 'Strong Match',
+    color: 'bg-success/20 text-success border-success',
+    icon: '✓'
+  },
+  medium: {
+    label: 'Medium Match',
+    color: 'bg-warning/20 text-warning border-warning',
+    icon: '~'
+  },
+  weak: {
+    label: 'Weak Match',
+    color: 'bg-danger/20 text-danger border-danger',
+    icon: '!'
+  }
+}
+
 export default function PredictionCard({ prediction, index }: PredictionCardProps) {
   const [copied, setCopied] = useState(false)
 
   const confidencePercent = (prediction.confidence * 100).toFixed(1)
+  const semanticMatch = prediction.semantic_match || 'medium'
+  const semanticConfig = SEMANTIC_MATCH_CONFIG[semanticMatch]
 
   const getConfidenceColor = () => {
     const conf = prediction.confidence
@@ -67,10 +87,13 @@ export default function PredictionCard({ prediction, index }: PredictionCardProp
         </button>
       </div>
 
-      {/* Category */}
-      <div className="flex items-center gap-2 mb-3">
+      {/* Category & Semantic Match */}
+      <div className="flex items-center gap-2 mb-3 flex-wrap">
         <span className="px-3 py-1 bg-gray-800 rounded-full text-xs uppercase tracking-wide text-gray-300">
           {prediction.category}
+        </span>
+        <span className={`px-3 py-1 rounded-full text-xs border ${semanticConfig.color}`}>
+          {semanticConfig.icon} {semanticConfig.label}
         </span>
       </div>
 

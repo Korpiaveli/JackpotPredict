@@ -1,0 +1,13 @@
+{
+  "patterns": [
+    {
+      "predicted": "Frasier",
+      "correct": "Eraser",
+      "clues_sample": ["removes pencil marks", "rubber tool"],
+      "error_type": "phonetic_confusion",
+      "occurrences": 1,
+      "timestamp": "2024-12-22"
+    }
+  ],
+  "last_updated": "2024-12-22"
+}

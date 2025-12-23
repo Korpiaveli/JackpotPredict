@@ -45,6 +45,13 @@ class ClueRequest(BaseModel):
     )
 
 
+class SemanticMatch(str, Enum):
+    """Semantic match quality for self-validation."""
+    STRONG = "strong"
+    MEDIUM = "medium"
+    WEAK = "weak"
+
+
 class Prediction(BaseModel):
     """Individual prediction result."""
 
@@ -77,6 +84,11 @@ class Prediction(BaseModel):
         description="Explanation of why this answer was predicted"
     )
 
+    semantic_match: SemanticMatch = Field(
+        default=SemanticMatch.MEDIUM,
+        description="Self-validation: how well the answer's meaning matches the clues (strong/medium/weak)"
+    )
+
     model_config = ConfigDict(
         json_schema_extra={
             "example": {
@@ -84,7 +96,8 @@ class Prediction(BaseModel):
                 "answer": "Monopoly",
                 "confidence": 0.87,
                 "category": "thing",
-                "reasoning": "Strong polysemy match with 'flavors' (editions) and keyword alignment"
+                "reasoning": "Strong polysemy match with 'flavors' (editions) and keyword alignment",
+                "semantic_match": "strong"
             }
         }
     )
@@ -345,6 +358,81 @@ class ErrorResponse(BaseModel):
                 "error": "ValidationError",
                 "message": "Invalid clue text",
                 "detail": "Clue text cannot be empty"
+            }
+        }
+    )
+
+
+class FeedbackRequest(BaseModel):
+    """Request model for submitting puzzle feedback."""
+
+    session_id: str = Field(
+        ...,
+        description="Session ID for the completed puzzle"
+    )
+
+    correct_answer: str = Field(
+        ...,
+        min_length=1,
+        max_length=200,
+        description="The correct answer for this puzzle"
+    )
+
+    category: EntityCategory = Field(
+        ...,
+        description="Category of the answer (person/place/thing)"
+    )
+
+    clues: List[str] = Field(
+        ...,
+        description="List of clues submitted during this puzzle"
+    )
+
+    solved_at_clue: Optional[int] = Field(
+        None,
+        ge=1,
+        le=5,
+        description="Clue number when user knew the answer (optional)"
+    )
+
+    key_insight: Optional[str] = Field(
+        None,
+        max_length=500,
+        description="Key insight about how to interpret the clues (optional)"
+    )
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "session_id": "550e8400-e29b-41d4-a716-446655440000",
+                "correct_answer": "Monopoly",
+                "category": "thing",
+                "clues": ["Savors many flavors", "Round and round", "A hostile takeover"],
+                "solved_at_clue": 3,
+                "key_insight": "'hostile takeover' referred to the business theme"
+            }
+        }
+    )
+
+
+class FeedbackResponse(BaseModel):
+    """Response model for feedback submission."""
+
+    success: bool = Field(
+        ...,
+        description="Whether feedback was successfully recorded"
+    )
+
+    message: str = Field(
+        ...,
+        description="Confirmation or error message"
+    )
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "success": True,
+                "message": "Feedback recorded successfully"
             }
         }
     )

@@ -1,11 +1,14 @@
 export type EntityCategory = 'person' | 'place' | 'thing'
 
+export type SemanticMatch = 'strong' | 'medium' | 'weak'
+
 export interface Prediction {
   rank: number
   answer: string
   confidence: number
   category: EntityCategory
   reasoning: string
+  semantic_match?: SemanticMatch
 }
 
 export interface GuessRecommendation {

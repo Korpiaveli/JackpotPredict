@@ -16,9 +16,10 @@ Endpoints:
 
 import time
 import uuid
+import json
 import logging
 from datetime import datetime, timedelta
-from typing import Dict, Optional
+from typing import Dict, Optional, List
 from pathlib import Path
 
 from fastapi import APIRouter, HTTPException, status
@@ -36,6 +37,7 @@ from app.api.models import (
     HealthResponse,
     ErrorResponse,
     EntityCategory,
+    SemanticMatch,
     FeedbackRequest,
     FeedbackResponse
 )
@@ -164,7 +166,8 @@ async def predict(request: ClueRequest) -> PredictionResponse:
                 answer=pred.answer,
                 confidence=pred.confidence,  # Already 0-1 scale
                 category=EntityCategory(pred.category),
-                reasoning=pred.reasoning
+                reasoning=pred.reasoning,
+                semantic_match=SemanticMatch(pred.semantic_match) if hasattr(pred, 'semantic_match') else SemanticMatch.MEDIUM
             )
             for i, pred in enumerate(prediction_result.predictions)
         ]
@@ -327,6 +330,69 @@ async def health() -> HealthResponse:
         )
 
 
+def _record_error_pattern(
+    predicted: str,
+    correct: str,
+    clues: List[str],
+    error_type: str = "unknown"
+) -> bool:
+    """
+    Record an error pattern for future learning.
+
+    Saves to error_patterns.json to warn Gemini about past mistakes.
+    """
+    try:
+        error_file = Path(__file__).parent.parent / "data" / "error_patterns.json"
+
+        # Load existing patterns
+        if error_file.exists():
+            with open(error_file, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        else:
+            data = {"patterns": [], "last_updated": ""}
+
+        # Check if this error pattern already exists
+        existing = None
+        for pattern in data["patterns"]:
+            if pattern["predicted"].lower() == predicted.lower() and pattern["correct"].lower() == correct.lower():
+                existing = pattern
+                break
+
+        if existing:
+            # Update existing pattern
+            existing["occurrences"] = existing.get("occurrences", 1) + 1
+            existing["timestamp"] = datetime.now().strftime("%Y-%m-%d")
+        else:
+            # Add new pattern
+            data["patterns"].append({
+                "predicted": predicted,
+                "correct": correct,
+                "clues_sample": clues[:2] if clues else [],
+                "error_type": error_type,
+                "occurrences": 1,
+                "timestamp": datetime.now().strftime("%Y-%m-%d")
+            })
+
+        # Keep only the most recent 10 patterns
+        data["patterns"] = sorted(
+            data["patterns"],
+            key=lambda x: x.get("timestamp", ""),
+            reverse=True
+        )[:10]
+
+        data["last_updated"] = datetime.now().strftime("%Y-%m-%d")
+
+        with open(error_file, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+
+        logger.info(f"Recorded error pattern: {predicted} -> {correct}")
+        return True
+
+    except Exception as e:
+        logger.error(f"Failed to record error pattern: {e}")
+        return False
+
+
 @router.post(
     "/feedback",
     response_model=FeedbackResponse,
@@ -340,6 +406,9 @@ async def submit_feedback(request: FeedbackRequest) -> FeedbackResponse:
 
     Records the correct answer and clues to history.json for
     few-shot learning improvement in the Gemini context.
+
+    If our prediction was wrong, also records the error pattern
+    to error_patterns.json to help prevent similar mistakes.
     """
     try:
         from app.core.context_manager import get_context_manager
@@ -356,6 +425,36 @@ async def submit_feedback(request: FeedbackRequest) -> FeedbackResponse:
             solved_at_clue=request.solved_at_clue or len(request.clues),
             key_insight=request.key_insight or ""
         )
+
+        # Check if we need to record an error pattern
+        # This requires checking if there was a prediction for this session
+        if request.session_id and request.session_id in _sessions:
+            predictor = _sessions[request.session_id]
+            if hasattr(predictor, '_last_predictions') and predictor._last_predictions:
+                top_prediction = predictor._last_predictions[0] if predictor._last_predictions else None
+                if top_prediction and top_prediction.answer.lower() != request.correct_answer.lower():
+                    # Our prediction was wrong - record the error pattern
+                    # Determine error type based on similarity
+                    try:
+                        from Levenshtein import distance as levenshtein_distance
+                        edit_distance = levenshtein_distance(
+                            top_prediction.answer.lower(),
+                            request.correct_answer.lower()
+                        )
+                        # If edit distance is small, it's likely phonetic confusion
+                        if edit_distance <= 3:
+                            error_type = "phonetic_confusion"
+                        else:
+                            error_type = "semantic_error"
+                    except ImportError:
+                        error_type = "unknown"
+
+                    _record_error_pattern(
+                        predicted=top_prediction.answer,
+                        correct=request.correct_answer,
+                        clues=request.clues,
+                        error_type=error_type
+                    )
 
         if success:
             logger.info(

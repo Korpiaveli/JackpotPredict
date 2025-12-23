@@ -69,6 +69,12 @@ backend/app/data/*.sqlite
 frontend/.vite
 .claude/
 
+# Learning Data - TRACKED for portability
+# These files contain learned patterns and should be synced across machines
+# Explicitly unignore them:
+!backend/app/data/history.json
+!backend/app/data/error_patterns.json
+
 # API Keys (safety)
 .env*
 !.env.example
