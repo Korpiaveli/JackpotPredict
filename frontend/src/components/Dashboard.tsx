@@ -1,11 +1,13 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import CountdownTimer from './CountdownTimer'
-import PredictionCard from './PredictionCard'
 import ClueInput from './ClueInput'
 import AnswerFeedback from './AnswerFeedback'
+import RecommendedPick from './RecommendedPick'
+import AgentRow from './AgentRow'
+import StatusBar from './StatusBar'
 import { useSubmitClue, useResetPuzzle, useHealth, useSubmitFeedback } from '../hooks/usePredictions'
 import { usePuzzleStore } from '../store/puzzleStore'
-import type { EntityCategory } from '../types/api'
+import type { EntityCategory, AgentName, AgentPrediction } from '../types/api'
 
 export default function Dashboard() {
   const {
@@ -30,22 +32,18 @@ export default function Dashboard() {
 
   const handleSubmitClue = async (clueText: string) => {
     try {
-      // Start the game on first clue submission
       if (!gameStarted) {
         startGame()
       }
 
       const result = await submitClueMutation.mutateAsync(clueText)
 
-      // Track response time
       if (result?.elapsed_time) {
         addResponseTime(result.elapsed_time)
       }
 
-      // Reset timer after successful submission
       resetTimer()
 
-      // Check if puzzle is complete (5 clues)
       if (result?.clue_number >= 5) {
         completePuzzle()
       }
@@ -76,7 +74,6 @@ export default function Dashboard() {
         solvedAtClue,
         keyInsight
       })
-      // After successful feedback, reset for a new puzzle
       await handleReset()
     } catch (err) {
       console.error('Failed to submit feedback:', err)
@@ -87,254 +84,191 @@ export default function Dashboard() {
     handleReset()
   }
 
+  const handleCopyAnswer = () => {
+    if (latestPrediction?.recommended_pick) {
+      navigator.clipboard.writeText(latestPrediction.recommended_pick)
+    }
+  }
+
   const currentClueNumber = (latestPrediction?.clue_number || 0) + 1
-  const shouldGuess = latestPrediction?.guess_recommendation?.should_guess
-  const topPrediction = latestPrediction?.predictions?.[0]
+  const shouldGuess = latestPrediction?.guess_recommendation?.should_guess ?? false
+
+  // Get agent predictions with proper typing
+  const agentPredictions = (latestPrediction?.agents ?? {}) as Record<AgentName, AgentPrediction | null>
+
+  // Count agents that agreed on the recommended pick
+  const agentsAgreed = latestPrediction?.agreements?.length ?? 0
+
+  // Calculate confidence from voting
+  const topVoteScore = latestPrediction?.voting?.vote_breakdown?.[0]?.total_votes ?? 0
+  const recommendedConfidence = Math.min(topVoteScore / 2, 1)
 
   return (
-    <div className="min-h-screen bg-background text-white p-6">
-      {/* Header */}
-      <header className="max-w-7xl mx-auto mb-8">
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-4xl font-bold text-primary mb-2">
-              🎰 JackpotPredict
+    <div className="min-h-screen bg-background text-white flex flex-col">
+      {/* Compact Header */}
+      <header className="border-b border-gray-800 px-4 py-2">
+        <div className="max-w-6xl mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <h1 className="text-xl font-bold text-primary">
+              JackpotPredict
             </h1>
-            <p className="text-gray-400">
-              AI-Powered Trivia Answer Prediction Engine
-            </p>
+            <span className="text-xs text-gray-500 bg-gray-800 px-2 py-0.5 rounded">
+              v3.0 MoA
+            </span>
           </div>
 
-          {/* Health Status */}
-          {healthData && (
-            <div className="flex items-center gap-4 text-sm">
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-success animate-pulse" />
-                <span className="text-gray-400">Online</span>
-              </div>
-              <div className="text-gray-500">
-                {healthData.entity_count.toLocaleString()} entities
-              </div>
+          <div className="flex items-center gap-4">
+            {/* Timer (compact) */}
+            <div className="flex items-center gap-2 text-sm">
+              <CountdownTimer
+                initialSeconds={20}
+                isActive={gameStarted && !isLoading && !puzzleComplete}
+                resetKey={timerKey}
+                showIdle={!gameStarted}
+              />
             </div>
-          )}
-        </div>
-      </header>
 
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Left Column - Timer & Input */}
-          <div className="lg:col-span-1 space-y-6">
-            {/* Countdown Timer */}
-            <CountdownTimer
-              initialSeconds={20}
-              isActive={gameStarted && !isLoading && !puzzleComplete}
-              resetKey={timerKey}
-              showIdle={!gameStarted}
-            />
-
-            {/* Session Info */}
-            {latestPrediction && (
-              <div className="clue-card">
-                <div className="text-xs text-gray-500 uppercase tracking-wide mb-2">
-                  Session Info
-                </div>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between">
-                    <span className="text-gray-400">Clues Submitted:</span>
-                    <span className="text-white font-bold">
-                      {latestPrediction.clue_number} / 5
-                    </span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-400">Processing Time:</span>
-                    <span className="text-white font-mono">
-                      {latestPrediction.elapsed_time.toFixed(2)}s
-                    </span>
-                  </div>
-                </div>
+            {/* Health indicator */}
+            {healthData && (
+              <div className="flex items-center gap-2 text-xs">
+                <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                <span className="text-gray-500">{healthData.entity_count.toLocaleString()} entities</span>
               </div>
             )}
 
-            {/* Category Probabilities */}
-            {latestPrediction?.category_probabilities && (
-              <div className="clue-card">
-                <div className="text-xs text-gray-500 uppercase tracking-wide mb-3">
-                  Category Analysis
-                </div>
-                <div className="space-y-3">
-                  {Object.entries(latestPrediction.category_probabilities).map(([category, prob]) => (
-                    <div key={category}>
-                      <div className="flex justify-between mb-1 text-sm">
-                        <span className="text-gray-400 capitalize">{category}</span>
-                        <span className="text-white font-mono">{(prob * 100).toFixed(1)}%</span>
-                      </div>
-                      <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
-                        <motion.div
-                          className="h-full bg-primary rounded-full"
-                          initial={{ width: 0 }}
-                          animate={{ width: `${prob * 100}%` }}
-                          transition={{ duration: 0.5 }}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Reset Button */}
+            {/* Reset button */}
             <button
               onClick={handleReset}
               disabled={resetMutation.isPending}
-              className="btn-secondary w-full"
+              className="text-xs px-3 py-1 bg-gray-800 hover:bg-gray-700 rounded transition-colors"
             >
-              {resetMutation.isPending ? 'Resetting...' : '🔄 New Puzzle'}
+              {resetMutation.isPending ? '...' : 'Reset'}
             </button>
           </div>
+        </div>
+      </header>
 
-          {/* Right Column - Predictions & Input */}
-          <div className="lg:col-span-2 space-y-6">
-            {/* Guess Recommendation Banner */}
-            <AnimatePresence>
-              {shouldGuess && topPrediction && (
-                <motion.div
-                  className="bg-gradient-to-r from-success/20 to-transparent border-2 border-success rounded-xl p-6"
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="text-4xl">✅</div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-success mb-1">
-                        Recommendation: GUESS NOW!
-                      </h3>
-                      <p className="text-sm text-gray-300">
-                        {latestPrediction.guess_recommendation.rationale}
-                      </p>
-                      <p className="text-sm text-gray-400 mt-2">
-                        Top Answer: <span className="text-white font-bold">{topPrediction.answer}</span>
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-
-            {/* Error Display */}
-            <AnimatePresence>
-              {error && (
-                <motion.div
-                  className="bg-danger/20 border-2 border-danger rounded-xl p-4"
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl">⚠️</span>
-                    <div>
-                      <h4 className="font-bold text-danger">Error</h4>
-                      <p className="text-sm text-gray-300">{error}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-
-            {/* Predictions */}
-            {latestPrediction && latestPrediction.predictions.length > 0 && (
-              <div className="space-y-4">
-                <h2 className="text-2xl font-bold text-white mb-4">
-                  Top {latestPrediction.predictions.length} Predictions
-                </h2>
-                <div className="space-y-4">
-                  {latestPrediction.predictions.map((prediction, index) => (
-                    <PredictionCard
-                      key={`${prediction.answer}-${index}`}
-                      prediction={prediction}
-                      index={index}
-                    />
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Clue History with Response Times */}
-            {clueHistory.length > 0 && (
-              <div className="clue-card">
-                <div className="text-xs text-gray-500 uppercase tracking-wide mb-3">
-                  Clue History
-                </div>
-                <div className="space-y-2">
-                  {clueHistory.map((clue, index) => (
-                    <div key={index} className="flex justify-between items-start gap-2 text-sm">
-                      <div className="flex gap-2">
-                        <span className="text-primary font-mono">#{index + 1}</span>
-                        <span className="text-gray-300">{clue}</span>
-                      </div>
-                      {responseTimes[index] !== undefined && (
-                        <span className="text-xs text-gray-500 font-mono whitespace-nowrap">
-                          {responseTimes[index].toFixed(2)}s
-                        </span>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Clue Input */}
-            <div className="clue-card">
-              <ClueInput
-                onSubmit={handleSubmitClue}
-                clueNumber={currentClueNumber}
-                previousClues={clueHistory}
-                isLoading={isLoading}
-                disabled={currentClueNumber > 5 || puzzleComplete}
-              />
-            </div>
-
-            {/* Welcome Message */}
-            {!latestPrediction && !puzzleComplete && (
+      {/* Main Content - Optimized for single screen */}
+      <main className="flex-1 px-4 py-4 max-w-6xl mx-auto w-full overflow-auto">
+        <div className="space-y-4">
+          {/* Error Display */}
+          <AnimatePresence>
+            {error && (
               <motion.div
-                className="text-center py-12"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.3 }}
+                className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 text-sm"
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
               >
-                <div className="text-6xl mb-4">🎯</div>
-                <h2 className="text-2xl font-bold mb-2">Ready to Predict!</h2>
-                <p className="text-gray-400 max-w-md mx-auto">
-                  Enter the first clue from the game show above to start getting AI-powered predictions.
-                  You'll get top 3 answers with confidence scores after each clue.
-                </p>
+                <span className="text-red-400">Error: {error}</span>
               </motion.div>
             )}
+          </AnimatePresence>
 
-            {/* Feedback Form - shown when puzzle is complete */}
-            {puzzleComplete && latestPrediction && (
-              <AnswerFeedback
-                sessionId={latestPrediction.session_id}
-                clues={clueHistory}
-                topPrediction={topPrediction?.answer}
-                onSubmit={handleSubmitFeedback}
-                onSkip={handleSkipFeedback}
-                isLoading={submitFeedbackMutation.isPending}
+          {/* Recommended Pick - Most prominent */}
+          {latestPrediction && latestPrediction.recommended_pick && (
+            <RecommendedPick
+              answer={latestPrediction.recommended_pick}
+              confidence={recommendedConfidence}
+              keyInsight={latestPrediction.key_insight || ''}
+              agreementStrength={latestPrediction.agreement_strength || 'none'}
+              agentsAgreed={agentsAgreed}
+              shouldGuess={shouldGuess}
+              onCopy={handleCopyAnswer}
+            />
+          )}
+
+          {/* Status Bar */}
+          {latestPrediction && (
+            <StatusBar
+              agentsResponded={latestPrediction.agents_responded || 0}
+              clueNumber={latestPrediction.clue_number}
+              elapsedTime={latestPrediction.elapsed_time}
+              agreementStrength={latestPrediction.agreement_strength || 'none'}
+            />
+          )}
+
+          {/* Clue History - Collapsible context */}
+          {clueHistory.length > 0 && (
+            <div className="bg-gray-800/30 rounded-lg p-3">
+              <div className="text-xs text-gray-500 uppercase tracking-wide mb-2">
+                Clue History
+              </div>
+              <div className="space-y-1">
+                {clueHistory.map((clue, index) => (
+                  <div key={index} className="flex items-start gap-2 text-sm">
+                    <span className="text-primary font-mono text-xs mt-0.5">
+                      {index + 1}.
+                    </span>
+                    <span className={`text-gray-300 ${index === clueHistory.length - 1 ? 'font-medium' : ''}`}>
+                      "{clue}"
+                      {index === clueHistory.length - 1 && (
+                        <span className="text-primary ml-1 text-xs">current</span>
+                      )}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* 5-Agent Row */}
+          {latestPrediction && Object.keys(agentPredictions).length > 0 && (
+            <div>
+              <div className="text-xs text-gray-500 uppercase tracking-wide mb-2">
+                Agent Predictions
+              </div>
+              <AgentRow
+                agents={agentPredictions}
+                winningAnswer={latestPrediction.recommended_pick || ''}
               />
-            )}
+            </div>
+          )}
+
+          {/* Clue Input - Always visible */}
+          <div className="bg-gray-800/50 rounded-lg p-3 border border-gray-700">
+            <ClueInput
+              onSubmit={handleSubmitClue}
+              clueNumber={currentClueNumber}
+              previousClues={clueHistory}
+              isLoading={isLoading}
+              disabled={currentClueNumber > 5 || puzzleComplete}
+            />
           </div>
+
+          {/* Welcome Message */}
+          {!latestPrediction && !puzzleComplete && (
+            <motion.div
+              className="text-center py-8"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+            >
+              <div className="text-4xl mb-3">🎯</div>
+              <h2 className="text-xl font-bold mb-2">Ready to Predict!</h2>
+              <p className="text-gray-400 text-sm max-w-md mx-auto">
+                Enter the first clue to get predictions from 5 specialized AI agents.
+              </p>
+            </motion.div>
+          )}
+
+          {/* Feedback Form */}
+          {puzzleComplete && latestPrediction && (
+            <AnswerFeedback
+              sessionId={latestPrediction.session_id}
+              clues={clueHistory}
+              topPrediction={latestPrediction.recommended_pick}
+              onSubmit={handleSubmitFeedback}
+              onSkip={handleSkipFeedback}
+              isLoading={submitFeedbackMutation.isPending}
+            />
+          )}
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="max-w-7xl mx-auto mt-12 pt-6 border-t border-gray-800 text-center text-sm text-gray-500">
-        <p>
-          Powered by Gemini 2.0 Flash • {' '}
-          <a href="/api/docs" target="_blank" className="text-primary hover:underline">
-            API Docs
-          </a>
-        </p>
+      {/* Compact Footer */}
+      <footer className="border-t border-gray-800 px-4 py-2 text-center text-xs text-gray-600">
+        5 Agents: Lateral + Wordsmith + PopCulture + Literal + WildCard
       </footer>
     </div>
   )

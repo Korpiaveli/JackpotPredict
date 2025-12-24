@@ -3,13 +3,17 @@ API Request/Response Models - Pydantic schemas for FastAPI endpoints.
 
 Defines:
 - Request models for submitting clues
-- Response models for predictions
+- Response models for predictions (5-agent MoA architecture)
 - Session management models
 """
 
 from typing import List, Optional, Dict
 from pydantic import BaseModel, Field, ConfigDict
 from enum import Enum
+
+
+# Agent names for MoA architecture
+AGENT_NAMES = ["lateral", "wordsmith", "popculture", "literal", "wildcard"]
 
 
 class EntityCategory(str, Enum):
@@ -132,8 +136,106 @@ class GuessRecommendation(BaseModel):
     )
 
 
+class AgentPrediction(BaseModel):
+    """Individual agent prediction in MoA architecture."""
+
+    answer: str = Field(
+        ...,
+        description="Predicted answer from this agent"
+    )
+
+    confidence: float = Field(
+        ...,
+        ge=0.0,
+        le=1.0,
+        description="Confidence score (0.0-1.0)"
+    )
+
+    reasoning: str = Field(
+        ...,
+        description="Brief 2-4 word explanation"
+    )
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "answer": "Bowling",
+                "confidence": 0.85,
+                "reasoning": "Strike=win"
+            }
+        }
+    )
+
+
+class VoteBreakdown(BaseModel):
+    """Vote breakdown for an answer in weighted voting."""
+
+    answer: str = Field(
+        ...,
+        description="The answer that received votes"
+    )
+
+    total_votes: float = Field(
+        ...,
+        description="Weighted vote total"
+    )
+
+    agents: List[str] = Field(
+        ...,
+        description="List of agents that predicted this answer"
+    )
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "answer": "Bowling",
+                "total_votes": 2.65,
+                "agents": ["lateral", "wordsmith"]
+            }
+        }
+    )
+
+
+class VotingResult(BaseModel):
+    """Result of weighted voting across agents."""
+
+    recommended_pick: str = Field(
+        ...,
+        description="The winning answer from voting"
+    )
+
+    key_insight: str = Field(
+        ...,
+        description="Key reasoning from top-confidence agent"
+    )
+
+    agreement_strength: str = Field(
+        ...,
+        description="Agreement strength: 'strong', 'moderate', 'weak', 'none'"
+    )
+
+    vote_breakdown: List[VoteBreakdown] = Field(
+        default_factory=list,
+        description="Vote distribution across answers"
+    )
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "recommended_pick": "Bowling",
+                "key_insight": "Strike=Success, Gutter=Failure",
+                "agreement_strength": "strong",
+                "vote_breakdown": [
+                    {"answer": "Bowling", "total_votes": 2.65, "agents": ["lateral", "wordsmith"]},
+                    {"answer": "Squid Game", "total_votes": 0.60, "agents": ["popculture"]}
+                ]
+            }
+        }
+    )
+
+
 class PredictionResponse(BaseModel):
-    """Response model for prediction results with dual AI predictions."""
+    """Response model for prediction results with 5-agent MoA architecture."""
 
     session_id: str = Field(
         ...,
@@ -147,37 +249,58 @@ class PredictionResponse(BaseModel):
         description="Current clue number (1-5)"
     )
 
-    # Dual AI prediction lists
-    gemini_predictions: List[Prediction] = Field(
-        default_factory=list,
-        description="Top 3 predictions from Gemini"
+    # 5-Agent predictions (MoA architecture)
+    agents: Dict[str, Optional[AgentPrediction]] = Field(
+        default_factory=dict,
+        description="Predictions from 5 specialized agents: lateral, wordsmith, popculture, literal, wildcard"
     )
 
-    openai_predictions: List[Prediction] = Field(
-        default_factory=list,
-        description="Top 3 predictions from OpenAI"
+    # Voting results
+    voting: Optional[VotingResult] = Field(
+        None,
+        description="Weighted voting result across agents"
     )
 
-    # Agreement analysis
-    agreements: List[str] = Field(
-        default_factory=list,
-        description="Answers that appear in both AI's top-3"
+    # Convenience fields
+    recommended_pick: str = Field(
+        default="",
+        description="The recommended answer from voting"
+    )
+
+    key_insight: str = Field(
+        default="",
+        description="Key reasoning explaining the recommendation"
     )
 
     agreement_strength: str = Field(
         default="none",
-        description="Agreement strength: 'strong' (both #1), 'moderate' (both top-3), 'none'"
+        description="Agreement strength: 'strong', 'moderate', 'weak', 'none'"
     )
 
-    recommended_pick: str = Field(
-        default="",
-        description="The recommended answer (agreement or top Gemini)"
+    agents_responded: int = Field(
+        default=0,
+        description="Number of agents that responded (0-5)"
     )
 
-    # Legacy field for backwards compatibility
+    # Legacy fields for backwards compatibility
+    gemini_predictions: List[Prediction] = Field(
+        default_factory=list,
+        description="Legacy: Top 3 predictions from Gemini (deprecated)"
+    )
+
+    openai_predictions: List[Prediction] = Field(
+        default_factory=list,
+        description="Legacy: Top 3 predictions from OpenAI (deprecated)"
+    )
+
     predictions: List[Prediction] = Field(
         default_factory=list,
-        description="Top 3 predictions (Gemini primary, for backwards compatibility)"
+        description="Legacy: Top 3 predictions (deprecated)"
+    )
+
+    agreements: List[str] = Field(
+        default_factory=list,
+        description="Legacy: Answers that appear in multiple agents' predictions"
     )
 
     guess_recommendation: GuessRecommendation = Field(
@@ -205,22 +328,29 @@ class PredictionResponse(BaseModel):
             "example": {
                 "session_id": "550e8400-e29b-41d4-a716-446655440000",
                 "clue_number": 2,
-                "gemini_predictions": [
-                    {"rank": 1, "answer": "Bowling", "confidence": 0.82, "category": "thing", "reasoning": "Strike/Gutter = Success/Failure"}
-                ],
-                "openai_predictions": [
-                    {"rank": 1, "answer": "Bowling", "confidence": 0.78, "category": "thing", "reasoning": "Strike and gutter are bowling terms"}
-                ],
-                "agreements": ["Bowling"],
-                "agreement_strength": "strong",
+                "agents": {
+                    "lateral": {"answer": "Bowling", "confidence": 0.85, "reasoning": "Strike=win"},
+                    "wordsmith": {"answer": "Bowling", "confidence": 0.80, "reasoning": "Pun: strike"},
+                    "popculture": {"answer": "Squid Game", "confidence": 0.60, "reasoning": "Netflix"},
+                    "literal": {"answer": "Life", "confidence": 0.40, "reasoning": "(trap)"},
+                    "wildcard": {"answer": "Roulette", "confidence": 0.55, "reasoning": "wheel"}
+                },
+                "voting": {
+                    "recommended_pick": "Bowling",
+                    "key_insight": "Strike=Success, Gutter=Failure",
+                    "agreement_strength": "strong",
+                    "vote_breakdown": [
+                        {"answer": "Bowling", "total_votes": 2.65, "agents": ["lateral", "wordsmith"]}
+                    ]
+                },
                 "recommended_pick": "Bowling",
-                "predictions": [
-                    {"rank": 1, "answer": "Bowling", "confidence": 0.82, "category": "thing", "reasoning": "Strike/Gutter = Success/Failure"}
-                ],
+                "key_insight": "Strike=Success, Gutter=Failure",
+                "agreement_strength": "strong",
+                "agents_responded": 5,
                 "guess_recommendation": {
                     "should_guess": True,
                     "confidence_threshold": 0.65,
-                    "rationale": "Both AIs agree on Bowling with high confidence"
+                    "rationale": "2 agents agree on Bowling with high confidence"
                 },
                 "elapsed_time": 2.1,
                 "clue_history": ["Surrounded by success and failure", "Strike and gutter"],
