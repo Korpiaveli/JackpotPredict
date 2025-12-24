@@ -49,6 +49,10 @@ class Settings(BaseSettings):
     # Enable hybrid mode (LLM + Bayesian)
     ENABLE_HYBRID: bool = True
 
+    # OpenAI Validator Settings (parallel validation with Gemini)
+    OPENAI_VALIDATOR_ENABLED: bool = True
+    VALIDATOR_TIMEOUT: int = 8  # seconds - shorter than main LLM timeout
+
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"
@@ -127,4 +131,21 @@ def get_fallback_config() -> dict:
         "api_key": None,
         "mode": "ollama",
         "is_cloud": False,
+    }
+
+
+def get_openai_validator_config() -> dict:
+    """
+    Get OpenAI validator configuration for parallel validation.
+
+    Returns:
+        dict with keys: base_url, model, api_key, enabled, timeout
+    """
+    settings = get_settings()
+    return {
+        "base_url": settings.OPENAI_API_URL,
+        "model": settings.OPENAI_MODEL,
+        "api_key": settings.OPENAI_API_KEY,
+        "enabled": settings.OPENAI_VALIDATOR_ENABLED and bool(settings.OPENAI_API_KEY),
+        "timeout": settings.VALIDATOR_TIMEOUT,
     }

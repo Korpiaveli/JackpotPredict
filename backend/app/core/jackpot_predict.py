@@ -29,6 +29,12 @@ from .gemini_predictor import (
     GeminiResponse,
     GeminiPrediction
 )
+from .hybrid_validation import (
+    HybridValidationService,
+    DualPredictionResult,
+    get_hybrid_service
+)
+from .openai_predictor import OpenAIPrediction
 from .response_validator import (
     Prediction,
     PredictionResponse,
@@ -38,6 +44,7 @@ from .response_validator import (
     create_wait_response,
     create_error_response
 )
+from .config import get_openai_validator_config
 
 logger = logging.getLogger(__name__)
 
@@ -65,7 +72,8 @@ class JackpotPredict:
     def __init__(
         self,
         entity_registry: EntityRegistry,
-        spelling_validator: Optional[SpellingValidator] = None
+        spelling_validator: Optional[SpellingValidator] = None,
+        enable_hybrid_validation: bool = True
     ):
         """
         Initialize JackpotPredict orchestrator.
@@ -73,26 +81,43 @@ class JackpotPredict:
         Args:
             entity_registry: Initialized EntityRegistry for spelling validation
             spelling_validator: Optional SpellingValidator (will create if None)
+            enable_hybrid_validation: Enable parallel OpenAI validation (default True)
         """
         self.registry = entity_registry
         self.validator = spelling_validator or SpellingValidator(entity_registry)
+        self.enable_hybrid_validation = enable_hybrid_validation
 
         # Session state
         self.session_id = str(uuid4())
         self.clue_count = 0
         self.clue_history: List[str] = []
         self.category_probs = self.DEFAULT_CATEGORY_PRIORS.copy()
+        self.last_agreement_level: Optional[str] = None  # Track validation agreement
 
-        # Gemini predictor (lazy initialized)
+        # Predictors (lazy initialized)
         self._gemini: Optional[GeminiPredictor] = None
+        self._hybrid_service: Optional[HybridValidationService] = None
 
-        logger.info(f"JackpotPredict initialized (session: {self.session_id})")
+        logger.info(f"JackpotPredict initialized (session: {self.session_id}, hybrid={enable_hybrid_validation})")
 
     async def _get_gemini(self) -> GeminiPredictor:
         """Get or create Gemini predictor."""
         if self._gemini is None:
             self._gemini = await get_gemini_predictor()
         return self._gemini
+
+    async def _get_hybrid_service(self) -> HybridValidationService:
+        """Get or create hybrid validation service."""
+        if self._hybrid_service is None:
+            self._hybrid_service = await get_hybrid_service()
+        return self._hybrid_service
+
+    def _is_hybrid_enabled(self) -> bool:
+        """Check if hybrid validation should be used."""
+        if not self.enable_hybrid_validation:
+            return False
+        config = get_openai_validator_config()
+        return config["enabled"]
 
     def add_clue(self, clue_text: str) -> PredictionResponse:
         """
@@ -113,24 +138,25 @@ class JackpotPredict:
             reason="Use async API for Gemini predictions"
         )
 
-    async def add_clue_async(self, clue_text: str) -> PredictionResponse:
+    async def add_clue_async(self, clue_text: str) -> dict:
         """
-        Analyze a new clue with Gemini-first prediction.
+        Analyze a new clue with dual AI prediction (Gemini + OpenAI in parallel).
 
         This is the main entry point for the prediction engine.
 
         Flow:
         1. Build context with clue history
-        2. Get predictions from Gemini (top 3 with reasoning)
-        3. Validate spelling of all predictions
-        4. Build guess recommendation
-        5. Format response for frontend
+        2. Run Gemini and OpenAI predictions in parallel
+        3. Find agreements between both AIs
+        4. Validate spelling of all predictions
+        5. Build guess recommendation based on agreements
+        6. Return both prediction lists with agreement analysis
 
         Args:
             clue_text: The clue text to analyze
 
         Returns:
-            PredictionResponse with top 3 predictions and metadata
+            Dict with dual predictions and agreement analysis
         """
         start_time = time.time()
 
@@ -142,59 +168,62 @@ class JackpotPredict:
         # Determine category hint from previous predictions or priors
         category_hint = self._get_category_hint()
 
-        # Get Gemini predictions
-        gemini = await self._get_gemini()
-        gemini_response = await gemini.predict(
+        # Always use dual prediction now
+        hybrid_service = await self._get_hybrid_service()
+        dual_result = await hybrid_service.predict_dual(
             clues=self.clue_history,
             category_hint=category_hint
         )
 
-        # Handle Gemini failure
-        if not gemini_response or not gemini_response.predictions:
-            logger.error("Gemini returned no predictions")
-            elapsed = time.time() - start_time
-            return create_error_response(
-                session_id=self.session_id,
-                clue_number=self.clue_count,
-                clue_history=self.clue_history,
-                error_message="Gemini prediction failed"
-            )
+        # Validate Gemini predictions
+        validated_gemini = self._validate_predictions(dual_result.gemini_predictions)
+        validated_openai = self._validate_openai_predictions(dual_result.openai_predictions)
 
-        # Process and validate predictions
-        validated_predictions = self._validate_predictions(gemini_response.predictions)
+        # Update category probabilities from Gemini predictions
+        self.category_probs = build_category_probabilities(validated_gemini)
 
-        # Update category probabilities from predictions
-        self.category_probs = build_category_probabilities(validated_predictions)
+        # Build guess recommendation based on agreement strength
+        top_confidence = validated_gemini[0].confidence if validated_gemini else 0.0
+        if dual_result.agreement_strength == "strong":
+            # Both AIs agree - boost confidence in recommendation
+            rationale = f"BOTH AIs agree: {dual_result.recommended_pick}"
+        elif dual_result.agreement_strength == "moderate":
+            rationale = f"Agreement found: {dual_result.agreements}"
+        else:
+            rationale = f"AIs differ - Gemini: {dual_result.top_gemini}, OpenAI: {dual_result.top_openai}"
 
-        # Build guess recommendation
-        top_confidence = validated_predictions[0].confidence if validated_predictions else 0.0
         guess_rec = build_guess_recommendation(
             top_confidence=top_confidence,
             clue_number=self.clue_count,
-            key_insight=gemini_response.key_insight
+            key_insight=rationale
         )
 
         elapsed_time = time.time() - start_time
 
         # Log result
-        top_pred = validated_predictions[0] if validated_predictions else None
-        if top_pred:
-            logger.info(
-                f"Clue {self.clue_count} processed in {elapsed_time:.3f}s. "
-                f"Top: {top_pred.answer} ({top_pred.confidence:.0%}) - "
-                f"Guess: {guess_rec.should_guess}"
-            )
-
-        return PredictionResponse(
-            session_id=self.session_id,
-            clue_number=self.clue_count,
-            predictions=validated_predictions,
-            guess_recommendation=guess_rec,
-            elapsed_time=elapsed_time,
-            clue_history=self.clue_history.copy(),
-            category_probabilities=self.category_probs,
-            key_insight=gemini_response.key_insight
+        logger.info(
+            f"Clue {self.clue_count} processed in {elapsed_time:.3f}s. "
+            f"Gemini: {dual_result.top_gemini}, OpenAI: {dual_result.top_openai}, "
+            f"Agreements: {dual_result.agreements}, Recommended: {dual_result.recommended_pick}"
         )
+
+        # Return the new dual prediction format
+        return {
+            "session_id": self.session_id,
+            "clue_number": self.clue_count,
+            "gemini_predictions": validated_gemini,
+            "openai_predictions": validated_openai,
+            "agreements": dual_result.agreements,
+            "agreement_strength": dual_result.agreement_strength,
+            "recommended_pick": dual_result.recommended_pick,
+            "predictions": validated_gemini,  # Backwards compatibility
+            "guess_recommendation": guess_rec,
+            "elapsed_time": elapsed_time,
+            "clue_history": self.clue_history.copy(),
+            "category_probabilities": self.category_probs,
+            "gemini_insight": dual_result.gemini_key_insight,
+            "openai_insight": dual_result.openai_key_insight,
+        }
 
     def _get_category_hint(self) -> Optional[str]:
         """Get category hint from current probabilities."""
@@ -269,6 +298,55 @@ class JackpotPredict:
 
         return validated
 
+    def _validate_openai_predictions(
+        self,
+        openai_predictions: List[OpenAIPrediction]
+    ) -> List[Prediction]:
+        """
+        Validate and format OpenAI predictions.
+
+        Same validation as Gemini predictions.
+        """
+        validated = []
+
+        for pred in openai_predictions:
+            # Skip WAIT responses
+            if pred.answer.upper() == "WAIT":
+                validated.append(Prediction(
+                    answer="WAIT",
+                    confidence=0.0,
+                    category=pred.category,
+                    reasoning="Waiting for more clues",
+                    spelling_valid=True,
+                    canonical_name=None
+                ))
+                continue
+
+            # Validate spelling against entity database
+            validation = self.validator.validate(pred.answer)
+
+            if validation.is_valid:
+                canonical = validation.formatted_answer
+                spelling_valid = True
+            else:
+                if validation.suggestion:
+                    canonical = validation.suggestion
+                    spelling_valid = True
+                else:
+                    canonical = pred.answer
+                    spelling_valid = False
+
+            validated.append(Prediction(
+                answer=canonical,
+                confidence=pred.confidence,
+                category=pred.category,
+                reasoning=pred.reasoning,
+                spelling_valid=spelling_valid,
+                canonical_name=canonical if spelling_valid else None
+            ))
+
+        return validated
+
     def reset(self):
         """
         Reset session for a new puzzle.
@@ -279,6 +357,7 @@ class JackpotPredict:
         self.clue_count = 0
         self.clue_history.clear()
         self.category_probs = self.DEFAULT_CATEGORY_PRIORS.copy()
+        self.last_agreement_level = None
 
         logger.info(f"Session reset. New session ID: {self.session_id}")
 

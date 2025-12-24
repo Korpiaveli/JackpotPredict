@@ -133,7 +133,7 @@ class GuessRecommendation(BaseModel):
 
 
 class PredictionResponse(BaseModel):
-    """Response model for prediction results."""
+    """Response model for prediction results with dual AI predictions."""
 
     session_id: str = Field(
         ...,
@@ -147,11 +147,37 @@ class PredictionResponse(BaseModel):
         description="Current clue number (1-5)"
     )
 
+    # Dual AI prediction lists
+    gemini_predictions: List[Prediction] = Field(
+        default_factory=list,
+        description="Top 3 predictions from Gemini"
+    )
+
+    openai_predictions: List[Prediction] = Field(
+        default_factory=list,
+        description="Top 3 predictions from OpenAI"
+    )
+
+    # Agreement analysis
+    agreements: List[str] = Field(
+        default_factory=list,
+        description="Answers that appear in both AI's top-3"
+    )
+
+    agreement_strength: str = Field(
+        default="none",
+        description="Agreement strength: 'strong' (both #1), 'moderate' (both top-3), 'none'"
+    )
+
+    recommended_pick: str = Field(
+        default="",
+        description="The recommended answer (agreement or top Gemini)"
+    )
+
+    # Legacy field for backwards compatibility
     predictions: List[Prediction] = Field(
-        ...,
-        min_length=0,
-        max_length=3,
-        description="Top 3 predictions ordered by confidence"
+        default_factory=list,
+        description="Top 3 predictions (Gemini primary, for backwards compatibility)"
     )
 
     guess_recommendation: GuessRecommendation = Field(
@@ -178,32 +204,27 @@ class PredictionResponse(BaseModel):
         json_schema_extra={
             "example": {
                 "session_id": "550e8400-e29b-41d4-a716-446655440000",
-                "clue_number": 3,
+                "clue_number": 2,
+                "gemini_predictions": [
+                    {"rank": 1, "answer": "Bowling", "confidence": 0.82, "category": "thing", "reasoning": "Strike/Gutter = Success/Failure"}
+                ],
+                "openai_predictions": [
+                    {"rank": 1, "answer": "Bowling", "confidence": 0.78, "category": "thing", "reasoning": "Strike and gutter are bowling terms"}
+                ],
+                "agreements": ["Bowling"],
+                "agreement_strength": "strong",
+                "recommended_pick": "Bowling",
                 "predictions": [
-                    {
-                        "rank": 1,
-                        "answer": "Monopoly",
-                        "confidence": 0.87,
-                        "category": "thing",
-                        "reasoning": "Strong polysemy match with 'flavors' (editions)"
-                    }
+                    {"rank": 1, "answer": "Bowling", "confidence": 0.82, "category": "thing", "reasoning": "Strike/Gutter = Success/Failure"}
                 ],
                 "guess_recommendation": {
                     "should_guess": True,
-                    "confidence_threshold": 0.75,
-                    "rationale": "Clue 3: Confidence 87% exceeds 75% threshold"
+                    "confidence_threshold": 0.65,
+                    "rationale": "Both AIs agree on Bowling with high confidence"
                 },
-                "elapsed_time": 1.23,
-                "clue_history": [
-                    "Savors many flavors",
-                    "Round and round",
-                    "A hostile takeover"
-                ],
-                "category_probabilities": {
-                    "thing": 0.85,
-                    "place": 0.10,
-                    "person": 0.05
-                }
+                "elapsed_time": 2.1,
+                "clue_history": ["Surrounded by success and failure", "Strike and gutter"],
+                "category_probabilities": {"thing": 1.0, "place": 0.0, "person": 0.0}
             }
         }
     )

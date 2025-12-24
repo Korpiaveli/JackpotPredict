@@ -2,11 +2,10 @@
 Gemini Predictor - Primary LLM engine for Best Guess Live trivia.
 
 This module provides optimized Gemini API inference with:
-- Expert trivia master system prompt
-- Chain-of-thought reasoning
+- Shared trivia master system prompt (same as OpenAI)
 - Wordplay-prioritized few-shot learning
 - JSON structured output
-- Confidence calibration
+- Raw confidence scores (no penalties)
 """
 
 import json
@@ -25,6 +24,7 @@ except ImportError:
 
 from app.core.config import get_settings, get_active_llm_config
 from app.core.context_manager import get_context_manager, HistoricalGame
+from app.core.trivia_prompt import build_trivia_prompt, format_clues_message
 
 logger = logging.getLogger(__name__)
 
@@ -303,13 +303,11 @@ class GeminiPredictor:
         return "\n".join(lines)
 
     def _build_system_prompt(self, category_hint: Optional[str] = None) -> str:
-        """Build complete system prompt with few-shot examples and error patterns."""
+        """Build complete system prompt with few-shot examples."""
         examples = self._select_few_shot_examples(category_hint, num_examples=4)
         error_patterns = self._get_error_patterns_prompt()
-        return GEMINI_TRIVIA_MASTER_PROMPT.format(
-            dynamic_examples=examples,
-            error_patterns=error_patterns
-        )
+        combined_examples = examples + "\n\n" + error_patterns if error_patterns else examples
+        return build_trivia_prompt(dynamic_examples=combined_examples)
 
     def _get_error_patterns_prompt(self) -> str:
         """Load error patterns from file and format as prompt warning."""
@@ -350,49 +348,13 @@ class GeminiPredictor:
             logger.warning(f"Failed to load error patterns: {e}")
             return ""
 
-    def _format_clues_message(
+    def _format_clues_for_prompt(
         self,
         clues: List[str],
         category_hint: Optional[str] = None
     ) -> str:
-        """Format clues for the user message."""
-        lines = []
-
-        if category_hint:
-            lines.append(f"[Category hint: {category_hint.upper()}]")
-            lines.append("")
-
-        lines.append("Here are the clues revealed so far:")
-        lines.append("")
-
-        for i, clue in enumerate(clues, 1):
-            lines.append(f'Clue {i}: "{clue}"')
-
-        lines.append("")
-        lines.append(f"We are on Clue {len(clues)} of 5. Provide your top 3 predictions in JSON format.")
-
-        return "\n".join(lines)
-
-    def _recalibrate_confidence(
-        self,
-        raw_confidence: float,
-        clue_number: int
-    ) -> float:
-        """
-        Adjust confidence based on clue number.
-
-        LLMs tend to be overconfident on early clues where information
-        is minimal. This applies a correction factor.
-        """
-        if clue_number <= 1:
-            # Very conservative on clue 1
-            return raw_confidence * 0.75
-        elif clue_number == 2:
-            return raw_confidence * 0.85
-        elif clue_number >= 4:
-            # Slight boost on late clues (more info available)
-            return min(0.98, raw_confidence * 1.05)
-        return raw_confidence
+        """Format clues for the user message using shared function."""
+        return format_clues_message(clues, category_hint)
 
     def _parse_response(
         self,
@@ -442,24 +404,18 @@ class GeminiPredictor:
                 if raw_conf > 1:
                     raw_conf = raw_conf / 100.0
 
-                calibrated_conf = self._recalibrate_confidence(raw_conf, clue_number)
+                # Use raw confidence - no penalties or adjustments
+                confidence = min(1.0, max(0.0, raw_conf))
 
-                # Parse semantic_match and apply confidence penalties
+                # Parse semantic_match (for display only, no penalty)
                 semantic_match = pred.get("semantic_match", "medium").lower()
                 if semantic_match not in ("strong", "medium", "weak"):
                     semantic_match = "medium"
 
-                # Apply confidence penalty for weak semantic matches
-                if semantic_match == "weak":
-                    calibrated_conf *= 0.6  # Significant penalty
-                elif semantic_match == "medium":
-                    calibrated_conf *= 0.85  # Slight penalty
-                # "strong" = no penalty
-
                 predictions.append(GeminiPrediction(
                     rank=pred.get("rank", i + 1),
                     answer=pred.get("answer", ""),
-                    confidence=calibrated_conf,
+                    confidence=confidence,
                     category=pred.get("category", "thing"),
                     reasoning=pred.get("reasoning", "")[:150],
                     semantic_match=semantic_match
@@ -513,7 +469,7 @@ class GeminiPredictor:
 
         clue_number = len(clues)
         system_prompt = self._build_system_prompt(category_hint)
-        user_message = self._format_clues_message(clues, category_hint)
+        user_message = self._format_clues_for_prompt(clues, category_hint)
 
         messages = [
             {"role": "system", "content": system_prompt},

@@ -133,21 +133,19 @@ def get_or_create_session(session_id: Optional[str] = None) -> tuple[str, Jackpo
     "/predict",
     response_model=PredictionResponse,
     status_code=status.HTTP_200_OK,
-    summary="Submit clue and get predictions",
-    description="Analyze a clue with Gemini AI and return top 3 predictions with confidence scores"
+    summary="Submit clue and get dual AI predictions",
+    description="Analyze a clue with both Gemini and OpenAI in parallel, showing agreements"
 )
 async def predict(request: ClueRequest) -> PredictionResponse:
     """
-    Submit a clue and get top 3 predictions.
+    Submit a clue and get predictions from both Gemini and OpenAI.
 
     This is the main endpoint for the prediction engine. Submit clues sequentially
     (1-5) and the system will maintain session state, providing predictions
     based on all clues seen so far.
 
-    Uses Gemini 2.0 Flash for intelligent trivia prediction with:
-    - Few-shot learning from historical games
-    - Wordplay and lateral thinking detection
-    - Confidence calibration per clue number
+    Both AIs predict independently using the same strategy-informed prompt.
+    Agreements between AIs are highlighted as high-confidence signals.
     """
     start_time = time.time()
 
@@ -155,28 +153,42 @@ async def predict(request: ClueRequest) -> PredictionResponse:
         # Get or create session
         session_id, predictor, is_new = get_or_create_session(request.session_id)
 
-        # Add clue to predictor (async for Gemini API call)
+        # Add clue to predictor (async for dual AI predictions)
         logger.info(f"Session {session_id}: Processing clue #{predictor.clue_count + 1}: '{request.clue_text}'")
-        prediction_result = await predictor.add_clue_async(request.clue_text)
+        result = await predictor.add_clue_async(request.clue_text)
 
-        # Convert to API response format
-        predictions = [
+        # Convert Gemini predictions to API format
+        gemini_preds = [
             Prediction(
                 rank=i + 1,
                 answer=pred.answer,
-                confidence=pred.confidence,  # Already 0-1 scale
+                confidence=pred.confidence,
                 category=EntityCategory(pred.category),
                 reasoning=pred.reasoning,
-                semantic_match=SemanticMatch(pred.semantic_match) if hasattr(pred, 'semantic_match') else SemanticMatch.MEDIUM
+                semantic_match=SemanticMatch.MEDIUM
             )
-            for i, pred in enumerate(prediction_result.predictions)
+            for i, pred in enumerate(result["gemini_predictions"])
+        ]
+
+        # Convert OpenAI predictions to API format
+        openai_preds = [
+            Prediction(
+                rank=i + 1,
+                answer=pred.answer,
+                confidence=pred.confidence,
+                category=EntityCategory(pred.category),
+                reasoning=pred.reasoning,
+                semantic_match=SemanticMatch.MEDIUM
+            )
+            for i, pred in enumerate(result["openai_predictions"])
         ]
 
         # Use the guess recommendation from the predictor
+        guess_rec_data = result["guess_recommendation"]
         guess_rec = GuessRecommendation(
-            should_guess=prediction_result.guess_recommendation.should_guess,
-            confidence_threshold=prediction_result.guess_recommendation.confidence_threshold,
-            rationale=prediction_result.guess_recommendation.rationale
+            should_guess=guess_rec_data.should_guess,
+            confidence_threshold=guess_rec_data.confidence_threshold,
+            rationale=guess_rec_data.rationale
         )
 
         # Calculate elapsed time
@@ -184,18 +196,25 @@ async def predict(request: ClueRequest) -> PredictionResponse:
 
         response = PredictionResponse(
             session_id=session_id,
-            clue_number=prediction_result.clue_number,
-            predictions=predictions,
+            clue_number=result["clue_number"],
+            gemini_predictions=gemini_preds,
+            openai_predictions=openai_preds,
+            agreements=result["agreements"],
+            agreement_strength=result["agreement_strength"],
+            recommended_pick=result["recommended_pick"],
+            predictions=gemini_preds,  # Backwards compatibility
             guess_recommendation=guess_rec,
             elapsed_time=elapsed,
-            clue_history=prediction_result.clue_history,
-            category_probabilities=prediction_result.category_probabilities
+            clue_history=result["clue_history"],
+            category_probabilities=result["category_probabilities"]
         )
 
+        # Log summary
         logger.info(
-            f"Session {session_id}: Clue #{prediction_result.clue_number} processed in {elapsed:.2f}s "
-            f"- Top: {predictions[0].answer if predictions else 'None'} "
-            f"({predictions[0].confidence:.0%} confidence)" if predictions else ""
+            f"Session {session_id}: Clue #{result['clue_number']} - "
+            f"Gemini: {gemini_preds[0].answer if gemini_preds else 'N/A'}, "
+            f"OpenAI: {openai_preds[0].answer if openai_preds else 'N/A'}, "
+            f"Agreements: {result['agreements']}"
         )
 
         return response
