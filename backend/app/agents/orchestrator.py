@@ -1,8 +1,9 @@
 """
-Agent Orchestrator - Parallel execution of 5 specialized agents.
+Agent Orchestrator - Parallel execution of 5 specialized agents + Oracle.
 
 Runs all agents concurrently with asyncio.gather() and a 5-second timeout.
-Collects predictions and passes them to the voting system.
+Collects predictions, passes them to voting, then runs Oracle meta-synthesis.
+Oracle runs in parallel with specialists for minimal latency impact.
 """
 
 import asyncio
@@ -12,6 +13,7 @@ from typing import Dict, List, Optional
 from dataclasses import dataclass
 
 from app.core.config import get_agent_configs
+from app.core.reasoning_accumulator import OracleSynthesis, ClueAnalysis
 
 from .base_agent import BaseAgent, AgentPrediction
 from .lateral_agent import LateralAgent
@@ -19,6 +21,7 @@ from .wordsmith_agent import WordsmithAgent
 from .popculture_agent import PopCultureAgent
 from .literal_agent import LiteralAgent
 from .wildcard_agent import WildCardAgent
+from .oracle_agent import get_oracle
 from .voting import WeightedVoting, VotingResult
 
 logger = logging.getLogger(__name__)
@@ -34,6 +37,7 @@ class OrchestratorResult:
     total_latency_ms: float
     agents_responded: int
     agents_failed: List[str]
+    oracle_synthesis: Optional[OracleSynthesis] = None  # Oracle meta-analysis
 
 
 class AgentOrchestrator:
@@ -108,17 +112,25 @@ class AgentOrchestrator:
         agent_name: str,
         agent: BaseAgent,
         clues: List[str],
-        category_hint: Optional[str]
+        category_hint: Optional[str],
+        prior_context: Optional[str] = None
     ) -> tuple[str, Optional[AgentPrediction]]:
         """
         Run a single agent with timeout.
+
+        Args:
+            agent_name: Name of the agent
+            agent: Agent instance
+            clues: List of clues
+            category_hint: Optional category hint
+            prior_context: Optional context from prior clue analysis (reasoning accumulation)
 
         Returns:
             (agent_name, prediction or None)
         """
         try:
             prediction = await asyncio.wait_for(
-                agent.predict(clues, category_hint),
+                agent.predict(clues, category_hint, prior_context),
                 timeout=self.timeout
             )
             return (agent_name, prediction)
@@ -133,26 +145,30 @@ class AgentOrchestrator:
         self,
         clues: List[str],
         clue_number: int,
-        category_hint: Optional[str] = None
+        category_hint: Optional[str] = None,
+        prior_context: Optional[str] = None,
+        prior_analyses: Optional[List[ClueAnalysis]] = None
     ) -> OrchestratorResult:
         """
-        Run all agents in parallel and aggregate results.
+        Run all agents in parallel, vote, then run Oracle meta-synthesis.
 
         Args:
             clues: List of clues revealed so far
             clue_number: Current clue number (1-5)
             category_hint: Optional category hint
+            prior_context: Optional context from prior clue analysis (reasoning accumulation)
+            prior_analyses: Optional list of ClueAnalysis for Oracle context
 
         Returns:
-            OrchestratorResult with predictions and voting
+            OrchestratorResult with predictions, voting, and Oracle synthesis
         """
         self._init_agents()
 
         start_time = time.time()
 
-        # Run all agents in parallel
+        # Run all agents in parallel with prior context
         tasks = [
-            self._run_agent(name, agent, clues, category_hint)
+            self._run_agent(name, agent, clues, category_hint, prior_context)
             for name, agent in self._agents.items()
         ]
 
@@ -178,11 +194,34 @@ class AgentOrchestrator:
         # Determine if should guess
         should_guess, guess_rationale = self.voting.should_guess(voting_result, clue_number)
 
+        # Run Oracle meta-synthesis (non-blocking, has own timeout)
+        oracle_synthesis = None
+        oracle = get_oracle()
+        if oracle.enabled:
+            try:
+                oracle_synthesis = await asyncio.wait_for(
+                    oracle.synthesize(
+                        predictions=predictions,
+                        voting_result=voting_result,
+                        clues=clues,
+                        clue_number=clue_number,
+                        prior_analyses=prior_analyses
+                    ),
+                    timeout=self.timeout + 2  # Allow a bit more time for Oracle
+                )
+            except asyncio.TimeoutError:
+                logger.warning(f"[Oracle] Timed out after {self.timeout + 2}s")
+            except Exception as e:
+                logger.error(f"[Oracle] Error: {e}")
+
         total_latency = (time.time() - start_time) * 1000
 
+        context_used = "with context" if prior_context else "no context"
+        oracle_status = f"Oracle: {oracle_synthesis.top_3[0].answer}" if oracle_synthesis else "Oracle: disabled"
         logger.info(
-            f"[Orchestrator] {len(predictions)}/5 agents responded in {total_latency:.0f}ms | "
-            f"Recommended: {voting_result.recommended_pick} ({voting_result.recommended_confidence*100:.0f}%)"
+            f"[Orchestrator] {len(predictions)}/5 agents responded in {total_latency:.0f}ms ({context_used}) | "
+            f"Recommended: {voting_result.recommended_pick} ({voting_result.recommended_confidence*100:.0f}%) | "
+            f"{oracle_status}"
         )
 
         return OrchestratorResult(
@@ -192,7 +231,8 @@ class AgentOrchestrator:
             guess_rationale=guess_rationale,
             total_latency_ms=total_latency,
             agents_responded=len(predictions),
-            agents_failed=failed_agents
+            agents_failed=failed_agents,
+            oracle_synthesis=oracle_synthesis
         )
 
     async def close(self):

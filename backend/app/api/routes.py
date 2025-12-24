@@ -42,11 +42,19 @@ from app.api.models import (
     FeedbackResponse,
     AgentPrediction as APIAgentPrediction,
     VotingResult as APIVotingResult,
-    VoteBreakdown
+    VoteBreakdown,
+    OracleSynthesis as APIOracleSynthesis,
+    OracleGuess as APIOracleGuess
 )
 from app.core.spelling_validator import SpellingValidator
 from app.core.entity_registry import EntityRegistry
 from app.agents.orchestrator import get_orchestrator, warmup_agents
+from app.core.reasoning_accumulator import (
+    get_accumulator,
+    ClueAnalysis,
+    OracleSynthesis,
+    OracleGuess
+)
 
 logger = logging.getLogger(__name__)
 
@@ -58,10 +66,14 @@ from dataclasses import dataclass, field
 
 @dataclass
 class SessionState:
-    """State for a prediction session."""
+    """State for a prediction session with reasoning accumulation."""
     clues: List[str] = field(default_factory=list)
     created_at: datetime = field(default_factory=datetime.now)
     last_prediction: Optional[str] = None
+
+    # Reasoning accumulation (NEW)
+    clue_analyses: List[ClueAnalysis] = field(default_factory=list)
+    hypothesis_tracker: Dict[str, List[float]] = field(default_factory=dict)
 
 # Global state
 _sessions: Dict[str, SessionState] = {}
@@ -174,12 +186,25 @@ async def predict(request: ClueRequest) -> PredictionResponse:
 
         logger.info(f"Session {session_id}: Processing clue #{clue_number}: '{request.clue_text}'")
 
-        # Run 5 agents in parallel via orchestrator
+        # Generate context injection from prior clue analyses (REASONING ACCUMULATION)
+        accumulator = get_accumulator()
+        prior_context = None
+        if session_state.clue_analyses:
+            prior_context = accumulator.generate_context_injection(
+                analyses=session_state.clue_analyses,
+                current_clue_number=clue_number,
+                full_predictions=True
+            )
+            logger.info(f"Session {session_id}: Injecting context from {len(session_state.clue_analyses)} prior clues")
+
+        # Run 5 agents in parallel via orchestrator (with prior context for reasoning accumulation)
         orchestrator = get_orchestrator()
         result = await orchestrator.predict(
             clues=session_state.clues,
             clue_number=clue_number,
-            category_hint=None  # Could add category detection later
+            category_hint=None,  # Could add category detection later
+            prior_context=prior_context,
+            prior_analyses=session_state.clue_analyses  # For Oracle context
         )
 
         # Convert agent predictions to API format
@@ -234,11 +259,29 @@ async def predict(request: ClueRequest) -> PredictionResponse:
             top_vote = result.voting.vote_breakdown[0]
             agreements = top_vote.agents
 
+        # Convert Oracle synthesis to API format
+        oracle_synthesis = None
+        if result.oracle_synthesis:
+            oracle_synthesis = APIOracleSynthesis(
+                top_3=[
+                    APIOracleGuess(
+                        answer=g.answer,
+                        confidence=g.confidence,
+                        explanation=g.explanation
+                    )
+                    for g in result.oracle_synthesis.top_3
+                ],
+                key_theme=result.oracle_synthesis.key_theme,
+                blind_spot=result.oracle_synthesis.blind_spot,
+                latency_ms=result.oracle_synthesis.latency_ms
+            )
+
         response = PredictionResponse(
             session_id=session_id,
             clue_number=clue_number,
             agents=agent_preds,
             voting=voting_result,
+            oracle=oracle_synthesis,
             recommended_pick=result.voting.recommended_pick,
             key_insight=result.voting.key_insight,
             agreement_strength=result.voting.agreement_strength,
@@ -256,6 +299,30 @@ async def predict(request: ClueRequest) -> PredictionResponse:
             f"Session {session_id}: Clue #{clue_number} - "
             f"Recommended: {result.voting.recommended_pick} ({result.voting.agreement_strength}) | "
             f"Agents: {', '.join(agent_answers)}"
+        )
+
+        # REASONING ACCUMULATION: Store analysis for next clue's context
+        clue_analysis = accumulator.create_clue_analysis(
+            clue_number=clue_number,
+            clue_text=request.clue_text,
+            predictions=result.predictions,
+            voting_result=result.voting,
+            prior_analyses=session_state.clue_analyses
+        )
+        # Attach Oracle synthesis if available
+        if result.oracle_synthesis:
+            clue_analysis.oracle_synthesis = result.oracle_synthesis
+        session_state.clue_analyses.append(clue_analysis)
+
+        # Update hypothesis tracker for confidence evolution
+        accumulator.update_hypothesis_tracker(
+            tracker=session_state.hypothesis_tracker,
+            analysis=clue_analysis
+        )
+
+        logger.info(
+            f"Session {session_id}: Stored analysis for clue #{clue_number} | "
+            f"Tracking {len(session_state.hypothesis_tracker)} hypotheses"
         )
 
         return response

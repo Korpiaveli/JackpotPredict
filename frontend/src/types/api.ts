@@ -28,6 +28,20 @@ export interface VotingResult {
   vote_breakdown: VoteBreakdown[]
 }
 
+// Oracle (Claude 3.5 Sonnet) meta-synthesizer
+export interface OracleGuess {
+  answer: string
+  confidence: number  // 0-100
+  explanation: string
+}
+
+export interface OracleSynthesis {
+  top_3: OracleGuess[]
+  key_theme: string
+  blind_spot: string
+  latency_ms: number
+}
+
 // Legacy prediction format (kept for backwards compatibility)
 export interface Prediction {
   rank: number
@@ -57,6 +71,9 @@ export interface PredictionResponse {
   agreement_strength: AgreementStrength
   agents_responded: number
   agreements: AgentName[]
+
+  // Oracle meta-synthesis (Claude 3.5 Sonnet)
+  oracle: OracleSynthesis | null
 
   // Legacy fields (deprecated)
   predictions: Prediction[]

@@ -63,6 +63,11 @@ class Settings(BaseSettings):
     GROQ_API_URL: str = "https://api.groq.com/openai/v1"
     GROQ_MODEL: str = "llama-3.3-70b-versatile"
 
+    # Anthropic API (Claude 3.5 Sonnet for Oracle meta-synthesizer)
+    # Get key at: https://console.anthropic.com/settings/keys
+    ANTHROPIC_API_KEY: str = ""
+    CLAUDE_MODEL: str = "claude-3-5-sonnet-20241022"
+
     # Agent orchestration settings
     AGENT_TIMEOUT: int = 5  # seconds per agent
     ENABLE_MOA: bool = True  # Enable Mixture of Agents
@@ -183,6 +188,22 @@ def get_groq_config() -> dict:
         "model": settings.GROQ_MODEL,
         "api_key": settings.GROQ_API_KEY,
         "enabled": bool(settings.GROQ_API_KEY),
+        "timeout": settings.AGENT_TIMEOUT,
+    }
+
+
+def get_oracle_config() -> dict:
+    """
+    Get Anthropic API configuration for Oracle (Claude 3.5 Sonnet).
+
+    Returns:
+        dict with keys: model, api_key, enabled, timeout
+    """
+    settings = get_settings()
+    return {
+        "model": settings.CLAUDE_MODEL,
+        "api_key": settings.ANTHROPIC_API_KEY,
+        "enabled": bool(settings.ANTHROPIC_API_KEY),
         "timeout": settings.AGENT_TIMEOUT,
     }
 

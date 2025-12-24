@@ -5,6 +5,7 @@ import AnswerFeedback from './AnswerFeedback'
 import RecommendedPick from './RecommendedPick'
 import AgentRow from './AgentRow'
 import StatusBar from './StatusBar'
+import OracleInsight from './OracleInsight'
 import { useSubmitClue, useResetPuzzle, useHealth, useSubmitFeedback } from '../hooks/usePredictions'
 import { usePuzzleStore } from '../store/puzzleStore'
 import type { EntityCategory, AgentName, AgentPrediction } from '../types/api'
@@ -188,6 +189,14 @@ export default function Dashboard() {
             />
           )}
 
+          {/* Oracle Meta-Synthesis - Above agent predictions */}
+          {latestPrediction && (
+            <OracleInsight
+              oracle={latestPrediction.oracle}
+              isLoading={isLoading}
+            />
+          )}
+
           {/* Clue History - Collapsible context */}
           {clueHistory.length > 0 && (
             <div className="bg-gray-800/30 rounded-lg p-3">
@@ -268,7 +277,7 @@ export default function Dashboard() {
 
       {/* Compact Footer */}
       <footer className="border-t border-gray-800 px-4 py-2 text-center text-xs text-gray-600">
-        5 Agents: Lateral + Wordsmith + PopCulture + Literal + WildCard
+        🔮 Oracle + 5 Agents: Lateral + Wordsmith + PopCulture + Literal + WildCard
       </footer>
     </div>
   )

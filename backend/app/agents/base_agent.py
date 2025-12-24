@@ -75,9 +75,29 @@ class BaseAgent(ABC):
         """Return the specialized system prompt for this agent."""
         pass
 
-    def format_clues_message(self, clues: List[str], category_hint: Optional[str] = None) -> str:
-        """Format clues for the user message."""
+    def format_clues_message(
+        self,
+        clues: List[str],
+        category_hint: Optional[str] = None,
+        prior_context: Optional[str] = None
+    ) -> str:
+        """
+        Format clues for the user message with optional prior context.
+
+        Args:
+            clues: List of clues revealed so far
+            category_hint: Optional category hint (person/place/thing)
+            prior_context: Optional context from prior clue analysis (reasoning accumulation)
+
+        Returns:
+            Formatted message string for the LLM
+        """
         lines = []
+
+        # Inject prior analysis context FIRST (if available)
+        if prior_context:
+            lines.append(prior_context)
+            lines.append("")
 
         if category_hint:
             lines.append(f"[Category hint: {category_hint.upper()}]")
@@ -89,14 +109,20 @@ class BaseAgent(ABC):
 
         lines.append("")
         lines.append(f"We are on Clue {len(clues)} of 5.")
-        lines.append("Provide your prediction.")
+
+        # Add directive based on context
+        if prior_context:
+            lines.append("Consider prior analysis. Confirm, refine, or challenge your position.")
+        else:
+            lines.append("Provide your prediction.")
 
         return "\n".join(lines)
 
     async def predict(
         self,
         clues: List[str],
-        category_hint: Optional[str] = None
+        category_hint: Optional[str] = None,
+        prior_context: Optional[str] = None
     ) -> Optional[AgentPrediction]:
         """
         Make a prediction based on the clues.
@@ -104,6 +130,7 @@ class BaseAgent(ABC):
         Args:
             clues: List of clues revealed so far
             category_hint: Optional category hint (person/place/thing)
+            prior_context: Optional context from prior clue analysis (reasoning accumulation)
 
         Returns:
             AgentPrediction or None if failed
@@ -111,10 +138,10 @@ class BaseAgent(ABC):
         start_time = time.time()
 
         try:
-            # Build request
+            # Build request with optional prior context
             messages = [
                 {"role": "system", "content": self.get_system_prompt()},
-                {"role": "user", "content": self.format_clues_message(clues, category_hint)}
+                {"role": "user", "content": self.format_clues_message(clues, category_hint, prior_context)}
             ]
 
             payload = {
@@ -177,9 +204,9 @@ class BaseAgent(ABC):
             confidence = float(conf_match.group(1)) / 100 if conf_match else 0.5
             confidence = max(0.0, min(1.0, confidence))  # Clamp to 0-1
 
-            # Extract reasoning
+            # Extract reasoning (increased to 100 chars for better context)
             reason_match = re.search(r'REASONING:\s*(.+?)(?:\n|$)', content, re.IGNORECASE)
-            reasoning = reason_match.group(1).strip()[:50] if reason_match else "No reasoning"
+            reasoning = reason_match.group(1).strip()[:100] if reason_match else "No reasoning"
 
             return AgentPrediction(
                 answer=answer,

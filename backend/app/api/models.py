@@ -234,6 +234,78 @@ class VotingResult(BaseModel):
     )
 
 
+class OracleGuess(BaseModel):
+    """A single guess from the Oracle meta-synthesizer."""
+
+    answer: str = Field(
+        ...,
+        description="Predicted answer"
+    )
+
+    confidence: int = Field(
+        ...,
+        ge=0,
+        le=100,
+        description="Confidence percentage (0-100)"
+    )
+
+    explanation: str = Field(
+        ...,
+        description="Brief explanation (1-2 sentences)"
+    )
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "answer": "Monopoly",
+                "confidence": 92,
+                "explanation": "Business terms ('hostile takeover') + board game signals + 'dicey' = dice"
+            }
+        }
+    )
+
+
+class OracleSynthesis(BaseModel):
+    """Oracle meta-synthesizer output with top 3 ranked guesses."""
+
+    top_3: List[OracleGuess] = Field(
+        ...,
+        min_length=1,
+        max_length=3,
+        description="Top 3 guesses ranked by confidence"
+    )
+
+    key_theme: str = Field(
+        ...,
+        description="Dominant theme identified across clues (5-10 words)"
+    )
+
+    blind_spot: str = Field(
+        ...,
+        description="What the agents might be missing (5-15 words)"
+    )
+
+    latency_ms: float = Field(
+        default=0.0,
+        description="Oracle processing time in milliseconds"
+    )
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "top_3": [
+                    {"answer": "Monopoly", "confidence": 92, "explanation": "Business terms + board game + dice"},
+                    {"answer": "Risk", "confidence": 45, "explanation": "Military conquest theme, weaker fit"},
+                    {"answer": "Life", "confidence": 30, "explanation": "'Flavors of life' metaphor"}
+                ],
+                "key_theme": "Board games with business/strategy elements",
+                "blind_spot": "Consider if 'dicey' is wordplay (dice) or means 'risky'",
+                "latency_ms": 1250.0
+            }
+        }
+    )
+
+
 class PredictionResponse(BaseModel):
     """Response model for prediction results with 5-agent MoA architecture."""
 
@@ -259,6 +331,12 @@ class PredictionResponse(BaseModel):
     voting: Optional[VotingResult] = Field(
         None,
         description="Weighted voting result across agents"
+    )
+
+    # Oracle meta-synthesis (Claude 3.5 Sonnet)
+    oracle: Optional[OracleSynthesis] = Field(
+        None,
+        description="Oracle meta-synthesizer output with top 3 guesses"
     )
 
     # Convenience fields
