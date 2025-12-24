@@ -25,7 +25,7 @@ from app.core.reasoning_accumulator import OracleSynthesis, OracleGuess, ClueAna
 logger = logging.getLogger(__name__)
 
 
-# Oracle System Prompt
+# Oracle System Prompt (used when specialist predictions are available)
 ORACLE_SYSTEM_PROMPT = """You are THE ORACLE - a meta-synthesizer for a 5-agent trivia prediction system
 for Netflix's "Best Guess Live" game show.
 
@@ -77,6 +77,54 @@ CRITICAL RULES:
 - Explanations should be 1-2 sentences max
 - key_theme: 5-10 word summary of the dominant pattern
 - blind_spot: What might agents be missing? (5-15 words)
+"""
+
+# Early Oracle System Prompt (runs in parallel with specialists, no current predictions)
+ORACLE_EARLY_SYSTEM_PROMPT = """You are THE ORACLE - analyzing clue progression for Netflix's "Best Guess Live" game show.
+
+You are running EARLY (in parallel with specialist agents, before their predictions arrive).
+Focus on clue pattern analysis and historical context.
+
+CONTEXT PROVIDED:
+- All clues revealed so far
+- Prior clue analyses (if any) with agent predictions and voting results
+
+YOUR TASK:
+1. Analyze the clue progression and emerging themes
+2. Identify patterns connecting the clues
+3. Provide YOUR TOP 3 GUESSES ranked by confidence
+4. Flag potential blind spots
+
+OUTPUT FORMAT (strict JSON only, no markdown):
+{
+  "top_3": [
+    {
+      "answer": "MONOPOLY",
+      "confidence": 85,
+      "explanation": "Clue progression suggests board game: 'flavors' (editions), 'round and round' (board movement), 'hostile takeover' (business theme)"
+    },
+    {
+      "answer": "RISK",
+      "confidence": 40,
+      "explanation": "Military/conquest theme fits 'hostile takeover' but weaker on other clues"
+    },
+    {
+      "answer": "LIFE",
+      "confidence": 25,
+      "explanation": "'Flavors of life' metaphor, but missing business connection"
+    }
+  ],
+  "key_theme": "Board games with business/strategy elements",
+  "blind_spot": "Check for wordplay - 'dicey' could mean dice or risky"
+}
+
+CRITICAL RULES:
+- Output ONLY valid JSON, no markdown code blocks
+- Always provide exactly 3 guesses
+- Confidence must be 0-100 (integers)
+- Explanations should be 1-2 sentences max
+- key_theme: 5-10 word summary of the dominant pattern
+- blind_spot: What might we be missing? (5-15 words)
 """
 
 
@@ -303,6 +351,120 @@ class OracleAgent:
 
         except Exception as e:
             logger.error(f"[Oracle] Error: {e}")
+            return None
+
+    def _build_early_context(
+        self,
+        clues: List[str],
+        clue_number: int,
+        prior_analyses: Optional[List[ClueAnalysis]] = None
+    ) -> str:
+        """
+        Build context for early Oracle (runs in parallel with specialists).
+
+        No current predictions available - uses only clues and prior analyses.
+        """
+        lines = []
+
+        # Current clue context
+        lines.append(f"CURRENT STATE: Clue {clue_number} of 5")
+        lines.append("")
+        lines.append("CLUES REVEALED:")
+        for i, clue in enumerate(clues, 1):
+            marker = ">>>" if i == clue_number else "   "
+            lines.append(f'{marker} Clue {i}: "{clue}"')
+        lines.append("")
+
+        # Prior analyses (this is the main context for early mode)
+        if prior_analyses:
+            lines.append("=" * 50)
+            lines.append("PRIOR CLUE ANALYSES (from earlier rounds):")
+            lines.append("=" * 50)
+            for analysis in prior_analyses:
+                lines.append(f'Clue {analysis.clue_number}: "{analysis.clue_text}"')
+                lines.append(f"  Top Pick: {analysis.top_answer} ({int(analysis.top_confidence * 100)}%)")
+                lines.append(f"  Agreement: {analysis.agreement_strength}")
+                if analysis.top_agents:
+                    lines.append(f"  Agents: {', '.join(analysis.top_agents)}")
+                # Include agent snapshots for full context
+                if analysis.agent_snapshots:
+                    for snap in analysis.agent_snapshots[:5]:
+                        conf_pct = int(snap.confidence * 100)
+                        lines.append(f"    [{snap.agent_name}] {snap.answer} ({conf_pct}%) - {snap.insight}")
+                if analysis.oracle_synthesis:
+                    oracle = analysis.oracle_synthesis
+                    if oracle.top_3:
+                        lines.append(f"  Oracle Pick: {oracle.top_3[0].answer} ({oracle.top_3[0].confidence}%)")
+                lines.append("")
+        else:
+            lines.append("(First clue - no prior analyses available)")
+            lines.append("")
+
+        lines.append("=" * 50)
+        lines.append("YOUR TASK: Analyze clue progression and provide TOP 3 GUESSES as JSON")
+        lines.append("=" * 50)
+
+        return "\n".join(lines)
+
+    async def synthesize_early(
+        self,
+        clues: List[str],
+        clue_number: int,
+        prior_analyses: Optional[List[ClueAnalysis]] = None
+    ) -> Optional[OracleSynthesis]:
+        """
+        Run Oracle synthesis using only prior analyses and current clues.
+
+        This runs in PARALLEL with specialist agents (no dependency on their predictions).
+        Uses the early system prompt focused on clue pattern analysis.
+
+        Args:
+            clues: List of clues revealed so far
+            clue_number: Current clue number (1-5)
+            prior_analyses: Optional prior clue analyses with agent predictions
+
+        Returns:
+            OracleSynthesis with top 3 guesses, or None if failed
+        """
+        if not self.enabled:
+            logger.warning("[Oracle] Disabled - no API key configured")
+            return None
+
+        start_time = time.time()
+
+        try:
+            # Build early context (no current predictions)
+            context = self._build_early_context(clues, clue_number, prior_analyses)
+
+            # Call Claude with early prompt
+            response = await self.client.messages.create(
+                model=self.model,
+                max_tokens=500,
+                temperature=self.TEMPERATURE,
+                system=ORACLE_EARLY_SYSTEM_PROMPT,
+                messages=[{"role": "user", "content": context}]
+            )
+
+            # Extract text response
+            content = response.content[0].text
+
+            # Parse response
+            synthesis = self._parse_response(content)
+            if synthesis:
+                synthesis.latency_ms = (time.time() - start_time) * 1000
+
+                logger.info(
+                    f"[Oracle-Early] Top pick: {synthesis.top_3[0].answer} ({synthesis.top_3[0].confidence}%) | "
+                    f"Theme: {synthesis.key_theme[:30]} | "
+                    f"Latency: {synthesis.latency_ms:.0f}ms"
+                )
+                return synthesis
+
+            logger.warning("[Oracle-Early] Failed to parse response")
+            return None
+
+        except Exception as e:
+            logger.error(f"[Oracle-Early] Error: {e}")
             return None
 
     async def close(self):

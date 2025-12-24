@@ -166,6 +166,22 @@ class AgentOrchestrator:
 
         start_time = time.time()
 
+        # Start Oracle in PARALLEL with specialists (using early mode)
+        # This removes Oracle's dependency on voting results for ~50% latency reduction
+        oracle = get_oracle()
+        oracle_task = None
+        if oracle.enabled:
+            oracle_task = asyncio.create_task(
+                asyncio.wait_for(
+                    oracle.synthesize_early(
+                        clues=clues,
+                        clue_number=clue_number,
+                        prior_analyses=prior_analyses
+                    ),
+                    timeout=self.timeout + 3  # Allow more time for Oracle
+                )
+            )
+
         # Run all agents in parallel with prior context
         tasks = [
             self._run_agent(name, agent, clues, category_hint, prior_context)
@@ -194,23 +210,13 @@ class AgentOrchestrator:
         # Determine if should guess
         should_guess, guess_rationale = self.voting.should_guess(voting_result, clue_number)
 
-        # Run Oracle meta-synthesis (non-blocking, has own timeout)
+        # Await Oracle result (already running in parallel, should be done or nearly done)
         oracle_synthesis = None
-        oracle = get_oracle()
-        if oracle.enabled:
+        if oracle_task:
             try:
-                oracle_synthesis = await asyncio.wait_for(
-                    oracle.synthesize(
-                        predictions=predictions,
-                        voting_result=voting_result,
-                        clues=clues,
-                        clue_number=clue_number,
-                        prior_analyses=prior_analyses
-                    ),
-                    timeout=self.timeout + 2  # Allow a bit more time for Oracle
-                )
+                oracle_synthesis = await oracle_task
             except asyncio.TimeoutError:
-                logger.warning(f"[Oracle] Timed out after {self.timeout + 2}s")
+                logger.warning(f"[Oracle] Timed out after {self.timeout + 3}s")
             except Exception as e:
                 logger.error(f"[Oracle] Error: {e}")
 

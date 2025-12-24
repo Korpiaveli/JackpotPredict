@@ -6,6 +6,7 @@ import RecommendedPick from './RecommendedPick'
 import AgentRow from './AgentRow'
 import StatusBar from './StatusBar'
 import OracleInsight from './OracleInsight'
+import ConfidenceTrend from './ConfidenceTrend'
 import { useSubmitClue, useResetPuzzle, useHealth, useSubmitFeedback } from '../hooks/usePredictions'
 import { usePuzzleStore } from '../store/puzzleStore'
 import type { EntityCategory, AgentName, AgentPrediction } from '../types/api'
@@ -14,11 +15,11 @@ export default function Dashboard() {
   const {
     latestPrediction,
     clueHistory,
+    predictionHistory,
     isLoading,
     error,
     timerKey,
     gameStarted,
-    responseTimes,
     puzzleComplete,
     startGame,
     resetTimer,
@@ -197,27 +198,35 @@ export default function Dashboard() {
             />
           )}
 
-          {/* Clue History - Collapsible context */}
+          {/* Clue History and Confidence Trend - Side by side on larger screens */}
           {clueHistory.length > 0 && (
-            <div className="bg-gray-800/30 rounded-lg p-3">
-              <div className="text-xs text-gray-500 uppercase tracking-wide mb-2">
-                Clue History
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+              {/* Clue History */}
+              <div className="bg-gray-800/30 rounded-lg p-3">
+                <div className="text-xs text-gray-500 uppercase tracking-wide mb-2">
+                  Clue History
+                </div>
+                <div className="space-y-1">
+                  {clueHistory.map((clue, index) => (
+                    <div key={index} className="flex items-start gap-2 text-sm">
+                      <span className="text-primary font-mono text-xs mt-0.5">
+                        {index + 1}.
+                      </span>
+                      <span className={`text-gray-300 ${index === clueHistory.length - 1 ? 'font-medium' : ''}`}>
+                        "{clue}"
+                        {index === clueHistory.length - 1 && (
+                          <span className="text-primary ml-1 text-xs">current</span>
+                        )}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className="space-y-1">
-                {clueHistory.map((clue, index) => (
-                  <div key={index} className="flex items-start gap-2 text-sm">
-                    <span className="text-primary font-mono text-xs mt-0.5">
-                      {index + 1}.
-                    </span>
-                    <span className={`text-gray-300 ${index === clueHistory.length - 1 ? 'font-medium' : ''}`}>
-                      "{clue}"
-                      {index === clueHistory.length - 1 && (
-                        <span className="text-primary ml-1 text-xs">current</span>
-                      )}
-                    </span>
-                  </div>
-                ))}
-              </div>
+
+              {/* Confidence Trend */}
+              {predictionHistory.length > 0 && (
+                <ConfidenceTrend predictions={predictionHistory} />
+              )}
             </div>
           )}
 
