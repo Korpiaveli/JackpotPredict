@@ -2,11 +2,10 @@
 Gemini Predictor - Primary LLM engine for Best Guess Live trivia.
 
 This module provides optimized Gemini API inference with:
-- Expert trivia master system prompt
-- Chain-of-thought reasoning
+- Shared trivia master system prompt (same as OpenAI)
 - Wordplay-prioritized few-shot learning
 - JSON structured output
-- Confidence calibration
+- Raw confidence scores (no penalties)
 """
 
 import json
@@ -25,6 +24,7 @@ except ImportError:
 
 from app.core.config import get_settings, get_active_llm_config
 from app.core.context_manager import get_context_manager, HistoricalGame
+from app.core.trivia_prompt import build_trivia_prompt, format_clues_message
 
 logger = logging.getLogger(__name__)
 
@@ -42,6 +42,24 @@ Your goal: Identify the famous PERSON, PLACE, or THING from 5 progressively-reve
 3. ONE TYPO = ELIMINATION. Spell answers EXACTLY (e.g., "Coca-Cola" not "Coke").
 4. Categories: PERSON (15%), PLACE (25%), THING (60% - brands, games, food, shows)
 
+## CRITICAL: PHONETIC CONFUSION WARNING
+BEWARE of sound-alike words that are COMPLETELY DIFFERENT entities:
+- "Frasier" (TV show) ≠ "Eraser" (rubber tool) - DIFFERENT THINGS!
+- "Flour" (baking ingredient) ≠ "Flower" (plant)
+- "Brake" (car part) ≠ "Break" (to shatter)
+- "Cereal" (breakfast food) ≠ "Serial" (sequence/killer)
+- "Principal" (school leader) ≠ "Principle" (rule/belief)
+- "Alter" (change) ≠ "Altar" (religious table)
+
+Before finalizing ANY prediction, ASK YOURSELF:
+"Does my answer's MEANING match the clues, or am I confused by similar SOUND?"
+
+## SELF-VALIDATION REQUIREMENT
+For EACH prediction, you MUST verify:
+1. Does your answer's known characteristics match the clue keywords?
+2. Could a similar-SOUNDING but different word be the actual answer?
+3. Rate your semantic match: "strong" (meaning clearly matches), "medium" (possible but uncertain), or "weak" (sounds right but meaning unclear)
+
 ## CRITICAL PATTERNS TO RECOGNIZE
 - **Wordplay/Puns**: "hospitable" → Hilton Hotels → Paris Hilton
 - **Double Meanings**: "Subway" = trains OR sandwiches, "Mars" = planet OR candy
@@ -55,7 +73,8 @@ For each clue set, think step-by-step:
 1. What are the LITERAL meanings of keywords?
 2. What are the FIGURATIVE/PUN meanings?
 3. What famous entities connect ALL clues?
-4. How confident am I? (>60% = guess, <40% = wait)
+4. VERIFY: Does my answer's meaning match, or just its sound?
+5. How confident am I? (>60% = guess, <40% = wait)
 
 ## CONFIDENCE CALIBRATION
 - 90-100%: Clues DIRECTLY name the answer or famous catchphrase
@@ -66,6 +85,8 @@ For each clue set, think step-by-step:
 
 {dynamic_examples}
 
+{error_patterns}
+
 ## OUTPUT FORMAT (JSON)
 Return ONLY valid JSON with NO markdown code blocks:
 {{
@@ -75,21 +96,24 @@ Return ONLY valid JSON with NO markdown code blocks:
       "answer": "Exact Canonical Name",
       "confidence": 0.85,
       "category": "person|place|thing",
-      "reasoning": "Step-by-step logic (max 100 chars)"
+      "reasoning": "Step-by-step logic (max 100 chars)",
+      "semantic_match": "strong"
     }},
     {{
       "rank": 2,
       "answer": "Second Best Guess",
       "confidence": 0.60,
       "category": "person|place|thing",
-      "reasoning": "Alternative interpretation"
+      "reasoning": "Alternative interpretation",
+      "semantic_match": "medium"
     }},
     {{
       "rank": 3,
       "answer": "Third Option",
       "confidence": 0.40,
       "category": "person|place|thing",
-      "reasoning": "Fallback possibility"
+      "reasoning": "Fallback possibility",
+      "semantic_match": "weak"
     }}
   ],
   "should_guess": true,
@@ -100,6 +124,7 @@ IMPORTANT:
 - Return exactly 3 predictions ranked by confidence
 - Set should_guess=false if top confidence < 0.40
 - If should_guess=false, still provide your best guesses for reference
+- semantic_match MUST be "strong", "medium", or "weak" - this is critical for validation
 """
 
 
@@ -111,6 +136,7 @@ class GeminiPrediction:
     confidence: float  # 0.0 to 1.0
     category: str
     reasoning: str
+    semantic_match: str = "medium"  # "strong", "medium", or "weak"
 
 
 @dataclass
@@ -279,51 +305,56 @@ class GeminiPredictor:
     def _build_system_prompt(self, category_hint: Optional[str] = None) -> str:
         """Build complete system prompt with few-shot examples."""
         examples = self._select_few_shot_examples(category_hint, num_examples=4)
-        return GEMINI_TRIVIA_MASTER_PROMPT.format(dynamic_examples=examples)
+        error_patterns = self._get_error_patterns_prompt()
+        combined_examples = examples + "\n\n" + error_patterns if error_patterns else examples
+        return build_trivia_prompt(dynamic_examples=combined_examples)
 
-    def _format_clues_message(
+    def _get_error_patterns_prompt(self) -> str:
+        """Load error patterns from file and format as prompt warning."""
+        try:
+            from pathlib import Path
+            error_file = Path(__file__).parent.parent / "data" / "error_patterns.json"
+
+            if not error_file.exists():
+                return ""
+
+            with open(error_file, "r", encoding="utf-8") as f:
+                data = json.load(f)
+
+            patterns = data.get("patterns", [])
+            if not patterns:
+                return ""
+
+            # Build warning section
+            lines = ["## LEARN FROM PAST MISTAKES", ""]
+
+            for pattern in patterns[:3]:  # Show up to 3 most recent errors
+                predicted = pattern.get("predicted", "")
+                correct = pattern.get("correct", "")
+                clues_sample = pattern.get("clues_sample", [])
+                error_type = pattern.get("error_type", "unknown")
+
+                if predicted and correct:
+                    clues_text = ", ".join(clues_sample[:2]) if clues_sample else "various clues"
+                    lines.append(f"⚠️ Previously, \"{predicted}\" was incorrectly predicted when the answer was \"{correct}\"")
+                    lines.append(f"   Clues were about: {clues_text}")
+                    if error_type == "phonetic_confusion":
+                        lines.append(f"   These words SOUND similar but have DIFFERENT meanings!")
+                    lines.append("")
+
+            return "\n".join(lines)
+
+        except Exception as e:
+            logger.warning(f"Failed to load error patterns: {e}")
+            return ""
+
+    def _format_clues_for_prompt(
         self,
         clues: List[str],
         category_hint: Optional[str] = None
     ) -> str:
-        """Format clues for the user message."""
-        lines = []
-
-        if category_hint:
-            lines.append(f"[Category hint: {category_hint.upper()}]")
-            lines.append("")
-
-        lines.append("Here are the clues revealed so far:")
-        lines.append("")
-
-        for i, clue in enumerate(clues, 1):
-            lines.append(f'Clue {i}: "{clue}"')
-
-        lines.append("")
-        lines.append(f"We are on Clue {len(clues)} of 5. Provide your top 3 predictions in JSON format.")
-
-        return "\n".join(lines)
-
-    def _recalibrate_confidence(
-        self,
-        raw_confidence: float,
-        clue_number: int
-    ) -> float:
-        """
-        Adjust confidence based on clue number.
-
-        LLMs tend to be overconfident on early clues where information
-        is minimal. This applies a correction factor.
-        """
-        if clue_number <= 1:
-            # Very conservative on clue 1
-            return raw_confidence * 0.75
-        elif clue_number == 2:
-            return raw_confidence * 0.85
-        elif clue_number >= 4:
-            # Slight boost on late clues (more info available)
-            return min(0.98, raw_confidence * 1.05)
-        return raw_confidence
+        """Format clues for the user message using shared function."""
+        return format_clues_message(clues, category_hint)
 
     def _parse_response(
         self,
@@ -373,14 +404,21 @@ class GeminiPredictor:
                 if raw_conf > 1:
                     raw_conf = raw_conf / 100.0
 
-                calibrated_conf = self._recalibrate_confidence(raw_conf, clue_number)
+                # Use raw confidence - no penalties or adjustments
+                confidence = min(1.0, max(0.0, raw_conf))
+
+                # Parse semantic_match (for display only, no penalty)
+                semantic_match = pred.get("semantic_match", "medium").lower()
+                if semantic_match not in ("strong", "medium", "weak"):
+                    semantic_match = "medium"
 
                 predictions.append(GeminiPrediction(
                     rank=pred.get("rank", i + 1),
                     answer=pred.get("answer", ""),
-                    confidence=calibrated_conf,
+                    confidence=confidence,
                     category=pred.get("category", "thing"),
-                    reasoning=pred.get("reasoning", "")[:150]
+                    reasoning=pred.get("reasoning", "")[:150],
+                    semantic_match=semantic_match
                 ))
 
             # Sort by confidence
@@ -431,7 +469,7 @@ class GeminiPredictor:
 
         clue_number = len(clues)
         system_prompt = self._build_system_prompt(category_hint)
-        user_message = self._format_clues_message(clues, category_hint)
+        user_message = self._format_clues_for_prompt(clues, category_hint)
 
         messages = [
             {"role": "system", "content": system_prompt},

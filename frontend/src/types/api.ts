@@ -1,11 +1,55 @@
 export type EntityCategory = 'person' | 'place' | 'thing'
 
+export type SemanticMatch = 'strong' | 'medium' | 'weak'
+
+export type AgentName = 'lateral' | 'wordsmith' | 'popculture' | 'literal' | 'wildcard'
+
+export type AgreementStrength = 'strong' | 'moderate' | 'weak' | 'none'
+
+// Agent prediction from MoA architecture
+export interface AgentPrediction {
+  answer: string
+  confidence: number
+  reasoning: string
+}
+
+// Vote breakdown for an answer
+export interface VoteBreakdown {
+  answer: string
+  total_votes: number
+  agents: AgentName[]
+}
+
+// Voting result from weighted voting
+export interface VotingResult {
+  recommended_pick: string
+  key_insight: string
+  agreement_strength: AgreementStrength
+  vote_breakdown: VoteBreakdown[]
+}
+
+// Oracle (Claude 3.5 Sonnet) meta-synthesizer
+export interface OracleGuess {
+  answer: string
+  confidence: number  // 0-100
+  explanation: string
+}
+
+export interface OracleSynthesis {
+  top_3: OracleGuess[]
+  key_theme: string
+  blind_spot: string
+  latency_ms: number
+}
+
+// Legacy prediction format (kept for backwards compatibility)
 export interface Prediction {
   rank: number
   answer: string
   confidence: number
   category: EntityCategory
   reasoning: string
+  semantic_match?: SemanticMatch
 }
 
 export interface GuessRecommendation {
@@ -14,14 +58,41 @@ export interface GuessRecommendation {
   rationale: string
 }
 
+// MoA-compatible prediction response
 export interface PredictionResponse {
   session_id: string
   clue_number: number
+
+  // 5-Agent MoA predictions
+  agents: Record<AgentName, AgentPrediction | null>
+  voting: VotingResult | null
+  recommended_pick: string
+  key_insight: string
+  agreement_strength: AgreementStrength
+  agents_responded: number
+  agreements: AgentName[]
+
+  // Oracle meta-synthesis (Claude 3.5 Sonnet)
+  oracle: OracleSynthesis | null
+
+  // Legacy fields (deprecated)
   predictions: Prediction[]
+  gemini_predictions?: Prediction[]
+  openai_predictions?: Prediction[]
+
   guess_recommendation: GuessRecommendation
   elapsed_time: number
   clue_history: string[]
   category_probabilities: Record<EntityCategory, number>
+}
+
+// Agent info for UI display
+export const AGENT_INFO: Record<AgentName, { emoji: string; label: string; description: string }> = {
+  lateral: { emoji: '', label: 'Lateral', description: 'Multi-hop associations' },
+  wordsmith: { emoji: '', label: 'Words', description: 'Puns & wordplay' },
+  popculture: { emoji: '', label: 'Pop', description: 'Netflix/trending' },
+  literal: { emoji: '', label: 'Lit', description: 'Trap detection' },
+  wildcard: { emoji: '', label: 'Wild', description: 'Creative leaps' },
 }
 
 export interface ClueRequest {

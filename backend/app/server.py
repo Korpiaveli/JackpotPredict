@@ -1,10 +1,10 @@
 """
 FastAPI Server - Main application entry point.
 
-GEMINI-FIRST ARCHITECTURE (v2.0)
-================================
-Simplified server using Gemini API as the primary LLM.
-Removed Ollama warmup as cloud APIs don't require it.
+MIXTURE OF AGENTS ARCHITECTURE (v3.0)
+=====================================
+5 specialized agents running in parallel with weighted voting.
+Agents: Lateral, Wordsmith, PopCulture, Literal, WildCard
 
 Run with:
     uvicorn app.server:app --reload --port 8000
@@ -20,7 +20,7 @@ from fastapi.responses import JSONResponse
 
 from app.api.routes import router
 from app.core.entity_registry import EntityRegistry
-from app.core.gemini_predictor import warmup_gemini
+from app.agents.orchestrator import warmup_agents, get_orchestrator
 
 # Configure logging
 logging.basicConfig(
@@ -37,14 +37,15 @@ async def lifespan(app: FastAPI):
 
     On startup:
     - Initialize entity registry
-    - Verify Gemini API availability
+    - Verify agent APIs availability
 
     On shutdown:
     - Close database connections
+    - Close agent HTTP clients
     """
     # Startup
     start_time = time.time()
-    logger.info("[STARTUP] JackpotPredict API starting up...")
+    logger.info("[STARTUP] JackpotPredict API v3.0 (MoA) starting up...")
 
     try:
         # Initialize entity registry (singleton pattern handled in routes.py)
@@ -54,13 +55,12 @@ async def lifespan(app: FastAPI):
         entity_count = registry.get_entity_count()
         logger.info(f"[OK] Entity registry loaded: {entity_count} entities")
 
-        # Verify Gemini API is available
-        # Note: Cloud APIs don't need warmup, just availability check
-        gemini_ready = await warmup_gemini()
-        if gemini_ready:
-            logger.info("[OK] Gemini API ready")
+        # Verify agent APIs are available
+        agents_ready = await warmup_agents()
+        if agents_ready:
+            logger.info("[OK] Agent APIs ready (3+ agents configured)")
         else:
-            logger.warning("[WARN] Gemini API not available - predictions will fail")
+            logger.warning("[WARN] Less than 3 agents available - predictions may be limited")
 
         startup_time = time.time() - start_time
         logger.info(f"[OK] Startup complete in {startup_time:.2f}s")
@@ -82,6 +82,11 @@ async def lifespan(app: FastAPI):
             _entity_registry.close()
             logger.info("[OK] Entity registry closed")
 
+        # Close agent orchestrator
+        orchestrator = get_orchestrator()
+        await orchestrator.close()
+        logger.info("[OK] Agent orchestrator closed")
+
         logger.info("[OK] Shutdown complete")
 
     except Exception as e:
@@ -94,22 +99,29 @@ app = FastAPI(
     description="""
     AI-powered real-time inference engine for Netflix's Best Guess Live game show.
 
-    **GEMINI-FIRST ARCHITECTURE (v2.0)**
+    **MIXTURE OF AGENTS ARCHITECTURE (v3.0)**
 
-    Submit clues sequentially (1-5) and receive top 3 predictions with confidence scores.
+    Submit clues sequentially (1-5) and receive predictions from 5 specialized agents.
+
+    ## 5 Specialized Agents
+    - **Lateral**: Multi-hop associative reasoning (GPT-4o-mini)
+    - **Wordsmith**: Puns, wordplay, homophones (GPT-4o-mini)
+    - **PopCulture**: Netflix/trending bias (Gemini Flash)
+    - **Literal**: Trap detection, face-value (Llama 3.3 70B via Groq)
+    - **WildCard**: Paradox, creative leaps (GPT-4o-mini, high temp)
 
     ## Key Features
-    - Gemini 2.0 Flash for intelligent trivia prediction
-    - Few-shot learning from 45+ historical games
-    - Wordplay and lateral thinking detection
+    - 5 agents predict in parallel (~5s total)
+    - Weighted voting based on clue number
+    - Early clues favor creative agents
+    - Late clues favor literal interpretation
     - Spelling validation (100% accuracy requirement)
     - Session management with 5-minute expiry
-    - Guess recommendations based on confidence thresholds
 
     ## Workflow
-    1. POST /api/predict - Submit Clue 1 (returns session_id)
-    2. POST /api/predict - Submit Clue 2 (use session_id)
-    3. Continue until top prediction confidence exceeds threshold
+    1. POST /api/predict - Submit Clue 1 (returns session_id + 5 predictions)
+    2. POST /api/predict - Submit Clue 2 (voting recommends best answer)
+    3. Continue until confidence threshold met
     4. POST /api/validate - Validate spelling before guessing
     5. POST /api/reset - Start new puzzle
 
@@ -118,7 +130,7 @@ app = FastAPI(
     - Place: 25% (landmarks, cities, buildings)
     - Person: 15% (celebrities, characters)
     """,
-    version="2.0.0",
+    version="3.0.0",
     lifespan=lifespan,
     docs_url="/docs",
     redoc_url="/redoc",
@@ -165,9 +177,10 @@ async def root():
     """Root endpoint - API information."""
     return {
         "name": "JackpotPredict API",
-        "version": "2.0.0",
-        "architecture": "Gemini-First",
-        "description": "AI-powered trivia answer prediction engine",
+        "version": "3.0.0",
+        "architecture": "Mixture of Agents (MoA)",
+        "agents": ["lateral", "wordsmith", "popculture", "literal", "wildcard"],
+        "description": "AI-powered trivia answer prediction engine with 5 specialized agents",
         "docs": "/docs",
         "health": "/api/health",
         "endpoints": {

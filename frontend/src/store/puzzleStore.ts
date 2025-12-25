@@ -1,10 +1,21 @@
 import { create } from 'zustand'
 import type { PredictionResponse } from '../types/api'
 
+// Simplified prediction snapshot for trend tracking
+export interface PredictionSnapshot {
+  clueNumber: number
+  recommendedPick: string
+  recommendedConfidence: number
+  oracleTopPick: string | null
+  oracleConfidence: number | null
+  agreementStrength: string
+}
+
 interface PuzzleState {
   sessionId: string | null
   clueHistory: string[]
   latestPrediction: PredictionResponse | null
+  predictionHistory: PredictionSnapshot[]  // Track all predictions for trend viz
   isLoading: boolean
   error: string | null
 
@@ -37,6 +48,7 @@ export const usePuzzleStore = create<PuzzleState>((set) => ({
   sessionId: null,
   clueHistory: [],
   latestPrediction: null,
+  predictionHistory: [],
   isLoading: false,
   error: null,
 
@@ -56,10 +68,26 @@ export const usePuzzleStore = create<PuzzleState>((set) => ({
     })),
 
   setPrediction: (prediction) =>
-    set({
-      latestPrediction: prediction,
-      sessionId: prediction.session_id,
-      clueHistory: prediction.clue_history,
+    set((state) => {
+      // Create snapshot for trend tracking
+      const topVoteScore = prediction.voting?.vote_breakdown?.[0]?.total_votes ?? 0
+      const snapshot: PredictionSnapshot = {
+        clueNumber: prediction.clue_number,
+        recommendedPick: prediction.recommended_pick,
+        recommendedConfidence: Math.min(topVoteScore / 2, 1),
+        oracleTopPick: prediction.oracle?.top_3?.[0]?.answer ?? null,
+        oracleConfidence: prediction.oracle?.top_3?.[0]?.confidence
+          ? prediction.oracle.top_3[0].confidence / 100
+          : null,
+        agreementStrength: prediction.agreement_strength,
+      }
+
+      return {
+        latestPrediction: prediction,
+        sessionId: prediction.session_id,
+        clueHistory: prediction.clue_history,
+        predictionHistory: [...state.predictionHistory, snapshot],
+      }
     }),
 
   setLoading: (loading) => set({ isLoading: loading }),
@@ -71,6 +99,7 @@ export const usePuzzleStore = create<PuzzleState>((set) => ({
       sessionId: null,
       clueHistory: [],
       latestPrediction: null,
+      predictionHistory: [],
       isLoading: false,
       error: null,
       timerKey: 0,
