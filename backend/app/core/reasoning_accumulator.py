@@ -42,6 +42,7 @@ class OracleSynthesis:
     key_theme: str
     blind_spot: str
     latency_ms: float
+    misdirection_detected: str = ""  # What trap is the clue writer setting?
 
 
 @dataclass

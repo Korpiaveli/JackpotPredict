@@ -270,6 +270,333 @@ def get_context_manager() -> HistoricalDataManager:
     return _context_manager
 
 
+# =============================================================================
+# CULTURAL CONTEXT MANAGER (MOA Optimization v3)
+# Provides adversarial counter-reasoning context for Oracle
+# =============================================================================
+
+import re
+from datetime import datetime
+
+
+@dataclass
+class CulturalMatch:
+    """A detected cultural reference match."""
+    keyword: str
+    answer: str
+    source: str
+    confidence: float  # 0.0 to 1.0
+
+
+@dataclass
+class HistoricalPuzzleMatch:
+    """A similar historical puzzle match."""
+    date: str
+    answer: str
+    similarity_score: float
+    matching_patterns: List[str]
+    key_clue: str
+
+
+class CulturalContextManager:
+    """
+    Provides cultural, temporal, and historical context for Oracle analysis.
+
+    Uses in-memory caching for <10ms lookup latency.
+    Enables adversarial counter-reasoning by detecting misdirection patterns.
+    """
+
+    def __init__(self, data_dir: Optional[Path] = None):
+        """
+        Initialize context manager with data files.
+
+        Args:
+            data_dir: Directory containing cultural_references.json and
+                     historical_puzzles.json. Defaults to app/data/.
+        """
+        if data_dir is None:
+            data_dir = Path(__file__).parent.parent / "data"
+
+        self.data_dir = data_dir
+
+        # Load and cache data
+        self._cultural_refs: Dict = {}
+        self._historical_puzzles: Dict = {}
+        self._quote_keywords: Dict[str, Dict] = {}  # keyword -> quote info
+        self._pattern_keywords: Dict[str, Dict] = {}  # keyword -> pattern info
+
+        self._load_data()
+
+    def _load_data(self) -> None:
+        """Load cultural references and historical puzzles into memory."""
+        # Load cultural references
+        cultural_path = self.data_dir / "cultural_references.json"
+        if cultural_path.exists():
+            try:
+                with open(cultural_path, 'r', encoding='utf-8') as f:
+                    self._cultural_refs = json.load(f)
+
+                # Build keyword lookup indexes for fast matching
+                for quote, info in self._cultural_refs.get("quotes", {}).items():
+                    for keyword in info.get("keywords", []):
+                        self._quote_keywords[keyword.lower()] = {
+                            "quote": quote,
+                            **info
+                        }
+
+                for pattern_name, info in self._cultural_refs.get("wordplay_patterns", {}).items():
+                    for keyword in info.get("keywords", []):
+                        self._pattern_keywords[keyword.lower()] = {
+                            "pattern": pattern_name,
+                            **info
+                        }
+
+                logger.info(f"[CulturalContext] Loaded {len(self._cultural_refs.get('quotes', {}))} quotes, "
+                           f"{len(self._cultural_refs.get('wordplay_patterns', {}))} patterns")
+            except Exception as e:
+                logger.error(f"[CulturalContext] Error loading cultural references: {e}")
+
+        # Load historical puzzles
+        historical_path = self.data_dir / "historical_puzzles.json"
+        if historical_path.exists():
+            try:
+                with open(historical_path, 'r', encoding='utf-8') as f:
+                    self._historical_puzzles = json.load(f)
+
+                puzzle_count = len(self._historical_puzzles.get("puzzles", []))
+                logger.info(f"[CulturalContext] Loaded {puzzle_count} historical puzzles")
+            except Exception as e:
+                logger.error(f"[CulturalContext] Error loading historical puzzles: {e}")
+
+    def detect_cultural_references(self, clues: List[str]) -> List[CulturalMatch]:
+        """
+        Detect cultural references (quotes, catchphrases) in clues.
+
+        Args:
+            clues: List of clues to analyze
+
+        Returns:
+            List of CulturalMatch objects with detected references
+        """
+        matches = []
+        clue_text = " ".join(clues).lower()
+
+        # Check for quote keywords
+        for keyword, info in self._quote_keywords.items():
+            if keyword in clue_text:
+                # Higher confidence if keyword appears in later clues (4-5)
+                clue_idx = next(
+                    (i for i, c in enumerate(clues) if keyword in c.lower()),
+                    0
+                )
+                confidence = 0.6 + (clue_idx * 0.1)  # 0.6-0.9 based on clue number
+
+                matches.append(CulturalMatch(
+                    keyword=keyword,
+                    answer=info["answer"],
+                    source=info.get("source", "Unknown"),
+                    confidence=min(confidence, 0.95)
+                ))
+
+        # Check for pattern keywords
+        for keyword, info in self._pattern_keywords.items():
+            if keyword in clue_text:
+                clue_idx = next(
+                    (i for i, c in enumerate(clues) if keyword in c.lower()),
+                    0
+                )
+                confidence = 0.5 + (clue_idx * 0.1)
+
+                matches.append(CulturalMatch(
+                    keyword=keyword,
+                    answer=info["answer"],
+                    source=info.get("pattern_type", "wordplay"),
+                    confidence=min(confidence, 0.85)
+                ))
+
+        # Deduplicate by answer, keeping highest confidence
+        answer_matches: Dict[str, CulturalMatch] = {}
+        for match in matches:
+            if match.answer not in answer_matches or match.confidence > answer_matches[match.answer].confidence:
+                answer_matches[match.answer] = match
+
+        return sorted(answer_matches.values(), key=lambda m: m.confidence, reverse=True)
+
+    def find_similar_puzzles(self, clues: List[str], top_k: int = 3) -> List[HistoricalPuzzleMatch]:
+        """
+        Find similar historical puzzles based on clue patterns.
+
+        Args:
+            clues: List of clues to match against
+            top_k: Number of top matches to return
+
+        Returns:
+            List of HistoricalPuzzleMatch objects
+        """
+        matches = []
+        clue_text = " ".join(clues).lower()
+        clue_words = set(re.findall(r'\w+', clue_text))
+
+        for puzzle in self._historical_puzzles.get("puzzles", []):
+            puzzle_clues = puzzle.get("clues", [])
+            puzzle_text = " ".join(puzzle_clues).lower()
+            puzzle_words = set(re.findall(r'\w+', puzzle_text))
+
+            # Calculate Jaccard-like similarity
+            intersection = len(clue_words & puzzle_words)
+            union = len(clue_words | puzzle_words)
+
+            if union > 0:
+                similarity = intersection / union
+
+                # Boost if patterns match
+                matching_patterns = []
+                for pattern in puzzle.get("patterns", []):
+                    if pattern.lower() in clue_text:
+                        matching_patterns.append(pattern)
+                        similarity += 0.1
+
+                if similarity > 0.15:  # Threshold for relevance
+                    matches.append(HistoricalPuzzleMatch(
+                        date=puzzle.get("date", "Unknown"),
+                        answer=puzzle.get("answer", "Unknown"),
+                        similarity_score=min(similarity, 1.0),
+                        matching_patterns=matching_patterns,
+                        key_clue=puzzle_clues[-1] if puzzle_clues else ""
+                    ))
+
+        # Sort by similarity and return top_k
+        matches.sort(key=lambda m: m.similarity_score, reverse=True)
+        return matches[:top_k]
+
+    def get_temporal_context(self) -> str:
+        """
+        Get temporal context (date, holidays, special events).
+
+        Returns:
+            String with temporal context for injection
+        """
+        now = datetime.now()
+        context_parts = []
+
+        context_parts.append(f"Today: {now.strftime('%A, %B %d, %Y')}")
+
+        # Check for holidays/special dates
+        month_day = (now.month, now.day)
+        holidays = {
+            (1, 1): "New Year's Day",
+            (2, 14): "Valentine's Day",
+            (3, 17): "St. Patrick's Day",
+            (4, 1): "April Fools' Day",
+            (7, 4): "Independence Day (USA)",
+            (10, 31): "Halloween",
+            (11, 11): "Veterans Day",
+            (12, 24): "Christmas Eve",
+            (12, 25): "Christmas Day",
+            (12, 31): "New Year's Eve",
+        }
+
+        if month_day in holidays:
+            context_parts.append(f"Holiday: {holidays[month_day]}")
+
+        # Check for December (holiday season)
+        if now.month == 12:
+            context_parts.append("Season: Holiday season - expect Christmas/winter themed answers")
+
+        return " | ".join(context_parts)
+
+    def get_category_priors(self) -> Dict[str, float]:
+        """
+        Get category priors from historical data.
+
+        Returns:
+            Dict mapping category to probability (e.g., {"thing": 0.65})
+        """
+        return self._cultural_refs.get("category_priors", {
+            "thing": 0.65,
+            "person": 0.20,
+            "place": 0.15
+        })
+
+    def get_clue_strategy(self, clue_number: int) -> str:
+        """
+        Get strategy guidance for specific clue number.
+
+        Args:
+            clue_number: Current clue number (1-5)
+
+        Returns:
+            Strategy string for the clue
+        """
+        strategies = self._cultural_refs.get("clue_number_strategy", {})
+        return strategies.get(str(clue_number), "Analyze carefully for patterns")
+
+    def build_context_injection(
+        self,
+        clues: List[str],
+        clue_number: int,
+        include_similar: bool = True
+    ) -> str:
+        """
+        Build complete context injection string for Oracle.
+
+        Args:
+            clues: List of clues revealed so far
+            clue_number: Current clue number (1-5)
+            include_similar: Whether to include similar historical puzzles
+
+        Returns:
+            Formatted context string for injection into Oracle prompt
+        """
+        sections = []
+
+        # 1. Temporal context
+        temporal = self.get_temporal_context()
+        sections.append(f"[TEMPORAL] {temporal}")
+
+        # 2. Clue strategy
+        strategy = self.get_clue_strategy(clue_number)
+        sections.append(f"[STRATEGY] Clue {clue_number}: {strategy}")
+
+        # 3. Cultural reference detection
+        cultural_matches = self.detect_cultural_references(clues)
+        if cultural_matches:
+            cultural_strs = [
+                f"'{m.keyword}' -> {m.answer} ({m.source}, {int(m.confidence*100)}%)"
+                for m in cultural_matches[:3]
+            ]
+            sections.append(f"[CULTURAL REFERENCES DETECTED] {' | '.join(cultural_strs)}")
+
+        # 4. Similar historical puzzles (optional, for pattern matching)
+        if include_similar and clue_number >= 3:
+            similar = self.find_similar_puzzles(clues, top_k=2)
+            if similar:
+                similar_strs = [
+                    f"{m.answer} ({m.date}, {int(m.similarity_score*100)}% match)"
+                    for m in similar
+                ]
+                sections.append(f"[SIMILAR PAST PUZZLES] {' | '.join(similar_strs)}")
+
+        # 5. Category priors reminder
+        priors = self.get_category_priors()
+        prior_str = f"THING {int(priors.get('thing', 0.65)*100)}% | PERSON {int(priors.get('person', 0.20)*100)}% | PLACE {int(priors.get('place', 0.15)*100)}%"
+        sections.append(f"[CATEGORY PRIORS] {prior_str}")
+
+        return "\n".join(sections)
+
+
+# Singleton instance for CulturalContextManager
+_cultural_context_manager: Optional[CulturalContextManager] = None
+
+
+def get_cultural_context_manager() -> CulturalContextManager:
+    """Get or create singleton CulturalContextManager instance."""
+    global _cultural_context_manager
+    if _cultural_context_manager is None:
+        _cultural_context_manager = CulturalContextManager()
+    return _cultural_context_manager
+
+
 # System prompt template with placeholder for dynamic examples
 BEST_GUESS_PROMPT = """You are a competitive trivia expert playing "Best Guess Live."
 Your goal is to identify the answer based on a sequence of vague clues.

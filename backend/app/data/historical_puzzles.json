@@ -1,0 +1,544 @@
+{
+  "metadata": {
+    "source": "Best Guess Live (Netflix) community-maintained history",
+    "date_range": "2025-12-08 to 2025-12-26",
+    "total_puzzles": 30,
+    "category_distribution": {
+      "thing": 20,
+      "person": 6,
+      "place": 4
+    }
+  },
+  "puzzles": [
+    {
+      "date": "2025-12-08",
+      "answer": "PICKLEBALL",
+      "category": "thing",
+      "prize": 10000,
+      "clues": [
+        "CAME OUT OF NOWHERE, NOW IT'S EVERYWHERE",
+        "CAUSES INTENSE EXCHANGES BETWEEN FRIENDS",
+        "EASY TO GET INTO EVEN THOUGH THERE'S A BOUNCER",
+        "SMALLER SERVINGS, MASSIVE POPULARITY",
+        "SOUR SPORT THAT GOOD SPORTS RELISH"
+      ],
+      "patterns": ["wordplay", "compound_word", "sports"],
+      "key_clue": 5,
+      "misdirection_type": "polysemy",
+      "notes": "sour=pickle, sport=sport, relish=condiment"
+    },
+    {
+      "date": "2025-12-08",
+      "answer": "BARBIE",
+      "category": "thing",
+      "prize": 5000,
+      "clues": [
+        "GLOBAL MULTIMEDIA STAR",
+        "KNOWN BY EVERYBODY BUT NOBODY ACTUALLY KNOWS THEM",
+        "ROLE MODEL WHOSE ROLES INCLUDE MODEL",
+        "TOWERING ICON WHO'S LESS THAN 1 FOOT TALL",
+        "I MATTEL YOU: KEN THINKS SHE'S A DOLL"
+      ],
+      "patterns": ["brand_reference", "wordplay", "pop_culture"],
+      "key_clue": 5,
+      "misdirection_type": "category_switch",
+      "notes": "Sounds like celebrity (person) but is a doll (thing)"
+    },
+    {
+      "date": "2025-12-09",
+      "answer": "MOUNT RUSHMORE",
+      "category": "place",
+      "prize": 10000,
+      "clues": [
+        "NATURAL BUT NOT NATURAL",
+        "CLASSIC ROCK GROUP THAT'S STILL TOGETHER",
+        "1, 3, 26, 16... BINGO!",
+        "THE ULTIMATE FACE-OFF",
+        "DAKOTA HILLS, POTUS GRILLS"
+      ],
+      "patterns": ["geographic", "presidents", "wordplay"],
+      "key_clue": 5,
+      "misdirection_type": "polysemy",
+      "notes": "'Rock group' = carved rock, not band. Presidents 1,3,26,16"
+    },
+    {
+      "date": "2025-12-09",
+      "answer": "CHATGPT",
+      "category": "thing",
+      "prize": 5000,
+      "clues": [
+        "ENTER AT YOUR OWN RISK",
+        "BACK AND FORTH BILLIONS OF TIMES",
+        "KNOW-IT-ALL WHO'S STILL LEARNING",
+        "HELPS WRITE YOUR RESUME BUT MAY TAKE YOUR JOB",
+        "OPENAI HAD A BOT, A-LA-I-O"
+      ],
+      "patterns": ["brand_reference", "tech", "wordplay"],
+      "key_clue": 5,
+      "misdirection_type": "cultural_reference",
+      "notes": "Old MacDonald parody with OpenAI"
+    },
+    {
+      "date": "2025-12-10",
+      "answer": "S'MORES",
+      "category": "thing",
+      "prize": 10000,
+      "clues": [
+        "HIGHLY ANTICIPATED",
+        "UNDER CONSTRUCTION",
+        "GETS FIRED BUT STILL DOES THE JOB",
+        "THE NAME IS ADDICTIVE",
+        "THE FINALE FOR CAMPING AND GLAMPING"
+      ],
+      "patterns": ["compound_word", "food", "wordplay"],
+      "key_clue": 5,
+      "misdirection_type": "literal_trap",
+      "notes": "'Fired' = over fire, 'construction' = assembling layers"
+    },
+    {
+      "date": "2025-12-10",
+      "answer": "JAMES BOND",
+      "category": "person",
+      "prize": 5000,
+      "clues": [
+        "CAN FEEL ENDLESS",
+        "RULES DO NOT APPLY",
+        "HAS MULTIPLE PERSONALITIES",
+        "CUE THE GADGETS",
+        "I'LL TAKE AN ASTON MARTINI, SHAKEN NOT STIRRED"
+      ],
+      "patterns": ["character", "cultural_reference", "spy"],
+      "key_clue": 5,
+      "misdirection_type": "cultural_reference",
+      "notes": "Famous Bond quote, Aston Martin + martini"
+    },
+    {
+      "date": "2025-12-11",
+      "answer": "TITANIC",
+      "category": "thing",
+      "prize": 10000,
+      "clues": [
+        "AGAINST THE ODDS",
+        "FAME AND FORTUNE FOREVER",
+        "SPLIT FROM ITS BETTER HALF",
+        "EXPERIENCED INCREDIBLE UPS AND DOWNS",
+        "I'M THE KING OF THE WORLD"
+      ],
+      "patterns": ["cultural_reference", "movie", "ship"],
+      "key_clue": 5,
+      "misdirection_type": "cultural_reference",
+      "notes": "Famous Leonardo DiCaprio quote from film"
+    },
+    {
+      "date": "2025-12-11",
+      "answer": "M&MS",
+      "category": "thing",
+      "prize": 5000,
+      "clues": [
+        "BORN IN THE USA",
+        "LOVES A GOOD MIXER",
+        "PROUD TO FLAUNT A COLORFUL COAT",
+        "ACTS NUTTY SOMETIMES",
+        "TASTES SO NICE THEY NAMED IT TWICE"
+      ],
+      "patterns": ["wordplay", "food", "brand"],
+      "key_clue": 5,
+      "misdirection_type": "polysemy",
+      "notes": "M and M = named twice, nutty = peanut variety"
+    },
+    {
+      "date": "2025-12-12",
+      "answer": "BIRTHDAY CAKE",
+      "category": "thing",
+      "prize": 10000,
+      "clues": [
+        "WINS A POPULARITY CONTEST",
+        "BUILT TO BE DEMOLISHED",
+        "WAX ON WAX OFF",
+        "PRESENTED AROUND THE PRESENT TIME",
+        "YOU WISH AND CUT"
+      ],
+      "patterns": ["celebration", "wordplay", "food"],
+      "key_clue": 5,
+      "misdirection_type": "compound_word",
+      "notes": "Wax = candles, present = birthday gift wordplay"
+    },
+    {
+      "date": "2025-12-12",
+      "answer": "GOODYEAR BLIMP",
+      "category": "thing",
+      "prize": 5000,
+      "clues": [
+        "STANDS OUT IN A CROWD",
+        "ALWAYS IN INCREDIBLE SHAPE",
+        "AN INNOVATION TO SEE AND BE SEEN",
+        "365 POSITIVE",
+        "NO LEAD IN THIS ZEPPELIN"
+      ],
+      "patterns": ["brand_object", "wordplay", "aircraft"],
+      "key_clue": 5,
+      "misdirection_type": "polysemy",
+      "notes": "365=Goodyear, Zeppelin=airship not band"
+    },
+    {
+      "date": "2025-12-15",
+      "answer": "MONOPOLY",
+      "category": "thing",
+      "prize": 10000,
+      "clues": [
+        "SAVORS MANY FLAVORS",
+        "ROUND AND ROUND",
+        "A HOSTILE TAKEOVER",
+        "TRESPASSING WILL COST YOU",
+        "JAIL TIME CAN BE DICEY"
+      ],
+      "patterns": ["game_reference", "wordplay", "business"],
+      "key_clue": 5,
+      "misdirection_type": "polysemy",
+      "notes": "dicey = dice, jail = Go to Jail"
+    },
+    {
+      "date": "2025-12-15",
+      "answer": "PARIS HILTON",
+      "category": "person",
+      "prize": 5000,
+      "clues": [
+        "BACK TO BASICS",
+        "LOUD WITH THE CROWD",
+        "A SENSATION AND A DESTINATION",
+        "HER FAMILY IS EXTREMELY HOSPITABLE",
+        "NAMED AFTER A ROMANTIC CITY? THAT'S HOT"
+      ],
+      "patterns": ["celebrity", "wordplay", "brand"],
+      "key_clue": 5,
+      "misdirection_type": "category_switch",
+      "notes": "Hilton hotels = hospitable, 'That's hot' = catchphrase"
+    },
+    {
+      "date": "2025-12-16",
+      "answer": "BOWLING",
+      "category": "thing",
+      "prize": 10000,
+      "clues": [
+        "SURROUNDED BY SUCCESS AND FAILURE",
+        "READY, SET, GO",
+        "TWO RIGHT IS NOT RIGHT. NEITHER IS TWO LEFT.",
+        "YOUR CLOTHES ARE FINE. CHANGE YOUR SHOES.",
+        "300 ON THIS TEST MEANS YOU WENT STRIKE"
+      ],
+      "patterns": ["sport", "wordplay", "numbers"],
+      "key_clue": 5,
+      "misdirection_type": "literal_trap",
+      "notes": "300 = perfect score, gutters = failure"
+    },
+    {
+      "date": "2025-12-16",
+      "answer": "THE GRINCH",
+      "category": "person",
+      "prize": 5000,
+      "clues": [
+        "FORGET THE PHARMACY",
+        "SINGLE AND NOT READY TO MINGLE",
+        "LIVES IN A QUESTIONABLE AREA",
+        "PART OF A WORLD FAMOUS HEIST",
+        "MEAN GREEN CHRISTMAS HATING MACHINE"
+      ],
+      "patterns": ["character", "christmas", "dr_seuss"],
+      "key_clue": 5,
+      "misdirection_type": "cultural_reference",
+      "notes": "Famous Dr. Seuss character"
+    },
+    {
+      "date": "2025-12-17",
+      "answer": "OREO",
+      "category": "thing",
+      "prize": 10000,
+      "clues": [
+        "LEADER OF THE PACK",
+        "THE CREAM DOESN'T RISE TO THE TOP",
+        "ROUND ON BOTH SIDES AS IS ITS NAME",
+        "ONE GOOD SANDWICH AFTER ANOTHER",
+        "BLACK AND WHITE WITH A TWIST"
+      ],
+      "patterns": ["food", "brand", "structure"],
+      "key_clue": 5,
+      "misdirection_type": "compound_word",
+      "notes": "O-R-E-O is round letters, twist = twist to open"
+    },
+    {
+      "date": "2025-12-17",
+      "answer": "RUDOLPH THE RED-NOSED REINDEER",
+      "category": "person",
+      "prize": 5000,
+      "clues": [
+        "AT THE JUNCTION OF FORM AND FUNCTION",
+        "FAST BUT NOT FURIOUS",
+        "DOESN'T LOOK LIKE A MILLION BUCKS",
+        "HISTORIC UNDERDOG THAT BEAT THE FOG",
+        "MORE FAMOUS THAN HIS DASHING DANCING CO-WORKERS"
+      ],
+      "patterns": ["character", "christmas", "wordplay"],
+      "key_clue": 5,
+      "misdirection_type": "cultural_reference",
+      "notes": "Other reindeer: Dasher, Dancer, etc."
+    },
+    {
+      "date": "2025-12-18",
+      "answer": "FRENCH FRIES",
+      "category": "thing",
+      "prize": 10000,
+      "clues": [
+        "AT THE TOP OF THE WISH LIST",
+        "SEASON'S GREETINGS ALL YEAR LONG",
+        "ENJOYS A HOT BUBBLE BATH",
+        "ARRIVES ORDERLY IN MANY SHAPES AND SIZES",
+        "PASS THE KETCHUP S'IL VOUS PLAIT"
+      ],
+      "patterns": ["food", "wordplay", "french"],
+      "key_clue": 5,
+      "misdirection_type": "polysemy",
+      "notes": "Season = seasoning, bubble bath = frying oil"
+    },
+    {
+      "date": "2025-12-18",
+      "answer": "KING KONG",
+      "category": "person",
+      "prize": 5000,
+      "clues": [
+        "LIGHT TRAVELER",
+        "CAN BE SALTY AND SWEET",
+        "AN EXPERT AT CONTROLLING SMALL AIRCRAFT",
+        "HAS THE LADIES IN THE PALM OF HIS HAND",
+        "PUTS THE APE IN SKYSCRAPER"
+      ],
+      "patterns": ["character", "movie", "wordplay"],
+      "key_clue": 5,
+      "misdirection_type": "compound_word",
+      "notes": "APE literally in skysc-APE-r, swatted planes"
+    },
+    {
+      "date": "2025-12-19",
+      "answer": "MR. T",
+      "category": "person",
+      "prize": 10000,
+      "clues": [
+        "NOT A GIRLY BEVERAGE",
+        "SPLIT PERSONALITY",
+        "DO YOU ALREADY KNOW",
+        "A TEAM PLAYER",
+        "I PITY THE FOOL WHO DOESN'T GET THIS"
+      ],
+      "patterns": ["celebrity", "cultural_reference", "wordplay"],
+      "key_clue": 5,
+      "misdirection_type": "cultural_reference",
+      "notes": "Famous A-Team quote"
+    },
+    {
+      "date": "2025-12-19",
+      "answer": "UGLY SWEATER",
+      "category": "thing",
+      "prize": 5000,
+      "clues": [
+        "MIXED EMOTIONS",
+        "TURN UP THE VOLUME",
+        "THE LIFE OF ITS OWN PARTY",
+        "UNATTRACTIVE IN A SAUNA",
+        "THE FRUITCAKE OF HOLIDAY ATTIRE"
+      ],
+      "patterns": ["clothing", "holiday", "wordplay"],
+      "key_clue": 5,
+      "misdirection_type": "compound_word",
+      "notes": "Fruitcake = unwanted holiday gift metaphor"
+    },
+    {
+      "date": "2025-12-22",
+      "answer": "WILL FERRELL",
+      "category": "person",
+      "prize": 30000,
+      "clues": [
+        "DROP IT, DUDE",
+        "AN ONSLAUGHT OF MUSICAL HITS",
+        "ONE OF THE GUYS, BUT NOT THESE GUYS",
+        "BUILT A HOME FOR KILLER COMEDY",
+        "SANTA'S BUDDY IN A HOLIDAY MOVIE"
+      ],
+      "patterns": ["celebrity", "comedy", "movies"],
+      "key_clue": 5,
+      "misdirection_type": "cultural_reference",
+      "notes": "Elf movie, SNL"
+    },
+    {
+      "date": "2025-12-22",
+      "answer": "PINOCCHIO",
+      "category": "person",
+      "prize": 20000,
+      "clues": [
+        "GREW UP IN A FOREST",
+        "TOUGH DEAL MAKER",
+        "EXPERIENCED MAJOR GROWTH SPURTS",
+        "LOVES CRICKETS, TERMITES NOT SO MUCH",
+        "CAN BE VERY NOSY"
+      ],
+      "patterns": ["character", "disney", "wordplay"],
+      "key_clue": 5,
+      "misdirection_type": "compound_word",
+      "notes": "Nose grows when lying"
+    },
+    {
+      "date": "2025-12-23",
+      "answer": "PIGGY BANK",
+      "category": "thing",
+      "prize": 65000,
+      "clues": [
+        "DON'T JUDGE A BOOK BY ITS COVER",
+        "GREAT START FOR SPARE PARTS",
+        "ENTER ABOVE, EXIT BELOW",
+        "A TRUSTY TRUST THAT YOU WANT TO BUST",
+        "AN ANIMAL AT SAVING MONEY"
+      ],
+      "patterns": ["compound_word", "money", "wordplay"],
+      "key_clue": 5,
+      "misdirection_type": "compound_word",
+      "notes": "Bust = break open"
+    },
+    {
+      "date": "2025-12-23",
+      "answer": "SEINFELD",
+      "category": "thing",
+      "prize": 35000,
+      "clues": [
+        "LESS IS MORE IF YOU WANT TO SCORE",
+        "STAND UP TO START",
+        "LAST ALWAYS CAME FIRST",
+        "ALL ABOUT THAT BASELINE",
+        "IT'S FESTIVUS FOR THE BEST GUESTS OF US"
+      ],
+      "patterns": ["tv_show", "cultural_reference", "comedy"],
+      "key_clue": 5,
+      "misdirection_type": "cultural_reference",
+      "notes": "Festivus = holiday from Seinfeld episode"
+    },
+    {
+      "date": "2025-12-24",
+      "answer": "SPEED BUMP",
+      "category": "thing",
+      "prize": 100000,
+      "clues": [
+        "EYES WIDE OPEN",
+        "A LOVE AND HATE RELATIONSHIP",
+        "GROUNDBREAKING TECHNOLOGY",
+        "RISE AND WINE",
+        "THIS CONCRETE HUMP MAY PUT YOUR CAR IN A SLUMP"
+      ],
+      "patterns": ["compound_word", "road", "wordplay"],
+      "key_clue": 5,
+      "misdirection_type": "polysemy",
+      "notes": "Rise = bump up, whine from car"
+    },
+    {
+      "date": "2025-12-24",
+      "answer": "CURLING IRON",
+      "category": "thing",
+      "prize": 50000,
+      "clues": [
+        "START THE COUNTDOWN",
+        "AFFECTS THE IMMEDIATE FUTURE",
+        "HANDLES THE HEAVY LIFTING",
+        "HOT ROD BUILT FOR TWISTS AND TURNS",
+        "ADD FLARE TO YOUR HAIR WITH THIS MAGIC WAND"
+      ],
+      "patterns": ["compound_word", "beauty", "wordplay"],
+      "key_clue": 5,
+      "misdirection_type": "polysemy",
+      "notes": "Hot rod = heated styling tool"
+    },
+    {
+      "date": "2025-12-25",
+      "answer": "GARBAGE TRUCK",
+      "category": "thing",
+      "prize": 130000,
+      "clues": [
+        "HELLO AND GOODBYE",
+        "BIG BANG THEORY",
+        "PRETTY LARGE FOR A COMPACT",
+        "LOVES EATING TAKEOUT",
+        "ROLLING THROUGH YOUR HOOD AND TALKING TRASH"
+      ],
+      "patterns": ["compound_word", "vehicle", "wordplay"],
+      "key_clue": 5,
+      "misdirection_type": "polysemy",
+      "notes": "Compact = compressed trash"
+    },
+    {
+      "date": "2025-12-25",
+      "answer": "CRUTCHES",
+      "category": "thing",
+      "prize": 70000,
+      "clues": [
+        "ALL THE RIGHT MOVES",
+        "EMBRACE CHANGE",
+        "A VERY IMPORTANT COUPLE",
+        "CRUISING AFTER A BRUISING",
+        "UP IN ARMS IF YOU BREAK A LEG"
+      ],
+      "patterns": ["medical", "wordplay", "pair"],
+      "key_clue": 5,
+      "misdirection_type": "compound_word",
+      "notes": "Break a leg = injury, up in arms = using crutches"
+    },
+    {
+      "date": "2025-12-26",
+      "answer": "BAGGAGE CLAIM",
+      "category": "place",
+      "prize": 300000,
+      "clues": [
+        "GET READY FOR YOUR CLOSE-UP",
+        "BEGINNING OF THE END",
+        "REUNITED AND IT FEELS SO GOOD",
+        "A CAROUSEL YOU SHOULDN'T RIDE",
+        "IT'S TIME TO HUGGAGE YOUR LUGGAGE"
+      ],
+      "patterns": ["compound_word", "airport", "wordplay"],
+      "key_clue": 5,
+      "misdirection_type": "compound_word",
+      "notes": "Huggage = hug + baggage"
+    },
+    {
+      "date": "2025-12-26",
+      "answer": "ICE CUBE TRAY",
+      "category": "thing",
+      "prize": 200000,
+      "clues": [
+        "FLEXIBLE BUT THAT'S A STRETCH",
+        "HOME MAKEOVER",
+        "YOU'RE IN THE GAME WITH THIS FREEZE FRAME",
+        "SOONER OR LATER I HAVE TO SPLIT",
+        "A HANDHELD MOLD THAT GETS REALLY COLD"
+      ],
+      "patterns": ["compound_word", "kitchen", "wordplay"],
+      "key_clue": 5,
+      "misdirection_type": "compound_word",
+      "notes": "Split = crack ice out"
+    }
+  ],
+  "pattern_statistics": {
+    "most_common_patterns": [
+      "wordplay (90%+)",
+      "compound_word (40%)",
+      "cultural_reference (30%)",
+      "brand_reference (15%)"
+    ],
+    "misdirection_breakdown": {
+      "polysemy": 8,
+      "compound_word": 10,
+      "cultural_reference": 7,
+      "category_switch": 3,
+      "literal_trap": 2
+    },
+    "key_clue_distribution": {
+      "clue_5_giveaway": 28,
+      "clue_4_revealing": 2,
+      "clue_3_pivotal": 0
+    }
+  }
+}

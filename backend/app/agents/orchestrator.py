@@ -14,6 +14,7 @@ from dataclasses import dataclass
 
 from app.core.config import get_agent_configs
 from app.core.reasoning_accumulator import OracleSynthesis, ClueAnalysis
+from app.core.context_manager import get_cultural_context_manager
 
 from .base_agent import BaseAgent, AgentPrediction
 from .lateral_agent import LateralAgent

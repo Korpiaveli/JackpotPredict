@@ -1,0 +1,240 @@
+{
+  "quotes": {
+    "i pity the fool": {
+      "answer": "MR. T",
+      "source": "The A-Team",
+      "category": "person",
+      "keywords": ["pity", "fool"]
+    },
+    "i'm the king of the world": {
+      "answer": "TITANIC",
+      "source": "Titanic (1997 film)",
+      "category": "thing",
+      "keywords": ["king", "world"]
+    },
+    "festivus": {
+      "answer": "SEINFELD",
+      "source": "Seinfeld TV show",
+      "category": "thing",
+      "keywords": ["festivus", "festivus for the rest of us"]
+    },
+    "houston we have a problem": {
+      "answer": "APOLLO 13",
+      "source": "Apollo 13 mission/film",
+      "category": "thing",
+      "keywords": ["houston", "problem"]
+    },
+    "may the force be with you": {
+      "answer": "STAR WARS",
+      "source": "Star Wars franchise",
+      "category": "thing",
+      "keywords": ["force", "jedi"]
+    },
+    "here's looking at you kid": {
+      "answer": "CASABLANCA",
+      "source": "Casablanca (1942 film)",
+      "category": "thing",
+      "keywords": ["looking", "kid"]
+    },
+    "you can't handle the truth": {
+      "answer": "A FEW GOOD MEN",
+      "source": "A Few Good Men (1992 film)",
+      "category": "thing",
+      "keywords": ["handle", "truth"]
+    },
+    "to infinity and beyond": {
+      "answer": "BUZZ LIGHTYEAR",
+      "source": "Toy Story",
+      "category": "person",
+      "keywords": ["infinity", "beyond"]
+    },
+    "i'll be back": {
+      "answer": "TERMINATOR",
+      "source": "The Terminator (1984 film)",
+      "category": "thing",
+      "keywords": ["back", "terminator"]
+    },
+    "elementary my dear watson": {
+      "answer": "SHERLOCK HOLMES",
+      "source": "Sherlock Holmes stories",
+      "category": "person",
+      "keywords": ["elementary", "watson", "detective"]
+    },
+    "e.t. phone home": {
+      "answer": "E.T.",
+      "source": "E.T. the Extra-Terrestrial (1982 film)",
+      "category": "thing",
+      "keywords": ["phone", "home", "alien"]
+    },
+    "winter is coming": {
+      "answer": "GAME OF THRONES",
+      "source": "Game of Thrones",
+      "category": "thing",
+      "keywords": ["winter", "coming", "stark"]
+    },
+    "yippee ki yay": {
+      "answer": "DIE HARD",
+      "source": "Die Hard franchise",
+      "category": "thing",
+      "keywords": ["yippee", "christmas"]
+    },
+    "say hello to my little friend": {
+      "answer": "SCARFACE",
+      "source": "Scarface (1983 film)",
+      "category": "thing",
+      "keywords": ["hello", "friend"]
+    },
+    "you're gonna need a bigger boat": {
+      "answer": "JAWS",
+      "source": "Jaws (1975 film)",
+      "category": "thing",
+      "keywords": ["boat", "shark", "bigger"]
+    }
+  },
+  "wordplay_patterns": {
+    "pickle + sport": {
+      "answer": "PICKLEBALL",
+      "pattern_type": "compound",
+      "keywords": ["pickle", "sport", "sour", "relish", "dill"]
+    },
+    "mattel + doll": {
+      "answer": "BARBIE",
+      "pattern_type": "brand_reference",
+      "keywords": ["mattel", "ken", "doll", "plastic"]
+    },
+    "ape + building": {
+      "answer": "KING KONG",
+      "pattern_type": "compound",
+      "keywords": ["ape", "skyscraper", "empire", "gorilla"]
+    },
+    "dice + jail": {
+      "answer": "MONOPOLY",
+      "pattern_type": "game_reference",
+      "keywords": ["dice", "dicey", "jail", "board", "money", "property"]
+    },
+    "double naming": {
+      "answer": "M&MS",
+      "pattern_type": "repetition",
+      "keywords": ["named it twice", "double", "m", "candy"]
+    },
+    "openai + bot": {
+      "answer": "CHATGPT",
+      "pattern_type": "brand_reference",
+      "keywords": ["openai", "bot", "ai", "chat", "gpt"]
+    },
+    "dakota + presidents": {
+      "answer": "MOUNT RUSHMORE",
+      "pattern_type": "geographic",
+      "keywords": ["dakota", "potus", "presidents", "face", "mountain"]
+    },
+    "trash + wheels": {
+      "answer": "GARBAGE TRUCK",
+      "pattern_type": "compound",
+      "keywords": ["trash", "rolling", "hood", "compact"]
+    },
+    "holiday + ugly + attire": {
+      "answer": "UGLY SWEATER",
+      "pattern_type": "compound",
+      "keywords": ["holiday", "ugly", "sweater", "fruitcake", "christmas"]
+    },
+    "wood + lie": {
+      "answer": "PINOCCHIO",
+      "pattern_type": "character_trait",
+      "keywords": ["wood", "puppet", "lie", "nose", "cricket"]
+    },
+    "pig + money": {
+      "answer": "PIGGY BANK",
+      "pattern_type": "compound",
+      "keywords": ["pig", "save", "money", "coin", "bust"]
+    },
+    "speed + road": {
+      "answer": "SPEED BUMP",
+      "pattern_type": "compound",
+      "keywords": ["speed", "bump", "road", "slow", "hump"]
+    },
+    "curl + hair": {
+      "answer": "CURLING IRON",
+      "pattern_type": "compound",
+      "keywords": ["curl", "iron", "hair", "hot", "wand"]
+    },
+    "bag + airport": {
+      "answer": "BAGGAGE CLAIM",
+      "pattern_type": "compound",
+      "keywords": ["bag", "luggage", "carousel", "airport"]
+    },
+    "ice + tray": {
+      "answer": "ICE CUBE TRAY",
+      "pattern_type": "compound",
+      "keywords": ["ice", "cube", "freeze", "cold", "mold"]
+    },
+    "crutch + leg": {
+      "answer": "CRUTCHES",
+      "pattern_type": "injury_related",
+      "keywords": ["crutch", "leg", "break", "arms"]
+    },
+    "red nose + reindeer": {
+      "answer": "RUDOLPH THE RED-NOSED REINDEER",
+      "pattern_type": "character",
+      "keywords": ["red", "nose", "reindeer", "fog", "santa"]
+    },
+    "oreo pattern": {
+      "answer": "OREO",
+      "pattern_type": "structure",
+      "keywords": ["black", "white", "cream", "sandwich", "twist"]
+    },
+    "french + potato": {
+      "answer": "FRENCH FRIES",
+      "pattern_type": "compound",
+      "keywords": ["french", "fry", "potato", "ketchup"]
+    },
+    "bowling pattern": {
+      "answer": "BOWLING",
+      "pattern_type": "sport",
+      "keywords": ["strike", "300", "pins", "shoes", "lane"]
+    },
+    "grinch pattern": {
+      "answer": "THE GRINCH",
+      "pattern_type": "character",
+      "keywords": ["green", "mean", "christmas", "heist", "whoville"]
+    },
+    "birthday pattern": {
+      "answer": "BIRTHDAY CAKE",
+      "pattern_type": "celebration",
+      "keywords": ["cake", "wax", "wish", "candle", "blow"]
+    },
+    "blimp pattern": {
+      "answer": "GOODYEAR BLIMP",
+      "pattern_type": "brand_object",
+      "keywords": ["blimp", "fly", "zeppelin", "tire", "365"]
+    },
+    "smores pattern": {
+      "answer": "S'MORES",
+      "pattern_type": "compound",
+      "keywords": ["fire", "marshmallow", "camping", "graham"]
+    },
+    "james bond pattern": {
+      "answer": "JAMES BOND",
+      "pattern_type": "character",
+      "keywords": ["007", "martini", "shaken", "gadget", "spy"]
+    }
+  },
+  "category_priors": {
+    "thing": 0.65,
+    "person": 0.20,
+    "place": 0.15
+  },
+  "clue_number_strategy": {
+    "1": "Be very skeptical - clue is designed to mislead. Multiple interpretations likely.",
+    "2": "Still early - don't commit to obvious answer. Look for wordplay hints.",
+    "3": "Pattern convergence point - start connecting themes across all clues.",
+    "4": "Narrowing down - look for explicit references or quotes emerging.",
+    "5": "Often a giveaway - famous quotes, explicit references, or final wordplay reveal."
+  },
+  "misdirection_types": {
+    "polysemy": "Word has multiple meanings (e.g., 'dicey' = dice or risky)",
+    "category_switch": "Clue sounds like person but answer is thing (or vice versa)",
+    "literal_trap": "Obvious literal interpretation is wrong; metaphor is right",
+    "cultural_reference": "Hidden quote or catchphrase from media",
+    "compound_word": "Answer combines two concepts mentioned separately in clues"
+  }
+}
