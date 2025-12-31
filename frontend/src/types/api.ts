@@ -149,3 +149,22 @@ export interface FeedbackResponse {
   success: boolean
   message: string
 }
+
+// Category statistics for analytics
+export interface CategoryStats {
+  total: number
+  avg_solve_clue: number
+  insights_provided: number
+}
+
+// Analytics response from /api/analytics
+export interface AnalyticsResponse {
+  total_games: number
+  category_breakdown: Record<string, CategoryStats>
+  avg_solve_clue: number
+  early_solves: number
+  late_solves: number
+  insights_provided: number
+  insights_percentage: number
+  recent_answers: string[]
+}

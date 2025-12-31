@@ -41,6 +41,8 @@ from app.api.models import (
     SemanticMatch,
     FeedbackRequest,
     FeedbackResponse,
+    AnalyticsResponse,
+    CategoryStats,
     AgentPrediction as APIAgentPrediction,
     VotingResult as APIVotingResult,
     VoteBreakdown,
@@ -831,6 +833,139 @@ async def submit_feedback(request: FeedbackRequest) -> FeedbackResponse:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Failed to submit feedback: {str(e)}"
+        )
+
+
+@router.get(
+    "/analytics",
+    response_model=AnalyticsResponse,
+    summary="Get feedback analytics",
+    description="Retrieve analytics showing how feedback has improved predictions over time"
+)
+async def get_analytics() -> AnalyticsResponse:
+    """
+    Get analytics from the feedback history.
+
+    Shows:
+    - Total games recorded
+    - Category breakdown with solve statistics
+    - Early vs late solve distribution
+    - Key insight contribution rate
+    - Recent answers for reference
+    """
+    try:
+        # Load history.json
+        history_path = Path(__file__).parent.parent / "data" / "history.json"
+
+        if not history_path.exists():
+            return AnalyticsResponse(
+                total_games=0,
+                category_breakdown={},
+                avg_solve_clue=0.0,
+                early_solves=0,
+                late_solves=0,
+                insights_provided=0,
+                insights_percentage=0.0,
+                recent_answers=[]
+            )
+
+        with open(history_path, "r", encoding="utf-8") as f:
+            history = json.load(f)
+
+        if not history:
+            return AnalyticsResponse(
+                total_games=0,
+                category_breakdown={},
+                avg_solve_clue=0.0,
+                early_solves=0,
+                late_solves=0,
+                insights_provided=0,
+                insights_percentage=0.0,
+                recent_answers=[]
+            )
+
+        total_games = len(history)
+
+        # Category breakdown
+        category_data: Dict[str, Dict] = {
+            "person": {"total": 0, "solve_clues": [], "insights": 0},
+            "place": {"total": 0, "solve_clues": [], "insights": 0},
+            "thing": {"total": 0, "solve_clues": [], "insights": 0}
+        }
+
+        all_solve_clues = []
+        early_solves = 0  # clue 1-2
+        late_solves = 0   # clue 4-5
+        insights_provided = 0
+
+        for game in history:
+            category = game.get("category", "thing").lower()
+            if category not in category_data:
+                category = "thing"
+
+            category_data[category]["total"] += 1
+
+            solve_clue = game.get("clue_solved_at")
+            if solve_clue:
+                category_data[category]["solve_clues"].append(solve_clue)
+                all_solve_clues.append(solve_clue)
+
+                if solve_clue <= 2:
+                    early_solves += 1
+                elif solve_clue >= 4:
+                    late_solves += 1
+
+            key_insight = game.get("key_insight", "")
+            if key_insight and key_insight.strip():
+                insights_provided += 1
+                category_data[category]["insights"] += 1
+
+        # Build category stats
+        category_breakdown = {}
+        for cat, data in category_data.items():
+            if data["total"] > 0:
+                avg_solve = (
+                    sum(data["solve_clues"]) / len(data["solve_clues"])
+                    if data["solve_clues"]
+                    else 0.0
+                )
+                category_breakdown[cat] = CategoryStats(
+                    total=data["total"],
+                    avg_solve_clue=round(avg_solve, 2),
+                    insights_provided=data["insights"]
+                )
+
+        # Overall average solve clue
+        avg_solve_clue = (
+            sum(all_solve_clues) / len(all_solve_clues)
+            if all_solve_clues
+            else 0.0
+        )
+
+        # Insights percentage
+        insights_percentage = (insights_provided / total_games * 100) if total_games > 0 else 0.0
+
+        # Recent answers (last 10)
+        recent_answers = [game.get("answer", "") for game in history[-10:]][::-1]
+
+        logger.info(f"Analytics retrieved: {total_games} games, {insights_provided} insights")
+
+        return AnalyticsResponse(
+            total_games=total_games,
+            category_breakdown=category_breakdown,
+            avg_solve_clue=round(avg_solve_clue, 2),
+            early_solves=early_solves,
+            late_solves=late_solves,
+            insights_provided=insights_provided,
+            insights_percentage=round(insights_percentage, 1),
+            recent_answers=recent_answers
+        )
+
+    except Exception as e:
+        logger.error(f"Error retrieving analytics: {e}", exc_info=True)
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to retrieve analytics: {str(e)}"
         )
 
 

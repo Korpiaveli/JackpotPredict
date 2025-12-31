@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import type { EntityCategory } from '../types/api'
 import type { RoundPrediction } from '../store/puzzleStore'
 import PuzzleSummary from './PuzzleSummary'
+import FeedbackAnalytics from './FeedbackAnalytics'
+import { useAnalytics } from '../hooks/usePredictions'
 
 interface AnswerFeedbackProps {
   sessionId: string
@@ -29,6 +31,9 @@ export default function AnswerFeedback({
   const [keyInsight, setKeyInsight] = useState('')
   const [showSummary, setShowSummary] = useState(false)
   const [submittedAnswer, setSubmittedAnswer] = useState('')
+  const [showAnalytics, setShowAnalytics] = useState(false)
+
+  const { data: analyticsData, refetch: refetchAnalytics } = useAnalytics()
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -182,6 +187,34 @@ export default function AnswerFeedback({
               roundHistory={roundHistory}
               correctAnswer={submittedAnswer}
             />
+
+            {/* Analytics Toggle */}
+            <motion.button
+              onClick={() => {
+                setShowAnalytics(!showAnalytics)
+                if (!showAnalytics) refetchAnalytics()
+              }}
+              className="w-full rounded-lg border border-gray-700 bg-gray-800/50 px-4 py-2 text-sm text-gray-400 transition-colors hover:bg-gray-700 hover:text-white"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.1 }}
+            >
+              {showAnalytics ? 'Hide Analytics' : 'View Feedback Analytics'}
+            </motion.button>
+
+            {/* Analytics Panel */}
+            <AnimatePresence>
+              {showAnalytics && analyticsData && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <FeedbackAnalytics analytics={analyticsData} />
+                </motion.div>
+              )}
+            </AnimatePresence>
 
             {/* Continue Button */}
             <motion.div

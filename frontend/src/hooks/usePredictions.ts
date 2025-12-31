@@ -96,3 +96,11 @@ export function useRepredict() {
     },
   })
 }
+
+export function useAnalytics() {
+  return useQuery({
+    queryKey: ['analytics'],
+    queryFn: () => api.getAnalytics(),
+    staleTime: 60000, // Consider fresh for 1 minute
+  })
+}

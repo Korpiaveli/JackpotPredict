@@ -52,13 +52,14 @@ export default function Dashboard() {
       }
 
       resetTimer()
-
-      if (result?.clue_number >= 5) {
-        completePuzzle()
-      }
+      // Don't auto-complete - let user see the 5th clue prediction first
     } catch (err) {
       console.error('Failed to submit clue:', err)
     }
+  }
+
+  const handleFinishPuzzle = () => {
+    completePuzzle()
   }
 
   const handleReset = async () => {
@@ -224,6 +225,19 @@ export default function Dashboard() {
               onEditClue={handleEditClue}
               disabled={currentClueNumber > 5}
             />
+          )}
+
+          {/* Finish Puzzle Button - Shows after all 5 clues */}
+          {currentClueNumber > 5 && !puzzleComplete && (
+            <motion.button
+              onClick={handleFinishPuzzle}
+              className="w-full rounded-xl bg-gradient-to-r from-primary to-purple-600 px-6 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+            >
+              Finish Puzzle & Submit Feedback
+            </motion.button>
           )}
 
           {/* Collapsible Details */}

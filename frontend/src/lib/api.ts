@@ -1,4 +1,4 @@
-import type { ClueRequest, PredictionResponse, ResetResponse, ValidationResponse, HealthResponse, FeedbackRequest, FeedbackResponse } from '../types/api'
+import type { ClueRequest, PredictionResponse, ResetResponse, ValidationResponse, HealthResponse, FeedbackRequest, FeedbackResponse, AnalyticsResponse } from '../types/api'
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || '/api'
 
@@ -66,6 +66,10 @@ class APIClient {
       method: 'POST',
       body: JSON.stringify({ clues, session_id: sessionId }),
     })
+  }
+
+  async getAnalytics(): Promise<AnalyticsResponse> {
+    return this.request<AnalyticsResponse>('/analytics')
   }
 }
 

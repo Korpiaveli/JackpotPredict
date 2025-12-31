@@ -747,3 +747,71 @@ class FeedbackResponse(BaseModel):
             }
         }
     )
+
+
+class CategoryStats(BaseModel):
+    """Statistics for a single category."""
+
+    total: int = Field(..., description="Total puzzles in this category")
+    avg_solve_clue: float = Field(..., description="Average clue number when solved")
+    insights_provided: int = Field(..., description="Number of puzzles with key insights")
+
+
+class AnalyticsResponse(BaseModel):
+    """Response model for feedback analytics."""
+
+    total_games: int = Field(..., description="Total games recorded in feedback history")
+
+    category_breakdown: Dict[str, CategoryStats] = Field(
+        ...,
+        description="Statistics per category (person/place/thing)"
+    )
+
+    avg_solve_clue: float = Field(
+        ...,
+        description="Average clue number when puzzles are solved (1-5)"
+    )
+
+    early_solves: int = Field(
+        ...,
+        description="Number of puzzles solved at clue 1-2"
+    )
+
+    late_solves: int = Field(
+        ...,
+        description="Number of puzzles solved at clue 4-5"
+    )
+
+    insights_provided: int = Field(
+        ...,
+        description="Number of games with key insight provided"
+    )
+
+    insights_percentage: float = Field(
+        ...,
+        description="Percentage of games with key insight"
+    )
+
+    recent_answers: List[str] = Field(
+        ...,
+        description="Last 10 correct answers submitted"
+    )
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "total_games": 56,
+                "category_breakdown": {
+                    "thing": {"total": 30, "avg_solve_clue": 2.8, "insights_provided": 25},
+                    "person": {"total": 15, "avg_solve_clue": 2.5, "insights_provided": 12},
+                    "place": {"total": 11, "avg_solve_clue": 2.2, "insights_provided": 10}
+                },
+                "avg_solve_clue": 2.6,
+                "early_solves": 35,
+                "late_solves": 12,
+                "insights_provided": 47,
+                "insights_percentage": 83.9,
+                "recent_answers": ["Sand Castle", "Ice cube tray", "Cavity"]
+            }
+        }
+    )
