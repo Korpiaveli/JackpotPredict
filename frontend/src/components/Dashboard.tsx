@@ -1,14 +1,15 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import HeroAnswer from './HeroAnswer'
 import SecondaryPicks from './SecondaryPicks'
-import ClueInputInline from './ClueInputInline'
+import ClueHistory from './ClueHistory'
 import InsightsPanel from './InsightsPanel'
+import RoundHistoryPanel from './RoundHistoryPanel'
 import MiniTimer from './MiniTimer'
 import ResponseTimer from './ResponseTimer'
 import CopyToast from './CopyToast'
 import AnswerFeedback from './AnswerFeedback'
 import { useCopyToClipboard } from '../hooks/useCopyToClipboard'
-import { useSubmitClue, useResetPuzzle, useHealth, useSubmitFeedback } from '../hooks/usePredictions'
+import { useSubmitClue, useResetPuzzle, useHealth, useSubmitFeedback, useRepredict } from '../hooks/usePredictions'
 import { usePuzzleStore } from '../store/puzzleStore'
 import type { EntityCategory, AgentName, AgentPrediction } from '../types/api'
 
@@ -16,6 +17,7 @@ export default function Dashboard() {
   const {
     latestPrediction,
     clueHistory,
+    roundHistory,
     isLoading,
     error,
     timerKey,
@@ -25,12 +27,15 @@ export default function Dashboard() {
     resetTimer,
     addResponseTime,
     completePuzzle,
+    updateClue,
+    clearRoundHistory,
     reset: resetStore
   } = usePuzzleStore()
 
   const submitClueMutation = useSubmitClue()
   const resetMutation = useResetPuzzle()
   const submitFeedbackMutation = useSubmitFeedback()
+  const repredictMutation = useRepredict()
   const { data: healthData } = useHealth()
   const { copy, copiedText, isCopied } = useCopyToClipboard()
 
@@ -86,6 +91,26 @@ export default function Dashboard() {
 
   const handleSkipFeedback = () => {
     handleReset()
+  }
+
+  const handleEditClue = async (index: number, newText: string) => {
+    // Update the store with the edited clue
+    updateClue(index, newText)
+
+    // Get updated clue list
+    const updatedClues = [...clueHistory]
+    updatedClues[index] = newText
+
+    // Clear round history since we're re-predicting
+    clearRoundHistory()
+
+    try {
+      // Re-run predictions with corrected clues
+      await repredictMutation.mutateAsync(updatedClues)
+      resetTimer()
+    } catch (err) {
+      console.error('Failed to repredict:', err)
+    }
   }
 
   // Derive display values
@@ -189,12 +214,14 @@ export default function Dashboard() {
             />
           )}
 
-          {/* Clue Input - Always visible */}
+          {/* Clue History with Input - Always visible */}
           {!puzzleComplete && (
-            <ClueInputInline
-              onSubmit={handleSubmitClue}
-              clueNumber={currentClueNumber}
-              isLoading={isLoading}
+            <ClueHistory
+              clues={clueHistory}
+              currentClueNumber={currentClueNumber}
+              isLoading={isLoading || repredictMutation.isPending}
+              onSubmitClue={handleSubmitClue}
+              onEditClue={handleEditClue}
               disabled={currentClueNumber > 5}
             />
           )}
@@ -208,6 +235,11 @@ export default function Dashboard() {
               clueHistory={clueHistory}
               winningAnswer={primaryAnswer || ''}
             />
+          )}
+
+          {/* Round-by-Round History */}
+          {roundHistory.length > 0 && !puzzleComplete && (
+            <RoundHistoryPanel roundHistory={roundHistory} />
           )}
 
           {/* Welcome State */}
@@ -231,6 +263,7 @@ export default function Dashboard() {
             <AnswerFeedback
               sessionId={latestPrediction.session_id}
               clues={clueHistory}
+              roundHistory={roundHistory}
               topPrediction={primaryAnswer}
               onSubmit={handleSubmitFeedback}
               onSkip={handleSkipFeedback}

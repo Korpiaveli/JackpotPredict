@@ -76,3 +76,23 @@ export function useSubmitFeedback() {
     }
   })
 }
+
+export function useRepredict() {
+  const { sessionId, setPrediction, setLoading, setError } = usePuzzleStore()
+
+  return useMutation({
+    mutationFn: (clues: string[]) => {
+      setLoading(true)
+      setError(null)
+      return api.repredict(clues, sessionId || undefined)
+    },
+    onSuccess: (data) => {
+      setPrediction(data)
+      setLoading(false)
+    },
+    onError: (error: Error) => {
+      setError(error.message)
+      setLoading(false)
+    },
+  })
+}

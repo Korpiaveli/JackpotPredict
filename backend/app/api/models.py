@@ -524,6 +524,34 @@ class ResetResponse(BaseModel):
     )
 
 
+class RepredictRequest(BaseModel):
+    """Request model for re-running predictions with corrected clues."""
+
+    clues: List[str] = Field(
+        ...,
+        min_length=1,
+        max_length=5,
+        description="List of clues to re-predict (1-5 clues)"
+    )
+
+    session_id: Optional[str] = Field(
+        None,
+        description="Optional session ID (will create new if not provided)"
+    )
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "clues": [
+                    "Flexible but that's a stretch",
+                    "A cube of water"
+                ],
+                "session_id": "550e8400-e29b-41d4-a716-446655440000"
+            }
+        }
+    )
+
+
 class ValidationRequest(BaseModel):
     """Request model for spelling validation."""
 

@@ -32,6 +32,7 @@ from app.api.models import (
     GuessRecommendation,
     ResetRequest,
     ResetResponse,
+    RepredictRequest,
     ValidationRequest,
     ValidationResponse,
     HealthResponse,
@@ -407,6 +408,205 @@ async def reset(request: ResetRequest) -> ResetResponse:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Reset failed: {str(e)}"
+        )
+
+
+@router.post(
+    "/repredict",
+    response_model=PredictionResponse,
+    status_code=status.HTTP_200_OK,
+    summary="Re-run predictions with corrected clues",
+    description="Replay all clues with corrections (e.g., typo fixes) and get new predictions"
+)
+async def repredict(request: RepredictRequest) -> PredictionResponse:
+    """
+    Re-run predictions with updated/corrected clues.
+
+    This endpoint:
+    1. Clears the existing session state
+    2. Replays all provided clues in sequence
+    3. Returns the final prediction
+
+    Use this when user corrects a typo in a previous clue.
+    """
+    global _sessions
+
+    try:
+        start_time = time.time()
+
+        # Validate clues
+        if not request.clues or len(request.clues) == 0:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="At least one clue is required"
+            )
+
+        if len(request.clues) > 5:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Maximum 5 clues allowed"
+            )
+
+        # Create or reset session
+        session_id = request.session_id or str(uuid.uuid4())
+
+        # Clear existing session
+        _sessions.pop(session_id, None)
+
+        # Create fresh session
+        _sessions[session_id] = SessionState(clues=[], created_at=datetime.now())
+        session_state = _sessions[session_id]
+
+        logger.info(f"Repredict session {session_id}: Starting with {len(request.clues)} clues")
+
+        # Process each clue in sequence
+        final_result = None
+        for i, clue_text in enumerate(request.clues, 1):
+            clue_text = clue_text.strip()
+            if not clue_text:
+                continue
+
+            session_state.clues.append(clue_text)
+            clue_number = len(session_state.clues)
+
+            # Get orchestrator and run prediction
+            orchestrator = get_orchestrator()
+            result = await orchestrator.predict(
+                clues=session_state.clues,
+                clue_number=clue_number
+            )
+            final_result = result
+
+            logger.info(f"Repredict session {session_id}: Clue #{clue_number} processed")
+
+        if final_result is None:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="No valid clues provided"
+            )
+
+        elapsed = time.time() - start_time
+
+        # Build agent predictions dict
+        agent_preds: Dict[str, Optional[APIAgentPrediction]] = {}
+        for name in ["lateral", "wordsmith", "popculture", "literal", "wildcard"]:
+            pred = final_result.agent_predictions.get(name)
+            if pred:
+                agent_preds[name] = APIAgentPrediction(
+                    answer=pred.answer,
+                    confidence=pred.confidence,
+                    reasoning=pred.reasoning
+                )
+            else:
+                agent_preds[name] = None
+
+        # Build voting result
+        voting_result = None
+        if final_result.voting:
+            voting_result = APIVotingResult(
+                recommended_pick=final_result.voting.recommended_pick,
+                key_insight=final_result.voting.key_insight,
+                agreement_strength=final_result.voting.agreement_strength,
+                vote_breakdown=[
+                    VoteBreakdown(
+                        answer=vb.answer,
+                        total_votes=vb.total_votes,
+                        agents=vb.agents
+                    )
+                    for vb in final_result.voting.vote_breakdown
+                ]
+            )
+
+        # Build Oracle synthesis
+        oracle_synthesis = None
+        if final_result.oracle_synthesis:
+            oracle_synthesis = APIOracleSynthesis(
+                top_3=[
+                    APIOracleGuess(
+                        answer=g.answer,
+                        confidence=g.confidence,
+                        explanation=g.explanation
+                    )
+                    for g in final_result.oracle_synthesis.top_3
+                ],
+                key_theme=final_result.oracle_synthesis.key_theme,
+                blind_spot=final_result.oracle_synthesis.blind_spot,
+                latency_ms=final_result.oracle_synthesis.latency_ms,
+                misdirection_detected=final_result.oracle_synthesis.misdirection_detected
+            )
+
+        # Get cultural context matches
+        cultural_matches = []
+        clue_strategy = ""
+        try:
+            cultural_ctx = get_cultural_context_manager()
+            raw_matches = cultural_ctx.detect_cultural_references(session_state.clues)
+            cultural_matches = [
+                APICulturalMatch(
+                    keyword=m.keyword,
+                    answer=m.answer,
+                    source=m.source,
+                    confidence=m.confidence
+                )
+                for m in raw_matches
+            ]
+            clue_strategy = cultural_ctx.get_clue_strategy(len(session_state.clues))
+        except Exception as e:
+            logger.warning(f"Cultural context detection failed: {e}")
+
+        # Use Oracle's top pick as recommended_pick
+        if final_result.oracle_synthesis and final_result.oracle_synthesis.top_3:
+            recommended_pick = final_result.oracle_synthesis.top_3[0].answer
+            key_insight = final_result.oracle_synthesis.top_3[0].explanation
+        else:
+            recommended_pick = final_result.voting.recommended_pick if final_result.voting else "WAIT"
+            key_insight = final_result.voting.key_insight if final_result.voting else ""
+
+        # Build guess recommendation
+        clue_number = len(session_state.clues)
+        should_guess = (
+            clue_number >= 4 or
+            (oracle_synthesis and oracle_synthesis.top_3 and oracle_synthesis.top_3[0].confidence >= 75)
+        )
+        guess_rec = GuessRecommendation(
+            should_guess=should_guess,
+            confidence_threshold=75,
+            rationale="High confidence" if should_guess else "Wait for more clues"
+        )
+
+        response = PredictionResponse(
+            session_id=session_id,
+            clue_number=clue_number,
+            agents=agent_preds,
+            voting=voting_result,
+            oracle=oracle_synthesis,
+            recommended_pick=recommended_pick,
+            key_insight=key_insight,
+            agreement_strength=final_result.voting.agreement_strength if final_result.voting else "none",
+            agents_responded=final_result.agents_responded,
+            agreements=final_result.agreements,
+            guess_recommendation=guess_rec,
+            elapsed_time=elapsed,
+            clue_history=session_state.clues.copy(),
+            category_probabilities={"thing": 0.65, "place": 0.15, "person": 0.20},
+            cultural_matches=cultural_matches,
+            clue_strategy=clue_strategy
+        )
+
+        logger.info(
+            f"Repredict session {session_id}: Completed {clue_number} clues in {elapsed:.2f}s | "
+            f"Recommended: {recommended_pick}"
+        )
+
+        return response
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error in repredict: {e}", exc_info=True)
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Repredict failed: {str(e)}"
         )
 
 
