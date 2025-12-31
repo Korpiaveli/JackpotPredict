@@ -40,6 +40,17 @@ export interface OracleSynthesis {
   key_theme: string
   blind_spot: string
   latency_ms: number
+  misdirection_detected?: string  // MOA v3: What trap is the clue writer setting?
+}
+
+// MOA v3: Cultural reference detected in clues
+export type CulturalMatchSource = 'quote' | 'pattern' | 'historical'
+
+export interface CulturalMatch {
+  keyword: string
+  answer: string
+  source: CulturalMatchSource
+  confidence: number  // 0.0-1.0
 }
 
 // Legacy prediction format (kept for backwards compatibility)
@@ -84,6 +95,10 @@ export interface PredictionResponse {
   elapsed_time: number
   clue_history: string[]
   category_probabilities: Record<EntityCategory, number>
+
+  // MOA v3: Cultural context fields
+  cultural_matches?: CulturalMatch[]
+  clue_strategy?: string
 }
 
 // Agent info for UI display

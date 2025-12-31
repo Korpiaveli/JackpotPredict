@@ -44,10 +44,12 @@ from app.api.models import (
     VotingResult as APIVotingResult,
     VoteBreakdown,
     OracleSynthesis as APIOracleSynthesis,
-    OracleGuess as APIOracleGuess
+    OracleGuess as APIOracleGuess,
+    CulturalMatch as APICulturalMatch
 )
 from app.core.spelling_validator import SpellingValidator
 from app.core.entity_registry import EntityRegistry
+from app.core.context_manager import get_cultural_context_manager
 from app.agents.orchestrator import get_orchestrator, warmup_agents
 from app.core.reasoning_accumulator import (
     get_accumulator,
@@ -273,8 +275,38 @@ async def predict(request: ClueRequest) -> PredictionResponse:
                 ],
                 key_theme=result.oracle_synthesis.key_theme,
                 blind_spot=result.oracle_synthesis.blind_spot,
-                latency_ms=result.oracle_synthesis.latency_ms
+                latency_ms=result.oracle_synthesis.latency_ms,
+                misdirection_detected=result.oracle_synthesis.misdirection_detected
             )
+
+        # Get cultural context matches (MOA v3)
+        cultural_matches = []
+        clue_strategy = ""
+        try:
+            cultural_ctx = get_cultural_context_manager()
+            raw_matches = cultural_ctx.detect_cultural_references(session_state.clues)
+            cultural_matches = [
+                APICulturalMatch(
+                    keyword=m.keyword,
+                    answer=m.answer,
+                    source=m.source,
+                    confidence=m.confidence
+                )
+                for m in raw_matches
+            ]
+            # Get clue strategy guidance
+            clue_strategy = cultural_ctx.get_clue_strategy(clue_number)
+        except Exception as e:
+            logger.warning(f"Cultural context detection failed: {e}")
+
+        # MOA v4: Use Oracle's top pick as recommended_pick (instead of voting)
+        if result.oracle_synthesis and result.oracle_synthesis.top_3:
+            recommended_pick = result.oracle_synthesis.top_3[0].answer
+            key_insight = result.oracle_synthesis.top_3[0].explanation
+        else:
+            # Fallback to voting if Oracle unavailable
+            recommended_pick = result.voting.recommended_pick
+            key_insight = result.voting.key_insight
 
         response = PredictionResponse(
             session_id=session_id,
@@ -282,15 +314,17 @@ async def predict(request: ClueRequest) -> PredictionResponse:
             agents=agent_preds,
             voting=voting_result,
             oracle=oracle_synthesis,
-            recommended_pick=result.voting.recommended_pick,
-            key_insight=result.voting.key_insight,
+            recommended_pick=recommended_pick,  # MOA v4: Oracle's pick
+            key_insight=key_insight,            # MOA v4: Oracle's explanation
             agreement_strength=result.voting.agreement_strength,
             agents_responded=result.agents_responded,
             agreements=agreements,
             guess_recommendation=guess_rec,
             elapsed_time=elapsed,
             clue_history=session_state.clues.copy(),
-            category_probabilities={"thing": 0.60, "place": 0.25, "person": 0.15}  # Priors
+            category_probabilities={"thing": 0.65, "place": 0.15, "person": 0.20},  # MOA v3 priors
+            cultural_matches=cultural_matches,
+            clue_strategy=clue_strategy
         )
 
         # Log summary

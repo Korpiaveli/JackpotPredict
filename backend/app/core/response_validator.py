@@ -109,6 +109,7 @@ class PredictionResponse:
     clue_history: List[str]
     category_probabilities: Dict[str, float]
     key_insight: str = ""
+    validation_agreement: Optional[str] = None  # "strong", "moderate", "disagreement", "unavailable"
 
 
 # ============================================================================

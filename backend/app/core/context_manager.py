@@ -329,6 +329,19 @@ class CulturalContextManager:
 
     def _load_data(self) -> None:
         """Load cultural references and historical puzzles into memory."""
+        # FIRST: Load historical answers to exclude them from patterns
+        # Historical answers NEVER repeat on this show!
+        historical_answers: set = set()
+        history_path = self.data_dir / "history.json"
+        if history_path.exists():
+            try:
+                with open(history_path, 'r', encoding='utf-8') as f:
+                    history = json.load(f)
+                historical_answers = {g.get("answer", "").lower().strip() for g in history}
+                logger.info(f"[CulturalContext] Loaded {len(historical_answers)} historical answers to EXCLUDE")
+            except Exception as e:
+                logger.warning(f"[CulturalContext] Could not load history for exclusion: {e}")
+
         # Load cultural references
         cultural_path = self.data_dir / "cultural_references.json"
         if cultural_path.exists():
@@ -337,7 +350,16 @@ class CulturalContextManager:
                     self._cultural_refs = json.load(f)
 
                 # Build keyword lookup indexes for fast matching
+                # EXCLUDE any patterns whose answer is in historical_answers
+                excluded_quotes = 0
+                excluded_patterns = 0
+
                 for quote, info in self._cultural_refs.get("quotes", {}).items():
+                    answer = info.get("answer", "").lower().strip()
+                    if answer in historical_answers:
+                        excluded_quotes += 1
+                        logger.debug(f"[CulturalContext] Excluding historical quote answer: {info.get('answer')}")
+                        continue  # Skip this quote - answer already used
                     for keyword in info.get("keywords", []):
                         self._quote_keywords[keyword.lower()] = {
                             "quote": quote,
@@ -345,14 +367,21 @@ class CulturalContextManager:
                         }
 
                 for pattern_name, info in self._cultural_refs.get("wordplay_patterns", {}).items():
+                    answer = info.get("answer", "").lower().strip()
+                    if answer in historical_answers:
+                        excluded_patterns += 1
+                        logger.debug(f"[CulturalContext] Excluding historical pattern answer: {info.get('answer')}")
+                        continue  # Skip this pattern - answer already used
                     for keyword in info.get("keywords", []):
                         self._pattern_keywords[keyword.lower()] = {
                             "pattern": pattern_name,
                             **info
                         }
 
-                logger.info(f"[CulturalContext] Loaded {len(self._cultural_refs.get('quotes', {}))} quotes, "
-                           f"{len(self._cultural_refs.get('wordplay_patterns', {}))} patterns")
+                logger.info(f"[CulturalContext] Loaded {len(self._cultural_refs.get('quotes', {}))} quotes "
+                           f"(excluded {excluded_quotes} historical), "
+                           f"{len(self._cultural_refs.get('wordplay_patterns', {}))} patterns "
+                           f"(excluded {excluded_patterns} historical)")
             except Exception as e:
                 logger.error(f"[CulturalContext] Error loading cultural references: {e}")
 
@@ -368,18 +397,31 @@ class CulturalContextManager:
             except Exception as e:
                 logger.error(f"[CulturalContext] Error loading historical puzzles: {e}")
 
-    def detect_cultural_references(self, clues: List[str]) -> List[CulturalMatch]:
+    def detect_cultural_references(self, clues: List[str], exclude_historical: bool = True) -> List[CulturalMatch]:
         """
         Detect cultural references (quotes, catchphrases) in clues.
 
         Args:
             clues: List of clues to analyze
+            exclude_historical: If True, filter out answers that are already in history.json
 
         Returns:
             List of CulturalMatch objects with detected references
         """
         matches = []
         clue_text = " ".join(clues).lower()
+
+        # Get historical answers to exclude
+        historical_answers = set()
+        if exclude_historical:
+            history_path = self.data_dir / "history.json"
+            if history_path.exists():
+                try:
+                    with open(history_path, 'r', encoding='utf-8') as f:
+                        history = json.load(f)
+                    historical_answers = {g.get("answer", "").lower().strip() for g in history}
+                except Exception:
+                    pass
 
         # Check for quote keywords
         for keyword, info in self._quote_keywords.items():
@@ -415,8 +457,14 @@ class CulturalContextManager:
                 ))
 
         # Deduplicate by answer, keeping highest confidence
+        # Also filter out historical answers that should be excluded
         answer_matches: Dict[str, CulturalMatch] = {}
         for match in matches:
+            # Skip if this answer is in history (it won't repeat)
+            if match.answer.lower().strip() in historical_answers:
+                logger.debug(f"[CulturalContext] Excluding historical answer: {match.answer}")
+                continue
+
             if match.answer not in answer_matches or match.confidence > answer_matches[match.answer].confidence:
                 answer_matches[match.answer] = match
 
@@ -425,6 +473,8 @@ class CulturalContextManager:
     def find_similar_puzzles(self, clues: List[str], top_k: int = 3) -> List[HistoricalPuzzleMatch]:
         """
         Find similar historical puzzles based on clue patterns.
+
+        OPTIMIZED: Uses early termination when enough strong matches found.
 
         Args:
             clues: List of clues to match against
@@ -436,6 +486,10 @@ class CulturalContextManager:
         matches = []
         clue_text = " ".join(clues).lower()
         clue_words = set(re.findall(r'\w+', clue_text))
+
+        # OPTIMIZATION: Track strong matches for early termination
+        strong_match_threshold = 0.4
+        strong_matches_found = 0
 
         for puzzle in self._historical_puzzles.get("puzzles", []):
             puzzle_clues = puzzle.get("clues", [])
@@ -464,6 +518,12 @@ class CulturalContextManager:
                         matching_patterns=matching_patterns,
                         key_clue=puzzle_clues[-1] if puzzle_clues else ""
                     ))
+
+                    # OPTIMIZATION: Early termination if we have enough strong matches
+                    if similarity >= strong_match_threshold:
+                        strong_matches_found += 1
+                        if strong_matches_found >= top_k:
+                            break
 
         # Sort by similarity and return top_k
         matches.sort(key=lambda m: m.similarity_score, reverse=True)
@@ -567,15 +627,17 @@ class CulturalContextManager:
             ]
             sections.append(f"[CULTURAL REFERENCES DETECTED] {' | '.join(cultural_strs)}")
 
-        # 4. Similar historical puzzles (optional, for pattern matching)
+        # 4. Similar historical puzzles - EXCLUDED ANSWERS (they will NOT repeat)
+        # Historical answers are shown to help identify PATTERNS, not to be predicted directly
         if include_similar and clue_number >= 3:
             similar = self.find_similar_puzzles(clues, top_k=2)
             if similar:
                 similar_strs = [
-                    f"{m.answer} ({m.date}, {int(m.similarity_score*100)}% match)"
+                    f"{m.answer} (EXCLUDE - already used {m.date})"
                     for m in similar
                 ]
-                sections.append(f"[SIMILAR PAST PUZZLES] {' | '.join(similar_strs)}")
+                sections.append(f"[EXCLUDED ANSWERS - DO NOT PREDICT THESE] {' | '.join(similar_strs)}")
+                sections.append("[WARNING] Historical answers NEVER repeat. Use these for PATTERN insight only, not as predictions!")
 
         # 5. Category priors reminder
         priors = self.get_category_priors()

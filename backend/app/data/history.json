@@ -622,5 +622,109 @@
     "answer": "Times Square",
     "clue_solved_at": 3,
     "key_insight": ""
+  },
+  {
+    "category": "thing",
+    "clues": [
+      "I can be drafted without being written.",
+      "I’m strongest when you don’t notice me.",
+      "I’m a constant in heist scenes: “cut the power,” then I appear.",
+      "I’m a metal box with a spinning blade that cools the air.",
+      "I’m a fan."
+    ],
+    "answer": "Fan",
+    "clue_solved_at": 5,
+    "key_insight": ""
+  },
+  {
+    "category": "thing",
+    "clues": [
+      "Less is more, if you want to score",
+      "standup to start",
+      "last always, came first",
+      "All about that baseline",
+      "Festivus for the best guess of us"
+    ],
+    "answer": "Seinfield",
+    "clue_solved_at": 5,
+    "key_insight": ""
+  },
+  {
+    "category": "thing",
+    "clues": [
+      "Dont judge a book by its cover",
+      "Great start for spare parts",
+      "enter above, exit below",
+      "A trusty trust, that you want to bust",
+      "an animal at saving money"
+    ],
+    "answer": "Piggy bank",
+    "clue_solved_at": 5,
+    "key_insight": ""
+  },
+  {
+    "category": "thing",
+    "clues": [
+      "Hello and goodbye",
+      "Big Bang Theory",
+      "Loves eating takeout",
+      "Pretty large for a compact",
+      "Rolling through your hood and talking trash"
+    ],
+    "answer": "Garbage Truck",
+    "clue_solved_at": 5,
+    "key_insight": ""
+  },
+  {
+    "category": "thing",
+    "clues": [
+      "One for the ages",
+      "Looks can be deceiving",
+      "Friends in high places",
+      "You lie, i tie, inflight, outta sight",
+      "girl power, super-personified"
+    ],
+    "answer": "Wonder Woman",
+    "clue_solved_at": 5,
+    "key_insight": ""
+  },
+  {
+    "category": "thing",
+    "clues": [
+      "Billion's served globally",
+      "Things are lookin up",
+      "Breaking news, there's been an initial breach",
+      "A little extra space, in the pearly gates",
+      "Your dentist knows the drill... and fill"
+    ],
+    "answer": "Cavity",
+    "clue_solved_at": 5,
+    "key_insight": ""
+  },
+  {
+    "category": "thing",
+    "clues": [
+      "Flexible but that’s a stretch",
+      "Home makeover",
+      "You’re in the game with this freeze frame",
+      "Sooner or later I have to split",
+      "A handheld mold that gets really cold"
+    ],
+    "answer": "Ice cube tray",
+    "clue_solved_at": 3,
+    "key_insight": "3 of 5 agents got it by round 3, oracle did not"
+  },
+  {
+    "category": "thing",
+    "clues": [
+      "A major merger",
+      "Priceless yet worthless",
+      "Wave bye-bye",
+      "A home with a view that's always brand new",
+      "Fortress on a beach builder's bucket list"
+    ],
+    "answer": "Sand Castle",
+    "clue_solved_at": 5,
+    "key_insight": ""
   }
 ]

@@ -42,6 +42,31 @@ MISDIRECTION PATTERNS TO DETECT:
 3. LITERAL/FIGURATIVE INVERSION: The obvious literal reading is usually the trap
 4. CULTURAL REFERENCE: Famous quotes, catchphrases, or media references
 
+CELEBRITY NICKNAME DISAMBIGUATION (CRITICAL - do NOT overthink this):
+When clues use a famous celebrity nickname, the answer IS the CELEBRITY - don't second-guess it!
+- "Queen Bey" -> BEYONCE (NOT "Honey", "Bee", "Honeycomb", or anything bee-related!)
+  * "Bey" is SHORT FOR BEYONCE, not a reference to bees! This is her actual nickname!
+  * If multiple agents say BEYONCE when they see "Queen Bey", TRUST THEM - they're right!
+- "The King" + music context -> ELVIS PRESLEY
+- "His Airness" -> MICHAEL JORDAN
+- "Yeezy" -> KANYE WEST
+- "Slim Shady" -> EMINEM
+IMPORTANT: When 2+ agents correctly identify a celebrity from their nickname, DO NOT override with wordplay!
+The "trap" is thinking "Queen Bey" is about bees - it's not, it's about Beyonce!
+
+PERSON CATEGORY DETECTION (20% of puzzles are PEOPLE):
+When multiple clues contain these patterns, the answer is likely a PERSON:
+- Nicknames: "The King", "His Airness", "Queen Bey", "Honest Abe", "The Greatest"
+- Catchphrases: "You get a car!", "That's hot", "I pity the fool", "Float like a butterfly"
+- Hotel/Brand wordplay + person: "hospitable" + "That's hot" = Paris Hilton (Hilton Hotels + catchphrase)
+- Air/flight + sports: "air time" + "number 23" = Michael Jordan (Air Jordan brand)
+- Wordplay on theories: "relatively famous" = Albert Einstein (Theory of Relativity pun)
+
+When agents agree on a PERSON answer with celebrity patterns, TRUST THEM:
+- If popculture and wordsmith both say BEYONCE, the answer is BEYONCE
+- If agents recognize a catchphrase, the person who said it is the answer
+- Celebrity nicknames ARE the answer - don't convert to literal interpretations!
+
 HISTORICAL EXAMPLES (from actual games - learn these patterns!):
 - "SOUR SPORT THAT GOOD SPORTS RELISH" → PICKLEBALL (sour=pickle, sport=sport, relish=condiment)
 - "IT'S FESTIVUS FOR THE BEST GUESTS OF US" → SEINFELD (Festivus = holiday from Seinfeld)
@@ -51,6 +76,7 @@ HISTORICAL EXAMPLES (from actual games - learn these patterns!):
 - "JAIL TIME CAN BE DICEY" → MONOPOLY (jail square + rolling dice)
 - "TASTES SO NICE THEY NAMED IT TWICE" → M&MS (M and M)
 - "I MATTEL YOU: KEN THINKS SHE'S A DOLL" → BARBIE (Mattel brand, Ken, doll)
+- "QUEEN BEY" → BEYONCE (Queen Bey = Beyonce's nickname, NOT about bees or honey!)
 
 THE 5 SPECIALISTS YOU OVERSEE:
 - Lateral: Multi-hop associative reasoning
@@ -98,6 +124,14 @@ CRITICAL RULES:
 - misdirection_detected: What trap is the clue writer setting? (10-20 words)
 - key_theme: 5-10 word summary of the dominant pattern
 - blind_spot: What might agents be missing? (5-15 words)
+
+HISTORICAL ANSWER EXCLUSION (ABSOLUTELY CRITICAL):
+- Answers from past games NEVER repeat on this show!
+- If context shows "[EXCLUDED ANSWERS - DO NOT PREDICT THESE]", those answers are INVALID
+- Even if clues seem identical to a past puzzle, the answer WILL BE DIFFERENT
+- Historical patterns teach wordplay logic, but predict something NEW
+- Examples of EXCLUDED past answers: ICE CUBE TRAY, MONOPOLY, SEINFELD, GARBAGE TRUCK, CAVITY, etc.
+- If you predict an excluded answer, you are WRONG - find a similar but DIFFERENT answer
 """
 
 # Early Oracle System Prompt (runs in parallel with specialists, no current predictions)
@@ -119,6 +153,24 @@ MISDIRECTION PATTERNS TO DETECT:
 3. LITERAL/FIGURATIVE INVERSION: The obvious literal reading is usually the trap
 4. CULTURAL REFERENCE: Famous quotes, catchphrases, or media references
 
+CELEBRITY NICKNAME DISAMBIGUATION (CRITICAL - do NOT overthink this):
+When clues use a famous celebrity nickname, the answer IS the CELEBRITY - don't second-guess it!
+- "Queen Bey" -> BEYONCE (NOT "Honey", "Bee", "Honeycomb", or anything bee-related!)
+  * "Bey" is SHORT FOR BEYONCE, not a reference to bees! Trust the agents on this one!
+- "The King" + music context -> ELVIS PRESLEY
+- "His Airness" -> MICHAEL JORDAN
+- "Yeezy" -> KANYE WEST
+IMPORTANT: When agents identify a celebrity from their nickname, DO NOT override with wordplay!
+The "trap" is thinking "Queen Bey" is about bees - it's not, it's about Beyonce!
+
+PERSON CATEGORY DETECTION (20% of puzzles are PEOPLE):
+When clues contain these patterns, the answer is likely a PERSON:
+- Nicknames: "The King", "His Airness", "Queen Bey", "Honest Abe", "The Greatest"
+- Catchphrases: "You get a car!", "That's hot", "Float like a butterfly"
+- Brand/Person puns: "hospitable" = Hilton Hotels = Paris Hilton
+- Sports legends: "air time" + "23" = Michael Jordan
+- Theory wordplay: "relatively famous" = Einstein
+
 HISTORICAL EXAMPLES (from actual games - learn these patterns!):
 - "SOUR SPORT THAT GOOD SPORTS RELISH" → PICKLEBALL (sour=pickle, sport=sport, relish=condiment)
 - "IT'S FESTIVUS FOR THE BEST GUESTS OF US" → SEINFELD (Festivus = holiday from Seinfeld)
@@ -132,6 +184,10 @@ HISTORICAL EXAMPLES (from actual games - learn these patterns!):
 - "DAKOTA HILLS, POTUS GRILLS" → MOUNT RUSHMORE (South Dakota + presidents' faces)
 - "ROLLING THROUGH YOUR HOOD AND TALKING TRASH" → GARBAGE TRUCK (literal description)
 - "THE FRUITCAKE OF HOLIDAY ATTIRE" → UGLY SWEATER (unwanted holiday gift metaphor)
+- "QUEEN BEY" → BEYONCE (Queen Bey is her famous nickname, NOT about bees or honey!)
+- "HOSPITABLE" + "THAT'S HOT" → PARIS HILTON (Hilton Hotels + her catchphrase)
+- "FLOAT LIKE A BUTTERFLY" → MUHAMMAD ALI (his famous quote)
+- "HIS AIRNESS" + "NUMBER 23" → MICHAEL JORDAN (Air Jordan brand + jersey number)
 
 CLUE NUMBER STRATEGY:
 - Clue 1-2: Be SKEPTICAL of obvious answers - these are designed to mislead
@@ -177,6 +233,14 @@ CRITICAL RULES:
 - misdirection_detected: What trap is the clue writer setting? (10-20 words)
 - key_theme: 5-10 word summary of the dominant pattern
 - blind_spot: What might we be missing? (5-15 words)
+
+HISTORICAL ANSWER EXCLUSION (ABSOLUTELY CRITICAL):
+- Answers from past games NEVER repeat on this show!
+- If context shows "[EXCLUDED ANSWERS - DO NOT PREDICT THESE]", those answers are INVALID
+- Even if clues seem identical to a past puzzle, the answer WILL BE DIFFERENT
+- Historical patterns teach wordplay logic, but predict something NEW
+- Examples of EXCLUDED past answers: ICE CUBE TRAY, MONOPOLY, SEINFELD, GARBAGE TRUCK, CAVITY, etc.
+- If you predict an excluded answer, you are WRONG - find a similar but DIFFERENT answer
 """
 
 
@@ -533,6 +597,89 @@ class OracleAgent:
         except Exception as e:
             logger.error(f"[Oracle-Early] Error: {e}")
             return None
+
+    async def synthesize_final(
+        self,
+        predictions: Dict[str, Any],
+        voting_result: Any,
+        early_synthesis: Optional[OracleSynthesis],
+        clues: List[str],
+        clue_number: int,
+        prior_analyses: Optional[List[ClueAnalysis]] = None
+    ) -> Optional[OracleSynthesis]:
+        """
+        FINAL SYNTHESIS: Run AFTER all agents complete (MOA v4).
+
+        Uses Oracle's full prompt WITH agent predictions as input.
+        This provides the authoritative "Recommended Pick" that replaces voting-based consensus.
+
+        Args:
+            predictions: All 5 agent predictions
+            voting_result: VotingResult from weighted voting
+            early_synthesis: OracleSynthesis from early mode (for comparison)
+            clues: List of clues revealed so far
+            clue_number: Current clue number (1-5)
+            prior_analyses: Optional prior clue analyses
+
+        Returns:
+            OracleSynthesis with final top 3 guesses
+        """
+        if not self.enabled:
+            return early_synthesis  # Fallback to early synthesis
+
+        start_time = time.time()
+
+        try:
+            # Build full context with agent predictions
+            context = self._build_context(
+                predictions, voting_result, clues, clue_number, prior_analyses
+            )
+
+            # Add early synthesis for comparison
+            if early_synthesis and early_synthesis.top_3:
+                context += f"\n\n{'=' * 50}\n"
+                context += "EARLY ORACLE PREDICTION (before seeing agents):\n"
+                context += f"{'=' * 50}\n"
+                context += f"Top pick: {early_synthesis.top_3[0].answer} ({early_synthesis.top_3[0].confidence}%)\n"
+                context += f"Theme: {early_synthesis.key_theme}\n"
+                if early_synthesis.misdirection_detected:
+                    context += f"Misdirection: {early_synthesis.misdirection_detected}\n"
+                context += "\nConsider: Did agents CONFIRM or CHALLENGE this prediction?\n"
+
+            # Call Claude with full system prompt
+            response = await self.client.messages.create(
+                model=self.model,
+                max_tokens=500,
+                temperature=self.TEMPERATURE,
+                system=ORACLE_SYSTEM_PROMPT,  # Uses full prompt expecting agent context
+                messages=[{"role": "user", "content": context}]
+            )
+
+            # Parse response
+            content = response.content[0].text
+            synthesis = self._parse_response(content)
+
+            if synthesis:
+                synthesis.latency_ms = (time.time() - start_time) * 1000
+
+                # Log comparison with early prediction
+                early_pick = early_synthesis.top_3[0].answer if early_synthesis and early_synthesis.top_3 else "N/A"
+                final_pick = synthesis.top_3[0].answer
+                match_status = "CONFIRMED" if early_pick.upper() == final_pick.upper() else "CHANGED"
+
+                logger.info(
+                    f"[Oracle-Final] Top pick: {final_pick} ({synthesis.top_3[0].confidence}%) | "
+                    f"Early: {early_pick} ({match_status}) | "
+                    f"Latency: {synthesis.latency_ms:.0f}ms"
+                )
+                return synthesis
+
+            logger.warning("[Oracle-Final] Failed to parse response, using early synthesis")
+            return early_synthesis  # Fallback
+
+        except Exception as e:
+            logger.error(f"[Oracle-Final] Error: {e}")
+            return early_synthesis  # Fallback
 
     async def close(self):
         """Close the Anthropic client (if needed)."""

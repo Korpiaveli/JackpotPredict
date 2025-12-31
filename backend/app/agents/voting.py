@@ -5,6 +5,11 @@ Implements weighted voting based on clue number:
 - Early clues (1-2): Favor lateral/wordsmith agents (cryptic clues)
 - Middle clues (3): Balanced weights
 - Late clues (4-5): Favor literal agent (direct clues)
+
+Enhanced with advanced answer matching:
+- First-name expansion (Oprah -> Oprah Winfrey)
+- Confusion disambiguation (Queen Bey -> Beyonce not Honey)
+- Tournament prefix handling (World Cup -> FIFA World Cup)
 """
 
 from typing import List, Dict, Optional
@@ -12,6 +17,12 @@ from dataclasses import dataclass
 import logging
 
 from .base_agent import AgentPrediction
+from ..core.answer_matcher import (
+    normalize_for_matching,
+    canonicalize_answer,
+    fuzzy_match_score,
+    analyze_clue_abstractness
+)
 
 logger = logging.getLogger(__name__)
 
@@ -51,51 +62,69 @@ def normalize_answer(answer: str) -> str:
     """
     Normalize answer for comparison.
 
-    - Lowercase
-    - Strip whitespace
-    - Remove common prefixes/suffixes
+    Uses enhanced normalize_for_matching from answer_matcher module.
     """
-    normalized = answer.lower().strip()
-
-    # Remove common prefixes
-    prefixes = ["the ", "a ", "an "]
-    for prefix in prefixes:
-        if normalized.startswith(prefix):
-            normalized = normalized[len(prefix):]
-
-    return normalized
+    return normalize_for_matching(answer)
 
 
 def cluster_predictions(
     predictions: Dict[str, AgentPrediction],
-    similarity_threshold: float = 0.85
+    similarity_threshold: float = 0.85,
+    clue_context: Optional[str] = None
 ) -> Dict[str, List[str]]:
     """
-    Group similar predictions into clusters.
+    Group similar predictions into clusters using fuzzy matching.
 
-    For now, uses exact match after normalization.
-    TODO: Add semantic similarity with embeddings.
+    Enhanced with:
+    - First-name expansion (Oprah -> Oprah Winfrey)
+    - Confusion disambiguation
+    - Fuzzy string matching
 
     Args:
         predictions: Dict of agent_name -> AgentPrediction
-        similarity_threshold: Cosine similarity threshold (future use)
+        similarity_threshold: Minimum similarity to cluster together
+        clue_context: Optional concatenated clue text for disambiguation
 
     Returns:
-        Dict mapping normalized_answer -> list of agent names
+        Dict mapping canonical_answer -> list of agent names
     """
     clusters: Dict[str, List[str]] = {}
+    canonical_map: Dict[str, str] = {}  # Maps normalized -> canonical
 
     for agent_name, pred in predictions.items():
         if pred is None:
             continue
 
-        normalized = normalize_answer(pred.answer)
+        # Canonicalize the answer (handles name expansion, disambiguation, prefixes)
+        canonical = canonicalize_answer(pred.answer, clue_context)
+        normalized = normalize_answer(canonical)
 
-        if normalized not in clusters:
-            clusters[normalized] = []
-        clusters[normalized].append(agent_name)
+        # Check if this matches an existing cluster via fuzzy matching
+        matched_cluster = None
+        best_score = 0.0
 
-    return clusters
+        for existing_normalized in list(clusters.keys()):
+            score = fuzzy_match_score(normalized, existing_normalized)
+            if score >= similarity_threshold and score > best_score:
+                matched_cluster = existing_normalized
+                best_score = score
+
+        if matched_cluster:
+            clusters[matched_cluster].append(agent_name)
+            # Update canonical map to prefer the more complete version
+            if len(canonical) > len(canonical_map.get(matched_cluster, "")):
+                canonical_map[matched_cluster] = canonical
+        else:
+            clusters[normalized] = [agent_name]
+            canonical_map[normalized] = canonical
+
+    # Replace normalized keys with canonical versions
+    result = {}
+    for normalized, agents in clusters.items():
+        canonical = canonical_map.get(normalized, normalized)
+        result[canonical] = agents
+
+    return result
 
 
 class WeightedVoting:
@@ -121,7 +150,8 @@ class WeightedVoting:
     def vote(
         self,
         predictions: Dict[str, AgentPrediction],
-        clue_number: int
+        clue_number: int,
+        clue_context: Optional[str] = None
     ) -> VotingResult:
         """
         Perform weighted voting on agent predictions.
@@ -129,6 +159,7 @@ class WeightedVoting:
         Args:
             predictions: Dict of agent_name -> AgentPrediction
             clue_number: Current clue number (1-5)
+            clue_context: Optional concatenated clue text for disambiguation
 
         Returns:
             VotingResult with recommended pick and breakdown
@@ -148,13 +179,13 @@ class WeightedVoting:
                 vote_breakdown=[]
             )
 
-        # Cluster similar answers
-        clusters = cluster_predictions(valid_predictions)
+        # Cluster similar answers with enhanced matching
+        clusters = cluster_predictions(valid_predictions, clue_context=clue_context)
 
         # Calculate weighted votes for each cluster
         vote_results: List[VoteResult] = []
 
-        for normalized_answer, agent_names in clusters.items():
+        for canonical_answer, agent_names in clusters.items():
             # Sum weighted votes
             total_votes = 0.0
             confidences = []
@@ -164,9 +195,6 @@ class WeightedVoting:
                 weight = clue_weights.get(agent_name, 1.0)
                 total_votes += weight * pred.confidence
                 confidences.append(pred.confidence)
-
-            # Get canonical answer (from first agent in cluster)
-            canonical_answer = valid_predictions[agent_names[0]].answer
 
             vote_results.append(VoteResult(
                 answer=canonical_answer,

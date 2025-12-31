@@ -38,7 +38,11 @@ def populate_database(
     logger.info(f"Loading entities from {input_file}")
     with open(input_file, 'r', encoding='utf-8') as f:
         data = json.load(f)
-        entities = data.get("entities", data)
+        # Handle both list format and dict with "entities" key
+        if isinstance(data, list):
+            entities = data
+        else:
+            entities = data.get("entities", data)
 
     logger.info(f"Found {len(entities)} entities to import")
 

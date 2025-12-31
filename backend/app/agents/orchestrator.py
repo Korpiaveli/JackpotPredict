@@ -167,6 +167,21 @@ class AgentOrchestrator:
 
         start_time = time.time()
 
+        # MOA v4: Build cultural context for all specialists
+        # OPTIMIZATION: Skip full cultural context for clue 1 (minimal signal, saves ~200ms)
+        cultural_context = ""
+        if clue_number >= 2:
+            try:
+                cultural_ctx = get_cultural_context_manager()
+                cultural_context = cultural_ctx.build_context_injection(clues, clue_number)
+            except Exception as e:
+                logger.warning(f"[Orchestrator] Cultural context injection failed: {e}")
+
+        # Combine cultural context with prior reasoning context
+        combined_context = prior_context or ""
+        if cultural_context:
+            combined_context = cultural_context + "\n\n" + combined_context if combined_context else cultural_context
+
         # Start Oracle in PARALLEL with specialists (using early mode)
         # This removes Oracle's dependency on voting results for ~50% latency reduction
         oracle = get_oracle()
@@ -183,9 +198,9 @@ class AgentOrchestrator:
                 )
             )
 
-        # Run all agents in parallel with prior context
+        # Run all agents in parallel with combined context (cultural + prior reasoning)
         tasks = [
-            self._run_agent(name, agent, clues, category_hint, prior_context)
+            self._run_agent(name, agent, clues, category_hint, combined_context)
             for name, agent in self._agents.items()
         ]
 
@@ -205,29 +220,61 @@ class AgentOrchestrator:
             else:
                 failed_agents.append(agent_name)
 
-        # Perform weighted voting
-        voting_result = self.voting.vote(predictions, clue_number)
+        # Perform weighted voting with clue context for disambiguation
+        clue_context = " ".join(clues)
+        voting_result = self.voting.vote(predictions, clue_number, clue_context=clue_context)
 
         # Determine if should guess
         should_guess, guess_rationale = self.voting.should_guess(voting_result, clue_number)
 
-        # Await Oracle result (already running in parallel, should be done or nearly done)
-        oracle_synthesis = None
+        # MOA v4: Two-stage Oracle pipeline
+        # Stage 1: Await early oracle (already running in parallel)
+        early_oracle_synthesis = None
         if oracle_task:
             try:
-                oracle_synthesis = await oracle_task
+                early_oracle_synthesis = await oracle_task
             except asyncio.TimeoutError:
-                logger.warning(f"[Oracle] Timed out after {self.timeout + 3}s")
+                logger.warning(f"[Oracle-Early] Timed out after {self.timeout + 3}s")
             except Exception as e:
-                logger.error(f"[Oracle] Error: {e}")
+                logger.error(f"[Oracle-Early] Error: {e}")
+
+        # Stage 2: Run final synthesis with agent predictions
+        # OPTIMIZATION: Only run final synthesis for clues 4-5 (more signal, worth the latency)
+        # For clues 1-3, early synthesis is sufficient and saves ~3-4 seconds
+        final_oracle_synthesis = None
+        if oracle.enabled and clue_number >= 4:
+            try:
+                final_oracle_synthesis = await asyncio.wait_for(
+                    oracle.synthesize_final(
+                        predictions=predictions,
+                        voting_result=voting_result,
+                        early_synthesis=early_oracle_synthesis,
+                        clues=clues,
+                        clue_number=clue_number,
+                        prior_analyses=prior_analyses
+                    ),
+                    timeout=self.timeout + 2  # 7 seconds max for final synthesis
+                )
+            except asyncio.TimeoutError:
+                logger.warning(f"[Oracle-Final] Timed out, using early synthesis")
+                final_oracle_synthesis = early_oracle_synthesis
+            except Exception as e:
+                logger.error(f"[Oracle-Final] Error: {e}")
+                final_oracle_synthesis = early_oracle_synthesis
+        elif oracle.enabled:
+            # For clues 1-3, use early synthesis only (faster response)
+            logger.info(f"[Oracle] Using early synthesis only for clue {clue_number} (optimization)")
+
+        # Use final synthesis as the authoritative oracle result
+        oracle_synthesis = final_oracle_synthesis or early_oracle_synthesis
 
         total_latency = (time.time() - start_time) * 1000
 
-        context_used = "with context" if prior_context else "no context"
-        oracle_status = f"Oracle: {oracle_synthesis.top_3[0].answer}" if oracle_synthesis else "Oracle: disabled"
+        context_used = "with cultural context" if cultural_context else "no cultural context"
+        oracle_status = f"Oracle: {oracle_synthesis.top_3[0].answer}" if oracle_synthesis and oracle_synthesis.top_3 else "Oracle: disabled"
         logger.info(
             f"[Orchestrator] {len(predictions)}/5 agents responded in {total_latency:.0f}ms ({context_used}) | "
-            f"Recommended: {voting_result.recommended_pick} ({voting_result.recommended_confidence*100:.0f}%) | "
+            f"Voting: {voting_result.recommended_pick} | "
             f"{oracle_status}"
         )
 

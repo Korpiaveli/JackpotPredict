@@ -1,0 +1,7966 @@
+[
+  {
+    "name": "Nintendo Entertainment System",
+    "category": "thing",
+    "polysemy_triggers": [
+      "8-bit",
+      "Retro Console",
+      "Classic Games"
+    ],
+    "clue_associations": [
+      "Plays it old school",
+      "Pixelated nostalgia",
+      "Family fun in the living room"
+    ],
+    "aliases": [
+      "NES"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Sega Dreamcast",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Backwards Compatible",
+      "Retro Console Revival",
+      "Phantasy Star"
+    ],
+    "clue_associations": [
+      "Experimental design",
+      "Controller innovation",
+      "Shmup enthusiast's delight"
+    ],
+    "aliases": [
+      "DC"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Nintendo Wii",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Motion Controls",
+      "Family Friendly",
+      "Virtual Console Games"
+    ],
+    "clue_associations": [
+      "Waggle magic",
+      "Accessible gaming",
+      "Nostalgia with a twist"
+    ],
+    "aliases": [
+      "Revolution"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Sega Genesis",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Retro Console",
+      "Classic Games",
+      "Sonic the Hedgehog"
+    ],
+    "clue_associations": [
+      "Iconic mascot",
+      "Fast-paced action",
+      "90s gaming memories"
+    ],
+    "aliases": [
+      "Mega Drive"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "PlayStation 2",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Best Selling Console",
+      "Exclusive Titles",
+      "Controller with Memory Card"
+    ],
+    "clue_associations": [
+      "Gaming behemoth",
+      "Iconic games of the era",
+      "Massive game library"
+    ],
+    "aliases": [
+      "PS2"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Nintendo Switch",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Hybrid Console",
+      "Portable Gaming",
+      "Joy-Con Controls"
+    ],
+    "clue_associations": [
+      "On-the-go gaming",
+      "Home console innovation",
+      "Multiplayer masterclass"
+    ],
+    "aliases": [
+      "Switch"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Nintendo 64",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Rumble Pack",
+      "3D Gaming Pioneers",
+      "GoldenEye 007"
+    ],
+    "clue_associations": [
+      "Innovative controller",
+      "Early 3D gaming experience",
+      "90s gaming nostalgia"
+    ],
+    "aliases": [
+      "N64"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Sega Saturn",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Retro Console",
+      "Exclusive Titles",
+      "Controller with Triggers"
+    ],
+    "clue_associations": [
+      "Japanese gaming icon",
+      "Early 3D gaming experience",
+      "Blast processing"
+    ],
+    "aliases": [
+      "Saturn"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Hulu",
+    "category": "thing",
+    "polysemy_triggers": [
+      "live TV streaming",
+      "ad-supported",
+      "TV shows online"
+    ],
+    "clue_associations": [
+      "A mix of free and paid, because who doesn't love a deal?",
+      "Catch up on your favorite shows without breaking the bank.",
+      "The perfect balance between ad-tastic and entertainment."
+    ],
+    "aliases": [
+      "Hulu Plus",
+      "Hulu Live"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Disney+",
+    "category": "thing",
+    "polysemy_triggers": [
+      "streaming service for kids",
+      "family-friendly content",
+      "new Disney movies"
+    ],
+    "clue_associations": [
+      "A magical kingdom of entertainment, minus the lines.",
+      "Where childhood dreams and nostalgia come to life.",
+      "The perfect place to find your inner child."
+    ],
+    "aliases": [
+      "D+"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Amazon Prime Video",
+    "category": "thing",
+    "polysemy_triggers": [
+      "exclusive content",
+      "additional benefit for members",
+      "streaming with perks"
+    ],
+    "clue_associations": [
+      "Where the Amazon experience meets your entertainment needs.",
+      "A treasure trove of original shows and movies, because who doesn't love a deal?",
+      "The ultimate package deal for your viewing pleasure."
+    ],
+    "aliases": [
+      "Prime Video",
+      "APV"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Apple TV+",
+    "category": "thing",
+    "polysemy_triggers": [
+      "exclusive original content",
+      "streaming service from Apple",
+      "high-quality productions"
+    ],
+    "clue_associations": [
+      "Where innovative storytelling meets cutting-edge technology.",
+      "A platform for creatives to shine, with a side of tech-savviness.",
+      "The perfect blend of art and science."
+    ],
+    "aliases": [
+      "TV Plus"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "HBO Max",
+    "category": "thing",
+    "polysemy_triggers": [
+      "library of content",
+      "new streaming service",
+      "popular TV shows"
+    ],
+    "clue_associations": [
+      "A treasure trove of hit series and movies, all under one roof.",
+      "The ultimate destination for binge-watching enthusiasts.",
+      "Where the old meets the new in entertainment."
+    ],
+    "aliases": [
+      "HBOMAX"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "YouTube Premium",
+    "category": "thing",
+    "polysemy_triggers": [
+      "ad-free experience",
+      "exclusive content creator perks",
+      "music streaming service"
+    ],
+    "clue_associations": [
+      "A platform where creators reign supreme, ad-free.",
+      "The perfect place to enjoy music and videos without interruptions.",
+      "Where the YouTube experience meets your entertainment needs."
+    ],
+    "aliases": [
+      "YouTube Red"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Apple TV Channels",
+    "category": "thing",
+    "polysemy_triggers": [
+      "channel-based streaming",
+      "a la carte options",
+      "streaming services in one place"
+    ],
+    "clue_associations": [
+      "Where the world of streaming converges, with no strings attached.",
+      "A platform for customization and flexibility in entertainment.",
+      "The ultimate way to tailor your viewing experience."
+    ],
+    "aliases": [
+      "ATVC"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Paramount+",
+    "category": "thing",
+    "polysemy_triggers": [
+      "streaming service with movies",
+      "ad-free entertainment",
+      "CBS All Access"
+    ],
+    "clue_associations": [
+      "Where the world of Paramount Pictures meets your living room.",
+      "A platform for premium content, minus the high price tag.",
+      "The ultimate destination for movie lovers and TV enthusiasts alike."
+    ],
+    "aliases": [
+      "Paramount+ Classic"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Bing",
+    "category": "thing",
+    "polysemy_triggers": [
+      "search",
+      "yahoo",
+      "results page"
+    ],
+    "clue_associations": [
+      "Microsoft's answer to G",
+      "Redmond rival to the king",
+      "Search engine with a red logo"
+    ],
+    "aliases": [
+      "MSN Search"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Yahoo",
+    "category": "thing",
+    "polysemy_triggers": [
+      "portal",
+      "directory",
+      "search service"
+    ],
+    "clue_associations": [
+      "Classic web destination",
+      "Verizon's online hub",
+      "Search engine with a purple logo"
+    ],
+    "aliases": [
+      "YMail"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "DuckDuckGo",
+    "category": "thing",
+    "polysemy_triggers": [
+      "search",
+      "engine",
+      "anonymous browsing"
+    ],
+    "clue_associations": [
+      "Private search option",
+      "Pittsburgh start-up sensation",
+      "No-tracking search engine"
+    ],
+    "aliases": [
+      "DDG"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Baidu",
+    "category": "thing",
+    "polysemy_triggers": [
+      "search",
+      "engine",
+      "Chinese giant"
+    ],
+    "clue_associations": [
+      "China's leading search engine",
+      "Private company from Beijing",
+      "Competition to Google in Asia"
+    ],
+    "aliases": [
+      "Bai du"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Ask Jeeves",
+    "category": "thing",
+    "polysemy_triggers": [
+      "search",
+      "assistant",
+      "natural language"
+    ],
+    "clue_associations": [
+      "Question-answering service",
+      "Classic web portal from the past",
+      "Search engine with a butler mascot"
+    ],
+    "aliases": [
+      "JJ"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Lycos",
+    "category": "thing",
+    "polysemy_triggers": [
+      "search",
+      "directory",
+      "web crawler"
+    ],
+    "clue_associations": [
+      "Early web search engine",
+      "Classic portal from the internet's early days",
+      "Crawler-based search technology"
+    ],
+    "aliases": [
+      "Lykos"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "AOL Search",
+    "category": "thing",
+    "polysemy_triggers": [
+      "search",
+      "engine",
+      "portal"
+    ],
+    "clue_associations": [
+      "Classic web portal from the US",
+      "Search engine with a purple logo",
+      "Competition to Google in North America"
+    ],
+    "aliases": [
+      "AOL Search"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "StartPage",
+    "category": "thing",
+    "polysemy_triggers": [
+      "search",
+      "engine",
+      "private browsing"
+    ],
+    "clue_associations": [
+      "Private search option with a neutral stance",
+      "Competition to Google's Adsense model",
+      "Search engine with a clean interface"
+    ],
+    "aliases": [
+      "Ixquick"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Windows Operating System",
+    "category": "thing",
+    "polysemy_triggers": [
+      "blue screen",
+      "microsoft product",
+      "desktop environment"
+    ],
+    "clue_associations": [
+      "used by most PCs worldwide",
+      "known for its start menu",
+      "vulnerable to viruses"
+    ],
+    "aliases": [
+      "WIndows",
+      "Win10"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "MacOS Operating System",
+    "category": "thing",
+    "polysemy_triggers": [
+      "macintosh system",
+      "apple exclusive",
+      "safari browser"
+    ],
+    "clue_associations": [
+      "favored by creative professionals",
+      "used in ipads and iphones",
+      "requires a password manager"
+    ],
+    "aliases": [
+      "Mac OS X",
+      "Mavericks"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Linux Operating System",
+    "category": "thing",
+    "polysemy_triggers": [
+      "open source software",
+      "unix variant",
+      "kernel architecture"
+    ],
+    "clue_associations": [
+      "free and customizable",
+      "popular among developers",
+      "uses apt-get package manager"
+    ],
+    "aliases": [
+      "Ubuntu Linux",
+      "Fedora Core"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Chrome OS Operating System",
+    "category": "thing",
+    "polysemy_triggers": [
+      "chromebook os",
+      "google operating system",
+      "cloud computing"
+    ],
+    "clue_associations": [
+      "used in chromebooks and pixelbooks",
+      "optimized for web apps",
+      "requires a google account"
+    ],
+    "aliases": [
+      "Chrome OS Beta"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "FreeBSD Operating System",
+    "category": "thing",
+    "polysemy_triggers": [
+      "freebsd unix",
+      "bsd variant",
+      "open source os"
+    ],
+    "clue_associations": [
+      "used in servers and routers",
+      "has a reputation for security",
+      "uses ports package manager"
+    ],
+    "aliases": [
+      "FreeBSD Stable"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Android Operating System",
+    "category": "thing",
+    "polysemy_triggers": [
+      "android mobile",
+      "google android",
+      "gapps bundle"
+    ],
+    "clue_associations": [
+      "used in millions of phones worldwide",
+      "customizable home screens",
+      "vulnerable to malware attacks"
+    ],
+    "aliases": [
+      "Android 10"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "IOS Operating System",
+    "category": "thing",
+    "polysemy_triggers": [
+      "iphone operating system",
+      "apple mobile os",
+      "siri integration"
+    ],
+    "clue_associations": [
+      "used exclusively on iphones and ipads",
+      "optimized for app store",
+      "requires a password lock"
+    ],
+    "aliases": [
+      "iOS 14"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Ubuntu Linux Distribution",
+    "category": "thing",
+    "polysemy_triggers": [
+      "ubuntu os",
+      "linux distribution",
+      "apt-get package manager"
+    ],
+    "clue_associations": [
+      "used by many developers and sysadmins",
+      "popular in server environments",
+      "has a user-friendly interface"
+    ],
+    "aliases": [
+      "Ubuntu Server"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Android TV Operating System",
+    "category": "thing",
+    "polysemy_triggers": [
+      "android tv os",
+      "google android tv",
+      "streaming media"
+    ],
+    "clue_associations": [
+      "used in smart TVs and streaming devices",
+      "optimized for video playback",
+      "has a voice remote control"
+    ],
+    "aliases": [
+      "Android TV 10"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Windows Server Operating System",
+    "category": "thing",
+    "polysemy_triggers": [
+      "windows server os",
+      "microsoft windows server",
+      "active directory"
+    ],
+    "clue_associations": [
+      "used in enterprise environments and data centers",
+      "optimized for network servers",
+      "has a built-in firewall"
+    ],
+    "aliases": [
+      "Windows Server 2019"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Google Chrome",
+    "category": "web browser",
+    "polysemy_triggers": [
+      "chrome",
+      "window",
+      "navigator"
+    ],
+    "clue_associations": [
+      "fast as lightning in a digital storm",
+      "sleek and agile like a web surfer",
+      "popular choice among internet explorers"
+    ],
+    "aliases": [
+      "CrChrome",
+      "G Chrome"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Mozilla Firefox",
+    "category": "web browser",
+    "polysemy_triggers": [
+      "firefox",
+      "mosaic",
+      "open source"
+    ],
+    "clue_associations": [
+      "rabid fox on the loose in cyberspace",
+      "flexible and adaptable like a web ninja",
+      "free spirit of the internet"
+    ],
+    "aliases": [
+      "Firefox Browser",
+      "FF"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Microsoft Edge",
+    "category": "web browser",
+    "polysemy_triggers": [
+      "edge",
+      "border",
+      "navigator"
+    ],
+    "clue_associations": [
+      "sharp as a razor's edge in the digital world",
+      "lightning-fast like a winged arrow",
+      "closely tied to Windows like a sibling"
+    ],
+    "aliases": [
+      "Edge Browser",
+      "Win Edge"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Safari",
+    "category": "web browser",
+    "polysemy_triggers": [
+      "safari",
+      "voyager",
+      "explorer"
+    ],
+    "clue_associations": [
+      "bold and fearless like a safari adventurer",
+      "light as air like a feather in the wind",
+      "popular among Mac users like a homecoming queen"
+    ],
+    "aliases": [
+      "Safari Browser",
+      "Apple Safari"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Internet Explorer",
+    "category": "web browser",
+    "polysemy_triggers": [
+      "explorer",
+      "navigator",
+      "ie"
+    ],
+    "clue_associations": [
+      "once the king of the internet jungle but now an old relic",
+      "bundled with Windows like a bonus feature",
+      "popular in its heyday but now obsolete"
+    ],
+    "aliases": [
+      "IE Browser",
+      "Microsoft Explorer"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Brave",
+    "category": "web browser",
+    "polysemy_triggers": [
+      "brave",
+      "daredevil",
+      "browser"
+    ],
+    "clue_associations": [
+      "unafraid to challenge the status quo like a rebel",
+      "blocks ads like a bouncer at a club",
+      "popular among those who value online freedom"
+    ],
+    "aliases": [
+      "Brave Browser",
+      "BRV"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Opera",
+    "category": "web browser",
+    "polysemy_triggers": [
+      "opera",
+      "theater",
+      "music"
+    ],
+    "clue_associations": [
+      "a grand performance in the world of browsers",
+      "known for its built-in VPN like a secret agent",
+      "popular among those who value user experience"
+    ],
+    "aliases": [
+      "Opera Browser",
+      "OPR"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Vivaldi",
+    "category": "web browser",
+    "polysemy_triggers": [
+      "vivaldi",
+      "music",
+      "composer"
+    ],
+    "clue_associations": [
+      "a harmonious blend of speed and features like a symphony orchestra",
+      "tailored to the needs of power users like a bespoke suit",
+      "popular among those who value customization"
+    ],
+    "aliases": [
+      "Vivaldi Browser",
+      "VVD"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Tor",
+    "category": "web browser",
+    "polysemy_triggers": [
+      "tor",
+      "tunnel",
+      "anonymous"
+    ],
+    "clue_associations": [
+      "a secret passage through the dark web like a spy novel",
+      "protects users' identities like a cloak of invisibility",
+      "popular among those who value online anonymity"
+    ],
+    "aliases": [
+      "Tor Browser",
+      "TB"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Maxthon",
+    "category": "web browser",
+    "polysemy_triggers": [
+      "maxthon",
+      "speed",
+      "fast"
+    ],
+    "clue_associations": [
+      "the fastest browser on the block like a bullet train",
+      "popular among those who value speed and ease of use",
+      "once popular in Asia but now relatively unknown"
+    ],
+    "aliases": [
+      "Maxthon Browser",
+      "MX"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Python",
+    "category": "programming language",
+    "polysemy_triggers": [
+      "Snake",
+      "Scripting",
+      "Reptile"
+    ],
+    "clue_associations": [
+      "Bites code with ease",
+      "Venomous libraries abound",
+      "Slithers through complexity"
+    ],
+    "aliases": [
+      "Py",
+      "Pythonic"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Java",
+    "category": "programming language",
+    "polysemy_triggers": [
+      "Coffee",
+      "Object-Oriented",
+      "Platform-Independent"
+    ],
+    "clue_associations": [
+      "Fueled by robust frameworks",
+      "Brews a rich ecosystem",
+      "Served in a virtual cup"
+    ],
+    "aliases": [
+      "JVM",
+      "Java EE"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "C++",
+    "category": "programming language",
+    "polysemy_triggers": [
+      "Plus-Plus",
+      "High-Performance",
+      "Low-Level"
+    ],
+    "clue_associations": [
+      "Amped up with compiler magic",
+      "Tuned for speed and agility",
+      "Delivers raw power"
+    ],
+    "aliases": [
+      "C Plus Plus",
+      "Cpp"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "JavaScript",
+    "category": "programming language",
+    "polysemy_triggers": [
+      "Script",
+      "Dynamic",
+      "Client-Side"
+    ],
+    "clue_associations": [
+      "Weaves magic with DOM manipulation",
+      "Fires off event-driven hooks",
+      "Dances in the browser's spotlight"
+    ],
+    "aliases": [
+      "JS",
+      "ECMAScript"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Ruby",
+    "category": "programming language",
+    "polysemy_triggers": [
+      "Gemstone",
+      "Dynamic",
+      "Object-Oriented"
+    ],
+    "clue_associations": [
+      "Polishes code with ease and finesse",
+      "Sparks joy with simplicity and elegance",
+      "Rubs off a pleasant sheen"
+    ],
+    "aliases": [
+      "Rubies",
+      "Ruby on Rails"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Swift",
+    "category": "programming language",
+    "polysemy_triggers": [
+      "Falcon",
+      "High-Performance",
+      "Modern"
+    ],
+    "clue_associations": [
+      "Soars with a clean syntax",
+      "Rides the wind of rapid development",
+      "Unfolds like a freshly minted app"
+    ],
+    "aliases": [
+      "Swift 5"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "PHP",
+    "category": "programming language",
+    "polysemy_triggers": [
+      "Hyphen",
+      "Server-Side",
+      "Web Development"
+    ],
+    "clue_associations": [
+      "Weaves a web of server-side magic",
+      "Pours liquid code into the browser",
+      "Binds client and server with ease"
+    ],
+    "aliases": [
+      "Hypertext Preprocessor"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Go",
+    "category": "programming language",
+    "polysemy_triggers": [
+      "Golang",
+      "Concurrency-Friendly",
+      "Simple"
+    ],
+    "clue_associations": [
+      "Chases concurrent goals with ease",
+      "Unleashes a storm of lightweight goroutines",
+      "Blends simplicity and elegance"
+    ],
+    "aliases": [
+      "Gopher"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Kotlin",
+    "category": "programming language",
+    "polysemy_triggers": [
+      "Coffee Script",
+      "Null-Safety",
+      "Android-Friendly"
+    ],
+    "clue_associations": [
+      "Steeps code in a rich ecosystem",
+      "Brews up robust Android apps",
+      "Dances on the stage of null-safety"
+    ],
+    "aliases": [
+      "Kotlin JVM"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Rust",
+    "category": "programming language",
+    "polysemy_triggers": [
+      "Metal",
+      "Memory-Safe",
+      "Systems Programming"
+    ],
+    "clue_associations": [
+      "Forges code with a strong and robust framework",
+      "Unleashes a storm of concurrency",
+      "Polishes code like fine metalwork"
+    ],
+    "aliases": [
+      "Rust Lang"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Microsoft",
+    "category": "thing",
+    "polysemy_triggers": [
+      "windows",
+      "office suite",
+      "ballmer's bill"
+    ],
+    "clue_associations": [
+      "a company that makes the computer run",
+      "the software that helps you stay organized",
+      "a tech giant with a name that sounds like a medical condition"
+    ],
+    "aliases": [
+      "MS",
+      "Windows 10"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Microsoft Teams",
+    "category": "thing",
+    "polysemy_triggers": [
+      "slack competitor",
+      "microsoft's team chat app",
+      "office online"
+    ],
+    "clue_associations": [
+      "a platform that brings teams together",
+      "the Microsoft answer to Slack",
+      "a tool for remote work that sounds like a sports stadium"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "IBM Watson",
+    "category": "thing",
+    "polysemy_triggers": [
+      "artificial intelligence",
+      "supercomputer",
+      "jeopardy winner"
+    ],
+    "clue_associations": [
+      "a computer brain that can beat humans at Jeopardy!",
+      "the technology behind IBM's cognitive systems",
+      "a platform that sounds like a science fiction movie"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Catcher in the Rye",
+    "category": "book",
+    "polysemy_triggers": [
+      "Catcher Boy",
+      "Coming of Age Struggles",
+      "Alienated Teenager"
+    ],
+    "clue_associations": [
+      "Classic Adolescent Novel",
+      "Phony People and Places",
+      "Lost Innocence"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Hunger Games",
+    "category": "book",
+    "polysemy_triggers": [
+      "Girl on Fire",
+      "Dystopian Rebellion",
+      "Survival Reality Show"
+    ],
+    "clue_associations": [
+      "Dystopian Trilogy",
+      "Fighting for Freedom",
+      "Katniss Everdeen's Story"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "War and Peace",
+    "category": "book",
+    "polysemy_triggers": [
+      "Russian Epic",
+      "Love and War",
+      "Napoleonic Wars Drama"
+    ],
+    "clue_associations": [
+      "Tolstoy Novel",
+      "Family Saga",
+      "Heroism and Sacrifice"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Alice in Wonderland",
+    "category": "book",
+    "polysemy_triggers": [
+      "Curiouser",
+      "Wonderland",
+      "Mad Hatter"
+    ],
+    "clue_associations": [
+      "Down rabbit hole tale",
+      "Queen of hearts rule",
+      "Eat me cake story"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Where the Wild Things Are",
+    "category": "book",
+    "polysemy_triggers": [
+      "Monster Island",
+      "Wild Things",
+      "Max and his crown"
+    ],
+    "clue_associations": [
+      "King of beasts tale",
+      "Nighttime monster hunt",
+      "Children's story about growth"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Very Hungry Caterpillar",
+    "category": "book",
+    "polysemy_triggers": [
+      "Caterpillar eats",
+      "Hungry caterpillar",
+      "Counting fruit tale"
+    ],
+    "clue_associations": [
+      "Eating and growing story",
+      "Fruit and counting book",
+      "Metamorphosis children's tale"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Charlotte's Web",
+    "category": "book",
+    "polysemy_triggers": [
+      "Spinning web",
+      "Pig friendship",
+      "Farmer Zuckerman farm"
+    ],
+    "clue_associations": [
+      "Friendship between animals",
+      "Tale of loyalty and sacrifice",
+      "Farm where friendship blossoms"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Giving Tree",
+    "category": "book",
+    "polysemy_triggers": [
+      "Giving tree tale",
+      "Childhood friendships",
+      "Tree gives to boy"
+    ],
+    "clue_associations": [
+      "Story of friendship and giving",
+      "Tale of love and sacrifice",
+      "Picture book about growing up"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Polar Express",
+    "category": "book",
+    "polysemy_triggers": [
+      "Polar express train",
+      "Boy's magical journey",
+      "Conductor on train"
+    ],
+    "clue_associations": [
+      "Magical Christmas story",
+      "Tale of believing in magic",
+      "Train ride to the North Pole"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Green Eggs and Ham",
+    "category": "book",
+    "polysemy_triggers": [
+      "Eating green eggs",
+      "Sam I am",
+      "Dr. Seuss classic tale"
+    ],
+    "clue_associations": [
+      "Tale of trying new things",
+      "Story about being adventurous",
+      "Children's book with rhymes"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Corduroy",
+    "category": "book",
+    "polysemy_triggers": [
+      "Teddy bear on shelf",
+      "Lost teddy bear tale",
+      "Girl buys toy for boy"
+    ],
+    "clue_associations": [
+      "Story about a lost teddy bear",
+      "Tale of friendship and kindness",
+      "Children's book with heartwarming story"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Make Way for Ducklings",
+    "category": "book",
+    "polysemy_triggers": [
+      "Duckling family journey",
+      "Boston Public Garden tale",
+      "Mother duck leads brood"
+    ],
+    "clue_associations": [
+      "Tale of family and friendship",
+      "Story about responsibility and caring",
+      "Children's book with Boston setting"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Velveteen Rabbit",
+    "category": "book",
+    "polysemy_triggers": [
+      "Velveteen rabbit tale",
+      "Childhood companion story",
+      "Toy becomes real"
+    ],
+    "clue_associations": [
+      "Tale of love and devotion",
+      "Story about the healing power of love",
+      "Children's book with poignant theme"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Wolverine",
+    "category": "thing",
+    "polysemy_triggers": [
+      "claws",
+      "healing",
+      "adamantium"
+    ],
+    "clue_associations": [
+      "Mutant with retractable claws",
+      "Member of the X-Men team",
+      "Healing factor and adamantium skeleton"
+    ],
+    "aliases": [
+      "Logan",
+      "The Wolverine"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Iron Man",
+    "category": "thing",
+    "polysemy_triggers": [
+      "iron",
+      "suit",
+      "genius"
+    ],
+    "clue_associations": [
+      "High-tech armored superhero",
+      "Billionaire inventor and philanthropist",
+      "Genius in a suit of armor"
+    ],
+    "aliases": [
+      "Tony Stark"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Captain America",
+    "category": "thing",
+    "polysemy_triggers": [
+      "shield",
+      "star",
+      "patriot"
+    ],
+    "clue_associations": [
+      "Super-soldier with indestructible shield",
+      "Star-spangled hero from World War II",
+      "Patriotic symbol of the United States"
+    ],
+    "aliases": [
+      "The Star-Spangled Man with a Plan"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Thor",
+    "category": "thing",
+    "polysemy_triggers": [
+      "hammer",
+      "asgardian",
+      "weather"
+    ],
+    "clue_associations": [
+      "God of thunder from Asgard",
+      "Superhero with magical hammer Mjolnir",
+      "Weather controller and protector of Midgard"
+    ],
+    "aliases": [
+      "The Mighty Thor"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Hulk",
+    "category": "thing",
+    "polysemy_triggers": [
+      "green",
+      "monster",
+      "anger"
+    ],
+    "clue_associations": [
+      "Super-soldier with incredible strength and rage issues",
+      "Large, green monster from the gamma radiation",
+      "Angry alter ego of Dr. Bruce Banner"
+    ],
+    "aliases": [
+      "Big Green Monster"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Black Widow",
+    "category": "thing",
+    "polysemy_triggers": [
+      "black",
+      "widow",
+      "spy"
+    ],
+    "clue_associations": [
+      "Secret agent and assassin from the KGB",
+      "Highly trained spy with deadly skills",
+      "Leader of the Red Room program"
+    ],
+    "aliases": [
+      "Natasha Romanoff"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Road Not Taken",
+    "category": "thing",
+    "polysemy_triggers": [
+      "path",
+      "choice",
+      "nature"
+    ],
+    "clue_associations": [
+      "Robert Frost's famous decision",
+      "a poet's reflection on regret",
+      "a moment of self-discovery"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Ozymandias",
+    "category": "thing",
+    "polysemy_triggers": [
+      "king",
+      "ruin",
+      "hubris"
+    ],
+    "clue_associations": [
+      "Shelley's sonnet on decline and fall",
+      "a statue in the desert",
+      "the fleeting nature of power"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Waste Land",
+    "category": "thing",
+    "polysemy_triggers": [
+      "desert",
+      "decay",
+      "chaos"
+    ],
+    "clue_associations": [
+      "T.S. Eliot's modernist masterpiece",
+      "a journey through post-war Europe",
+      "a fragmented exploration of disillusionment"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Raven",
+    "category": "thing",
+    "polysemy_triggers": [
+      "bird",
+      "midnight",
+      "loss"
+    ],
+    "clue_associations": [
+      "Edgar Allan Poe's haunting narrative poem",
+      "a visit from a mysterious bird",
+      "a reflection on love and death"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Love Song of J. Alfred Prufrock",
+    "category": "thing",
+    "polysemy_triggers": [
+      "speaker",
+      "stream",
+      "anxiety"
+    ],
+    "clue_associations": [
+      "T.S. Eliot's modernist magnum opus",
+      "a stream-of-consciousness exploration of self-doubt",
+      "a search for identity and meaning"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Tyger",
+    "category": "thing",
+    "polysemy_triggers": [
+      "beast",
+      "creator",
+      "duality"
+    ],
+    "clue_associations": [
+      "William Blake's mystical exploration of creation",
+      "a question of responsibility and power",
+      "a poetic inquiry into the nature of existence"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Do Not Go Gentle into That Good Night",
+    "category": "thing",
+    "polysemy_triggers": [
+      "death",
+      "fight",
+      "poet's plea"
+    ],
+    "clue_associations": [
+      "Dylan Thomas's iconic villanelle",
+      "a call to resist the inevitability of death",
+      "a passionate expression of defiance in the face of mortality"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Lady of Shalott",
+    "category": "thing",
+    "polysemy_triggers": [
+      "fate",
+      "mirror",
+      "love"
+    ],
+    "clue_associations": [
+      "Alfred, Lord Tennyson's classic Arthurian poem",
+      "a tale of doomed love and tragic fate",
+      "a reflection on the consequences of meddling with fate"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Hollow Men",
+    "category": "thing",
+    "polysemy_triggers": [
+      "emptiness",
+      "desert",
+      "void"
+    ],
+    "clue_associations": [
+      "T.S. Eliot's exploration of spiritual and emotional desolation",
+      "a poem about the disillusionment of modern life",
+      "a search for meaning in a seemingly meaningless world"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Kubla Khan",
+    "category": "thing",
+    "polysemy_triggers": [
+      "emperor",
+      "dream",
+      "landscape"
+    ],
+    "clue_associations": [
+      "Samuel Taylor Coleridge's visionary poem",
+      "a journey into the subconscious mind",
+      "a poetic exploration of the relationship between reality and fantasy"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Nobel Prize in Literature",
+    "category": "thing",
+    "polysemy_triggers": [
+      "literary",
+      "noble",
+      "honorary"
+    ],
+    "clue_associations": [
+      "Recognizing the world's greatest writers",
+      "Highest honor for literary achievement",
+      "Celebrating the masters of language"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Man Booker Prize",
+    "category": "thing",
+    "polysemy_triggers": [
+      "book",
+      "award",
+      "British"
+    ],
+    "clue_associations": [
+      "Rewarding excellence in British fiction",
+      "Annual prize for outstanding novel",
+      "Celebrating the best in UK writing"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Newbery Medal",
+    "category": "thing",
+    "polysemy_triggers": [
+      "award",
+      "children's",
+      "literary"
+    ],
+    "clue_associations": [
+      "Honoring outstanding children's literature",
+      "Recognizing the best in kids' books",
+      "Celebrating storytelling for young minds"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "National Book Award",
+    "category": "thing",
+    "polysemy_triggers": [
+      "book",
+      "award",
+      "American"
+    ],
+    "clue_associations": [
+      "Recognizing excellence in American literature",
+      "Annual prize for outstanding novel or nonfiction",
+      "Celebrating the best in US writing"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Hugo Award",
+    "category": "thing",
+    "polysemy_triggers": [
+      "science",
+      "fantasy",
+      "literary"
+    ],
+    "clue_associations": [
+      "Honoring outstanding science fiction and fantasy literature",
+      "Annual prize for imaginative storytelling",
+      "Celebrating the best in speculative fiction"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "PEN/Faulkner Award",
+    "category": "thing",
+    "polysemy_triggers": [
+      "writing",
+      "award",
+      "American"
+    ],
+    "clue_associations": [
+      "Recognizing excellence in American writing",
+      "Annual prize for outstanding novel or short stories",
+      "Celebrating the best in US literature"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Edgar Award",
+    "category": "thing",
+    "polysemy_triggers": [
+      "mystery",
+      "fiction",
+      "award"
+    ],
+    "clue_associations": [
+      "Honoring outstanding mystery and crime fiction",
+      "Annual prize for the best in detective writing",
+      "Celebrating the suspenseful and thrilling"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Andrew Carnegie Medal",
+    "category": "thing",
+    "polysemy_triggers": [
+      "literary",
+      "peace",
+      "award"
+    ],
+    "clue_associations": [
+      "Recognizing excellence in fiction or nonfiction that promotes international understanding",
+      "Annual prize for outstanding writing on global issues",
+      "Celebrating the best in literature with a social conscience"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "National Book Critics Circle Award",
+    "category": "thing",
+    "polysemy_triggers": [
+      "book",
+      "critics', award"
+    ],
+    "clue_associations": [
+      "Recognizing excellence in both fiction and nonfiction",
+      "Annual prize for outstanding literature as chosen by critics",
+      "Celebrating the best in writing as chosen by experts"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Lord of the Rings",
+    "category": "book series",
+    "polysemy_triggers": [
+      "Middle Earth",
+      "Ring of Power",
+      "Fellowship Quest"
+    ],
+    "clue_associations": [
+      "Epic journey to destroy a ring",
+      "Fantasy world of magic and might",
+      "Perilous road to Mount Doom"
+    ],
+    "aliases": [
+      "The Fellowship"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Percy Jackson",
+    "category": "book series",
+    "polysemy_triggers": [
+      "Greek Gods",
+      "Camp Half Blood",
+      "Monsters Lurking"
+    ],
+    "clue_associations": [
+      "Modern demigods of ancient myth",
+      "Quest to save the world from monsters",
+      "Son of Poseidon's adventures"
+    ],
+    "aliases": [
+      "The Olympians"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Twilight",
+    "category": "book series",
+    "polysemy_triggers": [
+      "Vampire Love Story",
+      "Cullen Family Secrets",
+      "Supernatural Romance"
+    ],
+    "clue_associations": [
+      "Forbidden love in the shadows",
+      "Blood-sucking creatures of the night",
+      "Sparkling vampires' world"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Mortal Instruments",
+    "category": "book series",
+    "polysemy_triggers": [
+      "Shadowhunters",
+      "Downworlders",
+      "Clave Secrets"
+    ],
+    "clue_associations": [
+      "Hidden world of demons and angels",
+      "Urban fantasy of magic and mystery",
+      "Love amidst a war between humans and demons"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Golden Compass",
+    "category": "book series",
+    "polysemy_triggers": [
+      "Daemons Companions",
+      "Armored Bears",
+      "Mythical World"
+    ],
+    "clue_associations": [
+      "Epic adventure in a parallel universe",
+      "Girl's journey to save her friend",
+      "Magical creatures of wonder and might"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Maze Runner",
+    "category": "book series",
+    "polysemy_triggers": [
+      "Mysterious Glade",
+      "Labyrinth Escape",
+      "Memory Loss"
+    ],
+    "clue_associations": [
+      "Boy's quest to escape a deadly maze",
+      "Survival against the unknown",
+      "Hidden truths in a world of mystery"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Mortal Engines",
+    "category": "book series",
+    "polysemy_triggers": [
+      "Traction Cities",
+      "Airships Adventure",
+      "Future War"
+    ],
+    "clue_associations": [
+      "Fantasy world of cities on wheels",
+      "Girl's journey to save her city from destruction",
+      "Epic battle between good and evil"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Inheritance Cycle",
+    "category": "book series",
+    "polysemy_triggers": [
+      "Dragon Riders",
+      "Ancient Prophecy",
+      "War Against Evil"
+    ],
+    "clue_associations": [
+      "Epic fantasy of dragons and magic",
+      "Boy's journey to save the world from darkness",
+      "Battle between good and evil"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Autobiography of Malcolm X",
+    "category": "thing",
+    "polysemy_triggers": [
+      "voice",
+      "memoir",
+      "black history"
+    ],
+    "clue_associations": [
+      "a story of struggle and redemption",
+      "an account of a life well-lived",
+      "words from behind bars"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Born with Teeth",
+    "category": "thing",
+    "polysemy_triggers": [
+      "novel",
+      "memoir",
+      "literary fiction"
+    ],
+    "clue_associations": [
+      "a life story of highs and lows",
+      "an account of a writer's journey",
+      "a memoir of love and loss"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Princess Diarist",
+    "category": "thing",
+    "polysemy_triggers": [
+      "memoir",
+      "diary",
+      "hollywood"
+    ],
+    "clue_associations": [
+      "an account of a secret affair",
+      "a story of fame and fortune",
+      "words from behind the scenes"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Yes Please",
+    "category": "thing",
+    "polysemy_triggers": [
+      "memoir",
+      "comedy",
+      "tina fey"
+    ],
+    "clue_associations": [
+      "a story of laughter and tears",
+      "an account of a life in comedy",
+      "words from the queen of funny"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Long Walk to Freedom",
+    "category": "thing",
+    "polysemy_triggers": [
+      "autobiography",
+      "biography",
+      "south african"
+    ],
+    "clue_associations": [
+      "a story of struggle and triumph",
+      "an account of a life under apartheid",
+      "words from the former president"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Me",
+    "category": "thing",
+    "polysemy_triggers": [
+      "memoir",
+      "autobiography",
+      "elton john"
+    ],
+    "clue_associations": [
+      "a story of love and loss",
+      "an account of a life in music",
+      "words from the Rocket Man"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Bossypants",
+    "category": "thing",
+    "polysemy_triggers": [
+      "memoir",
+      "comedy",
+      "tina fey"
+    ],
+    "clue_associations": [
+      "a story of laughter and tears",
+      "an account of a life in comedy",
+      "words from the queen of funny"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "I Know Why the Caged Bird Sings",
+    "category": "thing",
+    "polysemy_triggers": [
+      "autobiography",
+      "memoir",
+      "poetry"
+    ],
+    "clue_associations": [
+      "a story of struggle and triumph",
+      "an account of a life under oppression",
+      "words from behind bars"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Just Kids",
+    "category": "thing",
+    "polysemy_triggers": [
+      "memoir",
+      "autobiography",
+      "art"
+    ],
+    "clue_associations": [
+      "a story of love and loss",
+      "an account of a life in art",
+      "words from the streets of new york"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Year of Magical Thinking",
+    "category": "thing",
+    "polysemy_triggers": [
+      "memoir",
+      "autobiography",
+      "grief"
+    ],
+    "clue_associations": [
+      "a story of love and loss",
+      "an account of a life in grief",
+      "words from the depths of sorrow"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "New York Yankees",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Bronx Bombers",
+      "Pinstripes",
+      "Yankee Stadium"
+    ],
+    "clue_associations": [
+      "Legendary baseball team of the North East",
+      "Iconic symbol of American sports",
+      "29 World Series Championships"
+    ],
+    "aliases": [
+      "The Yanks",
+      "Pinstripe Pride"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Green Bay Packers",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Cheeseheads",
+      "Frozen Tundra",
+      "Titletown"
+    ],
+    "clue_associations": [
+      "Small market team with massive following",
+      "Most valued sports franchise in the world",
+      "4 Super Bowl victories since 1960s"
+    ],
+    "aliases": [
+      "The Pack"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Boston Red Sox",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Fenway Franchise",
+      "America's Oldest Professional Sports Team",
+      "Curse of the Bambino"
+    ],
+    "clue_associations": [
+      "Team that broke the Curse in 2004",
+      "Iconic ballpark with a manual scoreboard",
+      "Red Sox Nation extends beyond New England"
+    ],
+    "aliases": [
+      "The Sox"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Los Angeles Lakers",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Lake Show",
+      "Purple and Gold",
+      "Showtime"
+    ],
+    "clue_associations": [
+      "17 NBA Championships since 1940s",
+      "Home to basketball legends like Kareem and Kobe",
+      "The Staples Center is their home court"
+    ],
+    "aliases": [
+      "The Lakesters"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Manchester United",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Red Devils",
+      "Old Trafford",
+      "Cristiano Ronaldo's Former Team"
+    ],
+    "clue_associations": [
+      "20 League and 3 European Cup titles since 1960s",
+      "One of the most valuable sports teams in the world",
+      "Sir Alex Ferguson was a legendary manager"
+    ],
+    "aliases": [
+      "The Reds"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Dallas Cowboys",
+    "category": "thing",
+    "polysemy_triggers": [
+      "America's Team",
+      "Stadium in Big D",
+      "Cowboys Hat"
+    ],
+    "clue_associations": [
+      "5 Super Bowl wins and 8 Conference Championships",
+      "Iconic blue and white jersey design",
+      "Texas Stadium was their home from 1971-2009"
+    ],
+    "aliases": [
+      "The Boys"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Bayern Munich",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Red Shorts",
+      "Allianz Arena",
+      "Jupp Heynckes' Former Team"
+    ],
+    "clue_associations": [
+      "29 Bundesliga and 5 European Cup titles since 1960s",
+      "Most successful team in German football history",
+      "Franz Beckenbauer and Gerd Muller played for the club"
+    ],
+    "aliases": [
+      "Die Roten"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "San Francisco 49ers",
+    "category": "thing",
+    "polysemy_triggers": [
+      "The Niner Empire",
+      "Levi's Stadium",
+      "Joe Montana's Team"
+    ],
+    "clue_associations": [
+      "5 Super Bowl wins and 6 Conference Championships since 1980s",
+      "Red and gold colors are iconic in the NFL",
+      "From Candlestick to Levi's, they've had two home stadiums"
+    ],
+    "aliases": [
+      "The Niners"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Liverpool FC",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Anfield Legacy",
+      "Jurgen Klopp's Former Team",
+      "You'll Never Walk Alone"
+    ],
+    "clue_associations": [
+      "18 League and 6 European Cup titles since 1960s",
+      "One of the most successful teams in English football history",
+      "Bill Shankly was a legendary manager"
+    ],
+    "aliases": [
+      "The Reds"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Pittsburgh Steelers",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Steel Curtain",
+      "Black and Gold",
+      "Heinz Field"
+    ],
+    "clue_associations": [
+      "6 Super Bowl wins and 17 Conference Championships since 1970s",
+      "Iconic players like Terry Bradshaw and Joe Greene played for the team",
+      "From Three Rivers to Heinz, they've had two home stadiums"
+    ],
+    "aliases": [
+      "The Steel City Boys"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Rawlings",
+    "category": "thing",
+    "polysemy_triggers": [
+      "st. louis baseball",
+      "hardwood bats",
+      "spring training gear"
+    ],
+    "clue_associations": [
+      "equipment for professional baseball players",
+      "company founded in 1887",
+      "known for gloves and batting helmets"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Wilson",
+    "category": "thing",
+    "polysemy_triggers": [
+      "inflatable footballs",
+      "official balls",
+      "tennis racket strings"
+    ],
+    "clue_associations": [
+      "company founded in 1913",
+      "supplies equipment for various sports",
+      "known for volleyballs and basketballs"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Cobra Puma",
+    "category": "thing",
+    "polysemy_triggers": [
+      "golf clubs with snakes",
+      "puma shoes on feet",
+      "athletic wear with logos"
+    ],
+    "clue_associations": [
+      "equipment for professional golfers",
+      "known for golf clubs and apparel",
+      "merged company with Puma brand"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Easton",
+    "category": "thing",
+    "polysemy_triggers": [
+      "hockey sticks with logos",
+      "archery equipment suppliers",
+      "baseball bat makers"
+    ],
+    "clue_associations": [
+      "company founded in 1922",
+      "known for hockey and baseball gear",
+      "also produces archery products"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Under Armour",
+    "category": "thing",
+    "polysemy_triggers": [
+      "armour for athletes",
+      "heatgear sweat management",
+      "rapid motion logo"
+    ],
+    "clue_associations": [
+      "popular among football players",
+      "known for moisture-wicking apparel",
+      "company founded in 1996"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Wilson Pro Staff",
+    "category": "thing",
+    "polysemy_triggers": [
+      "racket with logo",
+      "tennis equipment suppliers",
+      "athletic wear for pros"
+    ],
+    "clue_associations": [
+      "known for high-end tennis gear",
+      "company founded in 1913",
+      "popular among professional tennis players"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Mizuno",
+    "category": "thing",
+    "polysemy_triggers": [
+      "japanese golf club makers",
+      "running shoes with wave logo",
+      "athletic wear suppliers"
+    ],
+    "clue_associations": [
+      "known for high-quality golf clubs and shoes",
+      "company founded in 1906",
+      "popular among runners and golfers"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Bruce Lee's Style",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Jeet Kune Do",
+      "Wing Chun",
+      "Kung Fu Master"
+    ],
+    "clue_associations": [
+      "Combination of water and oil",
+      " Empty cup, full mind",
+      "Silent wing attacks"
+    ],
+    "aliases": [
+      "Lee's art",
+      "Hybrid style"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Aikido Style",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Circle walk",
+      "Soft power",
+      "Harmony flow"
+    ],
+    "clue_associations": [
+      "Roll with the punch",
+      "Turning water to stone",
+      " Inner peace through movement"
+    ],
+    "aliases": [
+      "Gracious art",
+      "Divine path"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Muay Thai Style",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Eight points of contact",
+      "Art of eight limbs",
+      "Bangkok boxing"
+    ],
+    "clue_associations": [
+      "Fists, feet, and elbows combine",
+      "Knockout punch from the gods",
+      "Stance like a tiger's claw"
+    ],
+    "aliases": [
+      "Thai clinch",
+      "Stand-up art"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Kata Style",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Pre-arranged pattern",
+      "Formed movement",
+      "Karate form"
+    ],
+    "clue_associations": [
+      "Pretended attack, real defense",
+      "Flowing water through stone",
+      "Spiritual focus in motion"
+    ],
+    "aliases": [
+      "Pattern drill",
+      "Empty set"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Jujutsu Style",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Gentle art",
+      "Throwing technique",
+      "Japanese grappling"
+    ],
+    "clue_associations": [
+      "Soft as a feather, hard as steel",
+      "Twist of fate in the air",
+      " Gentle breeze that knocks down trees"
+    ],
+    "aliases": [
+      "Soft power style",
+      "Ground fighting"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Taekwondo Style",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Korean kicking art",
+      "Fist and foot style",
+      "Roundhouse king"
+    ],
+    "clue_associations": [
+      "Lightning speed, thunderous kick",
+      "Five elements in perfect harmony",
+      "Breaking board with precision"
+    ],
+    "aliases": [
+      "Color belt discipline",
+      "Korean way"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Ninjutsu Style",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Stealthy art",
+      "Shadow technique",
+      "Japanese ninja fighting"
+    ],
+    "clue_associations": [
+      "Silent as a ghost, swift as a snake",
+      "Smoke and mirrors deception",
+      "Escape artist in the night"
+    ],
+    "aliases": [
+      "Shadow walk",
+      "Ghostly art"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Judo Style",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Gentle way",
+      "Throwing technique",
+      "Japanese grappling art"
+    ],
+    "clue_associations": [
+      "Soft and strong like a feather",
+      "Twist of fate in the air",
+      " Gentle breeze that knocks down trees"
+    ],
+    "aliases": [
+      "Ground fighting style",
+      "Soft power art"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Kung Fu Style",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Martial arts legend",
+      "Traditional Chinese boxing",
+      "Wu shu"
+    ],
+    "clue_associations": [
+      "Dragon's roar, tiger's claw",
+      "Five elements in perfect harmony",
+      "Combination of hard and soft styles"
+    ],
+    "aliases": [
+      "Chinese martial art",
+      "Shaolin kung fu"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Capoeira Style",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Brazilian martial art",
+      "African dance",
+      "Acrobatic kicks"
+    ],
+    "clue_associations": [
+      "Music and movement in harmony",
+      "Flower that blooms in the night",
+      "Twist of fate in the air"
+    ],
+    "aliases": [
+      "Cultural fusion style",
+      "African-Brazilian martial art"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Felix Baumgartner",
+    "category": "person",
+    "polysemy_triggers": [
+      "Red Bull",
+      "Space Jump",
+      "Skydiver"
+    ],
+    "clue_associations": [
+      "Record holder for highest free fall jump",
+      "Jumped from edge of space",
+      "Breaks sound barrier"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "X Games",
+    "category": "event",
+    "polysemy_triggers": [
+      "Extreme Sports",
+      "Olympic Trials",
+      "Action Sports"
+    ],
+    "clue_associations": [
+      "Multi-sport event with big air competitions",
+      "Showcases thrilling stunts and tricks",
+      "Annual gathering of action sports athletes"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Big Wave Surfing",
+    "category": "sport",
+    "polysemy_triggers": [
+      "Huge Waves",
+      "Ocean Sports",
+      "Ridiculously Tall Surfs"
+    ],
+    "clue_associations": [
+      "Competitors ride enormous ocean waves",
+      "Thrilling sport for those with skills and luck",
+      "Dangerous pastime that requires perfect timing"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Bungee Jumping",
+    "category": "activity",
+    "polysemy_triggers": [
+      "Tied Jumper",
+      "Rope Sports",
+      "Leaping Humans"
+    ],
+    "clue_associations": [
+      "Thrill-seekers jump from great heights with elastic cord",
+      "Extreme activity that's both terrifying and exhilarating",
+      "Jump while attached to bungee cords"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Teton Gravity Research",
+    "category": "film production company",
+    "polysemy_triggers": [
+      "Mountain Movies",
+      "Action Film Makers",
+      "Thrilling Movie Producers"
+    ],
+    "clue_associations": [
+      "Produces visually stunning extreme sports films",
+      "Showcases breathtaking mountain landscapes and stunts",
+      "Documentary-style filmmaking with an adrenaline rush"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Dean Potter",
+    "category": "person",
+    "polysemy_triggers": [
+      "Rock Climber",
+      "American Adventurer",
+      "Death-Defying Athlete"
+    ],
+    "clue_associations": [
+      "Pioneering climber and base jumper known for bold stunts",
+      "Risked life to explore new climbing routes",
+      "Inspired generation of climbers with his fearless spirit"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Freestyle Motocross",
+    "category": "sport",
+    "polysemy_triggers": [
+      "Motorcycle Sports",
+      "Action Stunts",
+      "Crazy Bike Tricks"
+    ],
+    "clue_associations": [
+      "Competitors perform aerial stunts on motorcycles",
+      "Thrilling sport that combines speed and agility",
+      "High-risk activity with elaborate jumps and tricks"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Red Bull Cliff Diving",
+    "category": "event",
+    "polysemy_triggers": [
+      "Cliff Jumping",
+      "Diving Competitions",
+      "Thrilling Sports Events"
+    ],
+    "clue_associations": [
+      "Athletes leap from great heights into water below",
+      "Annual competition where divers push limits of human acrobatics",
+      "Event that combines skill, style, and raw fearlessness"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Mark Burnett",
+    "category": "person",
+    "polysemy_triggers": [
+      "Producer TV Shows",
+      "Mountain Climber TV Hosts",
+      "Adventure Sports Filmmakers"
+    ],
+    "clue_associations": [
+      "Creator of reality TV shows like Survivor and The Apprentice",
+      "Film producer known for extreme sports documentaries",
+      "TV personality who explores nature's extremes with cameras in tow"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Big Air",
+    "category": "event",
+    "polysemy_triggers": [
+      "Airborne Sports",
+      "High Flying Tricks",
+      "Action Sport Competitions"
+    ],
+    "clue_associations": [
+      "Event that showcases aerial stunts and tricks in snowboarding or skiing",
+      "High-flying competition where athletes push limits of speed and agility",
+      "Thrilling event with a focus on airborne stunts and acrobatics"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "PNC Park",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Pittsburgh Pirates",
+      "Three Rivers Ballpark",
+      "Navy City"
+    ],
+    "clue_associations": [
+      "Home of the majestic views of Pittsburgh skyline",
+      " Site of historic comeback wins by the Buccos",
+      "Beautiful natural surroundings and park design"
+    ],
+    "aliases": [
+      "The Park Along the River"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Angel Stadium",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Los Angeles Angels",
+      "Anaheim Ballpark",
+      "Left Field Power Alley"
+    ],
+    "clue_associations": [
+      "Famous for its iconic scoreboard and light system",
+      "Home of legendary Hall of Famer Nolan Ryan",
+      "Historic Big A Stadium"
+    ],
+    "aliases": [
+      "The Big A"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Busch Stadium",
+    "category": "thing",
+    "polysemy_triggers": [
+      "St. Louis Cardinals",
+      "Gateway City Ballpark",
+      "Cardinal Nation"
+    ],
+    "clue_associations": [
+      "Home of iconic Gateway Arch views",
+      "Famous for its retro-style design and classic ballparks feel",
+      " Site of historic World Series wins"
+    ],
+    "aliases": [
+      "The New Busch"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Coors Field",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Colorado Rockies",
+      "Mile High Ballpark",
+      "Rocky Mountains"
+    ],
+    "clue_associations": [
+      "Famous for its stunning mountain views and weather",
+      "Home of legendary mascot Dinger the Eagle",
+      " Site of historic games in thin air"
+    ],
+    "aliases": [
+      "The Rockpile"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Minute Maid Park",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Houston Astros",
+      "Astrodome's Replacement",
+      "Train Station Ballpark"
+    ],
+    "clue_associations": [
+      "Home of famous Crawford Boxes and retractable roof",
+      " Site of historic walk-off wins by the 'Stros",
+      " Unique train station-inspired design"
+    ],
+    "aliases": [
+      "The Juice Box"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Oriole Park at Camden Yards",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Baltimore Orioles",
+      "Camden Ballpark",
+      "Retro Ballparks"
+    ],
+    "clue_associations": [
+      "Pioneering design for modern ballparks and retro-style feel",
+      "Famous for its views of Baltimore cityscape and Eutaw Street",
+      " Site of historic wins by the O's"
+    ],
+    "aliases": [
+      "The Yard"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Porsche 911",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Ninety One",
+      "Porsche Icon",
+      "German Sports Car"
+    ],
+    "clue_associations": [
+      "Built with precision and passion",
+      "A two-seater with a storied past",
+      "Unmatched speed on the open road"
+    ],
+    "aliases": [
+      "911 Turbo",
+      " Carrera"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Ferrari Enzo",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Enigmatic Italian Speedster",
+      "Ferrari Legacy",
+      "Named for a legend"
+    ],
+    "clue_associations": [
+      "A tribute to the great engineer",
+      "Built with an air of exclusivity",
+      "The most exotic of supercars"
+    ],
+    "aliases": [
+      "Enzo Ferrari's Dream Car"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Lamborghini Miura",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Miura Bullfighter",
+      "Countach Inspiration",
+      "Spanish Stallion of Speed"
+    ],
+    "clue_associations": [
+      "An iconic wedge design",
+      "Named after a noble creature",
+      "Revolutionizing style and performance"
+    ],
+    "aliases": [
+      "1966 Lamborghini Miura"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Aston Martin DB5",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Bond's Ride",
+      "British Grand Tourer",
+      "Elegance on Wheels"
+    ],
+    "clue_associations": [
+      "James Bond's most iconic vehicle",
+      "An epitome of British motoring heritage",
+      "A symbol of sophistication and luxury"
+    ],
+    "aliases": [
+      "DB5 James Bond Car"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Ferrari F40",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Fast Forty",
+      "F40 Italian Stallion",
+      "Enzo's Enduring Legacy"
+    ],
+    "clue_associations": [
+      "A tribute to Enzo Ferrari's vision",
+      "The fastest production car of its time",
+      "Named for its 40th anniversary"
+    ],
+    "aliases": [
+      "1987 Ferrari F40"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Porsche Boxster",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Open Top Thrill",
+      "German Convertible Icon",
+      "Two-Seater Fun on Wheels"
+    ],
+    "clue_associations": [
+      "An entry-level Porsche with attitude",
+      "Convertible driving at its finest",
+      "Named for the rear-mounted engine"
+    ],
+    "aliases": [
+      "Boxster Roadster"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Lamborghini Aventador",
+    "category": "thing",
+    "polysemy_triggers": [
+      "LP700-4 Supercar",
+      "Countach Successor",
+      "V12 Beast on Wheels"
+    ],
+    "clue_associations": [
+      "Named after a fierce bullfighter",
+      "An epitome of modern Lamborghini design",
+      "A fusion of style and raw power"
+    ],
+    "aliases": [
+      "Lamborghini Aventador SV"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Ferrari 250 GTO",
+    "category": "thing",
+    "polysemy_triggers": [
+      "GTO Legend",
+      "Ferrari's Greatest",
+      "Classic Italian Beauty"
+    ],
+    "clue_associations": [
+      "A racing icon from the '60s",
+      "One of the rarest and most valuable cars ever made",
+      "Named for its victories in endurance racing"
+    ],
+    "aliases": [
+      "1962 Ferrari 250 GTO"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "McLaren F1",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Mclaren's Masterpiece",
+      "F1 Supercar",
+      "The most exclusive of supercars"
+    ],
+    "clue_associations": [
+      "A road-going version of the Formula One car",
+      "Unmatched acceleration and handling",
+      "Built with an air of exclusivity"
+    ],
+    "aliases": [
+      "McLaren F1 LM"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Ferrari Testa Rossa",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Rossi's Redhead",
+      "Red Squirrel",
+      "Italian Horse on Wheels"
+    ],
+    "clue_associations": [
+      "A legendary racing car with a unique design",
+      "Named after the famous Italian cyclist",
+      "One of the most beautiful and iconic Ferrari models ever made"
+    ],
+    "aliases": [
+      "1956 Ferrari 250 Testa Rossa"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Indianapolis 500",
+    "category": "thing",
+    "polysemy_triggers": [
+      "indy car",
+      "500 mile race",
+      "motor racing"
+    ],
+    "clue_associations": [
+      "the Brickyard",
+      "open-wheel excitement",
+      "one-lap showdown"
+    ],
+    "aliases": [
+      "Indy 500"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Formula One World Championship",
+    "category": "thing",
+    "polysemy_triggers": [
+      "F1 championship",
+      "formula one title",
+      "auto racing series"
+    ],
+    "clue_associations": [
+      "top-tier motorsport",
+      "red bull rivalry",
+      "Mercedes dominance"
+    ],
+    "aliases": [
+      "F1"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Monaco Grand Prix",
+    "category": "thing",
+    "polysemy_triggers": [
+      "monaco racing",
+      "formula one in monaco",
+      "street circuit"
+    ],
+    "clue_associations": [
+      "circuit de monte-carlo",
+      "rainy day drama",
+      "historic grand prix"
+    ],
+    "aliases": [
+      "Monaco GP"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "24 Hours of Le Mans",
+    "category": "thing",
+    "polysemy_triggers": [
+      "le mans racing",
+      "endurance event",
+      "long distance driving"
+    ],
+    "clue_associations": [
+      "la sarthe circuit",
+      "ferrari vs porsche",
+      "overnight competition"
+    ],
+    "aliases": [
+      "Le Mans"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Targa Florio",
+    "category": "thing",
+    "polysemy_triggers": [
+      "targa racing",
+      "scooter rally",
+      "mountain drive"
+    ],
+    "clue_associations": [
+      "madonie mountains course",
+      "Italian motorsport history",
+      "pre-war racing"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Mille Miglia",
+    "category": "thing",
+    "polysemy_triggers": [
+      "miglia racing",
+      "italian road rally",
+      "speed limits ignored"
+    ],
+    "clue_associations": [
+      "bressanone to roma",
+      "vintage car event",
+      "oldtimer driving"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Carrera Panamericana",
+    "category": "thing",
+    "polysemy_triggers": [
+      "panamericana racing",
+      "latin american rally",
+      "long distance drive"
+    ],
+    "clue_associations": [
+      "mexico to chile route",
+      "oldtimer driving event",
+      "pre-war car competition"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Giro d'Italia",
+    "category": "thing",
+    "polysemy_triggers": [
+      "giovanni brignole",
+      "italian grand tour",
+      "professional cycling"
+    ],
+    "clue_associations": [
+      "stage racing in italy",
+      "mountain passes conquered",
+      "pink jersey competition"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "24 Hours of Spa",
+    "category": "thing",
+    "polysemy_triggers": [
+      "spa racing",
+      "beaux arts circuit",
+      "endurance event belgium"
+    ],
+    "clue_associations": [
+      "touring cars on spa-francorchamps",
+      "rainy day drama",
+      "laurent sturle sebastiani"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Oklahoma!",
+    "category": "musical",
+    "polysemy_triggers": [
+      "rodeos",
+      "prairie",
+      "dance scene"
+    ],
+    "clue_associations": [
+      "Classic Rodgers and Hammerstein tale",
+      "Cowboy romance on stage",
+      "Set in the American West"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Phantom of the Opera",
+    "category": "musical",
+    "polysemy_triggers": [
+      "mask",
+      "opera house",
+      "love triangle"
+    ],
+    "clue_associations": [
+      "Gothic romance with a musical twist",
+      "Haunted love story from Paris",
+      "Eternal and enduring tale"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "My Fair Lady",
+    "category": "musical",
+    "polysemy_triggers": [
+      "professor",
+      "flower girl",
+      "social class"
+    ],
+    "clue_associations": [
+      "Pygmalion's lesson in social status",
+      "Elegant and refined tale of transformation",
+      "Linguistic wit on the London stage"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "West Side Story",
+    "category": "musical",
+    "polysemy_triggers": [
+      "gangs",
+      "ballet",
+      "love hate"
+    ],
+    "clue_associations": [
+      "Shakespearean classic in modern dance attire",
+      "Street violence and romance on the streets of New York",
+      "Timeless tale of love amidst conflict"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Les Misérables",
+    "category": "musical",
+    "polysemy_triggers": [
+      "revolution",
+      "prisoners",
+      "love triangle"
+    ],
+    "clue_associations": [
+      "Epic tale of redemption and struggle for justice",
+      "Set in 19th century France amidst the June Rebellion",
+      "Love, loss, and longing on the French streets"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Grease",
+    "category": "musical",
+    "polysemy_triggers": [
+      "high school",
+      "greasers",
+      "romance song"
+    ],
+    "clue_associations": [
+      "Sunny days, sweepin' the clouds away in this iconic tale",
+      "Rock and roll romance amidst the 1950s American high school scene",
+      "Teenage love, laughter, and heartbreak on stage"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "A Chorus Line",
+    "category": "musical",
+    "polysemy_triggers": [
+      "dance audition",
+      "backstage",
+      "showstopping number"
+    ],
+    "clue_associations": [
+      "Theatre magic revealed through the lives of performers",
+      "Candid and unflinching look at show business",
+      "Moving behind-the-scenes story of dreams and struggles"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Sweeney Todd: The Demon Barber of Fleet Street",
+    "category": "musical",
+    "polysemy_triggers": [
+      "barber shop",
+      "murder plot",
+      "bloodlust"
+    ],
+    "clue_associations": [
+      "Dark and twisted tale of revenge and horror",
+      "Set in Victorian London amidst a barber's bloody vendetta",
+      "Infamous and haunting musical from the master of dark comedy"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "La Bohème",
+    "category": "opera",
+    "polysemy_triggers": [
+      "Puccini",
+      "Bohemia",
+      "Love Song"
+    ],
+    "clue_associations": [
+      "Italian composer's masterpiece of wretched love",
+      "Famous opera about artists in Paris",
+      "Tragic tale of young lovers dying"
+    ],
+    "aliases": [
+      "Bohème, La"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Carmen",
+    "category": "opera",
+    "polysemy_triggers": [
+      "Spanish Dancer",
+      "Gypsy Woman",
+      "Lovers Fate"
+    ],
+    "clue_associations": [
+      "Bordello songstress with a fatal allure",
+      "Opera about jealousy and revenge in Seville",
+      "Temptress who drives men to madness"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Madama Butterfly",
+    "category": "opera",
+    "polysemy_triggers": [
+      "Japanese Girl",
+      "Love Triangle",
+      "Westerner's Mistake"
+    ],
+    "clue_associations": [
+      "Tragic tale of an Asian woman's doomed love for an American naval officer",
+      "Opera about cultural clash and heartbreak",
+      "Cruel fate that befalls a naive geisha"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Tosca",
+    "category": "opera",
+    "polysemy_triggers": [
+      "Italian Soprano",
+      "Police Chief's Obsession",
+      "Artist's Sacrifice"
+    ],
+    "clue_associations": [
+      "Opera about a famous soprano and her artist lover's struggle against the corrupt police chief",
+      "Tragic tale of love, betrayal, and redemption in Rome",
+      "Cruel fate that befalls an innocent woman in 19th century Italy"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Rigoletto",
+    "category": "opera",
+    "polysemy_triggers": [
+      "Duke's Jester",
+      "Maiden's Sacrifice",
+      "Royal Family Secret"
+    ],
+    "clue_associations": [
+      "Opera about a hunchbacked jester who seeks revenge for his daughter's honor",
+      "Tragic tale of love, betrayal, and deceit in 16th century Italy",
+      "Famous opera that features the famous aria 'La donna è mobile'"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Don Giovanni",
+    "category": "opera",
+    "polysemy_triggers": [
+      "Spanish Nobleman",
+      "Liberine's Demise",
+      "Moral Lesson"
+    ],
+    "clue_associations": [
+      "Opera about a charming but morally bankrupt nobleman who seduces and murders his way through Europe",
+      "Tragic tale of love, revenge, and redemption in 16th century Italy",
+      "Famous opera that features the famous aria 'Commendatore'"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Aida",
+    "category": "opera",
+    "polysemy_triggers": [
+      "Egyptian Princess",
+      "Love Triangle",
+      "Royal Sacrifice"
+    ],
+    "clue_associations": [
+      "Opera about an Egyptian princess who falls in love with a Nubian prince, forbidden by law and social custom",
+      "Tragic tale of love, betrayal, and sacrifice in ancient Egypt",
+      "Famous opera that features the famous aria 'Nessun dorma'"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Faust",
+    "category": "opera",
+    "polysemy_triggers": [
+      "German Alchemist",
+      "Deal with Devil",
+      "Love and Death"
+    ],
+    "clue_associations": [
+      "Opera about a scholar who sells his soul to the devil in exchange for knowledge and power",
+      "Tragic tale of love, temptation, and redemption in medieval Europe",
+      "Famous opera that features the famous aria 'Mephistopheles' chorus'"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Otello",
+    "category": "opera",
+    "polysemy_triggers": [
+      "Venetian General",
+      "Jealousy's Fury",
+      "Tragic Hero"
+    ],
+    "clue_associations": [
+      "Opera about a Moorish general who becomes the victim of his own jealousy and paranoia",
+      "Tragic tale of love, betrayal, and redemption in 16th century Italy",
+      "Famous opera that features the famous aria 'Ave Maria'"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Norma",
+    "category": "opera",
+    "polysemy_triggers": [
+      "Sicilian Nun",
+      "Love Affair",
+      "Vengeful Mother"
+    ],
+    "clue_associations": [
+      "Opera about a Norman nun who falls in love with a Roman officer and seeks revenge against the man she loves",
+      "Tragic tale of love, betrayal, and sacrifice in 5th century Italy",
+      "Famous opera that features the famous aria 'Casta Diva'"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Swan Lake",
+    "category": "thing",
+    "polysemy_triggers": [
+      "ballet classic",
+      "tchaikovsky's masterpiece",
+      "swan dance"
+    ],
+    "clue_associations": [
+      "a tale of love and betrayal",
+      "a ballet with a timeless score",
+      "a classic performance staple"
+    ],
+    "aliases": [
+      "Tchaikovsky's Swan Lake"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Giselle",
+    "category": "thing",
+    "polysemy_triggers": [
+      "romantic ballet",
+      "lovely maiden",
+      "village girl"
+    ],
+    "clue_associations": [
+      "a tale of love and heartbreak",
+      "a ballet with a haunting score",
+      "a performance staple for ballerinas"
+    ],
+    "aliases": [
+      "Giselle Ballet"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Nutcracker",
+    "category": "thing",
+    "polysemy_triggers": [
+      "holiday classic",
+      "tchaikovsky's treat",
+      "sugar plum fairy"
+    ],
+    "clue_associations": [
+      "a ballet with a magical score",
+      "a performance staple for families",
+      "a tale of wonder and enchantment"
+    ],
+    "aliases": [
+      "The Nutcracker Ballet"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "La Sylphide",
+    "category": "thing",
+    "polysemy_triggers": [
+      "romantic ballet",
+      "fey dance",
+      "sylphid charm"
+    ],
+    "clue_associations": [
+      "a tale of love and loss",
+      "a ballet with a haunting score",
+      "a performance staple for ballerinas"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Firebird",
+    "category": "thing",
+    "polysemy_triggers": [
+      "ballet spectacular",
+      "fiery dance",
+      "bird of prey"
+    ],
+    "clue_associations": [
+      "a tale of magic and wonder",
+      "a ballet with a soaring score",
+      "a performance staple for orchestras"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Romeo and Juliet",
+    "category": "thing",
+    "polysemy_triggers": [
+      "shakespearean classic",
+      "tragic love story",
+      "star-crossed lovers"
+    ],
+    "clue_associations": [
+      "a tale of love and heartbreak",
+      "a ballet with a timeless score",
+      "a performance staple for companies"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Sleeping Beauty",
+    "category": "thing",
+    "polysemy_triggers": [
+      "fairytale classic",
+      "princess's tale",
+      "sleeping beauty"
+    ],
+    "clue_associations": [
+      "a ballet with a magical score",
+      "a performance staple for families",
+      "a tale of wonder and enchantment"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Don Quixote",
+    "category": "thing",
+    "polysemy_triggers": [
+      "comical ballet",
+      "cervantes' classic",
+      "madman's quest"
+    ],
+    "clue_associations": [
+      "a tale of love and chivalry",
+      "a ballet with a lighthearted score",
+      "a performance staple for companies"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Coppélia",
+    "category": "thing",
+    "polysemy_triggers": [
+      "comical ballet",
+      "dancing doll",
+      "fanciful tale"
+    ],
+    "clue_associations": [
+      "a ballet with a lighthearted score",
+      "a performance staple for families",
+      "a tale of love and mischief"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Flying Wallendas",
+    "category": "thing",
+    "polysemy_triggers": [
+      "high wire act",
+      "death defying stunt",
+      "family tradition"
+    ],
+    "clue_associations": [
+      "balance of fate",
+      "heightened sense of danger",
+      "narrow margin for error"
+    ],
+    "aliases": [
+      "The Wallendas"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Cirque du Soleil",
+    "category": "thing",
+    "polysemy_triggers": [
+      "big top show",
+      "acrobatic feats",
+      "multinational troupe"
+    ],
+    "clue_associations": [
+      "tent of wonder",
+      "high flying spectacle",
+      "worlds apart from others"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Trick Roping",
+    "category": "thing",
+    "polysemy_triggers": [
+      "rope tricks",
+      "fast footwork",
+      "western circus act"
+    ],
+    "clue_associations": [
+      "lassoing skills",
+      "quick draw expertise",
+      "whirlwind of movement"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Flying Cirkus",
+    "category": "thing",
+    "polysemy_triggers": [
+      "aerial stunts",
+      "death defying leaps",
+      "european circus act"
+    ],
+    "clue_associations": [
+      "thrilling displays of skill",
+      "fearless flyers in the air",
+      "no net below them"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Trapeze Artists",
+    "category": "thing",
+    "polysemy_triggers": [
+      "swinging high above ground",
+      "high flying skills",
+      "precise timing required"
+    ],
+    "clue_associations": [
+      "artists of the air",
+      "thrilling aerial stunts",
+      "balance and control needed"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Jugglers",
+    "category": "thing",
+    "polysemy_triggers": [
+      "multiple objects in mid air",
+      "quick reflexes required",
+      "circus entertainment staple"
+    ],
+    "clue_associations": [
+      "balancing act with balls",
+      "objects flying through the air",
+      "precision and timing essential"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Acrobats",
+    "category": "thing",
+    "polysemy_triggers": [
+      "flexibility and strength required",
+      "high flying stunts",
+      "balance and precision needed"
+    ],
+    "clue_associations": [
+      "athletes of the circus ring",
+      "human pyramids and flips",
+      "bending and twisting skills"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Clown Cars",
+    "category": "thing",
+    "polysemy_triggers": [
+      "miniature vehicles",
+      "multiple clowns in a small space",
+      "circus magic illusions"
+    ],
+    "clue_associations": [
+      "shrinking cars and laughing clowns",
+      "squeezing into tiny spaces",
+      "amazing feats of illusion"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The High Wire Walker",
+    "category": "thing",
+    "polysemy_triggers": [
+      "thin wire above ground",
+      "death defying stunts",
+      "balance and focus required"
+    ],
+    "clue_associations": [
+      "balancing on a thin line",
+      "narrow margin for error",
+      "fearless walkers on high wires"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Strongmen",
+    "category": "thing",
+    "polysemy_triggers": [
+      "overcoming physical limits",
+      "lifting heavy weights",
+      "circus acts of strength"
+    ],
+    "clue_associations": [
+      "man of steel on display",
+      "picking up massive loads",
+      "human feats of incredible strength"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Waltz",
+    "category": "thing",
+    "polysemy_triggers": [
+      "slow dance",
+      "European rhythm",
+      "classical step"
+    ],
+    "clue_associations": [
+      "a royal ballroom staple",
+      "smooth, elegant movement",
+      "three-time tempo"
+    ],
+    "aliases": [
+      "Waltzer"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Tap Dance",
+    "category": "thing",
+    "polysemy_triggers": [
+      "shoe tapping",
+      "musical percussion",
+      "heel work"
+    ],
+    "clue_associations": [
+      "stomping out the beat",
+      "rhythmic footwork",
+      "legwork, headwork"
+    ],
+    "aliases": [
+      "Taps"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Kabuki",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Japanese drama",
+      "noble theater",
+      "stylized movement"
+    ],
+    "clue_associations": [
+      "high-energy performance art",
+      "dramatic arm gestures",
+      "flamboyant facial expressions"
+    ],
+    "aliases": [
+      "Kabuki Theater"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Hustle",
+    "category": "thing",
+    "polysemy_triggers": [
+      "disco dance",
+      "partner routine",
+      "street style"
+    ],
+    "clue_associations": [
+      "fast-paced, energetic partner dance",
+      "popular in the 1970s",
+      "lively, carefree movement"
+    ],
+    "aliases": [
+      "Hustler"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Tango",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Argentine passion",
+      "dark, seductive rhythm",
+      "strong connection"
+    ],
+    "clue_associations": [
+      "intense, dramatic movement",
+      "powerful leg work",
+      "dramatic dips and turns"
+    ],
+    "aliases": [
+      "Tango Argentino"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Contemporary",
+    "category": "thing",
+    "polysemy_triggers": [
+      "modern expression",
+      "abstract movement",
+      "free-flowing style"
+    ],
+    "clue_associations": [
+      "fusion of styles, techniques",
+      "interpretive, narrative-driven",
+      "expressive body language"
+    ],
+    "aliases": [
+      "Contemps"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Swing Dance",
+    "category": "thing",
+    "polysemy_triggers": [
+      "jazz rhythm",
+      "big band energy",
+      "lively kicks"
+    ],
+    "clue_associations": [
+      "upbeat, carefree movement",
+      "popular in the 1930s-1940s",
+      "partner dance with a swing"
+    ],
+    "aliases": [
+      "The Lindy Hop"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Salsa",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Latin rhythm",
+      "rapid-fire footwork",
+      "energetic movement"
+    ],
+    "clue_associations": [
+      "fast-paced, dynamic partner dance",
+      "high-energy hip movements",
+      "complex rhythmic patterns"
+    ],
+    "aliases": [
+      "Salsa Rueda"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Ballet",
+    "category": "thing",
+    "polysemy_triggers": [
+      "classical technique",
+      "pointe work",
+      "graceful movement"
+    ],
+    "clue_associations": [
+      "elegant, refined dance form",
+      "focus on musicality and expression",
+      "demanding physical discipline"
+    ],
+    "aliases": [
+      "The Ballet"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Hip-Hop",
+    "category": "thing",
+    "polysemy_triggers": [
+      "urban style",
+      "breakdancing moves",
+      "rhythmic isolation"
+    ],
+    "clue_associations": [
+      "high-energy, athletic dance form",
+      "street dance with a competitive edge",
+      "expressive body language and movement"
+    ],
+    "aliases": [
+      "B-Boy"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Fauvism",
+    "category": "art movement",
+    "polysemy_triggers": [
+      "wild colors",
+      "emotional brushstrokes",
+      "fierce art"
+    ],
+    "clue_associations": [
+      "characterized by vivid hues",
+      "dramatic use of color",
+      "challenging traditional norms"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Impressionism",
+    "category": "art movement",
+    "polysemy_triggers": [
+      "capturing light",
+      "outdoor paintings",
+      "everyday life subjects"
+    ],
+    "clue_associations": [
+      "focus on capturing atmosphere",
+      "emphasizing natural light effects",
+      "portraying modern life scenes"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Cubism",
+    "category": "art movement",
+    "polysemy_triggers": [
+      "fragmented forms",
+      "geometric structures",
+      "breaking conventions"
+    ],
+    "clue_associations": [
+      "analyzing objects into geometric shapes",
+      "challenging traditional perspectives",
+      "emphasizing abstract representation"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Expressionism",
+    "category": "art movement",
+    "polysemy_triggers": [
+      "distorted forms",
+      "intense emotions",
+      "inner world expression"
+    ],
+    "clue_associations": [
+      "conveying inner experiences",
+      "emphasizing subjective feelings",
+      "exaggerating or distorting reality"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Surrealism",
+    "category": "art movement",
+    "polysemy_triggers": [
+      "dreamlike scenes",
+      "hidden meanings",
+      "subconscious exploration"
+    ],
+    "clue_associations": [
+      "blending reality and fantasy",
+      "uncovering unconscious thoughts",
+      "challenging rational perceptions"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Pop Art",
+    "category": "art movement",
+    "polysemy_triggers": [
+      "mass-produced images",
+      "celebrity culture",
+      "consumerism themes"
+    ],
+    "clue_associations": [
+      "focusing on popular culture icons",
+      "examining the role of media",
+      "critiquing consumerist values"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Pointillism",
+    "category": "art movement",
+    "polysemy_triggers": [
+      "dots of color",
+      "optical mixing",
+      "buildup of patterns"
+    ],
+    "clue_associations": [
+      "using small dots to create images",
+      "relying on viewer's eye to mix colors",
+      "emphasizing texture and pattern"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Futurism",
+    "category": "art movement",
+    "polysemy_triggers": [
+      "speed and motion",
+      "machine-inspired forms",
+      "celebrating modernity"
+    ],
+    "clue_associations": [
+      "emphasizing dynamism and energy",
+      "portraying the thrill of technological progress",
+      "glorifying urban life"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Art Nouveau",
+    "category": "art movement",
+    "polysemy_triggers": [
+      "curvilinear forms",
+      "floral motifs",
+      "whiplash lines"
+    ],
+    "clue_associations": [
+      "characterized by sinuous, organic shapes",
+      "emphasizing decorative arts",
+      "celebrating the beauty of nature"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Abstract Expressionism",
+    "category": "art movement",
+    "polysemy_triggers": [
+      "non-representational forms",
+      "gestural brushstrokes",
+      "emotional expression"
+    ],
+    "clue_associations": [
+      "focusing on color and texture",
+      "exploring the subconscious through art",
+      "dissolving boundaries between artist and artwork"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "McQueen",
+    "category": "designer",
+    "polysemy_triggers": [
+      "King of Cool",
+      "British Style Icon",
+      "Fashion Maverick"
+    ],
+    "clue_associations": [
+      "Rebel Heartbeat",
+      "London Fashion House",
+      "Avant-Garde Pioneer"
+    ],
+    "aliases": [
+      "Steve McQueen"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Flapper",
+    "category": "era",
+    "polysemy_triggers": [
+      "Roaring Twenties",
+      "Frivolous Fashion",
+      "Free-Spirited Style"
+    ],
+    "clue_associations": [
+      "Daring Hemlines",
+      "Glamorous Gowns",
+      "Modernist Makeup"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Supermodel",
+    "category": "term",
+    "polysemy_triggers": [
+      "Fashion Royalty",
+      "Catwalk Goddesses",
+      "Beauty Icons"
+    ],
+    "clue_associations": [
+      "Waiflike Figures",
+      "Glamorous Graces",
+      "Runway Renowned"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Suspenders",
+    "category": "accessory",
+    "polysemy_triggers": [
+      "Dapper Details",
+      "Vintage Flair",
+      "Trendy Touches"
+    ],
+    "clue_associations": [
+      "Retro Revival",
+      "Classic Elegance",
+      "Sophisticated Statement"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Little Black Dress",
+    "category": "garment",
+    "polysemy_triggers": [
+      "Timeless Classic",
+      "Versatile Essential",
+      "Fashion Staple"
+    ],
+    "clue_associations": [
+      "Elegant Simplicity",
+      "Sophisticated Neutrality",
+      "Dressy Discretion"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Androgynous",
+    "category": "term",
+    "polysemy_triggers": [
+      "Fashion Rebellion",
+      "Blurred Boundaries",
+      "Style Equality"
+    ],
+    "clue_associations": [
+      "Bold Expression",
+      "Neutral Necessity",
+      "Modern Inclusivity"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Chanel Suit",
+    "category": "garment",
+    "polysemy_triggers": [
+      "Cubist Chic",
+      "Minimalist Masterpiece",
+      "French Fashion Icon"
+    ],
+    "clue_associations": [
+      "Streamlined Silhouette",
+      "Monochromatic Elegance",
+      "Modernist Classic"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Chick-fil-A",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Polite Service Promise",
+      "Original Chicken Sandwich Iconic",
+      "Pickles and Waffle Fries"
+    ],
+    "clue_associations": [
+      "Chicken sandwich empire with a twist",
+      "Waffle fries and chicken nuggets combo",
+      "Sunday service closure"
+    ],
+    "aliases": [
+      "CFA",
+      "The Chicken Place"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Walmart Stores",
+    "category": "thing",
+    "polysemy_triggers": [
+      "worlds largest",
+      "retail giant",
+      "supermarket chain"
+    ],
+    "clue_associations": [
+      "big box store",
+      "discount shopping mecca",
+      "everyday low prices"
+    ],
+    "aliases": [
+      "Wal Mart",
+      "Walmart USA"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Costco Wholesale",
+    "category": "thing",
+    "polysemy_triggers": [
+      "warehouse club",
+      "membership required",
+      "bulk purchases"
+    ],
+    "clue_associations": [
+      "private shopping clubs",
+      "treasure hunt store",
+      "no sales tax"
+    ],
+    "aliases": [
+      "Costo"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Safeway Inc.",
+    "category": "thing",
+    "polysemy_triggers": [
+      "supermarket staple",
+      "pharmacy included",
+      "grocery store chain"
+    ],
+    "clue_associations": [
+      "community supporter",
+      "loyalty program",
+      "weekly ads"
+    ],
+    "aliases": [
+      "Vons",
+      "Pavilions"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Whole Foods Market",
+    "category": "thing",
+    "polysemy_triggers": [
+      "high end grocery",
+      "organic only",
+      "expensive stores"
+    ],
+    "clue_associations": [
+      "natural foods market",
+      " specialty store",
+      "trendy shopping destination"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Target Corporation",
+    "category": "thing",
+    "polysemy_triggers": [
+      "retail giant",
+      "store with red logo",
+      "affordable fashion"
+    ],
+    "clue_associations": [
+      "department store",
+      "upscale discount shopping",
+      "design for all"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Trader Joe's",
+    "category": "thing",
+    "polysemy_triggers": [
+      "unique products",
+      "store with nautical theme",
+      "private company"
+    ],
+    "clue_associations": [
+      "quirky shopping experience",
+      "customer loyalty",
+      "exclusive brands"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "ShopRite",
+    "category": "thing",
+    "polysemy_triggers": [
+      "east coast chain",
+      "store with green logo",
+      "member owned co-op"
+    ],
+    "clue_associations": [
+      "weekly specials",
+      "private shopping clubs",
+      "community supported"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Publix Super Markets",
+    "category": "thing",
+    "polysemy_triggers": [
+      "southern chain",
+      "store with green logo",
+      "self-service lanes"
+    ],
+    "clue_associations": [
+      "customer favorite",
+      "weekly ads",
+      "private company"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Aldi Nord",
+    "category": "thing",
+    "polysemy_triggers": [
+      "discount grocery",
+      "store with yellow logo",
+      "no frills shopping"
+    ],
+    "clue_associations": [
+      "private label products",
+      "efficient operations",
+      "cash only lanes"
+    ],
+    "aliases": [
+      "Albrecht Discount"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Giant Eagle",
+    "category": "thing",
+    "polysemy_triggers": [
+      "east coast chain",
+      "store with eagle logo",
+      "full service grocery"
+    ],
+    "clue_associations": [
+      "pharmacy services",
+      "gas stations",
+      "loyalty program"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Marriott International",
+    "category": "hotel chain",
+    "polysemy_triggers": [
+      "starwood",
+      "luxury travel",
+      "airport hotels"
+    ],
+    "clue_associations": [
+      "global presence",
+      "loyalty program",
+      " upscale accommodations"
+    ],
+    "aliases": [
+      "Marriott"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Hilton Worldwide",
+    "category": "hotel chain",
+    "polysemy_triggers": [
+      "wimbledon",
+      "convention center",
+      "diamond elite"
+    ],
+    "clue_associations": [
+      "global brand",
+      "mid-range options",
+      " loyalty program rewards"
+    ],
+    "aliases": [
+      "Hilton"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "InterContinental Hotels Group",
+    "category": "hotel chain",
+    "polysemy_triggers": [
+      "IHG",
+      "candlewood suites",
+      "rewards credit card"
+    ],
+    "clue_associations": [
+      "global footprint",
+      "affordable options",
+      "free internet"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Choice Hotels International",
+    "category": "hotel chain",
+    "polysemy_triggers": [
+      "comfort inn",
+      "quality inn",
+      "budget friendly"
+    ],
+    "clue_associations": [
+      "independent owners",
+      "pet-friendly rooms",
+      "free breakfast"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "AccorHotels",
+    "category": "hotel chain",
+    "polysemy_triggers": [
+      "ibis",
+      "all Seasons",
+      "pullman hotel"
+    ],
+    "clue_associations": [
+      "global network",
+      "affordable options",
+      " loyalty program Le Club AccorHotels"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Hyatt Hotels Corporation",
+    "category": "hotel chain",
+    "polysemy_triggers": [
+      "grand hyatt",
+      "hyatt regency",
+      "park hyatt"
+    ],
+    "clue_associations": [
+      "upscale accommodations",
+      "loyalty program",
+      "global presence"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Wyndham Hotels & Resorts",
+    "category": "hotel chain",
+    "polysemy_triggers": [
+      "days inn",
+      "super 8 motel",
+      "ramada hotel"
+    ],
+    "clue_associations": [
+      "affordable options",
+      "independent owners",
+      "global footprint"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Best Western Hotels & Resorts",
+    "category": "hotel chain",
+    "polysemy_triggers": [
+      "best western plus",
+      "best western premier",
+      "free breakfast"
+    ],
+    "clue_associations": [
+      "affordable options",
+      "independent owners",
+      "global presence"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Radisson Hotel Group",
+    "category": "hotel chain",
+    "polysemy_triggers": [
+      "radisson blu",
+      "park plaza hotel",
+      "country inn & suites"
+    ],
+    "clue_associations": [
+      "upscale accommodations",
+      "global presence",
+      "loyalty program"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Meliá Hotels International",
+    "category": "hotel chain",
+    "polysemy_triggers": [
+      "paris melia",
+      "melissa hotel",
+      "sol melia"
+    ],
+    "clue_associations": [
+      "upscale options",
+      "beachfront resorts",
+      "global presence"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "American Express",
+    "category": "thing",
+    "polysemy_triggers": [
+      "green card",
+      "charge card",
+      "travel perks"
+    ],
+    "clue_associations": [
+      "iconic gold and blue logo",
+      "charge cards for the wealthy",
+      "no foreign transaction fees"
+    ],
+    "aliases": [
+      "Amex"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Visa",
+    "category": "thing",
+    "polysemy_triggers": [
+      "worldwide acceptance",
+      "electronic payment system",
+      "digital wallet integration"
+    ],
+    "clue_associations": [
+      "one of the largest card networks",
+      "chip and PIN technology",
+      "no foreign transaction fees"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Mastercard",
+    "category": "thing",
+    "polysemy_triggers": [
+      "gold or platinum status",
+      "price protection benefits",
+      "worldwide acceptance"
+    ],
+    "clue_associations": [
+      "high-end rewards programs",
+      "travel insurance coverage",
+      "chip and PIN security"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Discover Card",
+    "category": "thing",
+    "polysemy_triggers": [
+      "cashback rewards program",
+      "no foreign transaction fees",
+      "online banking platform"
+    ],
+    "clue_associations": [
+      "no annual fee option",
+      "credit score tracking tool",
+      "cashback categories for popular stores"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Capital One",
+    "category": "thing",
+    "polysemy_triggers": [
+      "360 credit card benefits",
+      "mobile banking app",
+      "no foreign transaction fees"
+    ],
+    "clue_associations": [
+      "no annual fee options available",
+      "360 rewards redemption",
+      "interest-free promotional periods"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Diners Club",
+    "category": "thing",
+    "polysemy_triggers": [
+      "traveler's card benefits",
+      "exclusive rewards programs",
+      "charge cards for business use"
+    ],
+    "clue_associations": [
+      "high-end rewards redemption options",
+      "no foreign transaction fees",
+      "chip and PIN security"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "JCB Card",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Japanese credit card benefits",
+      "international acceptance",
+      "no foreign transaction fees"
+    ],
+    "clue_associations": [
+      "high-end rewards programs for travelers",
+      "exclusive airport lounge access",
+      "chip and PIN technology"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "UnionPay",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Chinese credit card network",
+      "electronic payment system",
+      "digital wallet integration"
+    ],
+    "clue_associations": [
+      "high-end rewards programs for Chinese users",
+      "no foreign transaction fees",
+      "chip and PIN security"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Maestro Card",
+    "category": "thing",
+    "polysemy_triggers": [
+      "electronic payment system",
+      "contactless payment technology",
+      "worldwide acceptance"
+    ],
+    "clue_associations": [
+      "no foreign transaction fees",
+      "chip and PIN security",
+      "cashback rewards programs for online shopping"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Citi Card",
+    "category": "thing",
+    "polysemy_triggers": [
+      "credit card benefits for wealthy individuals",
+      "high-end rewards programs",
+      "travel insurance coverage"
+    ],
+    "clue_associations": [
+      "exclusive credit card benefits for Citi customers",
+      "chip and PIN technology",
+      "no foreign transaction fees"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Allstate",
+    "category": "insurance company",
+    "polysemy_triggers": [
+      "state of affairs",
+      "protective umbrella",
+      "all-encompassing"
+    ],
+    "clue_associations": [
+      "shield from life's unexpected twists",
+      "financial safety net for the masses",
+      "mutual support system"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Prudential",
+    "category": "insurance company",
+    "polysemy_triggers": [
+      "prudent decision maker",
+      "wise investor",
+      "precautionary measures"
+    ],
+    "clue_associations": [
+      "pillar of financial stability",
+      "responsible steward of wealth",
+      "forward-thinking guardian"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "GEICO",
+    "category": "insurance company",
+    "polysemy_triggers": [
+      "goat in the headlights",
+      "gecko mascot",
+      "insurance giant"
+    ],
+    "clue_associations": [
+      "affordable protection for the masses",
+      "low-cost leader in insurance",
+      "financial shield for the people"
+    ],
+    "aliases": [
+      "Geico Gecko"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Liberty Mutual",
+    "category": "insurance company",
+    "polysemy_triggers": [
+      "liberty and justice for all",
+      "mutual support network",
+      "equality in protection"
+    ],
+    "clue_associations": [
+      "fairness and equality in insurance",
+      "protecting what matters most",
+      "responsible steward of the community"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Nationwide",
+    "category": "insurance company",
+    "polysemy_triggers": [
+      "nation-wide coverage",
+      "unified protection system",
+      "country-wide network"
+    ],
+    "clue_associations": [
+      "protection that's everywhere you go",
+      "financial shield for the nation",
+      "mutual support across borders"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "State Farm",
+    "category": "insurance company",
+    "polysemy_triggers": [
+      "farming the state",
+      "state of protection",
+      "farmer's best friend"
+    ],
+    "clue_associations": [
+      "safety net for rural America",
+      "financial security for farmers",
+      "mutual support for the land"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "USAA",
+    "category": "insurance company",
+    "polysemy_triggers": [
+      "united service association",
+      "armed forces financial aid",
+      "American military benefits"
+    ],
+    "clue_associations": [
+      "exclusive protection for those who serve",
+      "financial security for the brave",
+      "mutual support for the troops"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Travelers",
+    "category": "insurance company",
+    "polysemy_triggers": [
+      "traveling companion",
+      "safe passage guarantor",
+      "journey insurance expert"
+    ],
+    "clue_associations": [
+      "protection for the road warrior",
+      "financial security on the move",
+      "mutual support for travelers"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Progressive",
+    "category": "insurance company",
+    "polysemy_triggers": [
+      "moving forward together",
+      "progressive protection plan",
+      "stepping into safety net"
+    ],
+    "clue_associations": [
+      "innovative insurance for the modern age",
+      "financial shield for the progressive thinker",
+      "mutual support for the forward-thinking"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "MetLife",
+    "category": "insurance company",
+    "polysemy_triggers": [
+      "metropolitan life insurance",
+      "life's precious moments captured",
+      " metropolitan protection system"
+    ],
+    "clue_associations": [
+      "financial security for the urban dweller",
+      "protection for life's precious milestones",
+      "mutual support for the city's residents"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Maersk Line",
+    "category": "shipping company",
+    "polysemy_triggers": [
+      "container",
+      "Danish",
+      "logistics"
+    ],
+    "clue_associations": [
+      "Global shipping giant with a Danish name",
+      "Container shipping pioneer",
+      "One of the largest container ship operators"
+    ],
+    "aliases": [
+      "Maersk"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "COSCO Shipping",
+    "category": "shipping company",
+    "polysemy_triggers": [
+      "Chinese",
+      "maritime",
+      "state-owned"
+    ],
+    "clue_associations": [
+      "Major Chinese shipping company with a rich history",
+      "Global container and bulk shipping leader",
+      "One of the largest dry cargo operators"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Evergreen Marine",
+    "category": "shipping company",
+    "polysemy_triggers": [
+      "Taiwanese",
+      "container",
+      "oceanic"
+    ],
+    "clue_associations": [
+      "Global container shipping company with Taiwanese roots",
+      "One of the largest container ship operators in the world",
+      "Fleet of over 200 vessels"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Hapag-Lloyd",
+    "category": "shipping company",
+    "polysemy_triggers": [
+      "German",
+      "container",
+      "reliable"
+    ],
+    "clue_associations": [
+      "Major German shipping company with a rich history",
+      "One of the largest container ship operators in the world",
+      "Fleet of over 230 vessels"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "K Line",
+    "category": "shipping company",
+    "polysemy_triggers": [
+      "Japanese",
+      "container",
+      "keel"
+    ],
+    "clue_associations": [
+      "Global container shipping company with Japanese roots",
+      "One of the largest container ship operators in Asia",
+      "Fleet of over 100 vessels"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "MOL ( Mitsui O.S.K. Lines)",
+    "category": "shipping company",
+    "polysemy_triggers": [
+      "Japanese",
+      "bulk",
+      "sea"
+    ],
+    "clue_associations": [
+      "Major Japanese shipping company with a rich history",
+      "One of the largest dry cargo operators in the world",
+      "Fleet of over 700 vessels"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "ONE (Ocean Network Express)",
+    "category": "shipping company",
+    "polysemy_triggers": [
+      "Japanese",
+      "maritime",
+      "network"
+    ],
+    "clue_associations": [
+      "Global container shipping company formed from a merger of Japanese carriers",
+      "One of the largest container ship operators in Asia",
+      "Fleet of over 220 vessels"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "NYK Line",
+    "category": "shipping company",
+    "polysemy_triggers": [
+      "Japanese",
+      "container",
+      "maritime"
+    ],
+    "clue_associations": [
+      "Global container shipping company with Japanese roots",
+      "One of the largest container ship operators in Asia",
+      "Fleet of over 800 vessels"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "OOCL (Orient Overseas Container Line)",
+    "category": "shipping company",
+    "polysemy_triggers": [
+      "Hong Kong",
+      "container",
+      "oceanic"
+    ],
+    "clue_associations": [
+      "Global container shipping company with Hong Kong roots",
+      "One of the largest container ship operators in Asia",
+      "Fleet of over 270 vessels"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Sulzer (now merged into Cosco Shipping)",
+    "category": "shipping company",
+    "polysemy_triggers": [
+      "Swiss",
+      "maritime",
+      "sailing"
+    ],
+    "clue_associations": [
+      "Historic Swiss shipping company with a rich history",
+      "One of the largest dry cargo operators in Europe",
+      "Fleet of over 30 vessels"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Lyft",
+    "category": "ride-share app",
+    "polysemy_triggers": [
+      "taxi",
+      "driver",
+      "safe"
+    ],
+    "clue_associations": [
+      "Ride with a smile, not a fare increase",
+      "The other ride-hailing company",
+      "Safety first in this app"
+    ],
+    "aliases": [
+      "Lyft Line",
+      "Lyft Premier"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Taxi Magic",
+    "category": "ride-share app",
+    "polysemy_triggers": [
+      "taxi",
+      "magic",
+      "book"
+    ],
+    "clue_associations": [
+      "Wave your magic wand, get a taxi ride",
+      "Book a cab with just one click",
+      "No more hailing cabs on the street"
+    ],
+    "aliases": [
+      "Taxi Magic App"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Via",
+    "category": "ride-share app",
+    "polysemy_triggers": [
+      "van",
+      "pool",
+      "share"
+    ],
+    "clue_associations": [
+      "Ride in a van, not alone",
+      "Share the ride, save some cash",
+      "Pool your resources for a cheaper fare"
+    ],
+    "aliases": [
+      "Via Van"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Juno",
+    "category": "ride-share app",
+    "polysemy_triggers": [
+      "car",
+      "share",
+      "service"
+    ],
+    "clue_associations": [
+      "Share the ride, share the cost",
+      "A new service for your daily commute",
+      "Ride in a car, not alone"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Gett",
+    "category": "ride-share app",
+    "polysemy_triggers": [
+      "taxi",
+      "book",
+      "app"
+    ],
+    "clue_associations": [
+      "Book a taxi with just one tap",
+      "The app that replaces your phone calls to taxis",
+      "A new way to hail a cab"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Bolt",
+    "category": "ride-share app",
+    "polysemy_triggers": [
+      "car",
+      "driver",
+      "fast"
+    ],
+    "clue_associations": [
+      "Fast, affordable rides at your fingertips",
+      "A new player in the ride-hailing market",
+      "Speed up your daily commute with Bolt"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Arro",
+    "category": "ride-share app",
+    "polysemy_triggers": [
+      "car",
+      "share",
+      "pool"
+    ],
+    "clue_associations": [
+      "Share the ride, share the cost, and reduce emissions",
+      "A new way to commute in a more sustainable manner",
+      "Pool your resources for a greener ride"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Curb",
+    "category": "ride-share app",
+    "polysemy_triggers": [
+      "taxi",
+      "book",
+      "driver"
+    ],
+    "clue_associations": [
+      "Book a taxi with just one click, no more hailing on the street",
+      "A new service that connects you with drivers",
+      "Find and book your ride in seconds with Curb"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "ZTrip",
+    "category": "ride-share app",
+    "polysemy_triggers": [
+      "taxi",
+      "share",
+      "affordable"
+    ],
+    "clue_associations": [
+      "Share the ride, save some cash on your daily commute",
+      "Affordable and convenient rides at your fingertips",
+      "No more hailing taxis on the street with ZTrip"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "RMS Titanic",
+    "category": "thing",
+    "polysemy_triggers": [
+      "iceberg",
+      "luxury liner",
+      "maritime disaster"
+    ],
+    "clue_associations": [
+      "she sank beneath the waves",
+      "grand staircase of doom",
+      "ill-fated maiden voyage"
+    ],
+    "aliases": [
+      "Titanic"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "USS Arizona",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Pearl Harbor",
+      "warship",
+      "memorial site"
+    ],
+    "clue_associations": [
+      "date of infamy",
+      "sunk in its moorings",
+      "nuclear attack memorial"
+    ],
+    "aliases": [
+      "Arizona"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "RMS Queen Mary",
+    "category": "thing",
+    "polysemy_triggers": [
+      "ocean liner",
+      "speed record holder",
+      "hotel ship"
+    ],
+    "clue_associations": [
+      "blue ribbon winner",
+      "host to royalty",
+      "transatlantic crossing champion"
+    ],
+    "aliases": [
+      "Queen Mary"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "USS Constitution",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Old Ironsides",
+      "frigate",
+      "wartime hero"
+    ],
+    "clue_associations": [
+      "survived the Barbary Wars",
+      "first all-wooden warship",
+      "patriotic icon of freedom"
+    ],
+    "aliases": [
+      "Constitution"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "RMS Lusitania",
+    "category": "thing",
+    "polysemy_triggers": [
+      "war zone disaster",
+      "transatlantic liner",
+      "German U-boat target"
+    ],
+    "clue_associations": [
+      "cruel fate at sea",
+      "day of reckoning for Germany",
+      "trench warfare catalyst"
+    ],
+    "aliases": [
+      "Lusitania"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Vasa",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Swedish warship",
+      "shipwreck mystery",
+      "16th-century vessel"
+    ],
+    "clue_associations": [
+      "unintended sailing lesson",
+      "king's ship of pride",
+      "archeological treasure"
+    ],
+    "aliases": [
+      "Vasa"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "RMS Olympic",
+    "category": "thing",
+    "polysemy_triggers": [
+      "sister ship",
+      "tragic fate averted",
+      "largest liner at the time"
+    ],
+    "clue_associations": [
+      "Titanic's near-identical twin",
+      "ship of wonder and awe",
+      "saved by timely repairs"
+    ],
+    "aliases": [
+      "Olympic"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "USS Midway",
+    "category": "thing",
+    "polysemy_triggers": [
+      "aircraft carrier",
+      "WWII hero ship",
+      "Vietnam War battle cruiser"
+    ],
+    "clue_associations": [
+      "mid-ocean miracle",
+      "famous naval aviation base",
+      "symbol of American sea power"
+    ],
+    "aliases": [
+      "Midway"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "RMS Britannic",
+    "category": "thing",
+    "polysemy_triggers": [
+      "sister ship",
+      "hospital ship disaster",
+      "Greek tragedy at sea"
+    ],
+    "clue_associations": [
+      "war zone fate sealed",
+      "ill-fated conversion to a hospital",
+      "underwater funeral rites"
+    ],
+    "aliases": [
+      "Britannic"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "USS Missouri",
+    "category": "thing",
+    "polysemy_triggers": [
+      "World War II battleship",
+      "Iwo Jima hero ship",
+      "V-J Day iconic vessel"
+    ],
+    "clue_associations": [
+      "final battle of World War II",
+      "surrender of Japan accepted",
+      "last battleship in the US Navy"
+    ],
+    "aliases": [
+      "Mighty Mo"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Lockheed SR-71 Blackbird",
+    "category": "thing",
+    "polysemy_triggers": [
+      "supersonic spy",
+      "high altitude bird",
+      "spy plane"
+    ],
+    "clue_associations": [
+      "speed demon of the skies",
+      "cold war secret agent",
+      "highest flying plane ever"
+    ],
+    "aliases": [
+      "SR-71, Blackbird, Habu"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Boeing B-29 Superfortress",
+    "category": "thing",
+    "polysemy_triggers": [
+      "atomic bomber",
+      "wartime workhorse",
+      "four engine flyer"
+    ],
+    "clue_associations": [
+      "greatest plane of all time",
+      "enola gay's ride",
+      "massive aerial presence"
+    ],
+    "aliases": [
+      "B-29, Superfortress"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "P-51 Mustang",
+    "category": "thing",
+    "polysemy_triggers": [
+      "wartime hero",
+      "piston engine plane",
+      "famous fighter of WWII"
+    ],
+    "clue_associations": [
+      "galloping major's pride and joy",
+      "one of the greatest planes ever",
+      "fighter ace's best friend"
+    ],
+    "aliases": [
+      "P-51, Mustang"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Lockheed U-2",
+    "category": "thing",
+    "polysemy_triggers": [
+      "high altitude spy plane",
+      "cold war era aircraft",
+      "dragon lady's cousin"
+    ],
+    "clue_associations": [
+      "mystery man of the skies",
+      "sleek and silent sentinel",
+      "eyes in the sky"
+    ],
+    "aliases": [
+      "U-2, Dragon Lady"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "B-17 Flying Fortress",
+    "category": "thing",
+    "polysemy_triggers": [
+      "wartime bomber",
+      "four engine heavy",
+      "famous flying fortress"
+    ],
+    "clue_associations": [
+      "heavy hitter of the skies",
+      "legendary bomber of WWII",
+      "heavily armed and heavily armored"
+    ],
+    "aliases": [
+      "B-17, Flying Fortress"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "X-15",
+    "category": "thing",
+    "polysemy_triggers": [
+      "experimental rocket plane",
+      "fastest manned aircraft ever",
+      "rocket powered flyer"
+    ],
+    "clue_associations": [
+      "speed demon of the desert",
+      "pioneer in supersonic flight",
+      "manned rocket's test pilot"
+    ],
+    "aliases": [
+      "X-15, Rocket Plane"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Douglas DC-3",
+    "category": "thing",
+    "polysemy_triggers": [
+      "classic airliner",
+      "four engine plane",
+      "invention of commercial aviation"
+    ],
+    "clue_associations": [
+      "workhorse of the skies",
+      "massive aerial transporter",
+      "pioneering passenger plane"
+    ],
+    "aliases": [
+      "DC-3, Dakota"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Bell X-1",
+    "category": "thing",
+    "polysemy_triggers": [
+      "experimental rocket plane",
+      "first supersonic flight",
+      "rocket powered flyer"
+    ],
+    "clue_associations": [
+      "smoke trail in the sky",
+      "gloomy ghost of the desert",
+      "fastest thing alive"
+    ],
+    "aliases": [
+      "X-1, Bell X-1"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Messerschmitt Bf 109",
+    "category": "thing",
+    "polysemy_triggers": [
+      "wartime fighter plane",
+      "german air force ace",
+      "famous axis aircraft"
+    ],
+    "clue_associations": [
+      "most produced plane of all time",
+      "ace maker's dream machine",
+      "axis aerial warrior"
+    ],
+    "aliases": [
+      "Bf 109, Messerschmitt"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Trans-Siberian Railway",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Russian rails",
+      "Siberian iron road",
+      "Longest train route"
+    ],
+    "clue_associations": [
+      "Connecting Moscow to Vladivostok",
+      "Passes through Ural Mountains",
+      "Stretches over 9,289 kilometers"
+    ],
+    "aliases": [
+      "TSR",
+      "Trans-Sib"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Flying Scotsman",
+    "category": "thing",
+    "polysemy_triggers": [
+      "British locomotive",
+      "Iconic steam engine",
+      "Famous train set"
+    ],
+    "clue_associations": [
+      "Built in 1923 by Sir Nigel Gresley",
+      "Held the speed record from 1934 to 1938",
+      "Named after a Scottish folk song"
+    ],
+    "aliases": [
+      "FS",
+      "The Scotsman"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Eurostar",
+    "category": "thing",
+    "polysemy_triggers": [
+      "High-speed train",
+      "Channel tunnel route",
+      "London to Paris service"
+    ],
+    "clue_associations": [
+      "Operates under the English Channel",
+      "Travels at speeds of up to 320 km/h",
+      "Passenger service since 1994"
+    ],
+    "aliases": [
+      "The Eurostar Train",
+      "EE22001"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Puffing Billy Railway",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Australian heritage train",
+      "Mountain steam train",
+      "Healesville to Belgrave route"
+    ],
+    "clue_associations": [
+      "Preserved heritage railway since 1962",
+      "Original Victorian-era locomotives still used",
+      "Popular tourist attraction in Melbourne"
+    ],
+    "aliases": [
+      "The Puffing Billy",
+      "PB"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Blue Train",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Luxurious South African train",
+      "Pretoria to Cape Town service",
+      "Five-star rail experience"
+    ],
+    "clue_associations": [
+      "Operates on a 1,300 km journey",
+      "Travelers can enjoy fine dining and wine",
+      "Named after its distinctive blue livery"
+    ],
+    "aliases": [
+      "The Blue Train Rovos Rail",
+      "Blue Cruiser"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Harzer Marathon",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Germany's oldest narrow-gauge railway",
+      "Historic train journey through Harz mountains",
+      "Passes through Wernigerode"
+    ],
+    "clue_associations": [
+      "Built in the late 19th century for tourists",
+      "Winding route with steep gradients and sharp curves",
+      "Popular excursion from Quedlinburg to Altenbrak"
+    ],
+    "aliases": [
+      "Harzer Markeisenbahn"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Rocky Mountaineer",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Luxurious Canadian train tour",
+      "Scenic route through Canadian Rockies",
+      "Two-day journey from Vancouver to Jasper"
+    ],
+    "clue_associations": [
+      "Operates with glass-domed observation cars",
+      "Guests enjoy gourmet meals and fine wines",
+      "Named after its scenic mountainous route"
+    ],
+    "aliases": [
+      "RM"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Bullet Train",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Japanese high-speed rail service",
+      "Tokyo to Osaka journey takes under four hours",
+      "Train with a top speed of 320 km/h"
+    ],
+    "clue_associations": [
+      "Introduced in the 1960s as a revolutionary transportation system",
+      "Reduced travel time between major cities by 75% since its launch",
+      "Iconic bullet-shaped design for streamlined aerodynamics"
+    ],
+    "aliases": [
+      "New Trains at High Speed"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Belmond Hiram Bingham",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Luxurious train to Machu Picchu",
+      "Peruvian rail experience since 1990s",
+      "Named after an American archaeologist"
+    ],
+    "clue_associations": [
+      "Journey from Cuzco to Aguas Calientes on the Andean highlands",
+      "Passengers can enjoy fine dining and drinks while watching the Inca ruins appear in the distance",
+      "Train runs along the Sante Fe section of the railway built by Peru's former president"
+    ],
+    "aliases": [
+      "The Bingham Train"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Glacier Express",
+    "category": "thing",
+    "polysemy_triggers": [
+      "Scenic Swiss train route",
+      "Zurich to St. Moritz journey through the Alps",
+      "Eight-hour ride through breathtaking landscapes"
+    ],
+    "clue_associations": [
+      "Built in 1882 as one of Switzerland's original narrow-gauge railways",
+      "Passes through picturesque valleys and across viaducts",
+      "Enjoy fine dining, wine, and stunning views from glass-domed observation cars"
+    ],
+    "aliases": [
+      "The Glacier Express Train"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Girard Avenue Bridge",
+    "category": "thing",
+    "polysemy_triggers": [
+      "hidden",
+      "Philadelphia",
+      "river crossing"
+    ],
+    "clue_associations": [
+      "Local landmark in the City of Brotherly Love",
+      "East River connection point",
+      "Lesser-known steel span"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Seven Mile Bridge",
+    "category": "thing",
+    "polysemy_triggers": [
+      "longest",
+      "Florida",
+      "coastal"
+    ],
+    "clue_associations": [
+      "Marathon, Florida landmark",
+      "Atlantic Ocean crossing point",
+      "Caribbean Sea border"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Charles Bridge",
+    "category": "thing",
+    "polysemy_triggers": [
+      "medieval",
+      "Prague",
+      "arched"
+    ],
+    "clue_associations": [
+      "Historic bridge over Vltava River",
+      "St. Vitus Cathedral adjacent",
+      "Riverbank architecture masterpiece"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Pittsburgh Bridge",
+    "category": "thing",
+    "polysemy_triggers": [
+      "russell",
+      "pennsylvania",
+      "three sisters"
+    ],
+    "clue_associations": [
+      "Fort Pitt connection point",
+      "Three rivers converging point",
+      "Steel City iconic landmark"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Hakone Ropeway",
+    "category": "thing",
+    "polysemy_triggers": [
+      "cableway",
+      "Japan",
+      "volcano"
+    ],
+    "clue_associations": [
+      "Mt. Fuji foothill crossing point",
+      "Lake Ashi scenic overlooks",
+      "Tokyo to Kyoto journey aid"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Penny Farthing",
+    "category": "thing",
+    "polysemy_triggers": [
+      "wheel",
+      "innovation",
+      "ride"
+    ],
+    "clue_associations": [
+      "spinning records",
+      "gearing up for the future",
+      "penny pincher's delight"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Microchip",
+    "category": "thing",
+    "polysemy_triggers": [
+      "small",
+      "computer",
+      "revolution"
+    ],
+    "clue_associations": [
+      "tiny but mighty",
+      "byte-sized innovation",
+      "processing power"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Computer Mouse",
+    "category": "thing",
+    "polysemy_triggers": [
+      "pointer",
+      "cursor",
+      "interface"
+    ],
+    "clue_associations": [
+      "clicking towards progress",
+      "tracking innovation",
+      "navigating the digital age"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Kinetoscope",
+    "category": "thing",
+    "polysemy_triggers": [
+      "moving",
+      "image",
+      "entertainment"
+    ],
+    "clue_associations": [
+      "projecting progress",
+      "rolling reels of history",
+      "viewing the moving image"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Rosetta Stone",
+    "category": "famous discovery",
+    "polysemy_triggers": [
+      "stone",
+      "ancient language",
+      "cryptic message"
+    ],
+    "clue_associations": [
+      "Deciphered by scholars of old",
+      "Language barrier broken stone",
+      "Gateway to Egyptian secrets"
+    ],
+    "aliases": [
+      "Rosetta Tablet"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Piltdown Man",
+    "category": "famous discovery",
+    "polysemy_triggers": [
+      "man",
+      "old",
+      "deception"
+    ],
+    "clue_associations": [
+      "Fake fossil scandal",
+      "Ancient primate misidentified",
+      "Hoax of the century"
+    ],
+    "aliases": [
+      "Eocene Man"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Tomb of Tutankhamun",
+    "category": "famous discovery",
+    "polysemy_triggers": [
+      "pharaoh",
+      "tomb",
+      "ancient treasure"
+    ],
+    "clue_associations": [
+      "Golden mask revealed",
+      "Boy king's burial site",
+      "Valley of the Kings hidden chamber"
+    ],
+    "aliases": [
+      "King Tut's Tomb"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Missing Link",
+    "category": "famous discovery",
+    "polysemy_triggers": [
+      "link",
+      "evolution",
+      "missing piece"
+    ],
+    "clue_associations": [
+      "Fossil gap filled",
+      "Evolutionary puzzle solved",
+      "Human ancestor unveiled"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Viking Runestone",
+    "category": "famous discovery",
+    "polysemy_triggers": [
+      "stone",
+      "viking",
+      "ancient writing"
+    ],
+    "clue_associations": [
+      "Runes of the Northmen",
+      "Ancient Viking script discovered",
+      "Seafarers' language decoded"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Dead Sea Scrolls",
+    "category": "famous discovery",
+    "polysemy_triggers": [
+      "scrolls",
+      "bible",
+      "ancient manuscript"
+    ],
+    "clue_associations": [
+      "Hidden scrolls in a cave",
+      "Ancient texts of the Bible",
+      "Desert secrets revealed"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Terracotta Army",
+    "category": "famous discovery",
+    "polysemy_triggers": [
+      "army",
+      "terracotta",
+      "ancient soldiers"
+    ],
+    "clue_associations": [
+      "Life-sized clay warriors",
+      "Chinese Emperor's secret army",
+      "Pit of 8,000 life-sized soldiers"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "King Tut's Sarcophagus",
+    "category": "famous discovery",
+    "polysemy_triggers": [
+      "sarcophagus",
+      "pharaoh",
+      "ancient treasure"
+    ],
+    "clue_associations": [
+      "Golden coffin of King Tutankhamun",
+      "Ancient burial site's hidden chamber",
+      "Treasures of the tomb"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Einstein's Photoelectric Effect Experiment",
+    "category": "thing",
+    "polysemy_triggers": [
+      "light",
+      "charge",
+      "quantum"
+    ],
+    "clue_associations": [
+      "a discovery that changed the game",
+      "the spark that ignited a new era",
+      "uncovering hidden energies"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Watson and Crick's DNA Double Helix Model",
+    "category": "thing",
+    "polysemy_triggers": [
+      "helix",
+      "molecule",
+      "code"
+    ],
+    "clue_associations": [
+      "a twisted revelation",
+      "the secret to life's codebook",
+      "unraveling the mystery of inheritance"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Braun and Hertz's Resonance Experiment",
+    "category": "thing",
+    "polysemy_triggers": [
+      "frequency",
+      "resonate",
+      "oscillate"
+    ],
+    "clue_associations": [
+      "the rhythm of the universe",
+      "a symphony of particles",
+      "capturing the harmony of nature"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Faraday's Electromagnetic Induction",
+    "category": "thing",
+    "polysemy_triggers": [
+      "magnetism",
+      "electricity",
+      "induce"
+    ],
+    "clue_associations": [
+      "a spark from the ether",
+      "capturing the hidden forces of nature",
+      "transferring energy through space"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Michelson's Interferometer",
+    "category": "thing",
+    "polysemy_triggers": [
+      "light",
+      "interference",
+      "split"
+    ],
+    "clue_associations": [
+      "a delicate dance of waves",
+      "the art of separating the signal from noise",
+      "unraveling the mystery of light's behavior"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Galileo's Leaning Tower Experiment",
+    "category": "thing",
+    "polysemy_triggers": [
+      "gravity",
+      "fall",
+      "accelerate"
+    ],
+    "clue_associations": [
+      "a test of the heavens' laws",
+      "the thrill of defying gravity",
+      "proving the majesty of the natural world"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Mendel's Peas Experiment",
+    "category": "thing",
+    "polysemy_triggers": [
+      "inheritance",
+      "trait",
+      "dominant"
+    ],
+    "clue_associations": [
+      "the hidden patterns of nature",
+      "uncovering the secrets of growth and development",
+      "the language of the genes"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Newton's Prism Experiment",
+    "category": "thing",
+    "polysemy_triggers": [
+      "spectrum",
+      "color",
+      "refract"
+    ],
+    "clue_associations": [
+      "a world of colors revealed",
+      "capturing the essence of light's diversity",
+      "the birth of a new understanding"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Rayleigh and Jeans' Blackbody Experiment",
+    "category": "thing",
+    "polysemy_triggers": [
+      "radiation",
+      "temperature",
+      "black"
+    ],
+    "clue_associations": [
+      "uncovering the secrets of heat's invisible messengers",
+      "the mysterious glow of the cosmos",
+      "a theory born from the darkness"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Millikan's Oil Drop Experiment",
+    "category": "thing",
+    "polysemy_triggers": [
+      "charge",
+      "electricity",
+      "precise"
+    ],
+    "clue_associations": [
+      "the delicate dance of electrons and oil drops",
+      "measuring the invisible forces of nature",
+      "a precise calculation of the universe's fundamental constants"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Arches National Park",
+    "category": "place",
+    "polysemy_triggers": [
+      "arch",
+      "rock",
+      "utah"
+    ],
+    "clue_associations": [
+      "a park of natural wonders",
+      "red rock formations abound",
+      "ancient stones stand tall"
+    ],
+    "aliases": [
+      "ANP",
+      "The Arches"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Redwood National and State Parks",
+    "category": "place",
+    "polysemy_triggers": [
+      "tree",
+      "tall",
+      "california"
+    ],
+    "clue_associations": [
+      "a park of towering giants",
+      "evergreen forests thrive",
+      "coastal wonders await"
+    ],
+    "aliases": [
+      "RNPS",
+      "The Redwoods"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Walt Disney World",
+    "category": "place",
+    "polysemy_triggers": [
+      "Magic Kingdom",
+      "Florida Dreamland",
+      "Imaginaria"
+    ],
+    "clue_associations": [
+      "Happiest Place on Earth",
+      "Iconic Cinderella Castle",
+      "Parades and Fireworks Galore"
+    ],
+    "aliases": [
+      "Disney World"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Universal Studios Japan",
+    "category": "place",
+    "polysemy_triggers": [
+      "Konnichiwa Hollywood",
+      "Japanese Magic",
+      "Minion Mayhem"
+    ],
+    "clue_associations": [
+      "Experience the Wizarding World",
+      "Behind-the-Scenes Tours",
+      "Thrilling Roller Coasters Abound"
+    ],
+    "aliases": [
+      "USJ"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Europa-Park",
+    "category": "place",
+    "polysemy_triggers": [
+      "German Thrills",
+      "European Dreams",
+      "Little Europe"
+    ],
+    "clue_associations": [
+      "Over 100 Attractions",
+      "Themed Areas Galore",
+      "Mighty Roller Coaster Collection"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "PortAventura World",
+    "category": "place",
+    "polysemy_triggers": [
+      "Spanish Spectacle",
+      "Thrilling Europe",
+      "Furius Baco"
+    ],
+    "clue_associations": [
+      "Three Parks in One",
+      "Shrek and Sesame Street Fun",
+      "Mystic India Temple Complex"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Efteling",
+    "category": "place",
+    "polysemy_triggers": [
+      "Fantasy Landscapes",
+      "Holland's Hidden Gem",
+      "De Sprookjesbos"
+    ],
+    "clue_associations": [
+      "Whimsical Wooden Coasters",
+      "Enchanting Fairytale Settings",
+      "Beautiful Water Features Galore"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Cedar Point",
+    "category": "place",
+    "polysemy_triggers": [
+      "Roller Coaster Heaven",
+      "Lake Erie Thrills",
+      "Steel Vengeance"
+    ],
+    "clue_associations": [
+      "The Rides Capital of the World",
+      "Blue Streak and Cedar Creek Mine Ride",
+      "A 220-Acre Theme Park"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Everland",
+    "category": "place",
+    "polysemy_triggers": [
+      "Korean Joy Land",
+      "Theme Park Delights",
+      "Zootopia World"
+    ],
+    "clue_associations": [
+      "Furilla Train and Adventure Forest",
+      "Safari World and Zoo",
+      "Roller Coaster Collection"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Alton Towers",
+    "category": "place",
+    "polysemy_triggers": [
+      "Thrill Seekers Paradise",
+      "The Towers of Fun",
+      "The Smiler"
+    ],
+    "clue_associations": [
+      "Nemesis and Oblivion Rides",
+      "The X-Sector and Cbeebies Land",
+      "Stunning Themed Areas Galore"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Disneyland Paris",
+    "category": "place",
+    "polysemy_triggers": [
+      "Happiest Place in Europe",
+      "Disney Magic Awaits",
+      "A Dreamland Come True"
+    ],
+    "clue_associations": [
+      "Iconic Sleeping Beauty Castle",
+      "Big Thunder Mountain and Pirates of the Caribbean",
+      "Walt Disney Studios Park"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Bora Bora Island",
+    "category": "place",
+    "polysemy_triggers": [
+      "Island of dreams",
+      "Overwater bungalows",
+      "Tropical paradise"
+    ],
+    "clue_associations": [
+      "Pearl of the Pacific",
+      "French Polynesian gem",
+      "Secluded island getaway"
+    ],
+    "aliases": [
+      "Bora Bora Lagoon",
+      "Matira Beach"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Waikiki Beach",
+    "category": "place",
+    "polysemy_triggers": [
+      "Honolulu hotspot",
+      "Surfing mecca",
+      "Royal resort"
+    ],
+    "clue_associations": [
+      "Sun-kissed shores",
+      "Diamond Head views",
+      "Legendary beach volleyball"
+    ],
+    "aliases": [
+      "Waikiki Strip",
+      "Kalakaua Avenue"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Copacabana Beach",
+    "category": "place",
+    "polysemy_triggers": [
+      "Rio de Janeiro landmark",
+      "Famous beach party spot",
+      "Karl Marx statue"
+    ],
+    "clue_associations": [
+      "Electric atmosphere",
+      "Stunning Ipanema views",
+      "Carnival celebrations"
+    ],
+    "aliases": [
+      "Copacabana Strip",
+      "Avenida Atlântica"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Gold Coast Beaches",
+    "category": "place",
+    "polysemy_triggers": [
+      "Queensland coastline",
+      "Theme park paradise",
+      "Sunshine State hotspot"
+    ],
+    "clue_associations": [
+      "Surfing and swimming spots",
+      "Vivid lights and nightlife",
+      "World-class theme parks"
+    ],
+    "aliases": [
+      "Gold Coast Strip",
+      "Main Beach"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Côte d'Azur",
+    "category": "place",
+    "polysemy_triggers": [
+      "French Riviera gem",
+      "Luxury yacht haven",
+      "Glittering coastal towns"
+    ],
+    "clue_associations": [
+      "Stunning Mediterranean views",
+      "Famous film festival location",
+      "Billionaire's playground"
+    ],
+    "aliases": [
+      "Côte d'Opale",
+      "Riviera Coast"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Hawaii Beaches",
+    "category": "place",
+    "polysemy_triggers": [
+      "Volcanic island chain",
+      "Tropical flower paradise",
+      "Surfing and snorkeling mecca"
+    ],
+    "clue_associations": [
+      "Rainbow-colored waterfalls",
+      "Endless sunsets over the ocean",
+      "Pacific coastal beauty spots"
+    ],
+    "aliases": [
+      "Aloha State Beaches",
+      "Oahu Coast"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Bondi Beach",
+    "category": "place",
+    "polysemy_triggers": [
+      "Sydney Harbour hotspot",
+      "Eastern Suburbs gem",
+      "Popular surf and swim spot"
+    ],
+    "clue_associations": [
+      "Iconic icebergs pool",
+      "Stunning ocean views from cliffs",
+      "Famous coastal promenade"
+    ],
+    "aliases": [
+      "Bondi Coast",
+      "Ben Buckler Point"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Bahamas",
+    "category": "place",
+    "polysemy_triggers": [
+      "Caribbean island chain",
+      "Turquoise waters and white sand beaches",
+      "Pristine coral reefs"
+    ],
+    "clue_associations": [
+      "Clear blue seas and sunny weather",
+      "Golfing paradise and luxury resorts",
+      "World-class snorkeling and diving"
+    ],
+    "aliases": [
+      "Bahama Islands",
+      "Nassau Paradise"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Myrtle Beach",
+    "category": "place",
+    "polysemy_triggers": [
+      "South Carolina coastal resort town",
+      "Family-friendly beach destination",
+      "Golfing and water sports mecca"
+    ],
+    "clue_associations": [
+      "Boardwalk with shops and restaurants",
+      "Skywheel amusement park",
+      "Fishing pier and sunset views"
+    ],
+    "aliases": [
+      "Myrtle Beach Boardwalk",
+      "Oceanfront Resort Town"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Ibiza Island",
+    "category": "place",
+    "polysemy_triggers": [
+      "Spanish",
+      "Dance",
+      "Clubbing"
+    ],
+    "clue_associations": [
+      "White beaches and coves",
+      "Vibrant nightlife scene",
+      "Ancient Phoenician ruins"
+    ],
+    "aliases": [
+      "Ibiza Balearic Islands"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Bermuda Island",
+    "category": "place",
+    "polysemy_triggers": [
+      "Pink",
+      "Sandy",
+      "Shoreline"
+    ],
+    "clue_associations": [
+      "Tropical pink-sand beaches",
+      "British Overseas Territory",
+      "Shipwrecks galore"
+    ],
+    "aliases": [
+      "Bermuda Islands British Overseas"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Kauai Island",
+    "category": "place",
+    "polysemy_triggers": [
+      "Garden",
+      "Island",
+      "Hawaii"
+    ],
+    "clue_associations": [
+      "Na Pali Coast's rugged shores",
+      "Wailua River and Fern Grotto",
+      "Spouting Horn natural wonder"
+    ],
+    "aliases": [
+      "Kauai Hawaii Island Garden Isle"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Santorini Island",
+    "category": "place",
+    "polysemy_triggers": [
+      "Greek",
+      "Island",
+      "Volcano"
+    ],
+    "clue_associations": [
+      "Whitewashed houses and blue domes",
+      "Ancient city of Akrotiri ruins",
+      "Oia village's picturesque views"
+    ],
+    "aliases": [
+      "Santorini Greek Island Thira"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Maldives Island",
+    "category": "place",
+    "polysemy_triggers": [
+      "Island",
+      "Beach",
+      "Paradise"
+    ],
+    "clue_associations": [
+      "Crystal clear waters and coral reefs",
+      "Luxury resorts and overwater bungalows",
+      "Pristine beaches and crystal sands"
+    ],
+    "aliases": [
+      "Maldives Islands Republic of Maldives"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Bali Island",
+    "category": "place",
+    "polysemy_triggers": [
+      "Island",
+      "Beach",
+      "Temples"
+    ],
+    "clue_associations": [
+      "Gorgeous beaches and temples galore",
+      "Mount Agung volcano's snow-capped peak",
+      "Ubud Monkey Forest Sanctuary"
+    ],
+    "aliases": [
+      "Bali Island Indonesia"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Sifnos Island",
+    "category": "place",
+    "polysemy_triggers": [
+      "Greek",
+      "Island",
+      "Pottery"
+    ],
+    "clue_associations": [
+      "Traditional whitewashed houses and blue-domed churches",
+      "Vathi harbor's scenic views",
+      "Ancient pottery-making traditions alive"
+    ],
+    "aliases": [
+      "Sifnos Island Greece"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Jamaica Island",
+    "category": "place",
+    "polysemy_triggers": [
+      "Island",
+      "Music",
+      "Reggae"
+    ],
+    "clue_associations": [
+      "Bustling Kingston city's vibrant music scene",
+      "Negril Cliffs and Dunn's River Falls",
+      "World-famous reggae legends born here"
+    ],
+    "aliases": [
+      "Jamaica Island Caribbean"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Crete Island",
+    "category": "place",
+    "polysemy_triggers": [
+      "Greek",
+      "Island",
+      "Mountains"
+    ],
+    "clue_associations": [
+      "Samaria Gorge's scenic hiking trails",
+      "Ancient Minoan palace of Knossos ruins",
+      "Diktaion Cave and Zeus' birthplace"
+    ],
+    "aliases": [
+      "Crete Island Greece"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Lake Winnipeg",
+    "category": "place",
+    "polysemy_triggers": [
+      "winnipeg",
+      "canada",
+      "manitoba"
+    ],
+    "clue_associations": [
+      "great white north gem",
+      "inland sea of prairies",
+      "fishing paradise"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Lake Maracaibo",
+    "category": "place",
+    "polysemy_triggers": [
+      "maracaibo",
+      "venezuela",
+      "oil"
+    ],
+    "clue_associations": [
+      "lake of oil riches",
+      "venezuelan pearl",
+      "circular waters"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Lake Mead",
+    "category": "place",
+    "polysemy_triggers": [
+      "mead",
+      "arizona",
+      "dam"
+    ],
+    "clue_associations": [
+      "blue water wonder",
+      "desert oasis",
+      "lake on a dam"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Lake Malawi",
+    "category": "place",
+    "polysemy_triggers": [
+      "malawi",
+      "africa",
+      "tropical"
+    ],
+    "clue_associations": [
+      "lake of the giants",
+      "unspoiled waters",
+      "blue heart of africa"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Lake Issyk-Kul",
+    "category": "place",
+    "polysemy_triggers": [
+      "issyk-kul",
+      "kyrgyzstan",
+      "alpine"
+    ],
+    "clue_associations": [
+      "frozen mirror to sky",
+      "mountain lake of secrets",
+      "crystal waters of asia"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Danube River",
+    "category": "place",
+    "polysemy_triggers": [
+      "European",
+      " delta",
+      "border"
+    ],
+    "clue_associations": [
+      "River that flows through Central Europe",
+      "Waterway that forms part of the border between Romania and Ukraine",
+      "A river of international significance"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Columbia River",
+    "category": "place",
+    "polysemy_triggers": [
+      "Pacific",
+      "northwest",
+      "fisheries"
+    ],
+    "clue_associations": [
+      "River that flows through the Pacific Northwest",
+      "Waterway that supports a rich salmon fishery",
+      "A river of rugged coastline and mountains"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Great Victoria Desert",
+    "category": "place",
+    "polysemy_triggers": [
+      "south australia",
+      "desert landform",
+      "dry climate zone"
+    ],
+    "clue_associations": [
+      "largest desert in south australia",
+      "home to the nullarbor plain",
+      "unique wildlife and fossils"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Kalahari Desert",
+    "category": "place",
+    "polysemy_triggers": [
+      "southern africa",
+      "arid terrain",
+      "sand dunes region"
+    ],
+    "clue_associations": [
+      "transboundary desert between namibia and south africa",
+      "home to the san people",
+      "unique wildlife and geological features"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Arabian Desert",
+    "category": "place",
+    "polysemy_triggers": [
+      "middle east",
+      "hot dry climate",
+      "desert region"
+    ],
+    "clue_associations": [
+      "largest hot desert in the world",
+      "home to the sirocco winds",
+      "unique flora and fauna adapted to arid conditions"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Patagonia Desert",
+    "category": "place",
+    "polysemy_triggers": [
+      "south america",
+      "mountainous terrain",
+      "patagonian wind"
+    ],
+    "clue_associations": [
+      "largest cold desert in the world",
+      "unique geology and climate",
+      "location of los glaciares national park"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Carson Desert",
+    "category": "place",
+    "polysemy_triggers": [
+      "nevada usa",
+      "arid region",
+      "high desert terrain"
+    ],
+    "clue_associations": [
+      "located between the sierra nevada and great basin mountain ranges",
+      "unique geology and wildlife",
+      "part of the larger mohave desert"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Borneo Rainforest",
+    "category": "place",
+    "polysemy_triggers": [
+      "southeast asian jungle",
+      "orangutan habitat",
+      "wildlife sanctuary"
+    ],
+    "clue_associations": [
+      "tropical paradise lost",
+      "world's oldest rainforest",
+      "habitat of proboscis monkeys"
+    ],
+    "aliases": [
+      "borneo forest reserve",
+      "kalimantan conservation area"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "New England Fall Foliage",
+    "category": "place",
+    "polysemy_triggers": [
+      "autumn leaf display",
+      "northeast usa color fest",
+      "fleeting seasonal wonder"
+    ],
+    "clue_associations": [
+      "briefly glowing maple trees",
+      "seasonal foliage spectacle",
+      "transient beauty of nature"
+    ],
+    "aliases": [
+      "new england fall colors",
+      "usa autumnal hues"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Plitvice Lakes National Park",
+    "category": "place",
+    "polysemy_triggers": [
+      "croatian water wonder",
+      "placid turquoise lakes",
+      "hidden gem of europe"
+    ],
+    "clue_associations": [
+      "waterfall-studded park",
+      "limestone karst landscape",
+      "natural beauty preserved"
+    ],
+    "aliases": [
+      "plitvice national park",
+      "hvar island nature reserve"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Himalayan Forests",
+    "category": "place",
+    "polysemy_triggers": [
+      "mountainous terrain",
+      "snow-capped peaks",
+      "tibetan spiritual heartland"
+    ],
+    "clue_associations": [
+      "fragile alpine ecosystem",
+      "home to sacred trees",
+      "remnants of ancient forest"
+    ],
+    "aliases": [
+      "himalayan mountain range",
+      "tibetan himalayas nature reserve"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Caledonian Forest",
+    "category": "place",
+    "polysemy_triggers": [
+      "scottish highland glen",
+      "old celtic woodland",
+      "heather-covered moorland"
+    ],
+    "clue_associations": [
+      "primeval forest fragments",
+      "habitat of golden eagles",
+      "ancient tree spirits lingering"
+    ],
+    "aliases": [
+      "caledonian woodland reserve",
+      "highland nature preserve"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Gherkin",
+    "category": "place",
+    "polysemy_triggers": [
+      "london gherkin",
+      "cheese shaped wonder",
+      "city of london landmark"
+    ],
+    "clue_associations": [
+      "Unique office building in the City of London",
+      "Built on the site of a 1970s office block",
+      "Has been the subject of controversy over its design"
+    ],
+    "aliases": [
+      "30 St Mary Axe"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The CN Tower",
+    "category": "place",
+    "polysemy_triggers": [
+      "toronto landmark",
+      "cable stayed wonder",
+      "6ix icon"
+    ],
+    "clue_associations": [
+      "Tallest free-standing structure in the Western Hemisphere",
+      "Has an observation deck and restaurant at its top",
+      "Completed in 1976 as a symbol of Canadian engineering"
+    ],
+    "aliases": [
+      "CN Tower Toronto"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Shard",
+    "category": "place",
+    "polysemy_triggers": [
+      "london shard",
+      "glass pyramid wonder",
+      "southwark pride"
+    ],
+    "clue_associations": [
+      "Tallest building in Western Europe since 2013",
+      "Located on the South Bank of the River Thames",
+      "Developed by Sellar Property Group and designed by Renzo Piano"
+    ],
+    "aliases": [
+      "The London Shard"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Leaning Tower of Pisa",
+    "category": "place",
+    "polysemy_triggers": [
+      "pisa tilt wonder",
+      "leaning tower fame",
+      "italian icon"
+    ],
+    "clue_associations": [
+      "Famous for its unintended tilt since construction began in 1173",
+      "Built as part of the Pisa Cathedral complex",
+      "Stabilized and reinforced between 1990-2001"
+    ],
+    "aliases": [
+      "The Leaning Tower"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Rialto Bridge",
+    "category": "place",
+    "polysemy_triggers": [
+      "Venice Icon",
+      "Arching Beauty",
+      "Grand Canal Crossing"
+    ],
+    "clue_associations": [
+      "Baroque architecture meets functionality",
+      "Kissing arches support the weight",
+      "Venetian landmark of beauty"
+    ],
+    "aliases": [
+      "The Rialto"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Marion Bridge",
+    "category": "place",
+    "polysemy_triggers": [
+      "Cape Breton Crossing",
+      "Railway Bridge High",
+      "Maritime Icon"
+    ],
+    "clue_associations": [
+      "Suspension system holds the weight",
+      "Cable system supports high traffic",
+      "Symbol of Canadian engineering"
+    ],
+    "aliases": [
+      "The Marion"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Gateshead Millennium Bridge",
+    "category": "place",
+    "polysemy_triggers": [
+      "Newcastle Icon",
+      "Blinking Eye High",
+      "Tyne River Crossing"
+    ],
+    "clue_associations": [
+      "Sleek design meets modern needs",
+      "Cantilever system holds the weight",
+      "Symbol of British innovation"
+    ],
+    "aliases": [
+      "The Gateshead"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Harbour Bridge",
+    "category": "place",
+    "polysemy_triggers": [
+      "Sydney Icon",
+      "Coathanger High",
+      "Habor Crossing"
+    ],
+    "clue_associations": [
+      "Art Deco design meets functionality",
+      "Suspension system holds high traffic",
+      "Symbol of Australian engineering"
+    ],
+    "aliases": [
+      "The Coat Hanger"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Aswan Dam",
+    "category": "place",
+    "polysemy_triggers": [
+      "Egypt",
+      "Nile",
+      "Waterfall"
+    ],
+    "clue_associations": [
+      "Ancient ruins and modern marvel coexist",
+      "A river runs through it",
+      "Sandstone wonder of the world"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Grand Coulee Dam",
+    "category": "place",
+    "polysemy_triggers": [
+      "Washington",
+      "Powerhouse",
+      "Hydroelectric"
+    ],
+    "clue_associations": [
+      "Harnessing the fury of nature",
+      "A behemoth on the Columbia River",
+      "Engineering feat of the century"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Three Gorges Dam",
+    "category": "place",
+    "polysemy_triggers": [
+      "China",
+      "Yangtze",
+      "Massive Structure"
+    ],
+    "clue_associations": [
+      "A dragon's tooth in the heart of China",
+      "The longest dam in the world",
+      "A feat of modern engineering"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Itaipu Dam",
+    "category": "place",
+    "polysemy_triggers": [
+      "Brazil",
+      "Paraguay",
+      "Rainbow"
+    ],
+    "clue_associations": [
+      "A bridge between two nations",
+      "Where the falls meet the dam",
+      "The largest dam in the Americas"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Bourget Dam",
+    "category": "place",
+    "polysemy_triggers": [
+      "France",
+      "Waterfall",
+      "Mountain"
+    ],
+    "clue_associations": [
+      "A towering presence on the French Alps",
+      "Where snow meets water",
+      "The highest dam in France"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Tarbela Dam",
+    "category": "place",
+    "polysemy_triggers": [
+      "Pakistan",
+      "Hydroelectric",
+      "Khyber Pakhtunkhwa"
+    ],
+    "clue_associations": [
+      "A mighty dam on the Indus River",
+      "Where water meets power",
+      "The largest earth-filled dam in the world"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Xingkai Lake Dam",
+    "category": "place",
+    "polysemy_triggers": [
+      "China",
+      "Flood Control",
+      "Man-made Lake"
+    ],
+    "clue_associations": [
+      "A barrier against China's floods",
+      "Where the Yangtze and Songhua meet",
+      "The largest man-made lake in Asia"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Kakhovka Dam",
+    "category": "place",
+    "polysemy_triggers": [
+      "Ukraine",
+      "Dnipro River",
+      "Reservoir"
+    ],
+    "clue_associations": [
+      "A giant on the Dnipro River",
+      "Where water meets industry",
+      "The largest reservoir in Ukraine"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Guri Dam",
+    "category": "place",
+    "polysemy_triggers": [
+      "Venezuela",
+      "Hydroelectric",
+      "Andes"
+    ],
+    "clue_associations": [
+      "A mighty dam on the Orinoco River",
+      "Where power meets water",
+      "The largest hydroelectric facility in Venezuela"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Hoover Dam",
+    "category": "place",
+    "polysemy_triggers": [
+      "Arizona",
+      "Nevada",
+      "Boulder City"
+    ],
+    "clue_associations": [
+      "A marvel of modern engineering on the Colorado River",
+      "Where water meets power in the desert",
+      "The iconic dam on the Arizona-Nevada border"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Mont Blanc Tunnel",
+    "category": "place",
+    "polysemy_triggers": [
+      "tunnel",
+      "France",
+      "mountain"
+    ],
+    "clue_associations": [
+      "Underground passage in French Alps",
+      "Connecting France and Italy",
+      "Longest tunnel in the world"
+    ],
+    "aliases": [
+      "E39",
+      "Great St Bernard Tunnel"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Channel Tunnel",
+    "category": "place",
+    "polysemy_triggers": [
+      "undersea",
+      "Europe",
+      "transportation"
+    ],
+    "clue_associations": [
+      "Connecting England and France",
+      "Longest undersea tunnel in the world",
+      "Passage beneath English Channel"
+    ],
+    "aliases": [
+      "Eurotunnel"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Chunnel",
+    "category": "place",
+    "polysemy_triggers": [
+      "undersea",
+      "Europe",
+      "transportation"
+    ],
+    "clue_associations": [
+      "Connecting England and France",
+      "Longest undersea tunnel in the world",
+      "Passage beneath English Channel"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Boring Tunnel",
+    "category": "place",
+    "polysemy_triggers": [
+      "tunnel",
+      "Seattle",
+      "construction"
+    ],
+    "clue_associations": [
+      "Underground transportation system in Seattle",
+      "Longest deep bore tunnel in the world",
+      "Connecting downtown Seattle to surrounding cities"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Berthold Tunnel",
+    "category": "place",
+    "polysemy_triggers": [
+      "tunnel",
+      "Colorado",
+      "mountain"
+    ],
+    "clue_associations": [
+      "Connecting Idaho and Colorado through Rocky Mountains",
+      "Longest tunnel in the United States",
+      "High-altitude passage beneath Continental Divide"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Kilpatrick Tunnel",
+    "category": "place",
+    "polysemy_triggers": [
+      "tunnel",
+      "Ohio",
+      "river"
+    ],
+    "clue_associations": [
+      "Connecting Cincinnati to Covington through Ohio River",
+      "Longest tunnel in the world beneath a river",
+      "Underground passage beneath Ohio River Valley"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Montrose Tunnel",
+    "category": "place",
+    "polysemy_triggers": [
+      "tunnel",
+      "Seattle",
+      "lake"
+    ],
+    "clue_associations": [
+      "Connecting downtown Seattle to Elliott Bay waterfront",
+      "Longest tunnel in the world beneath a lake",
+      "Underground passage beneath Lake Union"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Seikan Tunnel",
+    "category": "place",
+    "polysemy_triggers": [
+      "tunnel",
+      "Japan",
+      "island"
+    ],
+    "clue_associations": [
+      "Connecting Honshu and Kyushu through Japanese islands",
+      "Longest undersea tunnel in the world",
+      "Passage beneath Tsushima Strait"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Alaskan Way Viaduct Tunnel",
+    "category": "place",
+    "polysemy_triggers": [
+      "tunnel",
+      "Seattle",
+      "waterway"
+    ],
+    "clue_associations": [
+      "Connecting Seattle waterfront to downtown",
+      "Underground passage beneath Puget Sound",
+      "Longest tunnel in the world beneath a saltwater bay"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Gotthard Base Tunnel",
+    "category": "place",
+    "polysemy_triggers": [
+      "tunnel",
+      "Switzerland",
+      "mountain"
+    ],
+    "clue_associations": [
+      "Connecting Switzerland to Italy through the Alps",
+      "Longest tunnel in the world beneath a mountain range",
+      "Underground passage beneath Gotthard Massif"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": " Taj Mahal",
+    "category": "place",
+    "polysemy_triggers": [
+      "Indian monument",
+      "White marble mausoleum",
+      "Love story in stone"
+    ],
+    "clue_associations": [
+      "Mughal emperor's tribute to love",
+      "A symphony of white and black",
+      "Perfect blend of Indian and Persian styles"
+    ],
+    "aliases": [
+      "Crown of Palaces"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "Angel of Independence",
+    "category": "place",
+    "polysemy_triggers": [
+      "Mexican monument",
+      "Victoriana-style statue",
+      "Freedom symbol"
+    ],
+    "clue_associations": [
+      "Napoleon's hat on Mexico's highest hill",
+      "Equestrian tribute to Mexican independence",
+      "Pedro Esquivel's national treasure"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Washington Monument",
+    "category": "place",
+    "polysemy_triggers": [
+      "Obelisk",
+      "Capital Hill",
+      "President"
+    ],
+    "clue_associations": [
+      "Symbol of Freedom and Unity",
+      "Built to Honor the Nation's First Leader",
+      "A Tribute in the Heart of DC"
+    ],
+    "aliases": [
+      "The Monument"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Statue of Liberty",
+    "category": "place",
+    "polysemy_triggers": [
+      "Island Fortress",
+      "New Colossus",
+      "Goddess"
+    ],
+    "clue_associations": [
+      "A Beacon of Hope and Freedom for the World",
+      "Gift from a Friendly Nation",
+      "Standing Tall Amidst the Sea"
+    ],
+    "aliases": [
+      "Lady Liberty"
+    ],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Lincoln Memorial",
+    "category": "place",
+    "polysemy_triggers": [
+      "Reflecting Pool",
+      "Abe's Tribute",
+      "Marble Shrine"
+    ],
+    "clue_associations": [
+      "Honoring the Leader of the Union",
+      "Quotes from a Beloved President",
+      "A Peaceful Ode to Democracy"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Tomb of the Unknown Soldier",
+    "category": "place",
+    "polysemy_triggers": [
+      "Mysterious Monument",
+      "Honoring the Brave",
+      "Unmarked Graves"
+    ],
+    "clue_associations": [
+      "A Tribute to Those Whose Names are Lost in Time",
+      "A Symbol of Respect for the Fallen",
+      "Guarded by Sentinels 24/7"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Vietnam Veterans Memorial",
+    "category": "place",
+    "polysemy_triggers": [
+      "Wall of Tears",
+      "Black Granite",
+      "Washington Monument's Neighbor"
+    ],
+    "clue_associations": [
+      "A Memorial to Those Who Fought and Died in Vietnam",
+      "Names Etched on a Dark Slate",
+      "Reflecting the Sacrifices Made in a Foreign Land"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Gettysburg National Military Park",
+    "category": "place",
+    "polysemy_triggers": [
+      "Battlesite",
+      "Bloodiest Conflict",
+      "Civil War Battlefield"
+    ],
+    "clue_associations": [
+      "A Site of Great Tragedy and Turning Point in American History",
+      "Where Brothers Fought Against Each Other",
+      "Three Days of Fierce Combat"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The Arlington National Cemetery",
+    "category": "place",
+    "polysemy_triggers": [
+      "Mourning Grounds",
+      "Honor the Dead",
+      "President's Final Resting Place"
+    ],
+    "clue_associations": [
+      "A Place of Solace for Those Who Have Lost Loved Ones in Service",
+      "Where Fallen Heroes Lie in Eternal Rest",
+      "A Tribute to All Who Have Given Their Last Full Measure"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The USS Arizona Memorial",
+    "category": "place",
+    "polysemy_triggers": [
+      "Sunken Battleship",
+      "Pearl Harbor's Dark Day",
+      "Water Tomb"
+    ],
+    "clue_associations": [
+      "A Tribute to the Ship and its Crew That Sank in 1941",
+      "Where 1,177 Sailors and Marines Lie at Rest",
+      "An American Icon of Sacrifice and Remembrance"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The World War II Memorial",
+    "category": "place",
+    "polysemy_triggers": [
+      "Freedom Wall",
+      "Garden of Heroes",
+      "Washington DC's Tribute to the Greatest Generation"
+    ],
+    "clue_associations": [
+      "A Monument Honoring Those Who Fought and Died for Freedom",
+      "A Place of Reflection and Remembrance",
+      "42 Stars Representing Each State in the Union"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  },
+  {
+    "name": "The National World War I Memorial",
+    "category": "place",
+    "polysemy_triggers": [
+      "Trenches to Triumph",
+      "Lone Sailor Monument",
+      "WW1's Tribute in DC"
+    ],
+    "clue_associations": [
+      "A Site Honoring the Men and Women Who Fought in the Great War",
+      "An American Icon of Sacrifice and Victory",
+      "Echoes of a Distant Conflict"
+    ],
+    "aliases": [],
+    "source": "generated_v3",
+    "annotated": true
+  }
+]

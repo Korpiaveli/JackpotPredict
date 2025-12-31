@@ -66,7 +66,7 @@ class Settings(BaseSettings):
     # Anthropic API (Claude 3.5 Sonnet for Oracle meta-synthesizer)
     # Get key at: https://console.anthropic.com/settings/keys
     ANTHROPIC_API_KEY: str = ""
-    CLAUDE_MODEL: str = "claude-3-5-sonnet-20241022"
+    CLAUDE_MODEL: str = "claude-sonnet-4-20250514"
 
     # Agent orchestration settings
     AGENT_TIMEOUT: int = 5  # seconds per agent

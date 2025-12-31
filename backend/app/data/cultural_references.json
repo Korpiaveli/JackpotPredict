@@ -91,6 +91,63 @@
       "keywords": ["boat", "shark", "bigger"]
     }
   },
+  "person_patterns": {
+    "paris hilton pattern": {
+      "answer": "PARIS HILTON",
+      "pattern_type": "celebrity",
+      "keywords": ["hospitable", "hot", "hotel", "heiress", "simple", "reality"]
+    },
+    "michael jordan pattern": {
+      "answer": "MICHAEL JORDAN",
+      "pattern_type": "celebrity",
+      "keywords": ["air", "airness", "23", "bulls", "chicago", "dunk", "space jam", "rings"]
+    },
+    "oprah pattern": {
+      "answer": "OPRAH WINFREY",
+      "pattern_type": "celebrity",
+      "keywords": ["car", "daytime", "queen", "book club", "own", "chicago", "talk show"]
+    },
+    "elvis pattern": {
+      "answer": "ELVIS PRESLEY",
+      "pattern_type": "celebrity",
+      "keywords": ["king", "hound dog", "graceland", "blue suede", "memphis", "pelvis"]
+    },
+    "einstein pattern": {
+      "answer": "ALBERT EINSTEIN",
+      "pattern_type": "celebrity",
+      "keywords": ["relatively", "genius", "hair", "princeton", "physicist", "mc squared", "e=mc"]
+    },
+    "beyonce pattern": {
+      "answer": "BEYONCE",
+      "pattern_type": "celebrity",
+      "keywords": ["queen bey", "bey", "destiny", "single ladies", "lemonade", "houston", "jay-z", "formation", "halo"]
+    },
+    "dicaprio pattern": {
+      "answer": "LEONARDO DICAPRIO",
+      "pattern_type": "celebrity",
+      "keywords": ["oscar", "king of the world", "wolf", "titanic", "environmental", "models"]
+    },
+    "lincoln pattern": {
+      "answer": "ABRAHAM LINCOLN",
+      "pattern_type": "historical",
+      "keywords": ["honest abe", "tall hat", "ford", "theatre", "16th", "slaves", "emancipation"]
+    },
+    "cleopatra pattern": {
+      "answer": "CLEOPATRA",
+      "pattern_type": "historical",
+      "keywords": ["nile", "asp", "snake", "caesar", "antony", "egypt", "queen"]
+    },
+    "mlk pattern": {
+      "answer": "MARTIN LUTHER KING JR.",
+      "pattern_type": "historical",
+      "keywords": ["dream", "civil rights", "march", "washington", "atlanta", "nobel", "peace"]
+    },
+    "muhammad ali pattern": {
+      "answer": "MUHAMMAD ALI",
+      "pattern_type": "celebrity",
+      "keywords": ["butterfly", "bee", "greatest", "cassius", "clay", "rumble", "jungle", "louisville"]
+    }
+  },
   "wordplay_patterns": {
     "pickle + sport": {
       "answer": "PICKLEBALL",
@@ -165,7 +222,12 @@
     "ice + tray": {
       "answer": "ICE CUBE TRAY",
       "pattern_type": "compound",
-      "keywords": ["ice", "cube", "freeze", "cold", "mold"]
+      "keywords": ["ice", "cube", "freeze", "cold", "mold", "water", "kitchen", "freezer"]
+    },
+    "cavity pattern": {
+      "answer": "CAVITY",
+      "pattern_type": "riddle",
+      "keywords": ["dentist", "tooth", "decay", "drill", "filling", "mouth", "hidden", "pain"]
     },
     "crutch + leg": {
       "answer": "CRUTCHES",

@@ -9,9 +9,9 @@
         "clue_number": 1,
         "clue_text": "Savors many flavors",
         "top_3": [
-          "Statue of Liberty",
-          "Eiffel Tower",
-          "Mt. Rushmore"
+          "Ice Cream",
+          "Candle",
+          "Starbucks"
         ],
         "answer_found": false,
         "answer_rank": null,
@@ -21,9 +21,9 @@
         "clue_number": 2,
         "clue_text": "Round and round",
         "top_3": [
-          "Statue of Liberty",
-          "Eiffel Tower",
-          "Mt. Rushmore"
+          "Lollipop",
+          "Carousel",
+          "Ferris wheel"
         ],
         "answer_found": false,
         "answer_rank": null,
@@ -34,42 +34,42 @@
         "clue_text": "A hostile takeover",
         "top_3": [
           "Monopoly",
-          "Statue of Liberty",
-          "Eiffel Tower"
+          "Oreo",
+          "Gumball Machine"
         ],
         "answer_found": true,
         "answer_rank": 1,
-        "answer_confidence": 95.0
+        "answer_confidence": 75.0
       },
       {
         "clue_number": 4,
         "clue_text": "Trespassing will cost you",
         "top_3": [
           "Monopoly",
-          "Statue of Liberty",
-          "Eiffel Tower"
+          "Risk",
+          "Candy Land"
         ],
         "answer_found": true,
         "answer_rank": 1,
-        "answer_confidence": 95.0
+        "answer_confidence": 89.25
       },
       {
         "clue_number": 5,
         "clue_text": "Jail time can be dicey",
         "top_3": [
-          "Times Square",
-          "Big Ben",
-          "Baseball"
+          "Monopoly",
+          "Risk",
+          "Clue"
         ],
-        "answer_found": false,
-        "answer_rank": null,
-        "answer_confidence": 0.0
+        "answer_found": true,
+        "answer_rank": 1,
+        "answer_confidence": 98.0
       }
     ],
     "passed": true,
     "found_at_clue": 3,
     "final_rank": 1,
-    "final_confidence": 95.0
+    "final_confidence": 98.0
   },
   {
     "puzzle_name": "Paris Hilton",
@@ -81,9 +81,9 @@
         "clue_number": 1,
         "clue_text": "Back to the basics",
         "top_3": [
-          "Statue of Liberty",
-          "Eiffel Tower",
-          "Mt. Rushmore"
+          "Alphabet",
+          "Numbers",
+          "Chalkboard"
         ],
         "answer_found": false,
         "answer_rank": null,
@@ -93,9 +93,9 @@
         "clue_number": 2,
         "clue_text": "Loud with the crowd",
         "top_3": [
-          "Statue of Liberty",
-          "Eiffel Tower",
-          "Mt. Rushmore"
+          "Rock concert",
+          "Karaoke",
+          "Sports game"
         ],
         "answer_found": false,
         "answer_rank": null,
@@ -105,9 +105,9 @@
         "clue_number": 3,
         "clue_text": "A sensation and a destination",
         "top_3": [
-          "Statue of Liberty",
-          "Eiffel Tower",
-          "Mt. Rushmore"
+          "Concert",
+          "Festival",
+          "Arcade"
         ],
         "answer_found": false,
         "answer_rank": null,
@@ -117,9 +117,9 @@
         "clue_number": 4,
         "clue_text": "Her family is extremely hospitable",
         "top_3": [
-          "Statue of Liberty",
-          "Eiffel Tower",
-          "Mt. Rushmore"
+          "Hilton Hotels",
+          "McDonald's",
+          "Coca-Cola"
         ],
         "answer_found": false,
         "answer_rank": null,
@@ -129,19 +129,19 @@
         "clue_number": 5,
         "clue_text": "Named after a romantic city? That's hot.",
         "top_3": [
-          "Times Square",
-          "Eiffel Tower",
-          "Hot Dog"
+          "Paris Hilton",
+          "Hilton Hotels",
+          "Paris"
         ],
-        "answer_found": false,
-        "answer_rank": null,
-        "answer_confidence": 0.0
+        "answer_found": true,
+        "answer_rank": 1,
+        "answer_confidence": 98.0
       }
     ],
-    "passed": false,
-    "found_at_clue": null,
-    "final_rank": null,
-    "final_confidence": null
+    "passed": true,
+    "found_at_clue": 5,
+    "final_rank": 1,
+    "final_confidence": 98.0
   },
   {
     "puzzle_name": "Mt. Rushmore",
@@ -153,9 +153,9 @@
         "clue_number": 1,
         "clue_text": "Natural but not natural",
         "top_3": [
-          "Grand Canyon",
-          "Statue of Liberty",
-          "Eiffel Tower"
+          "Artificial Sweetener",
+          "Processed Food",
+          "Synthetic Fabric"
         ],
         "answer_found": false,
         "answer_rank": null,
@@ -166,20 +166,20 @@
         "clue_text": "Presidential faces",
         "top_3": [
           "Mt. Rushmore",
-          "Grand Canyon",
+          "Floyd Mayweather Jr.",
           "Statue of Liberty"
         ],
         "answer_found": true,
         "answer_rank": 1,
-        "answer_confidence": 86.07736166656659
+        "answer_confidence": 42.5
       },
       {
         "clue_number": 3,
         "clue_text": "South Dakota landmark",
         "top_3": [
           "Mt. Rushmore",
-          "Grand Canyon",
-          "Hollywood"
+          "Badlands National Park",
+          "Black Hills"
         ],
         "answer_found": true,
         "answer_rank": 1,
@@ -190,30 +190,30 @@
         "clue_text": "Carved in granite",
         "top_3": [
           "Mt. Rushmore",
-          "Grand Canyon",
-          "Hollywood"
+          "Badlands National Park",
+          "Black Hills"
         ],
         "answer_found": true,
         "answer_rank": 1,
-        "answer_confidence": 95.0
+        "answer_confidence": 98.0
       },
       {
         "clue_number": 5,
         "clue_text": "Four founding fathers",
         "top_3": [
           "Mt. Rushmore",
-          "Grand Canyon",
-          "Hollywood"
+          "Black Hills",
+          "Badlands National Park"
         ],
         "answer_found": true,
         "answer_rank": 1,
-        "answer_confidence": 95.0
+        "answer_confidence": 98.0
       }
     ],
     "passed": true,
     "found_at_clue": 2,
     "final_rank": 1,
-    "final_confidence": 95.0
+    "final_confidence": 98.0
   },
   {
     "puzzle_name": "Eiffel Tower",
@@ -226,32 +226,32 @@
         "clue_text": "Named after Eiffel",
         "top_3": [
           "Eiffel Tower",
-          "Statue of Liberty",
-          "Mt. Rushmore"
+          "Eiffel Tower replica",
+          "WAIT"
         ],
         "answer_found": true,
         "answer_rank": 1,
-        "answer_confidence": 50.0
+        "answer_confidence": 22.499999999999996
       },
       {
         "clue_number": 2,
         "clue_text": "Iron lady of Paris",
         "top_3": [
           "Eiffel Tower",
-          "Statue of Liberty",
-          "Football"
+          "Paris",
+          "Hot Dog"
         ],
         "answer_found": true,
         "answer_rank": 1,
-        "answer_confidence": 95.0
+        "answer_confidence": 76.5
       },
       {
         "clue_number": 3,
         "clue_text": "Built for an exposition",
         "top_3": [
           "Eiffel Tower",
-          "Statue of Liberty",
-          "Football"
+          "Paris",
+          "Hot Dog"
         ],
         "answer_found": true,
         "answer_rank": 1,
@@ -262,29 +262,1590 @@
         "clue_text": "World's most visited paid monument",
         "top_3": [
           "Eiffel Tower",
-          "Statue of Liberty",
-          "Times Square"
+          "Paris",
+          "Louvre Museum"
         ],
         "answer_found": true,
         "answer_rank": 1,
-        "answer_confidence": 95.0
+        "answer_confidence": 98.0
       },
       {
         "clue_number": 5,
         "clue_text": "1000 feet of French engineering",
         "top_3": [
           "Eiffel Tower",
-          "Football",
-          "Statue of Liberty"
+          "Paris",
+          "Hot Dog"
         ],
         "answer_found": true,
         "answer_rank": 1,
-        "answer_confidence": 95.0
+        "answer_confidence": 98.0
       }
     ],
     "passed": true,
     "found_at_clue": 1,
     "final_rank": 1,
-    "final_confidence": 95.0
+    "final_confidence": 98.0
+  },
+  {
+    "puzzle_name": "Star Wars",
+    "expected_answer": "Star Wars",
+    "target_clue": 3,
+    "min_confidence": 60.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "A long time ago",
+        "top_3": [
+          "Star Wars",
+          "History",
+          "Fossil"
+        ],
+        "answer_found": true,
+        "answer_rank": 1,
+        "answer_confidence": 22.499999999999996
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "The force is strong",
+        "error": "('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Dark side vs light",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Darth Vader's saga",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "May the force be with you",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": 1,
+    "final_rank": 1,
+    "final_confidence": 22.499999999999996
+  },
+  {
+    "puzzle_name": "Titanic",
+    "expected_answer": "Titanic",
+    "target_clue": 3,
+    "min_confidence": 60.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Unsinkable they said",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "An icy ending",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Jack and Rose",
+        "error": "HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=10)"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Heart of the ocean",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "King of the world",
+        "error": "HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=10)"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Michael Jordan",
+    "expected_answer": "Michael Jordan",
+    "target_clue": 3,
+    "min_confidence": 60.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Air time legend",
+        "error": "HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=10)"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Six championship rings",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Number 23 forever",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Space Jam star",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "His Airness from Chicago",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Google",
+    "expected_answer": "Google",
+    "target_clue": 3,
+    "min_confidence": 60.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Started in a garage",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Don't be evil",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Search for anything",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "The number one search engine",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Googol inspired its name",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Statue of Liberty",
+    "expected_answer": "Statue of Liberty",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "A gift from France",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Torch bearer",
+        "error": "HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=10)"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Lady in the harbor",
+        "error": "HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=10)"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Welcome to America",
+        "error": "HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=10)"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Liberty enlightening the world",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Disney",
+    "expected_answer": "Disney",
+    "target_clue": 3,
+    "min_confidence": 60.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "A magical kingdom",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Where dreams come true",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Started with a mouse",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "The happiest place on Earth",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Walt's vision",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Golden Gate Bridge",
+    "expected_answer": "Golden Gate Bridge",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Not actually golden",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "San Francisco icon",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "International orange",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Spans the bay",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Art deco beauty",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Oprah Winfrey",
+    "expected_answer": "Oprah Winfrey",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "You get a car!",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "The queen of daytime",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Book club sensation",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "OWN network founder",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Chicago media mogul",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Elvis Presley",
+    "expected_answer": "Elvis Presley",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "The King",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Hound dog howler",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Graceland resident",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Blue suede shoes",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Memphis legend",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Albert Einstein",
+    "expected_answer": "Albert Einstein",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Relatively famous",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "E equals MC squared",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Wild hair genius",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Princeton professor",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Nobel Prize physicist",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Beyonce",
+    "expected_answer": "Beyonce",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Queen Bey",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Destiny's child",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Single ladies anthem",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Lemonade maker",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Houston superstar",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Leonardo DiCaprio",
+    "expected_answer": "Leonardo DiCaprio",
+    "target_clue": 3,
+    "min_confidence": 60.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Finally got his Oscar",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "King of the world (again)",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Wolf of Wall Street",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Environmental activist",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Dating models exclusively",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Grand Canyon",
+    "expected_answer": "Grand Canyon",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "A big hole in the ground",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Arizona wonder",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Colorado River carved it",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Mile deep marvel",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Red rock majesty",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Las Vegas",
+    "expected_answer": "Las Vegas",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Sin City",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "What happens here stays here",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Desert oasis of gambling",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "The Strip",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Nevada neon lights",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Great Wall of China",
+    "expected_answer": "Great Wall of China",
+    "target_clue": 3,
+    "min_confidence": 60.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Visible from space? Not really",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Dragon's backbone",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Ancient defense system",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Thousands of miles long",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Ming Dynasty marvel",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Hollywood",
+    "expected_answer": "Hollywood",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Tinseltown",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Where dreams are made",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Big white letters on a hill",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Movie magic central",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "California's entertainment capital",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Times Square",
+    "expected_answer": "Times Square",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "New Year's Eve destination",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "The crossroads of the world",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Bright lights big city",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Broadway's heart",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Manhattan's neon jungle",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "iPhone",
+    "expected_answer": "iPhone",
+    "target_clue": 3,
+    "min_confidence": 60.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Revolutionized the smartphone",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "One more thing",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Cupertino's cash cow",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Steve Jobs' legacy",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "iOS runs on it",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Coca-Cola",
+    "expected_answer": "Coca-Cola",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "The real thing",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Secret formula",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Santa's favorite drink",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Atlanta original",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Open happiness",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Nike",
+    "expected_answer": "Nike",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Just do it",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Swoosh symbol",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Air Jordan maker",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Greek goddess of victory",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Phil Knight's creation",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "McDonald's",
+    "expected_answer": "McDonald's",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Golden arches",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "I'm lovin' it",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Happy Meals",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Big Mac birthplace",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Fast food empire",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Tesla",
+    "expected_answer": "Tesla",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Electric dreams",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Elon's baby",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Not just a scientist's name",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Autopilot pioneer",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Cybertruck creator",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Game of Thrones",
+    "expected_answer": "Game of Thrones",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Winter is coming",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Iron throne seeker",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Dragons and direwolves",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Red wedding horror",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "HBO fantasy epic",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "The Beatles",
+    "expected_answer": "The Beatles",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Fab Four",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "British invasion leaders",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Abbey Road crossers",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Lennon and McCartney",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Yeah yeah yeah",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Harry Potter",
+    "expected_answer": "Harry Potter",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "The boy who lived",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Hogwarts student",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Lightning bolt scar",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Quidditch seeker",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "J.K. Rowling's wizard",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Super Bowl",
+    "expected_answer": "Super Bowl",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Big game Sunday",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Halftime show spectacular",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Expensive commercials",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Lombardi Trophy",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "NFL championship",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Netflix",
+    "expected_answer": "Netflix",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "And chill",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Red envelope origins",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Binge watching enabler",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Stranger Things home",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Streaming giant",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Amazon",
+    "expected_answer": "Amazon",
+    "target_clue": 3,
+    "min_confidence": 60.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "A river runs through it",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Rainforest and retail",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Prime delivery",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Jeff's everything store",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Alexa's parent",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Apple",
+    "expected_answer": "Apple",
+    "target_clue": 3,
+    "min_confidence": 60.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Forbidden fruit",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Think different",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "One byte at a time",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Cupertino campus",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Steve's garage startup",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Subway",
+    "expected_answer": "Subway",
+    "target_clue": 3,
+    "min_confidence": 60.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Underground transportation",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Five dollar footlong",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Eat fresh",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Sandwich artist",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Jared's former employer",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Mars",
+    "expected_answer": "Mars",
+    "target_clue": 3,
+    "min_confidence": 60.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "The red planet",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Candy bar sweetness",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Bruno's surname",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Fourth from the sun",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Elon's destination",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Queen",
+    "expected_answer": "Queen",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Bohemian Rhapsody rockers",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Royal title",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Freddie's band",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Chess piece",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "We will rock you",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Abraham Lincoln",
+    "expected_answer": "Abraham Lincoln",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Honest Abe",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Freed the slaves",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Tall hat wearer",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Ford's Theatre tragedy",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "16th President",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Cleopatra",
+    "expected_answer": "Cleopatra",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Queen of the Nile",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Asp's victim",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Caesar's lover",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Egyptian ruler",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Mark Antony's romance",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Martin Luther King Jr.",
+    "expected_answer": "Martin Luther King Jr.",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "I have a dream",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Civil rights leader",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Nobel Peace Prize 1964",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "March on Washington",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Atlanta's son",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Muhammad Ali",
+    "expected_answer": "Muhammad Ali",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Float like a butterfly",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "The Greatest",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Cassius Clay transformed",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Rumble in the jungle",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Louisville Lip",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Olympics",
+    "expected_answer": "Olympics",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Five rings",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Go for gold",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Faster higher stronger",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Every four years",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Ancient Greece tradition",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "FIFA World Cup",
+    "expected_answer": "FIFA World Cup",
+    "target_clue": 3,
+    "min_confidence": 60.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "The beautiful game's biggest prize",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Every four years fever",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "National teams compete",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Soccer's holy grail",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "One billion viewers",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "DNA",
+    "expected_answer": "DNA",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Double helix",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Genetic blueprint",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Watson and Crick",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "ATCG code",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Life's building blocks",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Internet",
+    "expected_answer": "Internet",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "World wide web",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Information superhighway",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "ARPANET evolved",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Cat videos home",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Global network",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Pizza",
+    "expected_answer": "Pizza",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Italian pie",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Cheese and tomato",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "New York vs Chicago style",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Delivery in 30 minutes",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Pepperoni favorite",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
+  },
+  {
+    "puzzle_name": "Starbucks",
+    "expected_answer": "Starbucks",
+    "target_clue": 2,
+    "min_confidence": 70.0,
+    "clue_results": [
+      {
+        "clue_number": 1,
+        "clue_text": "Mermaid logo",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 2,
+        "clue_text": "Grande venti tall",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 3,
+        "clue_text": "Seattle coffee culture",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 4,
+        "clue_text": "Pumpkin spice pusher",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      },
+      {
+        "clue_number": 5,
+        "clue_text": "Green apron baristas",
+        "error": "404 Client Error: Not Found for url: http://localhost:8000/api/predict"
+      }
+    ],
+    "passed": false,
+    "found_at_clue": null,
+    "final_rank": null,
+    "final_confidence": null
   }
 ]

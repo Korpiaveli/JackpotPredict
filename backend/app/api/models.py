@@ -290,6 +290,11 @@ class OracleSynthesis(BaseModel):
         description="Oracle processing time in milliseconds"
     )
 
+    misdirection_detected: str = Field(
+        default="",
+        description="What trap is the clue writer setting? (10-20 words)"
+    )
+
     model_config = ConfigDict(
         json_schema_extra={
             "example": {
@@ -300,7 +305,45 @@ class OracleSynthesis(BaseModel):
                 ],
                 "key_theme": "Board games with business/strategy elements",
                 "blind_spot": "Consider if 'dicey' is wordplay (dice) or means 'risky'",
-                "latency_ms": 1250.0
+                "latency_ms": 1250.0,
+                "misdirection_detected": "Early clues suggest corporate world but 'dicey' wordplay points to board game"
+            }
+        }
+    )
+
+
+class CulturalMatch(BaseModel):
+    """Cultural reference detected in clues."""
+
+    keyword: str = Field(
+        ...,
+        description="The keyword or phrase that triggered the match"
+    )
+
+    answer: str = Field(
+        ...,
+        description="The answer associated with this cultural reference"
+    )
+
+    source: str = Field(
+        ...,
+        description="Source type: 'quote', 'pattern', or 'historical'"
+    )
+
+    confidence: float = Field(
+        ...,
+        ge=0.0,
+        le=1.0,
+        description="Confidence score (0.0-1.0)"
+    )
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "keyword": "festivus",
+                "answer": "SEINFELD",
+                "source": "quote",
+                "confidence": 0.95
             }
         }
     )
@@ -399,6 +442,17 @@ class PredictionResponse(BaseModel):
     category_probabilities: Dict[str, float] = Field(
         default_factory=dict,
         description="Current probability distribution across categories"
+    )
+
+    # MOA v3: Cultural context fields
+    cultural_matches: List[CulturalMatch] = Field(
+        default_factory=list,
+        description="Detected cultural references in clues (quotes, patterns, historical)"
+    )
+
+    clue_strategy: str = Field(
+        default="",
+        description="Strategy guidance for current clue number"
     )
 
     model_config = ConfigDict(

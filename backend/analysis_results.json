@@ -1,0 +1,95 @@
+{
+  "metadata": {
+    "run_date": "2025-12-30T16:28:39.402909",
+    "total_puzzles": 1,
+    "api_url": "http://localhost:8000"
+  },
+  "summary": {
+    "total_puzzles": 1,
+    "oracle_accuracy_by_clue": {
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0,
+      "5": 0.0
+    },
+    "oracle_in_top3_by_clue": {
+      "1": 1.0,
+      "2": 0.0,
+      "3": 1.0,
+      "4": 1.0,
+      "5": 1.0
+    },
+    "agent_accuracy_by_clue": {
+      "lateral": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0
+      },
+      "wordsmith": {
+        "1": 1.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0
+      },
+      "popculture": {
+        "1": 1.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0
+      },
+      "literal": {
+        "1": 1.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0
+      },
+      "wildcard": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0
+      }
+    },
+    "confidence_calibration": {
+      "high": 0.0,
+      "medium": 0,
+      "low": 0
+    },
+    "avg_response_time": 11.59114842414856,
+    "category_accuracy": {
+      "thing": 0,
+      "person": 0.0,
+      "place": 0
+    }
+  },
+  "per_puzzle": [
+    {
+      "answer": "Beyonce",
+      "category": "person",
+      "expected_solve_clue": 2,
+      "oracle_correct_at": null,
+      "oracle_in_top3_at": 1,
+      "oracle_final_confidence": 15,
+      "agents_correct_at": {
+        "wordsmith": 1,
+        "popculture": 1,
+        "literal": 1
+      },
+      "confidence_evolution": [
+        75,
+        85,
+        88,
+        98,
+        98
+      ],
+      "avg_response_time": 11.59114842414856
+    }
+  ]
+}
