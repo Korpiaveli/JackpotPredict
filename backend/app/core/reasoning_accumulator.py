@@ -48,6 +48,7 @@ class ThinkerInsight:
     wordplay_analysis: str  # Detected wordplay
     latency_ms: float
     completed: bool = True
+    contrarian_take: str = ""  # What everyone might be missing
 
 
 @dataclass
