@@ -12,6 +12,7 @@ Endpoints:
 - POST /api/validate - Validate answer spelling
 - POST /api/feedback - Submit puzzle feedback for learning
 - GET /api/health - Health check and metrics
+- GET /api/thinker-status/{session_id}/{clue_number} - Poll for thinker status
 """
 
 import time
@@ -44,16 +45,21 @@ from app.api.models import (
     VotingResult as APIVotingResult,
     VoteBreakdown,
     OracleSynthesis as APIOracleSynthesis,
-    OracleGuess as APIOracleGuess
+    OracleGuess as APIOracleGuess,
+    ThinkerInsight as APIThinkerInsight,
+    ThinkerStatus as APIThinkerStatus
 )
 from app.core.spelling_validator import SpellingValidator
 from app.core.entity_registry import EntityRegistry
 from app.agents.orchestrator import get_orchestrator, warmup_agents
+from app.agents.oracle_agent import get_oracle
 from app.core.reasoning_accumulator import (
     get_accumulator,
     ClueAnalysis,
     OracleSynthesis,
-    OracleGuess
+    OracleGuess,
+    ThinkerContext,
+    ThinkerInsight
 )
 
 logger = logging.getLogger(__name__)
@@ -71,9 +77,12 @@ class SessionState:
     created_at: datetime = field(default_factory=datetime.now)
     last_prediction: Optional[str] = None
 
-    # Reasoning accumulation (NEW)
+    # Reasoning accumulation
     clue_analyses: List[ClueAnalysis] = field(default_factory=list)
     hypothesis_tracker: Dict[str, List[float]] = field(default_factory=dict)
+
+    # Thinker context (deep analysis from prior clues)
+    thinker_context: ThinkerContext = field(default_factory=ThinkerContext)
 
 # Global state
 _sessions: Dict[str, SessionState] = {}
@@ -186,16 +195,18 @@ async def predict(request: ClueRequest) -> PredictionResponse:
 
         logger.info(f"Session {session_id}: Processing clue #{clue_number}: '{request.clue_text}'")
 
-        # Generate context injection from prior clue analyses (REASONING ACCUMULATION)
+        # Generate context injection from prior clue analyses + thinker context (REASONING ACCUMULATION)
         accumulator = get_accumulator()
         prior_context = None
-        if session_state.clue_analyses:
+        if session_state.clue_analyses or session_state.thinker_context.insights:
             prior_context = accumulator.generate_context_injection(
                 analyses=session_state.clue_analyses,
                 current_clue_number=clue_number,
-                full_predictions=True
+                full_predictions=True,
+                thinker_context=session_state.thinker_context
             )
-            logger.info(f"Session {session_id}: Injecting context from {len(session_state.clue_analyses)} prior clues")
+            thinker_insight_count = len(session_state.thinker_context.insights)
+            logger.info(f"Session {session_id}: Injecting context from {len(session_state.clue_analyses)} prior clues, {thinker_insight_count} thinker insights")
 
         # Run 5 agents in parallel via orchestrator (with prior context for reasoning accumulation)
         orchestrator = get_orchestrator()
@@ -204,7 +215,10 @@ async def predict(request: ClueRequest) -> PredictionResponse:
             clue_number=clue_number,
             category_hint=None,  # Could add category detection later
             prior_context=prior_context,
-            prior_analyses=session_state.clue_analyses  # For Oracle context
+            prior_analyses=session_state.clue_analyses,  # For Oracle context
+            theme=request.theme,  # Optional theme/sponsor context
+            session_id=session_id,  # For thinker background task tracking
+            thinker_context=session_state.thinker_context  # Prior thinker insights
         )
 
         # Convert agent predictions to API format
@@ -282,6 +296,7 @@ async def predict(request: ClueRequest) -> PredictionResponse:
             agents=agent_preds,
             voting=voting_result,
             oracle=oracle_synthesis,
+            thinker_task_id=result.thinker_task_id,
             recommended_pick=result.voting.recommended_pick,
             key_insight=result.voting.key_insight,
             agreement_strength=result.voting.agreement_strength,
@@ -452,6 +467,71 @@ async def health() -> HealthResponse:
         )
 
 
+@router.get(
+    "/thinker-status/{session_id}/{clue_number}",
+    response_model=APIThinkerStatus,
+    status_code=status.HTTP_200_OK,
+    summary="Get thinker analysis status",
+    description="Poll for thinker deep analysis completion. Called every 1s by frontend."
+)
+async def get_thinker_status(session_id: str, clue_number: int) -> APIThinkerStatus:
+    """
+    Get status of background thinker analysis.
+
+    Frontend polls this every 1s after receiving prediction response.
+    Returns pending=True while thinker is still processing.
+    Returns completed=True with insight when thinker finishes.
+
+    Also updates session's thinker_context when insight is retrieved.
+    """
+    try:
+        orchestrator = get_orchestrator()
+        status_result = orchestrator.get_thinker_status(session_id, clue_number)
+
+        insight_data = None
+        if status_result.get("insight"):
+            insight = status_result["insight"]
+            insight_data = APIThinkerInsight(
+                clue_number=insight.clue_number,
+                top_guess=insight.top_guess,
+                confidence=insight.confidence,
+                hypothesis_reasoning=insight.hypothesis_reasoning,
+                key_patterns=insight.key_patterns,
+                refined_guesses=[
+                    APIOracleGuess(
+                        answer=g.answer,
+                        confidence=g.confidence,
+                        explanation=g.explanation
+                    )
+                    for g in insight.refined_guesses
+                ],
+                narrative_arc=insight.narrative_arc,
+                wordplay_analysis=insight.wordplay_analysis,
+                latency_ms=insight.latency_ms
+            )
+
+            if session_id in _sessions:
+                session = _sessions[session_id]
+                existing = session.thinker_context.get_for_clue(clue_number)
+                if not existing:
+                    session.thinker_context.add_insight(insight)
+                    logger.info(f"Session {session_id}: Stored thinker insight for clue #{clue_number}")
+
+        return APIThinkerStatus(
+            pending=status_result.get("pending", False),
+            completed=status_result.get("completed", False),
+            insight=insight_data
+        )
+
+    except Exception as e:
+        logger.error(f"Error getting thinker status: {e}", exc_info=True)
+        return APIThinkerStatus(
+            pending=False,
+            completed=False,
+            insight=None
+        )
+
+
 def _record_error_pattern(
     predicted: str,
     correct: str,
@@ -598,6 +678,194 @@ async def submit_feedback(request: FeedbackRequest) -> FeedbackResponse:
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Failed to submit feedback: {str(e)}"
         )
+
+
+@router.get(
+    "/test-agents",
+    status_code=status.HTTP_200_OK,
+    summary="Test all agents individually",
+    description="Diagnostic endpoint to test each agent's API connectivity and response parsing"
+)
+async def test_agents():
+    """
+    Test each agent individually with a sample clue.
+
+    Returns detailed status for each agent including:
+    - API connectivity
+    - Response parsing success
+    - Raw response content (on failure)
+    - Error details
+    """
+    import asyncio
+    import httpx
+
+    test_clue = "Surrounded by success and failure"
+    results = {
+        "test_clue": test_clue,
+        "agents": {},
+        "oracle": {},
+        "summary": {}
+    }
+
+    # Test all 5 agents
+    orchestrator = get_orchestrator()
+    orchestrator._init_agents()
+
+    async def test_single_agent(name: str, agent):
+        try:
+            # Check if API key is configured
+            if not agent.api_key:
+                return {
+                    "status": "error",
+                    "error": "No API key configured",
+                    "api_key_present": False
+                }
+
+            start_time = time.time()
+
+            # Build request
+            messages = [
+                {"role": "system", "content": agent.get_system_prompt()},
+                {"role": "user", "content": agent.format_clues_message([test_clue])}
+            ]
+
+            payload = {
+                "model": agent.model,
+                "messages": messages,
+                "temperature": agent.TEMPERATURE,
+                "max_tokens": 150,
+            }
+
+            # Make API call
+            response = await agent.client.post(
+                f"{agent.base_url}/chat/completions",
+                json=payload
+            )
+
+            latency_ms = (time.time() - start_time) * 1000
+
+            if response.status_code != 200:
+                return {
+                    "status": "api_error",
+                    "http_status": response.status_code,
+                    "error": response.text[:500],
+                    "latency_ms": latency_ms,
+                    "api_key_present": True,
+                    "model": agent.model,
+                    "base_url": agent.base_url
+                }
+
+            data = response.json()
+            content = data.get("choices", [{}])[0].get("message", {}).get("content", "")
+
+            # Try to parse the response
+            prediction = agent.parse_response(content)
+
+            if prediction:
+                return {
+                    "status": "success",
+                    "prediction": {
+                        "answer": prediction.answer,
+                        "confidence": prediction.confidence,
+                        "reasoning": prediction.reasoning
+                    },
+                    "latency_ms": latency_ms,
+                    "model": agent.model,
+                    "base_url": agent.base_url
+                }
+            else:
+                return {
+                    "status": "parse_error",
+                    "raw_response": content[:500],
+                    "latency_ms": latency_ms,
+                    "model": agent.model,
+                    "base_url": agent.base_url,
+                    "error": "Response did not match expected format (ANSWER/CONFIDENCE/REASONING)"
+                }
+
+        except httpx.TimeoutException:
+            return {
+                "status": "timeout",
+                "error": f"Request timed out after {agent.timeout}s",
+                "model": agent.model,
+                "base_url": agent.base_url
+            }
+        except Exception as e:
+            return {
+                "status": "exception",
+                "error": str(e),
+                "error_type": type(e).__name__,
+                "model": agent.model if hasattr(agent, 'model') else "unknown",
+                "base_url": agent.base_url if hasattr(agent, 'base_url') else "unknown"
+            }
+
+    # Test all agents in parallel
+    agent_tasks = [
+        (name, test_single_agent(name, agent))
+        for name, agent in orchestrator._agents.items()
+    ]
+
+    for name, task in agent_tasks:
+        results["agents"][name] = await task
+
+    # Test Oracle
+    oracle = get_oracle()
+    try:
+        if not oracle.enabled:
+            results["oracle"] = {
+                "status": "disabled",
+                "error": "No Anthropic API key configured"
+            }
+        else:
+            start_time = time.time()
+            synthesis = await asyncio.wait_for(
+                oracle.synthesize_early(
+                    clues=[test_clue],
+                    clue_number=1,
+                    prior_analyses=None
+                ),
+                timeout=10
+            )
+            latency_ms = (time.time() - start_time) * 1000
+
+            if synthesis:
+                results["oracle"] = {
+                    "status": "success",
+                    "top_pick": synthesis.top_3[0].answer if synthesis.top_3 else "None",
+                    "confidence": synthesis.top_3[0].confidence if synthesis.top_3 else 0,
+                    "key_theme": synthesis.key_theme,
+                    "latency_ms": latency_ms,
+                    "model": oracle.model
+                }
+            else:
+                results["oracle"] = {
+                    "status": "parse_error",
+                    "error": "Failed to parse Oracle response",
+                    "latency_ms": latency_ms,
+                    "model": oracle.model
+                }
+    except asyncio.TimeoutError:
+        results["oracle"] = {
+            "status": "timeout",
+            "error": "Oracle timed out after 10s"
+        }
+    except Exception as e:
+        results["oracle"] = {
+            "status": "exception",
+            "error": str(e),
+            "error_type": type(e).__name__
+        }
+
+    # Generate summary
+    successful = sum(1 for r in results["agents"].values() if r.get("status") == "success")
+    results["summary"] = {
+        "agents_successful": successful,
+        "agents_total": 5,
+        "oracle_status": results["oracle"].get("status", "unknown"),
+        "all_working": successful == 5 and results["oracle"].get("status") == "success"
+    }
+
+    return results
 
 
 # Exception handlers are now in server.py

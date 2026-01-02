@@ -12,12 +12,15 @@ import time
 from typing import Dict, List, Optional
 from dataclasses import dataclass
 
-from app.core.config import get_agent_configs
-from app.core.reasoning_accumulator import OracleSynthesis, ClueAnalysis
+from app.core.config import get_agent_configs, get_settings, get_thinker_config
+from app.core.reasoning_accumulator import OracleSynthesis, ClueAnalysis, ThinkerContext, ThinkerInsight
 
 from .base_agent import BaseAgent, AgentPrediction
+from .thinker_agent import get_thinker
 from .lateral_agent import LateralAgent
 from .wordsmith_agent import WordsmithAgent
+from .lateral_agent_anthropic import LateralAgentAnthropic
+from .wordsmith_agent_anthropic import WordsmithAgentAnthropic
 from .popculture_agent import PopCultureAgent
 from .literal_agent import LiteralAgent
 from .wildcard_agent import WildCardAgent
@@ -38,6 +41,7 @@ class OrchestratorResult:
     agents_responded: int
     agents_failed: List[str]
     oracle_synthesis: Optional[OracleSynthesis] = None  # Oracle meta-analysis
+    thinker_task_id: Optional[str] = None  # Background thinker task for polling
 
 
 class AgentOrchestrator:
@@ -62,6 +66,8 @@ class AgentOrchestrator:
         self.voting = WeightedVoting()
         self._agents: Dict[str, BaseAgent] = {}
         self._initialized = False
+        self._pending_thinker_tasks: Dict[str, asyncio.Task] = {}
+        self._thinker_results: Dict[str, ThinkerInsight] = {}
 
     def _init_agents(self):
         """Initialize agents from config."""
@@ -69,21 +75,42 @@ class AgentOrchestrator:
             return
 
         configs = get_agent_configs()
+        settings = get_settings()
 
-        # Create agent instances
-        self._agents = {
-            "lateral": LateralAgent(
+        # Check if Anthropic Haiku is configured for Lateral/Wordsmith
+        use_haiku = bool(settings.ANTHROPIC_API_KEY) and settings.HAIKU_MODEL
+
+        if use_haiku:
+            logger.info("[Orchestrator] Using Claude 3.5 Haiku for Lateral & Wordsmith agents")
+            lateral_agent = LateralAgentAnthropic(
+                api_key=settings.ANTHROPIC_API_KEY,
+                model=settings.HAIKU_MODEL,
+                timeout=self.timeout
+            )
+            wordsmith_agent = WordsmithAgentAnthropic(
+                api_key=settings.ANTHROPIC_API_KEY,
+                model=settings.HAIKU_MODEL,
+                timeout=self.timeout
+            )
+        else:
+            logger.info("[Orchestrator] Using OpenAI for Lateral & Wordsmith agents")
+            lateral_agent = LateralAgent(
                 api_key=configs["lateral"]["api_key"],
                 base_url=configs["lateral"]["base_url"],
                 model=configs["lateral"]["model"],
                 timeout=self.timeout
-            ),
-            "wordsmith": WordsmithAgent(
+            )
+            wordsmith_agent = WordsmithAgent(
                 api_key=configs["wordsmith"]["api_key"],
                 base_url=configs["wordsmith"]["base_url"],
                 model=configs["wordsmith"]["model"],
                 timeout=self.timeout
-            ),
+            )
+
+        # Create agent instances
+        self._agents = {
+            "lateral": lateral_agent,
+            "wordsmith": wordsmith_agent,
             "popculture": PopCultureAgent(
                 api_key=configs["popculture"]["api_key"],
                 base_url=configs["popculture"]["base_url"],
@@ -113,7 +140,8 @@ class AgentOrchestrator:
         agent: BaseAgent,
         clues: List[str],
         category_hint: Optional[str],
-        prior_context: Optional[str] = None
+        prior_context: Optional[str] = None,
+        theme: Optional[str] = None
     ) -> tuple[str, Optional[AgentPrediction]]:
         """
         Run a single agent with timeout.
@@ -124,13 +152,14 @@ class AgentOrchestrator:
             clues: List of clues
             category_hint: Optional category hint
             prior_context: Optional context from prior clue analysis (reasoning accumulation)
+            theme: Optional theme/sponsor context
 
         Returns:
             (agent_name, prediction or None)
         """
         try:
             prediction = await asyncio.wait_for(
-                agent.predict(clues, category_hint, prior_context),
+                agent.predict(clues, category_hint, prior_context, theme),
                 timeout=self.timeout
             )
             return (agent_name, prediction)
@@ -147,10 +176,14 @@ class AgentOrchestrator:
         clue_number: int,
         category_hint: Optional[str] = None,
         prior_context: Optional[str] = None,
-        prior_analyses: Optional[List[ClueAnalysis]] = None
+        prior_analyses: Optional[List[ClueAnalysis]] = None,
+        theme: Optional[str] = None,
+        session_id: Optional[str] = None,
+        thinker_context: Optional[ThinkerContext] = None
     ) -> OrchestratorResult:
         """
         Run all agents in parallel, vote, then run Oracle meta-synthesis.
+        Also starts Thinker in background for deep analysis.
 
         Args:
             clues: List of clues revealed so far
@@ -158,6 +191,9 @@ class AgentOrchestrator:
             category_hint: Optional category hint
             prior_context: Optional context from prior clue analysis (reasoning accumulation)
             prior_analyses: Optional list of ClueAnalysis for Oracle context
+            theme: Optional theme/sponsor context
+            session_id: Session ID for thinker task tracking
+            thinker_context: Prior thinker insights for context injection
 
         Returns:
             OrchestratorResult with predictions, voting, and Oracle synthesis
@@ -182,9 +218,9 @@ class AgentOrchestrator:
                 )
             )
 
-        # Run all agents in parallel with prior context
+        # Run all agents in parallel with prior context and theme
         tasks = [
-            self._run_agent(name, agent, clues, category_hint, prior_context)
+            self._run_agent(name, agent, clues, category_hint, prior_context, theme)
             for name, agent in self._agents.items()
         ]
 
@@ -220,14 +256,28 @@ class AgentOrchestrator:
             except Exception as e:
                 logger.error(f"[Oracle] Error: {e}")
 
+        # Start Thinker in BACKGROUND (fire-and-forget)
+        # Thinker's output will be stored and used for NEXT clue's context
+        thinker_task_id = None
+        if session_id:
+            thinker_task_id = self._start_thinker_background(
+                session_id=session_id,
+                clues=clues,
+                clue_number=clue_number,
+                predictions=predictions,
+                thinker_context=thinker_context,
+                theme=theme
+            )
+
         total_latency = (time.time() - start_time) * 1000
 
         context_used = "with context" if prior_context else "no context"
         oracle_status = f"Oracle: {oracle_synthesis.top_3[0].answer}" if oracle_synthesis else "Oracle: disabled"
+        thinker_status = f"Thinker: started ({thinker_task_id})" if thinker_task_id else "Thinker: disabled"
         logger.info(
             f"[Orchestrator] {len(predictions)}/5 agents responded in {total_latency:.0f}ms ({context_used}) | "
             f"Recommended: {voting_result.recommended_pick} ({voting_result.recommended_confidence*100:.0f}%) | "
-            f"{oracle_status}"
+            f"{oracle_status} | {thinker_status}"
         )
 
         return OrchestratorResult(
@@ -238,8 +288,78 @@ class AgentOrchestrator:
             total_latency_ms=total_latency,
             agents_responded=len(predictions),
             agents_failed=failed_agents,
-            oracle_synthesis=oracle_synthesis
+            oracle_synthesis=oracle_synthesis,
+            thinker_task_id=thinker_task_id
         )
+
+    def _start_thinker_background(
+        self,
+        session_id: str,
+        clues: List[str],
+        clue_number: int,
+        predictions: Dict[str, AgentPrediction],
+        thinker_context: Optional[ThinkerContext],
+        theme: Optional[str]
+    ) -> Optional[str]:
+        """
+        Start thinker analysis in background.
+        Result stored in _thinker_results for later retrieval.
+        """
+        thinker = get_thinker()
+        if not thinker.enabled:
+            return None
+
+        task_id = f"{session_id}:{clue_number}"
+
+        # Get prior insight if available
+        prior_insight = None
+        if thinker_context:
+            prior_insight = thinker_context.get_prior_insight(clue_number)
+
+        async def run_thinker():
+            try:
+                config = get_thinker_config()
+                insight = await asyncio.wait_for(
+                    thinker.analyze_deep(
+                        clues=clues,
+                        clue_number=clue_number,
+                        fast_predictions=predictions,
+                        prior_insight=prior_insight,
+                        theme=theme
+                    ),
+                    timeout=config["timeout"]
+                )
+                if insight:
+                    self._thinker_results[task_id] = insight
+                    logger.info(f"[Thinker] Completed for {task_id}: {insight.top_guess}")
+            except asyncio.TimeoutError:
+                logger.warning(f"[Thinker] Timed out for {task_id}")
+            except Exception as e:
+                logger.error(f"[Thinker] Error for {task_id}: {e}")
+            finally:
+                if task_id in self._pending_thinker_tasks:
+                    del self._pending_thinker_tasks[task_id]
+
+        task = asyncio.create_task(run_thinker())
+        self._pending_thinker_tasks[task_id] = task
+        return task_id
+
+    def get_thinker_status(self, session_id: str, clue_number: int) -> Dict:
+        """
+        Get thinker status for a session/clue.
+
+        Returns:
+            Dict with pending, insight keys
+        """
+        task_id = f"{session_id}:{clue_number}"
+        pending = task_id in self._pending_thinker_tasks
+        insight = self._thinker_results.get(task_id)
+
+        return {
+            "pending": pending,
+            "completed": insight is not None,
+            "insight": insight
+        }
 
     async def close(self):
         """Close all agent HTTP clients."""

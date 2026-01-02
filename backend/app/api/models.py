@@ -39,11 +39,18 @@ class ClueRequest(BaseModel):
         description="Optional session ID for continuing an existing puzzle"
     )
 
+    theme: Optional[str] = Field(
+        None,
+        max_length=200,
+        description="Optional theme/sponsor context (e.g., 'Stranger Things'). May help inform predictions."
+    )
+
     model_config = ConfigDict(
         json_schema_extra={
             "example": {
                 "clue_text": "Savors many flavors",
-                "session_id": "550e8400-e29b-41d4-a716-446655440000"
+                "session_id": "550e8400-e29b-41d4-a716-446655440000",
+                "theme": "Stranger Things"
             }
         }
     )
@@ -306,6 +313,78 @@ class OracleSynthesis(BaseModel):
     )
 
 
+class ThinkerInsight(BaseModel):
+    """Thinker deep analysis output with patterns and wordplay."""
+
+    clue_number: int = Field(
+        ...,
+        ge=1,
+        le=5,
+        description="Clue number this analysis was generated for"
+    )
+
+    top_guess: str = Field(
+        ...,
+        description="Thinker's best guess"
+    )
+
+    confidence: int = Field(
+        ...,
+        ge=0,
+        le=100,
+        description="Confidence percentage (0-100)"
+    )
+
+    hypothesis_reasoning: str = Field(
+        ...,
+        description="Deep analysis explaining the thinking process (200-500 chars)"
+    )
+
+    key_patterns: List[str] = Field(
+        default_factory=list,
+        description="Identified patterns across clues"
+    )
+
+    refined_guesses: List[OracleGuess] = Field(
+        default_factory=list,
+        description="Top 3 guesses with explanations"
+    )
+
+    narrative_arc: str = Field(
+        default="",
+        description="The story these clues tell (1-2 sentences)"
+    )
+
+    wordplay_analysis: str = Field(
+        default="",
+        description="Any detected puns, homophones, or double meanings"
+    )
+
+    latency_ms: float = Field(
+        default=0.0,
+        description="Thinker processing time in milliseconds"
+    )
+
+
+class ThinkerStatus(BaseModel):
+    """Status of a background thinker task."""
+
+    pending: bool = Field(
+        ...,
+        description="True if thinker is still processing"
+    )
+
+    completed: bool = Field(
+        ...,
+        description="True if thinker has completed"
+    )
+
+    insight: Optional[ThinkerInsight] = Field(
+        None,
+        description="Thinker insight if completed"
+    )
+
+
 class PredictionResponse(BaseModel):
     """Response model for prediction results with 5-agent MoA architecture."""
 
@@ -337,6 +416,12 @@ class PredictionResponse(BaseModel):
     oracle: Optional[OracleSynthesis] = Field(
         None,
         description="Oracle meta-synthesizer output with top 3 guesses"
+    )
+
+    # Thinker background task
+    thinker_task_id: Optional[str] = Field(
+        None,
+        description="Task ID for polling thinker status (format: session_id:clue_number)"
     )
 
     # Convenience fields

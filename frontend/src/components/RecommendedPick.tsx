@@ -39,67 +39,48 @@ export default function RecommendedPick({
 
   return (
     <motion.div
-      className={`rounded-xl p-4 border-2 ${
+      className={`rounded-lg p-2.5 border ${
         shouldGuess
-          ? 'bg-gradient-to-r from-green-500/10 to-transparent border-green-500'
-          : 'bg-gray-800/50 border-gray-700'
+          ? 'bg-gradient-to-r from-green-500/10 to-transparent border-green-500/50'
+          : 'bg-gray-800/30 border-gray-700/50'
       }`}
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
     >
-      {/* Main recommendation row */}
-      <div className="flex items-center justify-between gap-4">
-        <div className="flex items-center gap-3 flex-1 min-w-0">
-          {/* Target icon */}
-          <span className="text-2xl flex-shrink-0">
-            {shouldGuess ? '✅' : '🎯'}
+      {/* Compact row layout */}
+      <div className="flex items-center justify-between gap-3">
+        <div className="flex items-center gap-2 flex-1 min-w-0">
+          {/* Icon */}
+          <span className="text-lg flex-shrink-0">📊</span>
+
+          {/* Label & Answer */}
+          <span className="text-xs text-gray-500 flex-shrink-0">Voting:</span>
+          <span className="text-lg font-bold text-white truncate">{answer}</span>
+          <span className={`text-sm font-mono ${getConfidenceColor()}`}>
+            {Math.round(confidence * 100)}%
           </span>
 
-          {/* Answer */}
-          <div className="min-w-0 flex-1">
-            <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-xl font-bold text-white uppercase truncate">
-                {answer}
-              </span>
-              <span className={`text-lg font-mono ${getConfidenceColor()}`}>
-                ({Math.round(confidence * 100)}%)
-              </span>
-            </div>
-          </div>
+          {/* Agreement */}
+          <span className={`px-1.5 py-0.5 text-xs font-medium rounded border ${getAgreementColor()}`}>
+            {agentsAgreed}/5
+          </span>
         </div>
 
         {/* Actions */}
-        <div className="flex items-center gap-2 flex-shrink-0">
+        <div className="flex items-center gap-1.5 flex-shrink-0">
           <button
             onClick={onCopy}
-            className="px-3 py-1.5 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm font-medium transition-colors"
+            className="px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded text-xs font-medium transition-colors"
             title="Copy to clipboard"
           >
-            Copy
+            📋
           </button>
           {shouldGuess && (
-            <span className="px-3 py-1.5 bg-green-500 text-white rounded-lg text-sm font-bold animate-pulse">
+            <span className="px-2 py-1 bg-green-500 text-white rounded text-xs font-bold">
               GUESS!
             </span>
           )}
         </div>
-      </div>
-
-      {/* Key insight */}
-      {keyInsight && keyInsight !== 'No insight' && (
-        <div className="mt-2 text-sm text-gray-400 italic pl-10">
-          "{keyInsight}"
-        </div>
-      )}
-
-      {/* Agreement badge */}
-      <div className="mt-2 flex items-center gap-2 pl-10">
-        <span className={`px-2 py-0.5 text-xs font-medium rounded border ${getAgreementColor()}`}>
-          {agentsAgreed} agent{agentsAgreed !== 1 ? 's' : ''} agree
-        </span>
-        <span className="text-xs text-gray-500">
-          {agreementStrength} agreement
-        </span>
       </div>
     </motion.div>
   )

@@ -42,6 +42,25 @@ export interface OracleSynthesis {
   latency_ms: number
 }
 
+// Thinker (Gemini 2.5 Pro) deep analysis
+export interface ThinkerInsight {
+  clue_number: number
+  top_guess: string
+  confidence: number  // 0-100
+  hypothesis_reasoning: string
+  key_patterns: string[]
+  refined_guesses: OracleGuess[]
+  narrative_arc: string
+  wordplay_analysis: string
+  latency_ms: number
+}
+
+export interface ThinkerStatus {
+  pending: boolean
+  completed: boolean
+  insight: ThinkerInsight | null
+}
+
 // Legacy prediction format (kept for backwards compatibility)
 export interface Prediction {
   rank: number
@@ -75,6 +94,9 @@ export interface PredictionResponse {
   // Oracle meta-synthesis (Claude 3.5 Sonnet)
   oracle: OracleSynthesis | null
 
+  // Thinker background task
+  thinker_task_id: string | null
+
   // Legacy fields (deprecated)
   predictions: Prediction[]
   gemini_predictions?: Prediction[]
@@ -98,6 +120,7 @@ export const AGENT_INFO: Record<AgentName, { emoji: string; label: string; descr
 export interface ClueRequest {
   clue_text: string
   session_id?: string
+  theme?: string
 }
 
 export interface ResetResponse {

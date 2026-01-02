@@ -89,10 +89,10 @@ export default function PredictionCard({ prediction, index }: PredictionCardProp
 
       {/* Category & Semantic Match */}
       <div className="flex items-center gap-2 mb-3 flex-wrap">
-        <span className="px-3 py-1 bg-gray-800 rounded-full text-xs uppercase tracking-wide text-gray-300">
+        <span className="px-3 py-1 bg-gray-800 rounded-full text-sm uppercase tracking-wide text-gray-300">
           {prediction.category}
         </span>
-        <span className={`px-3 py-1 rounded-full text-xs border ${semanticConfig.color}`}>
+        <span className={`px-3 py-1 rounded-full text-sm border ${semanticConfig.color}`}>
           {semanticConfig.icon} {semanticConfig.label}
         </span>
       </div>
@@ -117,7 +117,7 @@ export default function PredictionCard({ prediction, index }: PredictionCardProp
 
       {/* Reasoning */}
       <div className="mt-4 pt-4 border-t border-gray-800">
-        <p className="text-sm text-gray-400 leading-relaxed">
+        <p className="text-base text-gray-400 leading-relaxed">
           <span className="text-gray-500 font-bold">Why: </span>
           {prediction.reasoning}
         </p>

@@ -79,7 +79,8 @@ class BaseAgent(ABC):
         self,
         clues: List[str],
         category_hint: Optional[str] = None,
-        prior_context: Optional[str] = None
+        prior_context: Optional[str] = None,
+        theme: Optional[str] = None
     ) -> str:
         """
         Format clues for the user message with optional prior context.
@@ -88,13 +89,20 @@ class BaseAgent(ABC):
             clues: List of clues revealed so far
             category_hint: Optional category hint (person/place/thing)
             prior_context: Optional context from prior clue analysis (reasoning accumulation)
+            theme: Optional theme/sponsor context (e.g., "Stranger Things")
 
         Returns:
             Formatted message string for the LLM
         """
         lines = []
 
-        # Inject prior analysis context FIRST (if available)
+        # Inject theme context FIRST (if available)
+        if theme:
+            lines.append(f"TONIGHT'S THEME/SPONSOR: {theme}")
+            lines.append("(The answer may or may not relate to this theme - use as a hint only)")
+            lines.append("")
+
+        # Inject prior analysis context (if available)
         if prior_context:
             lines.append(prior_context)
             lines.append("")
@@ -122,7 +130,8 @@ class BaseAgent(ABC):
         self,
         clues: List[str],
         category_hint: Optional[str] = None,
-        prior_context: Optional[str] = None
+        prior_context: Optional[str] = None,
+        theme: Optional[str] = None
     ) -> Optional[AgentPrediction]:
         """
         Make a prediction based on the clues.
@@ -131,6 +140,7 @@ class BaseAgent(ABC):
             clues: List of clues revealed so far
             category_hint: Optional category hint (person/place/thing)
             prior_context: Optional context from prior clue analysis (reasoning accumulation)
+            theme: Optional theme/sponsor context
 
         Returns:
             AgentPrediction or None if failed
@@ -138,10 +148,10 @@ class BaseAgent(ABC):
         start_time = time.time()
 
         try:
-            # Build request with optional prior context
+            # Build request with optional prior context and theme
             messages = [
                 {"role": "system", "content": self.get_system_prompt()},
-                {"role": "user", "content": self.format_clues_message(clues, category_hint, prior_context)}
+                {"role": "user", "content": self.format_clues_message(clues, category_hint, prior_context, theme)}
             ]
 
             payload = {
@@ -159,7 +169,10 @@ class BaseAgent(ABC):
             response.raise_for_status()
 
             data = response.json()
+            logger.debug(f"[{self.AGENT_NAME}] Raw API response keys: {list(data.keys())}")
+
             content = data["choices"][0]["message"]["content"].strip()
+            logger.debug(f"[{self.AGENT_NAME}] Extracted content ({len(content)} chars): {content[:200]}")
 
             # Parse response
             prediction = self.parse_response(content)
@@ -168,14 +181,17 @@ class BaseAgent(ABC):
                 prediction.agent_name = self.AGENT_NAME
                 return prediction
 
-            logger.warning(f"[{self.AGENT_NAME}] Failed to parse response: {content[:100]}")
+            logger.warning(f"[{self.AGENT_NAME}] Failed to parse response. Full content:\n{content}")
             return None
 
         except httpx.TimeoutException:
             logger.warning(f"[{self.AGENT_NAME}] Timeout after {self.timeout}s")
             return None
+        except httpx.HTTPStatusError as e:
+            logger.error(f"[{self.AGENT_NAME}] HTTP {e.response.status_code}: {e.response.text[:300]}")
+            return None
         except Exception as e:
-            logger.error(f"[{self.AGENT_NAME}] Error: {e}")
+            logger.error(f"[{self.AGENT_NAME}] Error ({type(e).__name__}): {e}")
             return None
 
     def parse_response(self, content: str) -> Optional[AgentPrediction]:

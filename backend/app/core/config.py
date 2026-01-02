@@ -63,14 +63,22 @@ class Settings(BaseSettings):
     GROQ_API_URL: str = "https://api.groq.com/openai/v1"
     GROQ_MODEL: str = "llama-3.3-70b-versatile"
 
-    # Anthropic API (Claude 3.5 Sonnet for Oracle meta-synthesizer)
+    # Anthropic API (Claude for Oracle and specialist agents)
     # Get key at: https://console.anthropic.com/settings/keys
     ANTHROPIC_API_KEY: str = ""
-    CLAUDE_MODEL: str = "claude-3-5-sonnet-20241022"
+    CLAUDE_MODEL: str = "claude-3-5-sonnet-20241022"  # Oracle meta-synthesizer
+    HAIKU_MODEL: str = ""  # Claude 3.5 Haiku for Lateral/Wordsmith agents (optional)
 
     # Agent orchestration settings
     AGENT_TIMEOUT: int = 5  # seconds per agent
     ENABLE_MOA: bool = True  # Enable Mixture of Agents
+
+    # Thinker (Deep Analysis) settings
+    THINKER_ENABLED: bool = True
+    THINKER_MODEL: str = "gemini-2.5-flash"  # Switched from 2.5 Pro (OpenAI API compatibility issue)
+    THINKER_TIMEOUT: float = 30.0  # Background analysis max time (increased for Gemini thinking)
+    FAST_TIER_TIMEOUT: float = 0.8  # Clue 1 fast response target
+    FAST_TIER_EXTENDED: float = 1.5  # Clue 2-5 with thinker context
 
     class Config:
         env_file = str(_ENV_FILE)
@@ -205,6 +213,25 @@ def get_oracle_config() -> dict:
         "api_key": settings.ANTHROPIC_API_KEY,
         "enabled": bool(settings.ANTHROPIC_API_KEY),
         "timeout": settings.AGENT_TIMEOUT,
+    }
+
+
+def get_thinker_config() -> dict:
+    """
+    Get Thinker (Deep Analysis) configuration using Gemini 2.5 Pro.
+
+    Returns:
+        dict with keys: model, api_key, enabled, timeout, base_url
+    """
+    settings = get_settings()
+    return {
+        "base_url": settings.GEMINI_API_URL,
+        "model": settings.THINKER_MODEL,
+        "api_key": settings.GEMINI_API_KEY,
+        "enabled": settings.THINKER_ENABLED and bool(settings.GEMINI_API_KEY),
+        "timeout": settings.THINKER_TIMEOUT,
+        "fast_timeout": settings.FAST_TIER_TIMEOUT,
+        "extended_timeout": settings.FAST_TIER_EXTENDED,
     }
 
 

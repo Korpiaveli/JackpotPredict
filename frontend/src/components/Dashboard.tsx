@@ -6,8 +6,9 @@ import RecommendedPick from './RecommendedPick'
 import AgentRow from './AgentRow'
 import StatusBar from './StatusBar'
 import OracleInsight from './OracleInsight'
+import ThinkerInsight from './ThinkerInsight'
 import ConfidenceTrend from './ConfidenceTrend'
-import { useSubmitClue, useResetPuzzle, useHealth, useSubmitFeedback } from '../hooks/usePredictions'
+import { useSubmitClue, useResetPuzzle, useHealth, useSubmitFeedback, useThinkerStatus } from '../hooks/usePredictions'
 import { usePuzzleStore } from '../store/puzzleStore'
 import type { EntityCategory, AgentName, AgentPrediction } from '../types/api'
 
@@ -32,13 +33,20 @@ export default function Dashboard() {
   const submitFeedbackMutation = useSubmitFeedback()
   const { data: healthData } = useHealth()
 
-  const handleSubmitClue = async (clueText: string) => {
+  // Thinker polling - only when we have an active prediction
+  const { sessionId } = usePuzzleStore()
+  const { data: thinkerStatus } = useThinkerStatus(
+    sessionId,
+    latestPrediction?.clue_number ?? null
+  )
+
+  const handleSubmitClue = async (clueText: string, theme?: string) => {
     try {
       if (!gameStarted) {
         startGame()
       }
 
-      const result = await submitClueMutation.mutateAsync(clueText)
+      const result = await submitClueMutation.mutateAsync({ clueText, theme })
 
       if (result?.elapsed_time) {
         addResponseTime(result.elapsed_time)
@@ -167,7 +175,23 @@ export default function Dashboard() {
             )}
           </AnimatePresence>
 
-          {/* Recommended Pick - Most prominent */}
+          {/* 1. THINKER - Primary (largest, most prominent) */}
+          {latestPrediction && (
+            <ThinkerInsight
+              insight={thinkerStatus?.insight ?? null}
+              isPending={thinkerStatus?.pending || (latestPrediction.thinker_task_id && !thinkerStatus?.completed)}
+            />
+          )}
+
+          {/* 2. ORACLE - Secondary */}
+          {latestPrediction && (
+            <OracleInsight
+              oracle={latestPrediction.oracle}
+              isLoading={isLoading}
+            />
+          )}
+
+          {/* 3. VOTING CONSENSUS - Tertiary */}
           {latestPrediction && latestPrediction.recommended_pick && (
             <RecommendedPick
               answer={latestPrediction.recommended_pick}
@@ -187,14 +211,6 @@ export default function Dashboard() {
               clueNumber={latestPrediction.clue_number}
               elapsedTime={latestPrediction.elapsed_time}
               agreementStrength={latestPrediction.agreement_strength || 'none'}
-            />
-          )}
-
-          {/* Oracle Meta-Synthesis - Above agent predictions */}
-          {latestPrediction && (
-            <OracleInsight
-              oracle={latestPrediction.oracle}
-              isLoading={isLoading}
             />
           )}
 
@@ -230,17 +246,12 @@ export default function Dashboard() {
             </div>
           )}
 
-          {/* 5-Agent Row */}
+          {/* 4. AGENT DETAILS - Collapsible */}
           {latestPrediction && Object.keys(agentPredictions).length > 0 && (
-            <div>
-              <div className="text-xs text-gray-500 uppercase tracking-wide mb-2">
-                Agent Predictions
-              </div>
-              <AgentRow
-                agents={agentPredictions}
-                winningAnswer={latestPrediction.recommended_pick || ''}
-              />
-            </div>
+            <AgentRow
+              agents={agentPredictions}
+              winningAnswer={latestPrediction.recommended_pick || ''}
+            />
           )}
 
           {/* Clue Input - Always visible */}
@@ -286,7 +297,7 @@ export default function Dashboard() {
 
       {/* Compact Footer */}
       <footer className="border-t border-gray-800 px-4 py-2 text-center text-xs text-gray-600">
-        🔮 Oracle + 5 Agents: Lateral + Wordsmith + PopCulture + Literal + WildCard
+        🧠 Thinker + 🔮 Oracle + 5 Agents: Lateral + Wordsmith + PopCulture + Literal + WildCard
       </footer>
     </div>
   )

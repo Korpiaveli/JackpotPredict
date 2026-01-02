@@ -36,6 +36,48 @@ class OracleGuess:
 
 
 @dataclass
+class ThinkerInsight:
+    """Deep analysis result from the Thinker (Gemini 2.5 Pro)."""
+    clue_number: int
+    top_guess: str
+    confidence: int  # 0-100
+    hypothesis_reasoning: str  # 200-500 char deep analysis
+    key_patterns: List[str]  # Identified patterns
+    refined_guesses: List[OracleGuess]  # Top 3 with explanations
+    narrative_arc: str  # Story the clues tell
+    wordplay_analysis: str  # Detected wordplay
+    latency_ms: float
+    completed: bool = True
+
+
+@dataclass
+class ThinkerContext:
+    """Accumulated thinker insights for context injection."""
+    insights: List[ThinkerInsight] = field(default_factory=list)
+    last_updated: float = 0.0
+
+    def add_insight(self, insight: ThinkerInsight) -> None:
+        """Add a new insight from the thinker."""
+        self.insights.append(insight)
+        self.last_updated = time.time()
+
+    def latest(self) -> Optional[ThinkerInsight]:
+        """Get the most recent insight."""
+        return self.insights[-1] if self.insights else None
+
+    def get_for_clue(self, clue_number: int) -> Optional[ThinkerInsight]:
+        """Get insight for a specific clue number."""
+        for insight in self.insights:
+            if insight.clue_number == clue_number:
+                return insight
+        return None
+
+    def get_prior_insight(self, current_clue: int) -> Optional[ThinkerInsight]:
+        """Get the insight from the previous clue (for context injection)."""
+        return self.get_for_clue(current_clue - 1)
+
+
+@dataclass
 class OracleSynthesis:
     """Oracle's meta-synthesis output with top 3 guesses."""
     top_3: List[OracleGuess]
@@ -157,7 +199,8 @@ class ReasoningAccumulator:
         self,
         analyses: List[ClueAnalysis],
         current_clue_number: int,
-        full_predictions: bool = True
+        full_predictions: bool = True,
+        thinker_context: Optional[ThinkerContext] = None
     ) -> str:
         """
         Generate context injection string for agent prompts.
@@ -166,14 +209,32 @@ class ReasoningAccumulator:
             analyses: List of prior ClueAnalysis objects
             current_clue_number: Current clue number (for reference)
             full_predictions: If True, include all 5 agent predictions per clue
+            thinker_context: Optional ThinkerContext with deep analysis insights
 
         Returns:
             Formatted context string for injection into prompts
         """
-        if not analyses:
-            return ""
+        lines = []
 
-        lines = ["PRIOR ANALYSIS:"]
+        # Priority 1: Thinker deep analysis from PRIOR clue
+        if thinker_context:
+            prior_insight = thinker_context.get_prior_insight(current_clue_number)
+            if prior_insight:
+                lines.append("=== DEEP ANALYSIS (from prior clue) ===")
+                lines.append(f"Top Hypothesis: {prior_insight.top_guess} ({prior_insight.confidence}%)")
+                lines.append(f"Reasoning: {prior_insight.hypothesis_reasoning[:300]}")
+                if prior_insight.key_patterns:
+                    lines.append(f"Patterns: {', '.join(prior_insight.key_patterns[:3])}")
+                if prior_insight.wordplay_analysis:
+                    lines.append(f"Wordplay: {prior_insight.wordplay_analysis}")
+                lines.append(f"Narrative: {prior_insight.narrative_arc}")
+                lines.append("")
+
+        # Priority 2: Prior voting results
+        if not analyses:
+            return "\n".join(lines) if lines else ""
+
+        lines.append("PRIOR ANALYSIS:")
         lines.append("")
 
         for analysis in analyses:

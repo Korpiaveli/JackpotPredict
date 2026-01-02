@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 interface ClueInputProps {
-  onSubmit: (clue: string) => void
+  onSubmit: (clue: string, theme?: string) => void
   clueNumber: number
   previousClues: string[]
   isLoading: boolean
@@ -17,6 +17,8 @@ export default function ClueInput({
   disabled = false
 }: ClueInputProps) {
   const [clueText, setClueText] = useState('')
+  const [theme, setTheme] = useState('')
+  const [showTheme, setShowTheme] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
@@ -29,7 +31,7 @@ export default function ClueInput({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     if (clueText.trim() && !isLoading) {
-      onSubmit(clueText.trim())
+      onSubmit(clueText.trim(), theme.trim() || undefined)
       setClueText('')
     }
   }
@@ -64,11 +66,47 @@ export default function ClueInput({
         </div>
       )}
 
+      {/* Theme/Sponsor Input (Optional, Collapsible) */}
+      <div className="mb-4">
+        <button
+          type="button"
+          onClick={() => setShowTheme(!showTheme)}
+          className="text-sm text-gray-400 hover:text-primary transition-colors flex items-center gap-2"
+        >
+          <span className={`transform transition-transform ${showTheme ? 'rotate-90' : ''}`}>▶</span>
+          {showTheme ? 'Hide' : 'Add'} Tonight's Theme/Sponsor (optional)
+        </button>
+        <AnimatePresence>
+          {showTheme && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="mt-2 overflow-hidden"
+            >
+              <input
+                type="text"
+                value={theme}
+                onChange={(e) => setTheme(e.target.value)}
+                placeholder="e.g., Stranger Things, Marvel, 80s Movies..."
+                className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white text-base
+                         focus:border-primary focus:outline-none transition-all duration-200
+                         placeholder:text-gray-500"
+                maxLength={200}
+              />
+              <p className="text-xs text-gray-500 mt-1">
+                Hint: The answer may or may not relate to this theme
+              </p>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
       {/* Input Form */}
       <form onSubmit={handleSubmit} className="space-y-3">
         <div>
           <label htmlFor="clue-input" className="block mb-2">
-            <span className="text-primary text-lg font-bold uppercase tracking-wide">
+            <span className="text-primary text-xl font-bold uppercase tracking-wide">
               Clue {clueNumber} of 5
             </span>
             {isMaxClues && (
@@ -87,7 +125,7 @@ export default function ClueInput({
                 : 'Enter the clue from the game show...'
             }
             disabled={disabled || isLoading || isMaxClues}
-            className="w-full px-6 py-4 bg-gray-900 border-2 border-gray-800 rounded-lg text-white text-lg
+            className="w-full px-6 py-4 bg-gray-900 border-2 border-gray-800 rounded-lg text-white text-xl
                      focus:border-primary focus:outline-none transition-all duration-200
                      disabled:opacity-50 disabled:cursor-not-allowed
                      placeholder:text-gray-600"
